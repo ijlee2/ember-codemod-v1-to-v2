@@ -1,0 +1,20 @@
+# compiled output
+/dist/
+
+# misc
+/.DS_Store
+/.env*
+/.eslintcache
+/.eslintignore
+/.eslintrc.cjs
+/.git/
+/.github/
+/.gitignore
+/.prettierignore
+/.prettierrc.cjs
+/CONTRIBUTING.md
+/tests/
+/tmp/
+/yarn-error.log
+/yarn.lock
+.gitkeep

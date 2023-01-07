@@ -1,0 +1,67 @@
+{
+  "name": "ember-codemod-v1-to-v2",
+  "version": "0.0.0",
+  "description": "Codemod to convert Ember addons to v2 addon format",
+  "keywords": [
+    "codemod",
+    "ember-codemod",
+    "ember-octane",
+    "ember-polaris",
+    "ember-v2-addon",
+    "emberjs",
+    "embroider"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ijlee2/ember-codemod-v1-to-v2.git"
+  },
+  "license": "MIT",
+  "author": "Isaac J. Lee",
+  "main": "src/index.js",
+  "type": "module",
+  "bin": "./bin/ember-codemod-v1-to-v2.js",
+  "files": [
+    "bin/",
+    "src/"
+  ],
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "changelog": "lerna-changelog",
+    "lint": "eslint . --cache --ext=.cjs,.js",
+    "lint:fix": "eslint . --ext=.cjs,.js --fix",
+    "start": "node ./src/index.js",
+    "test": "mt tests --quiet"
+  },
+  "changelog": {
+    "labels": {
+      "breaking": "Breaking Change",
+      "bug": "Bug Fix",
+      "enhance: code": "Enhancement",
+      "enhance: dependency": "Internal",
+      "enhance: documentation": "Documentation",
+      "user feedback": "User Feedback"
+    }
+  },
+  "dependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/eslint-parser": "^7.19.1",
+    "glob": "^8.1.0",
+    "lodash.template": "^4.5.0",
+    "yargs": "^17.6.2"
+  },
+  "devDependencies": {
+    "@sondr3/minitest": "^0.1.1",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "fixturify": "^3.0.0",
+    "lerna-changelog": "^2.2.0",
+    "prettier": "^2.8.3"
+  },
+  "engines": {
+    "node": ">= 16"
+  }
+}

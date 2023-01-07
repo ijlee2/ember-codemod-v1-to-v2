@@ -1,0 +1,13 @@
+# compiled output
+/dist/
+
+# dependencies
+/node_modules/
+
+# misc
+!.*
+.*/
+.eslintcache
+/src/blueprints/
+/tests/fixtures/
+/tmp/
