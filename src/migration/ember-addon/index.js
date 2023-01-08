@@ -1,4 +1,8 @@
-import { augmentOptions, useRelativePaths } from './steps/index.js';
+import {
+  augmentOptions,
+  moveAddonFiles,
+  useRelativePaths,
+} from './steps/index.js';
 
 export function migrateEmberAddon(options) {
   const augmentedOptions = augmentOptions(options);
@@ -11,4 +15,7 @@ export function migrateEmberAddon(options) {
 
   // Prepare for migration
   useRelativePaths(augmentedOptions);
+
+  // Preserve code
+  moveAddonFiles(augmentedOptions);
 }
