@@ -12,6 +12,8 @@
 /.gitignore
 /.prettierignore
 /.prettierrc.cjs
+/codemod-test-fixture.sh
+/codemod-test-fixtures.sh
 /create-test-fixture.sh
 /CONTRIBUTING.md
 /tests/
