@@ -12,6 +12,7 @@
 /.gitignore
 /.prettierignore
 /.prettierrc.cjs
+/create-test-fixture.sh
 /CONTRIBUTING.md
 /tests/
 /tmp/
