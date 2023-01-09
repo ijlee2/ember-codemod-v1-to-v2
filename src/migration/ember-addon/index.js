@@ -1,5 +1,6 @@
 import {
   augmentOptions,
+  createFilesFromBlueprint,
   moveAddonFiles,
   moveProjectRootFiles,
   moveTestAppFiles,
@@ -22,4 +23,7 @@ export function migrateEmberAddon(options) {
   moveAddonFiles(augmentedOptions);
   moveTestAppFiles(augmentedOptions);
   moveProjectRootFiles(augmentedOptions);
+
+  // Get the latest code from blueprint
+  createFilesFromBlueprint(augmentedOptions);
 }
