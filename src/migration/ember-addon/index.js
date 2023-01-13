@@ -1,6 +1,7 @@
 import {
   augmentOptions,
   moveAddonFiles,
+  moveTestAppFiles,
   useRelativePaths,
 } from './steps/index.js';
 
@@ -18,4 +19,5 @@ export function migrateEmberAddon(options) {
 
   // Preserve code
   moveAddonFiles(augmentedOptions);
+  moveTestAppFiles(augmentedOptions);
 }
