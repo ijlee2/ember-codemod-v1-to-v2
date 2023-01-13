@@ -1,0 +1,76 @@
+<% if (options.packageManager.isNpm) { %>{
+  "name": "<%= options.packages.addon.name %>",
+  "version": "<%= options.packages.addon.version %>",
+  "private": true,
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "workspaces": [
+    "<%= options.packages.addon.name %>",
+    "<%= options.packages.testApp.name %>"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace <%= options.packages.addon.name %>",
+    "lint": "npm run lint --workspaces --if-present",
+    "lint:fix": "npm run lint:fix --workspaces --if-present",
+    "prepare": "npm run build",
+    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start:addon": "npm start --workspace <%= options.packages.addon.name %>",
+    "start:tests": "npm start --workspace <%= options.packages.testApp.name %>",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "<%= options.packages.addon.dependencies.get('concurrently') ?? '^7.6.0' %>",
+    "prettier": "<%= options.packages.addon.dependencies.get('prettier') ?? '^2.8.3' %>"
+  }
+}<% } else if (options.packageManager.isPnpm) { %>{
+  "name": "<%= options.packages.addon.name %>",
+  "version": "<%= options.packages.addon.version %>",
+  "private": true,
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "workspaces": [
+    "<%= options.packages.addon.name %>",
+    "<%= options.packages.testApp.name %>"
+  ],
+  "scripts": {
+    "build": "pnpm --filter <%= options.packages.addon.name %> build",
+    "lint": "pnpm --filter '*' lint",
+    "lint:fix": "pnpm --filter '*' lint:fix",
+    "prepare": "pnpm build",
+    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start:addon": "pnpm --filter <%= options.packages.addon.name %> start",
+    "start:test": "pnpm --filter <%= options.packages.testApp.name %> start",
+    "test": "pnpm --filter '*' test"
+  },
+  "devDependencies": {
+    "concurrently": "<%= options.packages.addon.dependencies.get('concurrently') ?? '^7.6.0' %>",
+    "prettier": "<%= options.packages.addon.dependencies.get('prettier') ?? '^2.8.3' %>"
+  }
+}<% } else if (options.packageManager.isYarn) { %>{
+  "name": "<%= options.packages.addon.name %>",
+  "version": "<%= options.packages.addon.version %>",
+  "private": true,
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "workspaces": [
+    "<%= options.packages.addon.name %>",
+    "<%= options.packages.testApp.name %>"
+  ],
+  "scripts": {
+    "build": "yarn workspace <%= options.packages.addon.name %> run build",
+    "lint": "yarn workspaces run lint",
+    "lint:fix": "yarn workspaces run lint:fix",
+    "prepare": "yarn build",
+    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start:addon": "yarn workspace <%= options.packages.addon.name %> run start",
+    "start:test": "yarn workspace <%= options.packages.testApp.name %> run start",
+    "test": "yarn workspaces run test"
+  },
+  "devDependencies": {
+    "concurrently": "<%= options.packages.addon.dependencies.get('concurrently') ?? '^7.6.0' %>",
+    "prettier": "<%= options.packages.addon.dependencies.get('prettier') ?? '^2.8.3' %>"
+  }
+}<% } %>

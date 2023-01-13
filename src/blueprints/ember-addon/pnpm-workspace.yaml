@@ -1,0 +1,3 @@
+packages:
+  - '<%= options.packages.addon.name %>'
+  - '<%= options.packages.testApp.name %>'
