@@ -1,4 +1,4 @@
-import { augmentOptions } from './steps/index.js';
+import { augmentOptions, useRelativePaths } from './steps/index.js';
 
 export function migrateEmberAddon(options) {
   const augmentedOptions = augmentOptions(options);
@@ -9,6 +9,6 @@ export function migrateEmberAddon(options) {
     return;
   }
 
-  console.log('Run codemod with these options:');
-  console.log(augmentedOptions);
+  // Prepare for migration
+  useRelativePaths(augmentedOptions);
 }
