@@ -4,6 +4,10 @@ import {
   moveAddonFiles,
   moveProjectRootFiles,
   moveTestAppFiles,
+  updateAddonPackageJson,
+  updateAddonTsconfigJson,
+  updateTestAppPackageJson,
+  updateTestAppTsconfigJson,
   useRelativePaths,
 } from './steps/index.js';
 
@@ -26,4 +30,10 @@ export function migrateEmberAddon(options) {
 
   // Get the latest code from blueprint
   createFilesFromBlueprint(augmentedOptions);
+
+  // Fine-tune individual files
+  updateAddonPackageJson(augmentedOptions);
+  updateAddonTsconfigJson(augmentedOptions);
+  updateTestAppPackageJson(augmentedOptions);
+  updateTestAppTsconfigJson(augmentedOptions);
 }
