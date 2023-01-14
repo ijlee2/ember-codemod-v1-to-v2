@@ -6,33 +6,6 @@ import glob from 'glob';
 import { createFiles } from '../../../utils/files.js';
 import { processTemplate } from '../../../utils/process-template.js';
 
-function getContext(options) {
-  const { packages } = options;
-
-  if (!packages.addon.hasTypeScript) {
-    return {
-      appReexports: ['components/**/*.js'],
-      publicEntrypoints: ['components/**/*.js', 'index.js'],
-    };
-  }
-
-  if (!packages.addon.hasGlint) {
-    return {
-      appReexports: ['components/**/*.js'],
-      publicEntrypoints: ['components/**/*.js', 'index.js'],
-    };
-  }
-
-  return {
-    appReexports: ['components/**/*.js'],
-    publicEntrypoints: [
-      'components/**/*.js',
-      'index.js',
-      'template-registry.js',
-    ],
-  };
-}
-
 function getFilePath(blueprintFilePath, options) {
   const { locations } = options;
 
@@ -61,10 +34,9 @@ function getFilesToSkip(options) {
   return [...files];
 }
 
-export function createFilesFromBlueprint(options) {
+export function createFilesFromBlueprint(context, options) {
   const blueprintRoot = 'src/blueprints/ember-addon';
 
-  const context = getContext(options);
   const filesToSkip = getFilesToSkip(options);
 
   const blueprintFilePaths = glob.sync('**/*', {

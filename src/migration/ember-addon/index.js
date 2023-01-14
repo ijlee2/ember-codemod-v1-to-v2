@@ -1,4 +1,5 @@
 import {
+  analyzeAddon,
   augmentOptions,
   createFilesFromBlueprint,
   moveAddonFiles,
@@ -21,6 +22,7 @@ export function migrateEmberAddon(options) {
   }
 
   // Prepare for migration
+  const context = analyzeAddon(augmentedOptions);
   useRelativePaths(augmentedOptions);
 
   // Preserve code
@@ -29,7 +31,7 @@ export function migrateEmberAddon(options) {
   moveProjectRootFiles(augmentedOptions);
 
   // Get the latest code from blueprint
-  createFilesFromBlueprint(augmentedOptions);
+  createFilesFromBlueprint(context, augmentedOptions);
 
   // Fine-tune individual files
   updateAddonPackageJson(augmentedOptions);
