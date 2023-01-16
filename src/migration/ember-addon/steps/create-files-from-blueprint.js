@@ -1,10 +1,20 @@
 import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import glob from 'glob';
 
 import { createFiles } from '../../../utils/files.js';
 import { processTemplate } from '../../../utils/process-template.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+function getBlueprintRoot() {
+  const codemodRoot = join(__dirname, '../../../..');
+
+  return join(codemodRoot, 'src/blueprints/ember-addon');
+}
 
 function getFilePath(blueprintFilePath, options) {
   const { locations } = options;
@@ -36,7 +46,7 @@ function getFilesToSkip(options) {
 }
 
 export function createFilesFromBlueprint(context, options) {
-  const blueprintRoot = 'src/blueprints/ember-addon';
+  const blueprintRoot = getBlueprintRoot();
 
   const filesToSkip = getFilesToSkip(options);
 
