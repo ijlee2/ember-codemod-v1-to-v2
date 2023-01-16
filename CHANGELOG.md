@@ -1,3 +1,12 @@
+## 0.1.2 (2023-01-16)
+
+### Bug Fix
+* [#2](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/2) Accounted for the location of the installed package ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.1.1 (2023-01-16)
 
 ### Bug Fix
