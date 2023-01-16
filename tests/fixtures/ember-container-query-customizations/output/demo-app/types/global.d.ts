@@ -1,6 +1,7 @@
 // Types for compiled templates
-declare module 'ember-container-query/templates/*' {
-  import { TemplateFactory } from 'htmlbars-inline-precompile';
+declare module 'demo-app-for-ember-container-query/templates/*' {
+  import { TemplateFactory } from 'ember-cli-htmlbars';
+
   const tmpl: TemplateFactory;
   export default tmpl;
 }

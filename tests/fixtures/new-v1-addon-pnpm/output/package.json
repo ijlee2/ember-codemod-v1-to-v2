@@ -1,0 +1,26 @@
+{
+  "name": "new-v1-addon",
+  "version": "0.0.0",
+  "private": true,
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "workspaces": [
+    "new-v1-addon",
+    "test-app"
+  ],
+  "scripts": {
+    "build": "pnpm --filter new-v1-addon build",
+    "lint": "pnpm --filter '*' lint",
+    "lint:fix": "pnpm --filter '*' lint:fix",
+    "prepare": "pnpm build",
+    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start:addon": "pnpm --filter new-v1-addon start",
+    "start:test": "pnpm --filter test-app start",
+    "test": "pnpm --filter '*' test"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "prettier": "^2.8.1"
+  }
+}
