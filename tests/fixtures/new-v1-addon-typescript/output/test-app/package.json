@@ -1,10 +1,8 @@
 {
-  "name": "new-v1-addon",
+  "name": "test-app",
   "version": "0.0.0",
   "description": "The default blueprint for ember-cli addons.",
-  "keywords": [
-    "ember-addon"
-  ],
+  "keywords": [],
   "repository": "",
   "license": "MIT",
   "author": "",
@@ -28,11 +26,7 @@
     "prepack": "ember ts:precompile",
     "postpack": "ember ts:clean"
   },
-  "dependencies": {
-    "ember-cli-babel": "^7.26.11",
-    "ember-cli-htmlbars": "^6.1.1",
-    "ember-cli-typescript": "^5.2.1"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.8.1",
@@ -69,10 +63,13 @@
     "concurrently": "^7.6.0",
     "ember-auto-import": "^2.5.0",
     "ember-cli": "~4.9.2",
+    "ember-cli-babel": "^7.26.11",
     "ember-cli-dependency-checker": "^3.3.1",
+    "ember-cli-htmlbars": "^6.1.1",
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
+    "ember-cli-typescript": "^5.2.1",
     "ember-load-initializers": "^2.1.2",
     "ember-page-title": "^7.0.0",
     "ember-qunit": "^6.0.0",
@@ -88,6 +85,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-qunit": "^7.3.4",
     "loader.js": "^4.7.0",
+    "new-v1-addon": "0.0.0",
     "prettier": "^2.8.1",
     "qunit": "^2.19.3",
     "qunit-dom": "^2.0.0",
@@ -103,7 +101,5 @@
   "ember": {
     "edition": "octane"
   },
-  "ember-addon": {
-    "configPath": "tests/dummy/config"
-  }
+  "private": true
 }

@@ -1,5 +1,5 @@
 {
-  "name": "ember-container-query",
+  "name": "demo-app-for-ember-container-query",
   "version": "3.2.0",
   "description": "Container queries using Ember modifiers",
   "keywords": [
@@ -7,7 +7,6 @@
     "container-query",
     "element-queries",
     "element-query",
-    "ember-addon",
     "ember-octane",
     "emberjs",
     "glint",
@@ -54,15 +53,7 @@
       "user feedback": "User Feedback"
     }
   },
-  "dependencies": {
-    "ember-cli-babel": "^7.26.11",
-    "ember-cli-htmlbars": "^6.1.1",
-    "ember-cli-typescript": "^5.2.1",
-    "ember-element-helper": "^0.6.1",
-    "ember-modifier": "^3.2.7",
-    "ember-resize-observer-service": "^1.1.0",
-    "ember-test-selectors": "^6.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.9.3",
@@ -109,12 +100,16 @@
     "ember-a11y-testing": "^5.1.0",
     "ember-auto-import": "^2.5.0",
     "ember-cli": "~4.9.2",
+    "ember-cli-babel": "^7.26.11",
     "ember-cli-dependency-checker": "^3.3.1",
     "ember-cli-dependency-lint": "^2.0.1",
+    "ember-cli-htmlbars": "^6.1.1",
     "ember-cli-inject-live-reload": "^2.1.0",
     "ember-cli-netlify": "^0.4.1",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-terser": "^4.0.2",
+    "ember-cli-typescript": "^5.2.1",
+    "ember-container-query": "3.2.0",
     "ember-css-modules": "^2.0.1",
     "ember-load-initializers": "^2.1.2",
     "ember-page-title": "^7.0.0",
@@ -153,8 +148,5 @@
   "ember": {
     "edition": "octane"
   },
-  "ember-addon": {
-    "configPath": "tests/dummy/config",
-    "demoURL": "https://ember-container-query.netlify.app"
-  }
+  "private": true
 }

@@ -24,7 +24,7 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "ember build --environment=production",
+    "build": "rollup --config",
     "build:test": "ember build --environment=test",
     "changelog": "lerna-changelog",
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
@@ -36,8 +36,9 @@
     "lint:hbs:fix": "ember-template-lint . --fix",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "start": "ember serve",
-    "test": "DEVICE='w3-h3' ember test",
+    "prepack": "rollup --config",
+    "start": "rollup --config --watch",
+    "test": "echo 'A v2 addon does not have tests, run tests in test-app'",
     "test:ember": "ember test",
     "test:ember-compatibility": "./node_modules/.bin/ember try:one"
   },
@@ -52,70 +53,20 @@
     }
   },
   "dependencies": {
-    "ember-cli-babel": "^7.26.11",
-    "ember-cli-htmlbars": "^6.1.1",
+    "@embroider/addon-shim": "^1.8.4",
     "ember-element-helper": "^0.6.1",
     "ember-modifier": "^3.2.7",
     "ember-resize-observer-service": "^1.1.0",
     "ember-test-selectors": "^6.0.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.19.1",
+    "@babel/core": "^7.20.12",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-decorators": "^7.20.7",
-    "@ember/optional-features": "^2.0.0",
-    "@ember/test-helpers": "^2.9.3",
-    "@embroider/test-setup": "^2.0.2",
-    "@glimmer/component": "^1.1.2",
-    "@glimmer/tracking": "^1.1.2",
-    "@percy/cli": "^1.16.0",
-    "@percy/ember": "^4.0.0",
-    "broccoli-asset-rev": "^3.0.0",
-    "concurrently": "^7.6.0",
-    "d3-array": "^3.2.1",
-    "d3-axis": "^3.0.0",
-    "d3-scale": "^4.0.2",
-    "d3-selection": "^3.0.0",
-    "d3-shape": "^3.2.0",
-    "ember-a11y-refocus": "^3.0.2",
-    "ember-a11y-testing": "^5.1.0",
-    "ember-auto-import": "^2.5.0",
-    "ember-cli": "~4.9.2",
-    "ember-cli-dependency-checker": "^3.3.1",
-    "ember-cli-dependency-lint": "^2.0.1",
-    "ember-cli-inject-live-reload": "^2.1.0",
-    "ember-cli-netlify": "^0.4.1",
-    "ember-cli-sri": "^2.1.1",
-    "ember-cli-terser": "^4.0.2",
-    "ember-css-modules": "^2.0.1",
-    "ember-load-initializers": "^2.1.2",
-    "ember-page-title": "^7.0.0",
-    "ember-qunit": "^6.1.1",
-    "ember-resolver": "^9.0.1",
-    "ember-source": "~4.9.3",
-    "ember-source-channel-url": "^3.0.0",
-    "ember-svg-jar": "^2.4.2",
-    "ember-template-lint": "^5.3.1",
-    "ember-template-lint-plugin-prettier": "^4.1.0",
-    "ember-truth-helpers": "^3.1.1",
-    "ember-try": "^2.0.0",
-    "eslint": "^8.31.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-ember": "^11.4.2",
-    "eslint-plugin-n": "^15.6.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-qunit": "^7.3.4",
-    "eslint-plugin-simple-import-sort": "^8.0.0",
-    "eslint-plugin-typescript-sort-keys": "^2.1.0",
-    "lerna-changelog": "^2.2.0",
-    "loader.js": "^4.7.0",
-    "prettier": "^2.8.2",
-    "qunit": "^2.19.3",
-    "qunit-dom": "^2.0.0",
-    "stylelint": "^14.16.1",
-    "stylelint-config-standard": "^29.0.0",
-    "stylelint-no-unsupported-browser-features": "^6.0.1",
-    "stylelint-order": "^6.0.1",
-    "webpack": "^5.75.0"
+    "@embroider/addon-dev": "^3.0.0",
+    "@rollup/plugin-babel": "^6.0.3",
+    "rollup": "^3.10.0",
+    "rollup-plugin-copy": "^3.4.0"
   },
   "engines": {
     "node": "14.* || 16.* || >= 18"
@@ -124,7 +75,18 @@
     "edition": "octane"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config",
-    "demoURL": "https://ember-container-query.netlify.app"
-  }
+    "app-js": {},
+    "main": "addon-main.js",
+    "type": "addon",
+    "version": 2
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js",
+    "./addon-main.js": "./addon-main.js"
+  },
+  "files": [
+    "addon-main.js",
+    "dist"
+  ]
 }
