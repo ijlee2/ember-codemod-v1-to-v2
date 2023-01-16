@@ -9,7 +9,7 @@ import { stack, stackOrderReverse } from 'd3-shape';
 import {
   COLOR_PALETTE,
   formatRevenue,
-} from 'dummy/utils/components/widgets/widget-2';
+} from '../utils/components/widgets/widget-2';
 import Modifier from 'ember-modifier';
 
 const musicFormats = Object.keys(COLOR_PALETTE);
