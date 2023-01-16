@@ -11,6 +11,7 @@ function getFilePath(blueprintFilePath, options) {
 
   return blueprintFilePath
     .replace('__addonLocation__', locations.addon)
+    .replace('__gitignore__', '.gitignore')
     .replace('__testAppLocation__', locations.testApp);
 }
 
