@@ -1,5 +1,5 @@
 import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/augment-options.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | steps | augment-options > v2 addon', function () {
   const options = {

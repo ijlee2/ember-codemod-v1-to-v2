@@ -1,5 +1,9 @@
 import { useRelativePaths } from '../../../../../src/migration/ember-addon/steps/use-relative-paths.js';
-import { assertFixture, loadFixture, test } from '../../../../test-helpers.js';
+import {
+  assertFixture,
+  loadFixture,
+  test,
+} from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | steps | use-relative-paths > edge case (folders are missing)', function () {
   const options = {

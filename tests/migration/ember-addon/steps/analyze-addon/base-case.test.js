@@ -1,5 +1,5 @@
 import { analyzeAddon } from '../../../../../src/migration/ember-addon/steps/analyze-addon.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | steps | analyze-addon > base case', function () {
   const options = {

@@ -3,7 +3,11 @@ import {
   inputProject,
   outputProject,
 } from '../../../../fixtures/ember-container-query-typescript/index.js';
-import { assertFixture, loadFixture, test } from '../../../../test-helpers.js';
+import {
+  assertFixture,
+  loadFixture,
+  test,
+} from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | index > ember-container-query-typescript', function () {
   const options = {
