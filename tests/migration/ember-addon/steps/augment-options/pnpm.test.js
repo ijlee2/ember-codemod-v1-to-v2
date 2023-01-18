@@ -26,7 +26,7 @@ test('migration | ember-addon | steps | augment-options > pnpm', function () {
       null,
       2
     ),
-    'pnpm-lock.yaml': 'some code for pnpm-lock.yaml',
+    'pnpm-lock.yaml': '',
   };
 
   loadFixture(inputProject, options);

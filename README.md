@@ -11,7 +11,7 @@ _Codemod to convert Ember addons to v2 addon format_
 - Switches Ember's "magic" import paths to relative paths
 - Preserves your code whenever possible
 - Supports [`ember-cli-typescript`](https://docs.ember-cli-typescript.com/) and [`glint`](https://typed-ember.gitbook.io/glint/)
-- Focuses on maintainbility and extensibility
+- Focuses on maintainability and extensibility
 
 
 ## Usage

@@ -1,7 +1,7 @@
 import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/augment-options.js';
 import { assert, loadFixture, test } from '../../../../test-helpers.js';
 
-test('migration | ember-addon | steps | augment-options > error handling (empty file)', function () {
+test('migration | ember-addon | steps | augment-options > error handling (package.json is an empty file)', function () {
   const options = {
     addonLocation: undefined,
     projectRoot: 'tmp/new-v1-addon-javascript',
@@ -11,7 +11,7 @@ test('migration | ember-addon | steps | augment-options > error handling (empty 
 
   const inputProject = {
     'package.json': '',
-    'yarn.lock': 'some code for yarn.lock',
+    'yarn.lock': '',
   };
 
   loadFixture(inputProject, options);

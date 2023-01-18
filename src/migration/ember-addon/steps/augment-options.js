@@ -68,8 +68,14 @@ function analyzePackageManager(options) {
 
 function deriveAddonLocation(addonPackage) {
   if (!addonPackage.name) {
-    throw new RangeError(
-      `ERROR: In package.json, the package name \`${addonPackage.name}\` is not valid.`
+    throw new SyntaxError(
+      'ERROR: In package.json, the package name is missing.'
+    );
+  }
+
+  if (!addonPackage.version) {
+    throw new SyntaxError(
+      'ERROR: In package.json, the package version is missing.'
     );
   }
 

@@ -37,7 +37,10 @@ function moveDependenciesToDevDependencies(packageJson, options) {
 function updateDependencies(packageJson) {
   const dependencies = convertToMap(packageJson['dependencies']);
 
-  // May be easier to start over and add missing dependencies
+  /*
+    For the time being, we'll take the approach of starting over and
+    adding back the dependencies that are required.
+  */
   dependencies.clear();
 
   packageJson['dependencies'] = convertToObject(dependencies);
@@ -58,9 +61,9 @@ function updateOtherFields(packageJson, options) {
 
   delete packageJson['ember-addon'];
 
-  packageJson['keywords'] = packageJson['keywords'].filter((keyword) => {
-    return keyword !== 'ember-addon';
-  });
+  packageJson['keywords'] = (packageJson['keywords'] ?? []).filter(
+    (keyword) => keyword !== 'ember-addon'
+  );
 
   packageJson['name'] = packages.testApp.name;
 

@@ -26,7 +26,7 @@ test('migration | ember-addon | steps | augment-options > npm', function () {
       null,
       2
     ),
-    'package-lock.json': 'some code for package-lock.json',
+    'package-lock.json': '',
   };
 
   loadFixture(inputProject, options);

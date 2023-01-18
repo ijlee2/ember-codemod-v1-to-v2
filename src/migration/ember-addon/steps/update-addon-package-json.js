@@ -17,11 +17,11 @@ function updateDependencies(packageJson) {
     'ember-cli-htmlbars',
   ];
 
-  const packagesToInstall = ['@embroider/addon-shim'];
-
   packagesToDelete.forEach((packageName) => {
     dependencies.delete(packageName);
   });
+
+  const packagesToInstall = ['@embroider/addon-shim'];
 
   packagesToInstall.forEach((packageName) => {
     const version = decideVersion(packageName, dependencies);
@@ -37,12 +37,17 @@ function updateDevDependencies(packageJson, options) {
 
   const devDependencies = convertToMap(packageJson['devDependencies']);
 
-  const packagesToDelete = [
-    '@embroider/macros',
-    'ember-auto-import',
-    'ember-cli-babel',
-    'ember-cli-htmlbars',
-  ];
+  /*
+    For the time being, we'll take the approach of starting over and
+    adding back the development dependencies that are required. For
+    a more conservative approach, we could delete only the following:
+
+      - @embroider/macros
+      - ember-auto-import
+      - ember-cli-babel
+      - ember-cli-htmlbars
+  */
+  devDependencies.clear();
 
   const packagesToInstall = packages.addon.hasTypeScript
     ? [
@@ -64,13 +69,6 @@ function updateDevDependencies(packageJson, options) {
         'rollup',
         'rollup-plugin-copy',
       ];
-
-  // May be easier to start over and add missing dependencies
-  devDependencies.clear();
-
-  packagesToDelete.forEach((packageName) => {
-    devDependencies.delete(packageName);
-  });
 
   packagesToInstall.forEach((packageName) => {
     const version = decideVersion(packageName, devDependencies);
