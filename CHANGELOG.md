@@ -1,3 +1,13 @@
+## 0.1.3 (2023-01-18)
+
+### Documentation
+* [#4](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/4) Added tests and refactored code (Part 2) ([@ijlee2](https://github.com/ijlee2))
+* [#3](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/3) Added tests and refactored code (Part 1) ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.1.2 (2023-01-16)
 
 ### Bug Fix
