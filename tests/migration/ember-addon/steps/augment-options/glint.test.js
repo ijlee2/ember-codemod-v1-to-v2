@@ -29,7 +29,7 @@ test('migration | ember-addon | steps | augment-options > Glint', function () {
       null,
       2
     ),
-    'yarn.lock': 'some code for yarn.lock',
+    'yarn.lock': '',
   };
 
   loadFixture(inputProject, options);
