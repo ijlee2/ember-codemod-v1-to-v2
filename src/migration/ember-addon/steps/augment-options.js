@@ -75,21 +75,21 @@ function analyzePackageManager(options) {
 }
 
 function deriveAddonLocation(addonPackage) {
-  // Package is scoped
-  if (addonPackage.name.includes('/')) {
-    // eslint-disable-next-line no-unused-vars
-    const [scope, packageName] = addonPackage.name.split('/');
-
-    if (!packageName) {
-      throw new SyntaxError(
-        `ERROR: In package.json, the package name \`${addonPackage.name}\` is not valid.`
-      );
-    }
-
-    return packageName;
+  // Package is not scoped
+  if (!addonPackage.name.includes('/')) {
+    return addonPackage.name;
   }
 
-  return addonPackage.name;
+  // eslint-disable-next-line no-unused-vars
+  const [scope, packageName] = addonPackage.name.split('/');
+
+  if (!packageName) {
+    throw new SyntaxError(
+      `ERROR: In package.json, the package name \`${addonPackage.name}\` is not valid.`
+    );
+  }
+
+  return packageName;
 }
 
 export function augmentOptions(options) {
