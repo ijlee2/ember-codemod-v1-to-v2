@@ -20,6 +20,14 @@ function analyzePackageJson(options) {
       version,
     } = JSON.parse(packageJsonFile);
 
+    if (!name) {
+      throw new SyntaxError('Package name is missing.');
+    }
+
+    if (!version) {
+      throw new SyntaxError('Package version is missing.');
+    }
+
     const projectDependencies = new Map([
       ...Object.entries(dependencies ?? {}),
       ...Object.entries(devDependencies ?? {}),
@@ -35,7 +43,7 @@ function analyzePackageJson(options) {
     };
   } catch (e) {
     throw new SyntaxError(
-      `ERROR: package.json is missing or is not a valid JSON. (${e.message})\n`
+      `ERROR: package.json is missing or is not valid. (${e.message})\n`
     );
   }
 }
@@ -67,18 +75,6 @@ function analyzePackageManager(options) {
 }
 
 function deriveAddonLocation(addonPackage) {
-  if (!addonPackage.name) {
-    throw new SyntaxError(
-      'ERROR: In package.json, the package name is missing.'
-    );
-  }
-
-  if (!addonPackage.version) {
-    throw new SyntaxError(
-      'ERROR: In package.json, the package version is missing.'
-    );
-  }
-
   // Package is scoped
   if (addonPackage.name.includes('/')) {
     // eslint-disable-next-line no-unused-vars

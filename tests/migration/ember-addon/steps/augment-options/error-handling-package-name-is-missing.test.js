@@ -23,7 +23,7 @@ test('migration | ember-addon | steps | augment-options > error handling (packag
     (error) => {
       assert.strictEqual(
         error.message,
-        'ERROR: In package.json, the package name is missing.'
+        'ERROR: package.json is missing or is not valid. (Package name is missing.)\n'
       );
 
       return true;

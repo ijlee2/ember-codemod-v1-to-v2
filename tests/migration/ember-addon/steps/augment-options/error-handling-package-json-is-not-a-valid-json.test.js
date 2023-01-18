@@ -23,7 +23,7 @@ test('migration | ember-addon | steps | augment-options > error handling (packag
     (error) => {
       assert.strictEqual(
         error.message,
-        'ERROR: package.json is missing or is not a valid JSON. (Unexpected token } in JSON at position 12)\n'
+        'ERROR: package.json is missing or is not valid. (Unexpected token } in JSON at position 12)\n'
       );
 
       return true;
