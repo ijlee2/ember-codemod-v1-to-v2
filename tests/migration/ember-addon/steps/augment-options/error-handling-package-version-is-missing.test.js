@@ -1,5 +1,5 @@
 import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/augment-options.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | steps | augment-options > error handling (package version is missing)', function () {
   const options = {
@@ -29,7 +29,7 @@ test('migration | ember-addon | steps | augment-options > error handling (packag
     (error) => {
       assert.strictEqual(
         error.message,
-        'ERROR: In package.json, the package version is missing.'
+        'ERROR: package.json is missing or is not valid. (Package version is missing.)\n'
       );
 
       return true;

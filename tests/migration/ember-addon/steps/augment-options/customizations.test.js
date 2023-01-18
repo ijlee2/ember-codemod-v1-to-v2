@@ -1,7 +1,7 @@
 import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/augment-options.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | augment-options > custom locations', function () {
+test('migration | ember-addon | steps | augment-options > customizations', function () {
   const options = {
     addonLocation: 'packages/new-v1-addon',
     projectRoot: 'tmp/new-v1-addon-customizations',

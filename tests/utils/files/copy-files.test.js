@@ -1,5 +1,5 @@
 import { copyFiles } from '../../../src/utils/files.js';
-import { assertFixture, loadFixture, test } from '../../test-helpers.js';
+import { assertFixture, loadFixture, test } from '../../helpers/testing.js';
 
 test('utils | files > copyFiles', function () {
   const options = {

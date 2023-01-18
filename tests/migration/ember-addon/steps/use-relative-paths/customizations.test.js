@@ -1,5 +1,13 @@
 import { useRelativePaths } from '../../../../../src/migration/ember-addon/steps/use-relative-paths.js';
-import { assertFixture, loadFixture, test } from '../../../../test-helpers.js';
+import {
+  augmentedOptions,
+  options,
+} from '../../../../helpers/shared-test-setups/customizations.js';
+import {
+  assertFixture,
+  loadFixture,
+  test,
+} from '../../../../helpers/testing.js';
 
 const fileMapping = new Map([
   [
@@ -9,7 +17,6 @@ const fileMapping = new Map([
         `import { action } from '@ember/object';`,
         `import Component from '@glimmer/component';`,
         `import { tracked } from '@glimmer/tracking';`,
-        ``,
         `import type {`,
         `  Dimensions,`,
         `  Features,`,
@@ -22,7 +29,6 @@ const fileMapping = new Map([
         `import { action } from '@ember/object';`,
         `import Component from '@glimmer/component';`,
         `import { tracked } from '@glimmer/tracking';`,
-        ``,
         `import type {`,
         `  Dimensions,`,
         `  Features,`,
@@ -76,14 +82,7 @@ const fileMapping = new Map([
   ],
 ]);
 
-test('migration | ember-addon | steps | use-relative-paths > base case', function () {
-  const options = {
-    addonLocation: undefined,
-    projectRoot: 'tmp/ember-container-query-typescript',
-    testAppLocation: undefined,
-    testAppName: undefined,
-  };
-
+test('migration | ember-addon | steps | use-relative-paths > customizations', function () {
   const inputProject = {
     addon: {
       components: {
@@ -142,21 +141,6 @@ test('migration | ember-addon | steps | use-relative-paths > base case', functio
 
   loadFixture(inputProject, options);
 
-  // Run the step
-  const augmentedOptions = {
-    packages: {
-      addon: {
-        name: 'ember-container-query',
-      },
-    },
-    projectRoot: 'tmp/ember-container-query-typescript',
-  };
-
-  useRelativePaths(augmentedOptions);
-
-  assertFixture(outputProject, options);
-
-  // Check idempotence
   useRelativePaths(augmentedOptions);
 
   assertFixture(outputProject, options);

@@ -1,5 +1,5 @@
 import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/augment-options.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | steps | augment-options > error handling (package.json is an empty file)', function () {
   const options = {
@@ -23,7 +23,7 @@ test('migration | ember-addon | steps | augment-options > error handling (packag
     (error) => {
       assert.strictEqual(
         error.message,
-        'ERROR: package.json is missing or is not a valid JSON. (Unexpected end of JSON input)\n'
+        'ERROR: package.json is missing or is not valid. (Unexpected end of JSON input)\n'
       );
 
       return true;

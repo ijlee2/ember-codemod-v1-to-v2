@@ -51,7 +51,7 @@ fi
 mkdir -p "tests/fixtures/$DESTINATION/input"
 mkdir -p "tests/fixtures/$DESTINATION/output"
 
-echo "import { convertToJson } from '../../fixture-helpers.js';
+echo "import { convertToJson } from '../../helpers/fixture.js';
 
 const inputProject = convertToJson('$DESTINATION/input');
 const outputProject = convertToJson('$DESTINATION/output');

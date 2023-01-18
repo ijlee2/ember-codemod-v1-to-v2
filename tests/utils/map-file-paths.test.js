@@ -1,5 +1,5 @@
 import { mapFilePaths } from '../../src/utils/map-file-paths.js';
-import { assert, test } from '../test-helpers.js';
+import { assert, test } from '../helpers/testing.js';
 
 test('utils | map-file-paths', function () {
   const filePaths = [

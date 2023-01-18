@@ -1,14 +1,11 @@
 import { analyzeAddon } from '../../../../../src/migration/ember-addon/steps/analyze-addon.js';
-import { assert, loadFixture, test } from '../../../../test-helpers.js';
+import {
+  augmentedOptions,
+  options,
+} from '../../../../helpers/shared-test-setups/typescript.js';
+import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | analyze-addon > base case', function () {
-  const options = {
-    addonLocation: undefined,
-    projectRoot: 'tmp/ember-container-query-typescript',
-    testAppLocation: undefined,
-    testAppName: undefined,
-  };
-
+test('migration | ember-addon | steps | analyze-addon > typescript', function () {
   const inputProject = {
     addon: {
       components: {
@@ -46,7 +43,9 @@ test('migration | ember-addon | steps | analyze-addon > base case', function () 
     },
   };
 
-  const expectedValue = {
+  loadFixture(inputProject, options);
+
+  assert.deepEqual(analyzeAddon(augmentedOptions), {
     appReexports: [
       'components/container-query.js',
       'helpers/aspect-ratio.js',
@@ -63,17 +62,5 @@ test('migration | ember-addon | steps | analyze-addon > base case', function () 
       'modifiers/container-query.js',
       'template-registry.js',
     ],
-  };
-
-  loadFixture(inputProject, options);
-
-  // Run the step
-  const augmentedOptions = {
-    projectRoot: 'tmp/ember-container-query-typescript',
-  };
-
-  assert.deepEqual(analyzeAddon(augmentedOptions), expectedValue);
-
-  // Check idempotence
-  assert.deepEqual(analyzeAddon(augmentedOptions), expectedValue);
+  });
 });

@@ -3,7 +3,11 @@ import {
   inputProject,
   outputProject,
 } from '../../../../fixtures/new-v1-addon-pnpm/index.js';
-import { assertFixture, loadFixture, test } from '../../../../test-helpers.js';
+import {
+  assertFixture,
+  loadFixture,
+  test,
+} from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | index > new-v1-addon-pnpm', function () {
   const options = {
