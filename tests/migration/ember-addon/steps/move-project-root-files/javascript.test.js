@@ -36,6 +36,7 @@ test('migration | ember-addon | steps | move-project-root-files > javascript', f
 
   const outputProject = {
     'ember-container-query': {
+      '.eslintignore': 'some code for .eslintignore',
       '.eslintrc.js': 'some code for .eslintrc.js',
       '.gitignore': 'some code for .gitignore',
       '.prettierignore': 'some code for .prettierignore',
