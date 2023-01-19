@@ -16,7 +16,7 @@
     "prepare": "npm run build",
     "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "npm start --workspace <%= options.packages.addon.name %>",
-    "start:tests": "npm start --workspace <%= options.packages.testApp.name %>",
+    "start:test-app": "npm start --workspace <%= options.packages.testApp.name %>",
     "test": "npm run test --workspaces --if-present"
   },
   "devDependencies": {
@@ -41,7 +41,7 @@
     "prepare": "pnpm build",
     "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "pnpm --filter <%= options.packages.addon.name %> start",
-    "start:test": "pnpm --filter <%= options.packages.testApp.name %> start",
+    "start:test-app": "pnpm --filter <%= options.packages.testApp.name %> start",
     "test": "pnpm --filter '*' test"
   },
   "devDependencies": {
@@ -66,7 +66,7 @@
     "prepare": "yarn build",
     "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "yarn workspace <%= options.packages.addon.name %> run start",
-    "start:test": "yarn workspace <%= options.packages.testApp.name %> run start",
+    "start:test-app": "yarn workspace <%= options.packages.testApp.name %> run start",
     "test": "yarn workspaces run test"
   },
   "devDependencies": {
