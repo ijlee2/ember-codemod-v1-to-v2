@@ -1,3 +1,17 @@
+## 0.1.4 (2023-01-19)
+
+### Bug Fix
+* [#6](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/6) Added tests and refactored code (Part 4) ([@ijlee2](https://github.com/ijlee2))
+* [#5](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/5) Added tests and refactored code (Part 3) ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#7](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/7) Updated eslint-plugin-simple-import-sort to v9.0.0 ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#6](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/6) Added tests and refactored code (Part 4) ([@ijlee2](https://github.com/ijlee2))
+* [#5](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/5) Added tests and refactored code (Part 3) ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.1.3 (2023-01-18)
 
 ### Documentation
