@@ -1,0 +1,26 @@
+{
+  "name": "ember-container-query",
+  "version": "3.2.0",
+  "private": true,
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "workspaces": [
+    "ember-container-query",
+    "test-app"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace ember-container-query",
+    "lint": "npm run lint --workspaces --if-present",
+    "lint:fix": "npm run lint:fix --workspaces --if-present",
+    "prepare": "npm run build",
+    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start:addon": "npm start --workspace ember-container-query",
+    "start:test-app": "npm start --workspace test-app",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "prettier": "^2.8.3"
+  }
+}
