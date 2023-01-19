@@ -16,7 +16,7 @@
     "prepare": "pnpm build",
     "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "pnpm --filter new-v1-addon start",
-    "start:test": "pnpm --filter test-app start",
+    "start:test-app": "pnpm --filter test-app start",
     "test": "pnpm --filter '*' test"
   },
   "devDependencies": {
