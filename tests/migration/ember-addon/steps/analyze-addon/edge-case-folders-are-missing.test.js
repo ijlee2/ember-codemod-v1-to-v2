@@ -1,4 +1,4 @@
-import { analyzeAddon } from '../../../../../src/migration/ember-addon/steps/analyze-addon.js';
+import { analyzeAddon } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   augmentedOptions,
   options,
