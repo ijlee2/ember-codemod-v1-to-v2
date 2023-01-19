@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import {
   convertToMap,
   convertToObject,
+  sanitizeJson,
 } from '../../../utils/convert-json-object.js';
 
 function updateCompilerOptions(tsconfigJson, options) {
@@ -33,10 +34,7 @@ export function updateTestAppTsconfigJson(options) {
 
   const oldPath = join(projectRoot, locations.testApp, 'tsconfig.json');
   const oldFile = readFileSync(oldPath, 'utf8');
-  const tsconfigJson = JSON.parse(
-    // Remove comments
-    oldFile.replace(new RegExp('//.*', 'mg'), '')
-  );
+  const tsconfigJson = JSON.parse(sanitizeJson(oldFile));
 
   updateCompilerOptions(tsconfigJson, options);
   updateInclude(tsconfigJson);
