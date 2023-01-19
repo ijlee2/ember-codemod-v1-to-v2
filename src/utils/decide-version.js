@@ -16,8 +16,10 @@ const latestVersions = new Map([
   ['rollup-plugin-ts', '3.1.1'],
 ]);
 
-export function decideVersion(packageName, projectDependencies) {
-  const installedVersion = projectDependencies.get(packageName);
+export function decideVersion(packageName, options) {
+  const { packages } = options;
+
+  const installedVersion = packages.addon.dependencies.get(packageName);
   const latestVersion = `^${latestVersions.get(packageName)}`;
 
   return installedVersion ?? latestVersion;

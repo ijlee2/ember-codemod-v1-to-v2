@@ -23,7 +23,7 @@ function moveDependenciesToDevDependencies(packageJson, options) {
     : ['ember-auto-import', 'ember-cli-babel', 'ember-cli-htmlbars'];
 
   packagesToMove.forEach((packageName) => {
-    const version = decideVersion(packageName, dependencies);
+    const version = decideVersion(packageName, options);
 
     devDependencies.set(packageName, version);
 
