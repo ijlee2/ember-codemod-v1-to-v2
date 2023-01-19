@@ -1,4 +1,4 @@
-import { moveAddonFiles } from '../../../../../src/migration/ember-addon/steps/move-addon-files.js';
+import { moveAddonFiles } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   augmentedOptions,
   options,

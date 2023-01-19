@@ -1,4 +1,4 @@
-import { useRelativePaths } from '../../../../../src/migration/ember-addon/steps/use-relative-paths.js';
+import { useRelativePaths } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { convertToJson } from '../../../../helpers/fixture.js';
 import {
   augmentedOptions,

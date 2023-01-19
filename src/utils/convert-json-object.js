@@ -7,3 +7,8 @@ export function convertToObject(map) {
 
   return Object.fromEntries(sortedMap);
 }
+
+export function sanitizeJson(jsonFile) {
+  // Remove comments
+  return jsonFile.replace(new RegExp('//.*', 'mg'), '');
+}

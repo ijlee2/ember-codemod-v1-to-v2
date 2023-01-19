@@ -1,4 +1,4 @@
-import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/create-files-from-blueprint.js';
+import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { convertToJson } from '../../../../helpers/fixture.js';
 import {
   augmentedOptions,

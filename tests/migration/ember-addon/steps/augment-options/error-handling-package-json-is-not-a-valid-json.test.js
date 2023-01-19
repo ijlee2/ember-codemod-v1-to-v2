@@ -1,4 +1,4 @@
-import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/augment-options.js';
+import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | steps | augment-options > error handling (package.json is not a valid JSON)', function () {

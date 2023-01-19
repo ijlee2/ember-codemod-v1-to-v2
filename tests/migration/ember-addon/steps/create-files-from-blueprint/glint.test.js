@@ -1,6 +1,9 @@
-import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/create-files-from-blueprint.js';
+import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { convertToJson } from '../../../../helpers/fixture.js';
-import { options } from '../../../../helpers/shared-test-setups/typescript.js';
+import {
+  augmentedOptions,
+  options,
+} from '../../../../helpers/shared-test-setups/glint.js';
 import {
   assertFixture,
   loadFixture,
@@ -15,37 +18,6 @@ test('migration | ember-addon | steps | create-files-from-blueprint > glint', fu
   );
 
   loadFixture(inputProject, options);
-
-  const augmentedOptions = {
-    locations: {
-      addon: 'ember-container-query',
-      testApp: 'test-app',
-    },
-    packageManager: {
-      isNpm: false,
-      isPnpm: false,
-      isYarn: true,
-    },
-    packages: {
-      addon: {
-        dependencies: new Map([
-          ['ember-cli-babel', '^7.26.11'],
-          ['ember-cli-htmlbars', '^6.1.1'],
-          ['@glint/core', '^v1.0.0-beta.2'],
-          ['typescript', '^4.9.4'],
-        ]),
-        hasGlint: true,
-        hasTypeScript: true,
-        isV1Addon: true,
-        name: 'ember-container-query',
-        version: '3.2.0',
-      },
-      testApp: {
-        name: 'test-app',
-      },
-    },
-    projectRoot: 'tmp/ember-container-query-typescript',
-  };
 
   const context = {
     appReexports: [

@@ -7,7 +7,7 @@ import {
 } from '../../../utils/convert-json-object.js';
 import { decideVersion } from '../../../utils/decide-version.js';
 
-function updateDependencies(packageJson) {
+function updateDependencies(packageJson, options) {
   const dependencies = convertToMap(packageJson['dependencies']);
 
   const packagesToDelete = [
@@ -24,7 +24,7 @@ function updateDependencies(packageJson) {
   const packagesToInstall = ['@embroider/addon-shim'];
 
   packagesToInstall.forEach((packageName) => {
-    const version = decideVersion(packageName, dependencies);
+    const version = decideVersion(packageName, options);
 
     dependencies.set(packageName, version);
   });
@@ -71,7 +71,7 @@ function updateDevDependencies(packageJson, options) {
       ];
 
   packagesToInstall.forEach((packageName) => {
-    const version = decideVersion(packageName, devDependencies);
+    const version = decideVersion(packageName, options);
 
     devDependencies.set(packageName, version);
   });
@@ -117,7 +117,7 @@ export function updateAddonPackageJson(options) {
   const oldFile = readFileSync(oldPath, 'utf8');
   const packageJson = JSON.parse(oldFile);
 
-  updateDependencies(packageJson);
+  updateDependencies(packageJson, options);
   updateDevDependencies(packageJson, options);
   updateScripts(packageJson);
   updateOtherFields(packageJson);
