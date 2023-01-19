@@ -33,6 +33,7 @@ function moveToAddonAndTestApp(options) {
 
   const files = packages.addon.hasTypeScript
     ? [
+        '.eslintignore',
         '.eslintrc.js',
         '.gitignore',
         '.prettierignore',
@@ -43,6 +44,7 @@ function moveToAddonAndTestApp(options) {
         'tsconfig.json',
       ]
     : [
+        '.eslintignore',
         '.eslintrc.js',
         '.gitignore',
         '.prettierignore',
@@ -83,7 +85,6 @@ function moveToTestApp(options) {
 
   const files = [
     '.ember-cli',
-    '.eslintignore',
     '.watchmanconfig',
     'ember-cli-build.js',
     'testem.js',

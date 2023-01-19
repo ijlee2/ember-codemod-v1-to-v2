@@ -1,7 +1,7 @@
 // Add any types here that you need for local development only.
 // These will *not* be published as part of your addon, so be careful that your published code does not rely on them!
-
-<% if (options.packages.addon.hasGlint) { %>import '@glint/environment-ember-loose';
+<% if (options.packages.addon.hasGlint) { %>
+import '@glint/environment-ember-loose';
 
 declare module '@glint/environment-ember-loose/registry' {
   // Remove this once entries have been added! 👇
@@ -10,4 +10,5 @@ declare module '@glint/environment-ember-loose/registry' {
     // Add any registry entries from other addons here that your addon itself uses (in non-strict mode templates)
     // See https://typed-ember.gitbook.io/glint/using-glint/ember/using-addons
   }
-}<% } %>
+}
+<% } %>

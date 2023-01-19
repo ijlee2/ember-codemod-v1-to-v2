@@ -9,7 +9,7 @@ import {
   test,
 } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | index > ember-container-query-javascript', function () {
+test('migration | ember-addon | index | ember-container-query > javascript', function () {
   const options = {
     addonLocation: undefined,
     projectRoot: 'tmp/ember-container-query-javascript',

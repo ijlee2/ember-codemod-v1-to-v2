@@ -9,7 +9,7 @@ import {
   test,
 } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | index > new-v1-addon-javascript', function () {
+test('migration | ember-addon | index | new-v1-addon > javascript', function () {
   const options = {
     addonLocation: undefined,
     projectRoot: 'tmp/new-v1-addon-javascript',

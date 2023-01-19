@@ -16,7 +16,7 @@
     "prepare": "npm run build",
     "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "npm start --workspace new-v1-addon",
-    "start:tests": "npm start --workspace test-app",
+    "start:test-app": "npm start --workspace test-app",
     "test": "npm run test --workspaces --if-present"
   },
   "devDependencies": {
