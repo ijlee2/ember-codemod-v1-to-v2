@@ -1,7 +1,7 @@
 import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | augment-options > TypeScript', function () {
+test('migration | ember-addon | steps | augment-options > typescript', function () {
   const options = {
     addonLocation: undefined,
     projectRoot: 'tmp/new-v1-addon-typescript',

@@ -10,7 +10,7 @@ import {
   test,
 } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | update-addon-tsconfig-json > typescript', function () {
+test('migration | ember-addon | steps | update-addon-tsconfig-json > javascript', function () {
   const inputProject = convertFixtureToJson(
     'steps/update-addon-tsconfig-json/javascript/input'
   );

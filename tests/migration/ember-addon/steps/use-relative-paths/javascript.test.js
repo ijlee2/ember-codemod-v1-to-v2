@@ -10,7 +10,7 @@ import {
   test,
 } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | use-relative-paths > typescript', function () {
+test('migration | ember-addon | steps | use-relative-paths > javascript', function () {
   const inputProject = convertFixtureToJson(
     'steps/use-relative-paths/javascript/input'
   );
