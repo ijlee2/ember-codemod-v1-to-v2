@@ -2,7 +2,7 @@ import { analyzeAddon } from '../../../../../src/migration/ember-addon/steps/ind
 import {
   augmentedOptions,
   options,
-} from '../../../../helpers/shared-test-setups/customizations.js';
+} from '../../../../helpers/shared-test-setups/typescript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | steps | analyze-addon > edge case (folders are missing)', function () {

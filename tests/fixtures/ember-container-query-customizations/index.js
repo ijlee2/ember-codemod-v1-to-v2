@@ -1,6 +1,6 @@
-import { convertToJson } from '../../helpers/fixture.js';
+import { convertFixtureToJson } from '../../helpers/testing.js';
 
-const inputProject = convertToJson('ember-container-query-customizations/input');
-const outputProject = convertToJson('ember-container-query-customizations/output');
+const inputProject = convertFixtureToJson('ember-container-query-customizations/input');
+const outputProject = convertFixtureToJson('ember-container-query-customizations/output');
 
 export { inputProject, outputProject };
