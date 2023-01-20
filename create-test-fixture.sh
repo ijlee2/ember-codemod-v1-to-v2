@@ -51,10 +51,10 @@ fi
 mkdir -p "tests/fixtures/$DESTINATION/input"
 mkdir -p "tests/fixtures/$DESTINATION/output"
 
-echo "import { convertToJson } from '../../helpers/fixture.js';
+echo "import { convertFixtureToJson } from '../../helpers/testing.js';
 
-const inputProject = convertToJson('$DESTINATION/input');
-const outputProject = convertToJson('$DESTINATION/output');
+const inputProject = convertFixtureToJson('$DESTINATION/input');
+const outputProject = convertFixtureToJson('$DESTINATION/output');
 
 export { inputProject, outputProject };" \
   > "tests/fixtures/$DESTINATION/index.js"

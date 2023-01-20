@@ -1,21 +1,21 @@
 import { updateAddonPackageJson } from '../../../../../src/migration/ember-addon/steps/index.js';
-import { convertToJson } from '../../../../helpers/fixture.js';
 import {
   augmentedOptions,
   options,
 } from '../../../../helpers/shared-test-setups/glint.js';
 import {
   assertFixture,
+  convertFixtureToJson,
   loadFixture,
   test,
 } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | steps | update-addon-package-json > glint', function () {
-  const inputProject = convertToJson(
+  const inputProject = convertFixtureToJson(
     'steps/update-addon-package-json/glint/input'
   );
 
-  const outputProject = convertToJson(
+  const outputProject = convertFixtureToJson(
     'steps/update-addon-package-json/glint/output'
   );
 

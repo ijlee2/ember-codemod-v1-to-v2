@@ -1,8 +1,8 @@
 import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/index.js';
-import { convertToJson } from '../../../../helpers/fixture.js';
 import { options } from '../../../../helpers/shared-test-setups/typescript.js';
 import {
   assertFixture,
+  convertFixtureToJson,
   loadFixture,
   test,
 } from '../../../../helpers/testing.js';
@@ -10,7 +10,7 @@ import {
 test('migration | ember-addon | steps | create-files-from-blueprint > pnpm', function () {
   const inputProject = {};
 
-  const outputProject = convertToJson(
+  const outputProject = convertFixtureToJson(
     'steps/create-files-from-blueprint/pnpm/output'
   );
 
