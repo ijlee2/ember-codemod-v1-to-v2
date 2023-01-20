@@ -35,7 +35,7 @@ function createJson(filePaths = [], projectRoot) {
   return json;
 }
 
-export function convertToJson(projectRoot) {
+export function convertFixtureToJson(projectRoot) {
   const absolutePath = `${process.cwd()}/tests/fixtures/${projectRoot}`;
 
   const filePaths = glob.sync('**/*', {
