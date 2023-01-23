@@ -1,10 +1,10 @@
-import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { createOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | augment-options > typescript', function () {
-  const options = {
+test('migration | ember-addon | steps | create-options > scoped package', function () {
+  const codemodOptions = {
     addonLocation: undefined,
-    projectRoot: 'tmp/new-v1-addon-typescript',
+    projectRoot: 'tmp/new-v1-addon-javascript',
     testAppLocation: undefined,
     testAppName: undefined,
   };
@@ -12,15 +12,13 @@ test('migration | ember-addon | steps | augment-options > typescript', function 
   const inputProject = {
     'package.json': JSON.stringify(
       {
-        name: 'new-v1-addon',
+        name: '@ijlee2/ui-buttons',
         version: '0.0.0',
         dependencies: {
           'ember-cli-babel': '^7.26.11',
           'ember-cli-htmlbars': '^6.1.1',
         },
-        devDependencies: {
-          typescript: '^4.9.4',
-        },
+        devDependencies: {},
         'ember-addon': {
           configPath: 'tests/dummy/config',
         },
@@ -31,11 +29,11 @@ test('migration | ember-addon | steps | augment-options > typescript', function 
     'yarn.lock': '',
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(augmentOptions(options), {
+  assert.deepEqual(createOptions(codemodOptions), {
     locations: {
-      addon: 'new-v1-addon',
+      addon: 'ui-buttons',
       testApp: 'test-app',
     },
     packageManager: {
@@ -48,18 +46,17 @@ test('migration | ember-addon | steps | augment-options > typescript', function 
         dependencies: new Map([
           ['ember-cli-babel', '^7.26.11'],
           ['ember-cli-htmlbars', '^6.1.1'],
-          ['typescript', '^4.9.4'],
         ]),
         hasGlint: false,
-        hasTypeScript: true,
+        hasTypeScript: false,
         isV1Addon: true,
-        name: 'new-v1-addon',
+        name: '@ijlee2/ui-buttons',
         version: '0.0.0',
       },
       testApp: {
         name: 'test-app',
       },
     },
-    projectRoot: 'tmp/new-v1-addon-typescript',
+    projectRoot: 'tmp/new-v1-addon-javascript',
   });
 });

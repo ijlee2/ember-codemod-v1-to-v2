@@ -1,6 +1,6 @@
 import { useRelativePaths } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
-  augmentedOptions,
+  codemodOptions,
   options,
 } from '../../../../helpers/shared-test-setups/customizations.js';
 import {
@@ -14,9 +14,9 @@ test('migration | ember-addon | steps | use-relative-paths > edge case (folders 
 
   const outputProject = {};
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
-  useRelativePaths(augmentedOptions);
+  useRelativePaths(options);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

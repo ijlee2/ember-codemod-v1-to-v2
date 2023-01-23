@@ -10,21 +10,21 @@ import {
 } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | index | new-v1-addon > customizations', function () {
-  const options = {
+  const codemodOptions = {
     addonLocation: 'packages/new-v1-addon',
     projectRoot: 'tmp/new-v1-addon-customizations',
     testAppLocation: 'demo-app',
     testAppName: 'demo-app-for-new-v1-addon',
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
-  migrateEmberAddon(options);
+  migrateEmberAddon(codemodOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 
   // Check idempotence
-  migrateEmberAddon(options);
+  migrateEmberAddon(codemodOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

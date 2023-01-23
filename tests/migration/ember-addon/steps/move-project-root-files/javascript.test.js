@@ -1,6 +1,6 @@
 import { moveProjectRootFiles } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
-  augmentedOptions,
+  codemodOptions,
   options,
 } from '../../../../helpers/shared-test-setups/javascript.js';
 import {
@@ -70,9 +70,9 @@ test('migration | ember-addon | steps | move-project-root-files > javascript', f
     'yarn.lock': 'some code for yarn.lock',
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
-  moveProjectRootFiles(augmentedOptions);
+  moveProjectRootFiles(options);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

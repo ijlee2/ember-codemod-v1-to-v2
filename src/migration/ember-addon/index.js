@@ -1,7 +1,7 @@
 import {
   analyzeAddon,
-  augmentOptions,
   createFilesFromBlueprint,
+  createOptions,
   moveAddonFiles,
   moveProjectRootFiles,
   moveTestAppFiles,
@@ -12,9 +12,9 @@ import {
   useRelativePaths,
 } from './steps/index.js';
 
-export function migrateEmberAddon(options) {
-  const augmentedOptions = augmentOptions(options);
-  const { isV1Addon } = augmentedOptions.packages.addon;
+export function migrateEmberAddon(codemodOptions) {
+  const options = createOptions(codemodOptions);
+  const { isV1Addon } = options.packages.addon;
 
   // Guarantee idempotency
   if (!isV1Addon) {
@@ -22,20 +22,20 @@ export function migrateEmberAddon(options) {
   }
 
   // Prepare for migration
-  const context = analyzeAddon(augmentedOptions);
-  useRelativePaths(augmentedOptions);
+  const context = analyzeAddon(options);
+  useRelativePaths(options);
 
   // Preserve code
-  moveAddonFiles(augmentedOptions);
-  moveTestAppFiles(augmentedOptions);
-  moveProjectRootFiles(augmentedOptions);
+  moveAddonFiles(options);
+  moveTestAppFiles(options);
+  moveProjectRootFiles(options);
 
   // Get the latest code from blueprint
-  createFilesFromBlueprint(context, augmentedOptions);
+  createFilesFromBlueprint(context, options);
 
   // Fine-tune individual files
-  updateAddonPackageJson(augmentedOptions);
-  updateAddonTsconfigJson(augmentedOptions);
-  updateTestAppPackageJson(augmentedOptions);
-  updateTestAppTsconfigJson(augmentedOptions);
+  updateAddonPackageJson(options);
+  updateAddonTsconfigJson(options);
+  updateTestAppPackageJson(options);
+  updateTestAppTsconfigJson(options);
 }

@@ -1,11 +1,11 @@
 import { removeFiles } from '../../../src/utils/files.js';
+import {
+  codemodOptions,
+  options,
+} from '../../helpers/shared-test-setups/typescript.js';
 import { assertFixture, loadFixture, test } from '../../helpers/testing.js';
 
 test('utils | files > removeFiles', function () {
-  const options = {
-    projectRoot: 'tmp/ember-container-query-typescript',
-  };
-
   const inputProject = {
     'ember-container-query': {
       src: {
@@ -34,7 +34,7 @@ test('utils | files > removeFiles', function () {
     },
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   const migrationStrategy = new Map([
     ['app/components/container-query.js', 'app/components/container-query.js'],
@@ -42,5 +42,5 @@ test('utils | files > removeFiles', function () {
 
   removeFiles(migrationStrategy, options);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

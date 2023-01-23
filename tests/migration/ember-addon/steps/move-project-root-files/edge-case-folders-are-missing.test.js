@@ -1,6 +1,6 @@
 import { moveProjectRootFiles } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
-  augmentedOptions,
+  codemodOptions,
   options,
 } from '../../../../helpers/shared-test-setups/typescript.js';
 import {
@@ -14,9 +14,9 @@ test('migration | ember-addon | steps | move-project-root-files > edge case (fol
 
   const outputProject = {};
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
-  moveProjectRootFiles(augmentedOptions);
+  moveProjectRootFiles(options);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

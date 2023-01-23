@@ -32,11 +32,11 @@ function castEmptyStringToUndefined(string) {
   return string === '' ? undefined : string;
 }
 
-const options = {
+const codemodOptions = {
   addonLocation: castEmptyStringToUndefined(argv['addon-location']),
   projectRoot: argv['root'] ?? process.cwd(),
   testAppLocation: castEmptyStringToUndefined(argv['test-app-location']),
   testAppName: castEmptyStringToUndefined(argv['test-app-name']),
 };
 
-runCodemod(options);
+runCodemod(codemodOptions);

@@ -1,12 +1,12 @@
-import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { createOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | augment-options > customizations', function () {
-  const options = {
-    addonLocation: 'packages/new-v1-addon',
-    projectRoot: 'tmp/new-v1-addon-customizations',
-    testAppLocation: 'demo-app',
-    testAppName: 'demo-app-for-new-v1-addon',
+test('migration | ember-addon | steps | create-options > pnpm', function () {
+  const codemodOptions = {
+    addonLocation: undefined,
+    projectRoot: 'tmp/new-v1-addon-javascript',
+    testAppLocation: undefined,
+    testAppName: undefined,
   };
 
   const inputProject = {
@@ -26,20 +26,20 @@ test('migration | ember-addon | steps | augment-options > customizations', funct
       null,
       2
     ),
-    'yarn.lock': '',
+    'pnpm-lock.yaml': '',
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(augmentOptions(options), {
+  assert.deepEqual(createOptions(codemodOptions), {
     locations: {
-      addon: 'packages/new-v1-addon',
-      testApp: 'demo-app',
+      addon: 'new-v1-addon',
+      testApp: 'test-app',
     },
     packageManager: {
       isNpm: false,
-      isPnpm: false,
-      isYarn: true,
+      isPnpm: true,
+      isYarn: false,
     },
     packages: {
       addon: {
@@ -54,9 +54,9 @@ test('migration | ember-addon | steps | augment-options > customizations', funct
         version: '0.0.0',
       },
       testApp: {
-        name: 'demo-app-for-new-v1-addon',
+        name: 'test-app',
       },
     },
-    projectRoot: 'tmp/new-v1-addon-customizations',
+    projectRoot: 'tmp/new-v1-addon-javascript',
   });
 });

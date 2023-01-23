@@ -1,8 +1,8 @@
-import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { createOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | augment-options > error handling (package version is missing)', function () {
-  const options = {
+test('migration | ember-addon | steps | create-options > error handling (package version is missing)', function () {
+  const codemodOptions = {
     addonLocation: undefined,
     projectRoot: 'tmp/new-v1-addon-javascript',
     testAppLocation: undefined,
@@ -20,11 +20,11 @@ test('migration | ember-addon | steps | augment-options > error handling (packag
     'yarn.lock': '',
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   assert.throws(
     () => {
-      augmentOptions(options);
+      createOptions(codemodOptions);
     },
     (error) => {
       assert.strictEqual(

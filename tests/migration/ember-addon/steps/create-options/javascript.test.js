@@ -1,8 +1,8 @@
-import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { createOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | augment-options > v2 addon', function () {
-  const options = {
+test('migration | ember-addon | steps | create-options > javascript', function () {
+  const codemodOptions = {
     addonLocation: undefined,
     projectRoot: 'tmp/new-v1-addon-javascript',
     testAppLocation: undefined,
@@ -14,8 +14,14 @@ test('migration | ember-addon | steps | augment-options > v2 addon', function ()
       {
         name: 'new-v1-addon',
         version: '0.0.0',
-        private: true,
-        workspaces: ['new-v1-addon', 'test-app'],
+        dependencies: {
+          'ember-cli-babel': '^7.26.11',
+          'ember-cli-htmlbars': '^6.1.1',
+        },
+        devDependencies: {},
+        'ember-addon': {
+          configPath: 'tests/dummy/config',
+        },
       },
       null,
       2
@@ -23,9 +29,9 @@ test('migration | ember-addon | steps | augment-options > v2 addon', function ()
     'yarn.lock': '',
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(augmentOptions(options), {
+  assert.deepEqual(createOptions(codemodOptions), {
     locations: {
       addon: 'new-v1-addon',
       testApp: 'test-app',
@@ -37,10 +43,13 @@ test('migration | ember-addon | steps | augment-options > v2 addon', function ()
     },
     packages: {
       addon: {
-        dependencies: new Map(),
+        dependencies: new Map([
+          ['ember-cli-babel', '^7.26.11'],
+          ['ember-cli-htmlbars', '^6.1.1'],
+        ]),
         hasGlint: false,
         hasTypeScript: false,
-        isV1Addon: false,
+        isV1Addon: true,
         name: 'new-v1-addon',
         version: '0.0.0',
       },

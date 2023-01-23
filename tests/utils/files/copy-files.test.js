@@ -1,11 +1,11 @@
 import { copyFiles } from '../../../src/utils/files.js';
+import {
+  codemodOptions,
+  options,
+} from '../../helpers/shared-test-setups/typescript.js';
 import { assertFixture, loadFixture, test } from '../../helpers/testing.js';
 
 test('utils | files > copyFiles', function () {
-  const options = {
-    projectRoot: 'tmp/ember-container-query-typescript',
-  };
-
   const inputProject = {
     '.editorconfig': 'some code for .editorconfig',
     '.eslintrc.js': 'some code for .eslintrc.js',
@@ -23,7 +23,7 @@ test('utils | files > copyFiles', function () {
     'package.json': 'some code for package.json',
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   const migrationStrategy = new Map([
     ['.eslintrc.js', 'ember-container-query/.eslintrc.js'],
@@ -32,5 +32,5 @@ test('utils | files > copyFiles', function () {
 
   copyFiles(migrationStrategy, options);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

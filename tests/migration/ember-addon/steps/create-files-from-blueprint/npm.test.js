@@ -1,5 +1,5 @@
 import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/index.js';
-import { options } from '../../../../helpers/shared-test-setups/typescript.js';
+import { codemodOptions } from '../../../../helpers/shared-test-setups/typescript.js';
 import {
   assertFixture,
   convertFixtureToJson,
@@ -14,9 +14,9 @@ test('migration | ember-addon | steps | create-files-from-blueprint > npm', func
     'steps/create-files-from-blueprint/npm/output'
   );
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
-  const augmentedOptions = {
+  const options = {
     locations: {
       addon: 'ember-container-query',
       testApp: 'test-app',
@@ -65,7 +65,7 @@ test('migration | ember-addon | steps | create-files-from-blueprint > npm', func
     ],
   };
 
-  createFilesFromBlueprint(context, augmentedOptions);
+  createFilesFromBlueprint(context, options);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

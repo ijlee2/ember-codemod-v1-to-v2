@@ -1,6 +1,6 @@
 import { moveAddonFiles } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
-  augmentedOptions,
+  codemodOptions,
   options,
 } from '../../../../helpers/shared-test-setups/typescript.js';
 import {
@@ -72,9 +72,9 @@ test('migration | ember-addon | steps | move-addon-files > typescript', function
     },
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
-  moveAddonFiles(augmentedOptions);
+  moveAddonFiles(options);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

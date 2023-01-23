@@ -1,6 +1,6 @@
 import { analyzeAddon } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
-  augmentedOptions,
+  codemodOptions,
   options,
 } from '../../../../helpers/shared-test-setups/customizations.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
@@ -43,9 +43,9 @@ test('migration | ember-addon | steps | analyze-addon > customizations', functio
     },
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(analyzeAddon(augmentedOptions), {
+  assert.deepEqual(analyzeAddon(options), {
     appReexports: [
       'components/container-query.js',
       'helpers/aspect-ratio.js',
