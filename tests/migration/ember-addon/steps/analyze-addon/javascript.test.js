@@ -44,20 +44,22 @@ test('migration | ember-addon | steps | analyze-addon > javascript', function ()
   loadFixture(inputProject, codemodOptions);
 
   assert.deepEqual(analyzeAddon(options), {
-    appReexports: [
-      'components/container-query.js',
-      'helpers/aspect-ratio.js',
-      'helpers/height.js',
-      'helpers/width.js',
-      'modifiers/container-query.js',
-    ],
-    publicEntrypoints: [
-      'components/container-query.js',
-      'helpers/aspect-ratio.js',
-      'helpers/height.js',
-      'helpers/width.js',
-      'modifiers/container-query.js',
-    ],
+    addon: {
+      appReexports: [
+        'components/container-query.js',
+        'helpers/aspect-ratio.js',
+        'helpers/height.js',
+        'helpers/width.js',
+        'modifiers/container-query.js',
+      ],
+      publicEntrypoints: [
+        'components/container-query.js',
+        'helpers/aspect-ratio.js',
+        'helpers/height.js',
+        'helpers/width.js',
+        'modifiers/container-query.js',
+      ],
+    },
     projectRoot: {
       devDependencies: {
         concurrently: '^7.6.0',

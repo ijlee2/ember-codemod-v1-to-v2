@@ -32,12 +32,11 @@ function getPublicEntrypoints(options) {
 }
 
 export function analyzeAddon(options) {
-  const appReexports = getAppReexports(options);
-  const publicEntrypoints = getPublicEntrypoints(options);
-
   return {
-    appReexports,
-    publicEntrypoints,
+    addon: {
+      appReexports: getAppReexports(options),
+      publicEntrypoints: getPublicEntrypoints(options),
+    },
     projectRoot: {
       devDependencies: getProjectRootDevDependencies(options),
     },

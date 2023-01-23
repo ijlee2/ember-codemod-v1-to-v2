@@ -20,22 +20,24 @@ test('migration | ember-addon | steps | create-files-from-blueprint > customizat
   loadFixture(inputProject, codemodOptions);
 
   const context = {
-    appReexports: [
-      'components/container-query.js',
-      'helpers/aspect-ratio.js',
-      'helpers/height.js',
-      'helpers/width.js',
-      'modifiers/container-query.js',
-    ],
-    publicEntrypoints: [
-      'components/container-query.js',
-      'helpers/aspect-ratio.js',
-      'helpers/height.js',
-      'helpers/width.js',
-      'index.js',
-      'modifiers/container-query.js',
-      'template-registry.js',
-    ],
+    addon: {
+      appReexports: [
+        'components/container-query.js',
+        'helpers/aspect-ratio.js',
+        'helpers/height.js',
+        'helpers/width.js',
+        'modifiers/container-query.js',
+      ],
+      publicEntrypoints: [
+        'components/container-query.js',
+        'helpers/aspect-ratio.js',
+        'helpers/height.js',
+        'helpers/width.js',
+        'index.js',
+        'modifiers/container-query.js',
+        'template-registry.js',
+      ],
+    },
     projectRoot: {
       devDependencies: {
         concurrently: '^7.6.0',
