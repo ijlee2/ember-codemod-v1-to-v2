@@ -76,12 +76,7 @@ function moveToAddonAndTestApp(options) {
 
   copyFiles(pathMapping, options);
 
-  pathMapping = mapFilePaths(filePaths, {
-    from: '',
-    to: '',
-  });
-
-  removeFiles(pathMapping, options);
+  removeFiles(filePaths, options);
 }
 
 function moveToTestApp(options) {
@@ -115,12 +110,7 @@ function removeFromProjectRoot(options) {
     cwd: projectRoot,
   });
 
-  const pathMapping = mapFilePaths(filePaths, {
-    from: '',
-    to: '',
-  });
-
-  removeFiles(pathMapping, options);
+  removeFiles(filePaths, options);
 }
 
 export function moveProjectRootFiles(options) {

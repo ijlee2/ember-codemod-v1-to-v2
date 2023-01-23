@@ -7,12 +7,10 @@ import { assertFixture, loadFixture, test } from '../../helpers/testing.js';
 
 test('utils | files | remove-files', function () {
   const inputProject = {
-    'ember-container-query': {
-      src: {
-        components: {
-          'container-query.hbs': 'some code for container-query.hbs',
-          'container-query.ts': 'some code for container-query.ts',
-        },
+    addon: {
+      components: {
+        'container-query.hbs': 'some code for container-query.hbs',
+        'container-query.ts': 'some code for container-query.ts',
       },
     },
 
@@ -24,23 +22,21 @@ test('utils | files | remove-files', function () {
   };
 
   const outputProject = {
-    'ember-container-query': {
-      src: {
-        components: {
-          'container-query.hbs': 'some code for container-query.hbs',
-          'container-query.ts': 'some code for container-query.ts',
-        },
+    app: {
+      components: {
+        'container-query.js': 'some code for container-query.js',
       },
     },
   };
 
   loadFixture(inputProject, codemodOptions);
 
-  const migrationStrategy = new Map([
-    ['app/components/container-query.js', 'app/components/container-query.js'],
-  ]);
+  const filePaths = [
+    'addon/components/container-query.hbs',
+    'addon/components/container-query.ts',
+  ];
 
-  removeFiles(migrationStrategy, options);
+  removeFiles(filePaths, options);
 
   assertFixture(outputProject, codemodOptions);
 });

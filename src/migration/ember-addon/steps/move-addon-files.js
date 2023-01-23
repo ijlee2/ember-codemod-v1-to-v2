@@ -62,12 +62,7 @@ function removeAppFolder(options) {
     nodir: true,
   });
 
-  const pathMapping = mapFilePaths(filePaths, {
-    from: 'app',
-    to: 'app',
-  });
-
-  removeFiles(pathMapping, options);
+  removeFiles(filePaths, options);
 }
 
 export function moveAddonFiles(options) {
