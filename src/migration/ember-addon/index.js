@@ -13,8 +13,8 @@ import {
 } from './steps/index.js';
 
 export function migrateEmberAddon(codemodOptions) {
-  const augmentedOptions = createOptions(codemodOptions);
-  const { isV1Addon } = augmentedOptions.packages.addon;
+  const options = createOptions(codemodOptions);
+  const { isV1Addon } = options.packages.addon;
 
   // Guarantee idempotency
   if (!isV1Addon) {
@@ -22,20 +22,20 @@ export function migrateEmberAddon(codemodOptions) {
   }
 
   // Prepare for migration
-  const context = analyzeAddon(augmentedOptions);
-  useRelativePaths(augmentedOptions);
+  const context = analyzeAddon(options);
+  useRelativePaths(options);
 
   // Preserve code
-  moveAddonFiles(augmentedOptions);
-  moveTestAppFiles(augmentedOptions);
-  moveProjectRootFiles(augmentedOptions);
+  moveAddonFiles(options);
+  moveTestAppFiles(options);
+  moveProjectRootFiles(options);
 
   // Get the latest code from blueprint
-  createFilesFromBlueprint(context, augmentedOptions);
+  createFilesFromBlueprint(context, options);
 
   // Fine-tune individual files
-  updateAddonPackageJson(augmentedOptions);
-  updateAddonTsconfigJson(augmentedOptions);
-  updateTestAppPackageJson(augmentedOptions);
-  updateTestAppTsconfigJson(augmentedOptions);
+  updateAddonPackageJson(options);
+  updateAddonTsconfigJson(options);
+  updateTestAppPackageJson(options);
+  updateTestAppTsconfigJson(options);
 }

@@ -1,6 +1,6 @@
 import { moveProjectRootFiles } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
-  augmentedOptions,
+  options,
   codemodOptions,
 } from '../../../../helpers/shared-test-setups/typescript.js';
 import {
@@ -75,7 +75,7 @@ test('migration | ember-addon | steps | move-project-root-files > typescript', f
 
   loadFixture(inputProject, codemodOptions);
 
-  moveProjectRootFiles(augmentedOptions);
+  moveProjectRootFiles(options);
 
   assertFixture(outputProject, codemodOptions);
 });

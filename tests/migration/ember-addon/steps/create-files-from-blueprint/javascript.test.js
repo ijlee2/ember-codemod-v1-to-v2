@@ -1,6 +1,6 @@
 import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
-  augmentedOptions,
+  options,
   codemodOptions,
 } from '../../../../helpers/shared-test-setups/javascript.js';
 import {
@@ -36,7 +36,7 @@ test('migration | ember-addon | steps | create-files-from-blueprint > javascript
     ],
   };
 
-  createFilesFromBlueprint(context, augmentedOptions);
+  createFilesFromBlueprint(context, options);
 
   assertFixture(outputProject, codemodOptions);
 });

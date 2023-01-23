@@ -1,5 +1,5 @@
 import { createFiles } from '../../../src/utils/files.js';
-import { augmentedOptions, codemodOptions } from '../../helpers/shared-test-setups/typescript.js';
+import { options, codemodOptions } from '../../helpers/shared-test-setups/typescript.js';
 import { assertFixture, loadFixture, test } from '../../helpers/testing.js';
 
 test('utils | files > createFiles', function () {
@@ -31,7 +31,7 @@ test('utils | files > createFiles', function () {
     ['package.json', 'some code for package.json'],
   ]);
 
-  createFiles(fileMapping, augmentedOptions);
+  createFiles(fileMapping, options);
 
   assertFixture(outputProject, codemodOptions);
 });

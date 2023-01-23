@@ -1,5 +1,5 @@
 import { copyFiles } from '../../../src/utils/files.js';
-import { augmentedOptions, codemodOptions } from '../../helpers/shared-test-setups/typescript.js';
+import { options, codemodOptions } from '../../helpers/shared-test-setups/typescript.js';
 import { assertFixture, loadFixture, test } from '../../helpers/testing.js';
 
 test('utils | files > copyFiles', function () {
@@ -27,7 +27,7 @@ test('utils | files > copyFiles', function () {
     ['package.json', 'ember-container-query/package.json'],
   ]);
 
-  copyFiles(migrationStrategy, augmentedOptions);
+  copyFiles(migrationStrategy, options);
 
   assertFixture(outputProject, codemodOptions);
 });

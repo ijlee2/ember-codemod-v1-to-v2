@@ -1,6 +1,6 @@
 import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
-  augmentedOptions,
+  options,
   codemodOptions,
 } from '../../../../helpers/shared-test-setups/glint.js';
 import {
@@ -38,7 +38,7 @@ test('migration | ember-addon | steps | create-files-from-blueprint > glint', fu
     ],
   };
 
-  createFilesFromBlueprint(context, augmentedOptions);
+  createFilesFromBlueprint(context, options);
 
   assertFixture(outputProject, codemodOptions);
 });

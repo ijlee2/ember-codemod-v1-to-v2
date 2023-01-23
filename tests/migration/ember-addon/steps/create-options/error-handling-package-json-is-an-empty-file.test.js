@@ -2,7 +2,7 @@ import { createOptions } from '../../../../../src/migration/ember-addon/steps/in
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | steps | create-options > error handling (package.json is an empty file)', function () {
-  const augmentedOptions = {
+  const options = {
     addonLocation: undefined,
     projectRoot: 'tmp/new-v1-addon-javascript',
     testAppLocation: undefined,
@@ -14,11 +14,11 @@ test('migration | ember-addon | steps | create-options > error handling (package
     'yarn.lock': '',
   };
 
-  loadFixture(inputProject, augmentedOptions);
+  loadFixture(inputProject, options);
 
   assert.throws(
     () => {
-      createOptions(augmentedOptions);
+      createOptions(options);
     },
     (error) => {
       assert.strictEqual(

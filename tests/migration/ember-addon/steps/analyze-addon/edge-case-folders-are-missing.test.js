@@ -1,6 +1,6 @@
 import { analyzeAddon } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
-  augmentedOptions,
+  options,
   codemodOptions,
 } from '../../../../helpers/shared-test-setups/typescript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
@@ -10,7 +10,7 @@ test('migration | ember-addon | steps | analyze-addon > edge case (folders are m
 
   loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(analyzeAddon(augmentedOptions), {
+  assert.deepEqual(analyzeAddon(options), {
     appReexports: [],
     publicEntrypoints: [],
   });

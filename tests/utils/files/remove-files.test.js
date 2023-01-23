@@ -1,5 +1,5 @@
 import { removeFiles } from '../../../src/utils/files.js';
-import { augmentedOptions, codemodOptions } from '../../helpers/shared-test-setups/typescript.js';
+import { options, codemodOptions } from '../../helpers/shared-test-setups/typescript.js';
 import { assertFixture, loadFixture, test } from '../../helpers/testing.js';
 
 test('utils | files > removeFiles', function () {
@@ -37,7 +37,7 @@ test('utils | files > removeFiles', function () {
     ['app/components/container-query.js', 'app/components/container-query.js'],
   ]);
 
-  removeFiles(migrationStrategy, augmentedOptions);
+  removeFiles(migrationStrategy, options);
 
   assertFixture(outputProject, codemodOptions);
 });

@@ -1,6 +1,6 @@
 import { updateTestAppPackageJson } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
-  augmentedOptions,
+  options,
   codemodOptions,
 } from '../../../../helpers/shared-test-setups/glint.js';
 import {
@@ -21,7 +21,7 @@ test('migration | ember-addon | steps | update-test-app-package-json > glint', f
 
   loadFixture(inputProject, codemodOptions);
 
-  updateTestAppPackageJson(augmentedOptions);
+  updateTestAppPackageJson(options);
 
   assertFixture(outputProject, codemodOptions);
 });

@@ -16,7 +16,7 @@ test('migration | ember-addon | steps | create-files-from-blueprint > pnpm', fun
 
   loadFixture(inputProject, codemodOptions);
 
-  const augmentedOptions = {
+  const options = {
     locations: {
       addon: 'ember-container-query',
       testApp: 'test-app',
@@ -65,7 +65,7 @@ test('migration | ember-addon | steps | create-files-from-blueprint > pnpm', fun
     ],
   };
 
-  createFilesFromBlueprint(context, augmentedOptions);
+  createFilesFromBlueprint(context, options);
 
   assertFixture(outputProject, codemodOptions);
 });
