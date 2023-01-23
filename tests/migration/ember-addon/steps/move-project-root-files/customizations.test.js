@@ -1,7 +1,7 @@
 import { moveProjectRootFiles } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
-  options,
   codemodOptions,
+  options,
 } from '../../../../helpers/shared-test-setups/customizations.js';
 import {
   assertFixture,

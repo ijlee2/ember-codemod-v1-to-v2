@@ -1,7 +1,7 @@
 import {
   analyzeAddon,
-  createOptions,
   createFilesFromBlueprint,
+  createOptions,
   moveAddonFiles,
   moveProjectRootFiles,
   moveTestAppFiles,

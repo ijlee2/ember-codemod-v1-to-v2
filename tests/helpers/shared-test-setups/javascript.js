@@ -93,4 +93,4 @@ const options = {
   projectRoot: 'tmp/ember-container-query-javascript',
 };
 
-export { options, codemodOptions };
+export { codemodOptions, options };

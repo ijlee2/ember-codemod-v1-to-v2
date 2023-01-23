@@ -121,4 +121,4 @@ const options = {
   projectRoot: 'tmp/ember-container-query-customizations',
 };
 
-export { options, codemodOptions };
+export { codemodOptions, options };

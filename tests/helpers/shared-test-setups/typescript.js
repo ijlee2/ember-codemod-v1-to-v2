@@ -117,4 +117,4 @@ const options = {
   projectRoot: 'tmp/ember-container-query-typescript',
 };
 
-export { options, codemodOptions };
+export { codemodOptions, options };

@@ -1,7 +1,7 @@
 import { updateAddonPackageJson } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
-  options,
   codemodOptions,
+  options,
 } from '../../../../helpers/shared-test-setups/typescript.js';
 import {
   assertFixture,

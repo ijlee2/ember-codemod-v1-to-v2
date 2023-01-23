@@ -1,7 +1,7 @@
 import { analyzeAddon } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
-  options,
   codemodOptions,
+  options,
 } from '../../../../helpers/shared-test-setups/customizations.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
