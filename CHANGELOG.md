@@ -1,3 +1,17 @@
+## 0.1.5 (2023-01-23)
+
+### Bug Fix
+* [#10](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/10) Reorganized utilities and handled multiline comments in JSON ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#10](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/10) Reorganized utilities and handled multiline comments in JSON ([@ijlee2](https://github.com/ijlee2))
+* [#9](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/9) Renamed the two types of options ([@ijlee2](https://github.com/ijlee2))
+* [#8](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/8) Reorganized helpers for test fixtures ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.1.4 (2023-01-19)
 
 ### Bug Fix
