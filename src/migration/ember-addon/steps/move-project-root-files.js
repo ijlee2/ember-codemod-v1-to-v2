@@ -1,7 +1,11 @@
 import glob from 'glob';
 
-import { copyFiles, moveFiles, removeFiles } from '../../../utils/files.js';
-import { mapFilePaths } from '../../../utils/map-file-paths.js';
+import {
+  copyFiles,
+  mapFilePaths,
+  moveFiles,
+  removeFiles,
+} from '../../../utils/files.js';
 
 function globPattern(files) {
   if (files.length <= 1) {

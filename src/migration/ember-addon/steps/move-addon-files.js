@@ -1,7 +1,6 @@
 import glob from 'glob';
 
-import { moveFiles, removeFiles } from '../../../utils/files.js';
-import { mapFilePaths } from '../../../utils/map-file-paths.js';
+import { mapFilePaths, moveFiles, removeFiles } from '../../../utils/files.js';
 
 function moveAddonFolder(options) {
   const { locations, projectRoot } = options;
