@@ -4,8 +4,8 @@ import { fileURLToPath } from 'node:url';
 
 import glob from 'glob';
 
+import { processTemplate } from '../../../utils/blueprints.js';
 import { createFiles } from '../../../utils/files.js';
-import { processTemplate } from '../../../utils/process-template.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
