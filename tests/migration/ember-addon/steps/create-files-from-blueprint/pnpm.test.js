@@ -1,5 +1,5 @@
 import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/index.js';
-import { options } from '../../../../helpers/shared-test-setups/typescript.js';
+import { codemodOptions } from '../../../../helpers/shared-test-setups/typescript.js';
 import {
   assertFixture,
   convertFixtureToJson,
@@ -14,7 +14,7 @@ test('migration | ember-addon | steps | create-files-from-blueprint > pnpm', fun
     'steps/create-files-from-blueprint/pnpm/output'
   );
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   const augmentedOptions = {
     locations: {
@@ -67,5 +67,5 @@ test('migration | ember-addon | steps | create-files-from-blueprint > pnpm', fun
 
   createFilesFromBlueprint(context, augmentedOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

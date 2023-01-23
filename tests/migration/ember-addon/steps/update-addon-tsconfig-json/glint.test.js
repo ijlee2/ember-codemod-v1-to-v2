@@ -1,7 +1,7 @@
 import { updateAddonTsconfigJson } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   augmentedOptions,
-  options,
+  codemodOptions,
 } from '../../../../helpers/shared-test-setups/glint.js';
 import {
   assertFixture,
@@ -19,9 +19,9 @@ test('migration | ember-addon | steps | update-addon-tsconfig-json > glint', fun
     'steps/update-addon-tsconfig-json/glint/output'
   );
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   updateAddonTsconfigJson(augmentedOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

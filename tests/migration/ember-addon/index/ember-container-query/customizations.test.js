@@ -10,21 +10,21 @@ import {
 } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | index | ember-container-query > customizations', function () {
-  const options = {
+  const codemodOptions = {
     addonLocation: 'packages/ember-container-query',
     projectRoot: 'tmp/ember-container-query-customizations',
     testAppLocation: 'demo-app',
     testAppName: 'demo-app-for-ember-container-query',
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
-  migrateEmberAddon(options);
+  migrateEmberAddon(codemodOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 
   // Check idempotence
-  migrateEmberAddon(options);
+  migrateEmberAddon(codemodOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

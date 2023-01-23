@@ -2,7 +2,7 @@ import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/i
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | steps | augment-options > error handling (package.json is not a valid JSON)', function () {
-  const options = {
+  const codemodOptions = {
     addonLocation: undefined,
     projectRoot: 'tmp/new-v1-addon-javascript',
     testAppLocation: undefined,
@@ -14,11 +14,11 @@ test('migration | ember-addon | steps | augment-options > error handling (packag
     'yarn.lock': '',
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   assert.throws(
     () => {
-      augmentOptions(options);
+      augmentOptions(codemodOptions);
     },
     (error) => {
       assert.strictEqual(

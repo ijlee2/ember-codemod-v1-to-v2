@@ -1,11 +1,8 @@
 import { createFiles } from '../../../src/utils/files.js';
+import { augmentedOptions, codemodOptions } from '../../helpers/shared-test-setups/typescript.js';
 import { assertFixture, loadFixture, test } from '../../helpers/testing.js';
 
 test('utils | files > createFiles', function () {
-  const options = {
-    projectRoot: 'tmp/ember-container-query-typescript',
-  };
-
   const inputProject = {};
 
   const outputProject = {
@@ -20,7 +17,7 @@ test('utils | files > createFiles', function () {
     'package.json': 'some code for package.json',
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   const fileMapping = new Map([
     [
@@ -34,7 +31,7 @@ test('utils | files > createFiles', function () {
     ['package.json', 'some code for package.json'],
   ]);
 
-  createFiles(fileMapping, options);
+  createFiles(fileMapping, augmentedOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

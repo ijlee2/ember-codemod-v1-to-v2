@@ -1,7 +1,7 @@
 import { updateTestAppTsconfigJson } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   augmentedOptions,
-  options,
+  codemodOptions,
 } from '../../../../helpers/shared-test-setups/customizations.js';
 import {
   assertFixture,
@@ -19,9 +19,9 @@ test('migration | ember-addon | steps | update-test-app-tsconfig-json > customiz
     'steps/update-test-app-tsconfig-json/customizations/output'
   );
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   updateTestAppTsconfigJson(augmentedOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

@@ -1,4 +1,4 @@
-const options = {
+const codemodOptions = {
   addonLocation: 'packages/ember-container-query',
   projectRoot: 'tmp/ember-container-query-customizations',
   testAppLocation: 'demo-app',
@@ -121,4 +121,4 @@ const augmentedOptions = {
   projectRoot: 'tmp/ember-container-query-customizations',
 };
 
-export { augmentedOptions, options };
+export { augmentedOptions, codemodOptions };

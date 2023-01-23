@@ -1,7 +1,7 @@
 import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   augmentedOptions,
-  options,
+  codemodOptions,
 } from '../../../../helpers/shared-test-setups/typescript.js';
 import {
   assertFixture,
@@ -17,7 +17,7 @@ test('migration | ember-addon | steps | create-files-from-blueprint > typescript
     'steps/create-files-from-blueprint/typescript/output'
   );
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   const context = {
     appReexports: [
@@ -40,5 +40,5 @@ test('migration | ember-addon | steps | create-files-from-blueprint > typescript
 
   createFilesFromBlueprint(context, augmentedOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

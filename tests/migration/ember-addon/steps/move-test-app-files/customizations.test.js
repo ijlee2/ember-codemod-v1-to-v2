@@ -1,7 +1,7 @@
 import { moveTestAppFiles } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   augmentedOptions,
-  options,
+  codemodOptions,
 } from '../../../../helpers/shared-test-setups/customizations.js';
 import {
   assertFixture,
@@ -162,9 +162,9 @@ test('migration | ember-addon | steps | move-test-app-files > customizations', f
     },
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   moveTestAppFiles(augmentedOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

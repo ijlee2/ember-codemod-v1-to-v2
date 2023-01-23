@@ -1,11 +1,8 @@
 import { moveFiles } from '../../../src/utils/files.js';
+import { augmentedOptions, codemodOptions } from '../../helpers/shared-test-setups/typescript.js';
 import { assertFixture, loadFixture, test } from '../../helpers/testing.js';
 
 test('utils | files > moveFiles', function () {
-  const options = {
-    projectRoot: 'tmp/ember-container-query-typescript',
-  };
-
   const inputProject = {
     addon: {
       components: {
@@ -38,7 +35,7 @@ test('utils | files > moveFiles', function () {
     },
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   const migrationStrategy = new Map([
     [
@@ -51,7 +48,7 @@ test('utils | files > moveFiles', function () {
     ],
   ]);
 
-  moveFiles(migrationStrategy, options);
+  moveFiles(migrationStrategy, augmentedOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

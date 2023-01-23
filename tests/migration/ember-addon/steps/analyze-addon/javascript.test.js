@@ -1,7 +1,7 @@
 import { analyzeAddon } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   augmentedOptions,
-  options,
+  codemodOptions,
 } from '../../../../helpers/shared-test-setups/javascript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
@@ -41,7 +41,7 @@ test('migration | ember-addon | steps | analyze-addon > javascript', function ()
     },
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   assert.deepEqual(analyzeAddon(augmentedOptions), {
     appReexports: [

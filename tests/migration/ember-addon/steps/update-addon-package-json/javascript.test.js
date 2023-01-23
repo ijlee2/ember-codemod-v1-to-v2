@@ -1,7 +1,7 @@
 import { updateAddonPackageJson } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   augmentedOptions,
-  options,
+  codemodOptions,
 } from '../../../../helpers/shared-test-setups/javascript.js';
 import {
   assertFixture,
@@ -19,9 +19,9 @@ test('migration | ember-addon | steps | update-addon-package-json > javascript',
     'steps/update-addon-package-json/javascript/output'
   );
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   updateAddonPackageJson(augmentedOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

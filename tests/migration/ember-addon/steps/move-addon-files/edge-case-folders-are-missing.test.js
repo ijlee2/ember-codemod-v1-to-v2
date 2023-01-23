@@ -1,7 +1,7 @@
 import { moveAddonFiles } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   augmentedOptions,
-  options,
+  codemodOptions,
 } from '../../../../helpers/shared-test-setups/typescript.js';
 import {
   assertFixture,
@@ -14,9 +14,9 @@ test('migration | ember-addon | steps | move-addon-files > edge case (folders ar
 
   const outputProject = {};
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
   moveAddonFiles(augmentedOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });

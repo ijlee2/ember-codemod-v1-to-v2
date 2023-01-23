@@ -2,7 +2,7 @@ import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/i
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | steps | augment-options > typescript', function () {
-  const options = {
+  const codemodOptions = {
     addonLocation: undefined,
     projectRoot: 'tmp/new-v1-addon-typescript',
     testAppLocation: undefined,
@@ -31,9 +31,9 @@ test('migration | ember-addon | steps | augment-options > typescript', function 
     'yarn.lock': '',
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(augmentOptions(options), {
+  assert.deepEqual(augmentOptions(codemodOptions), {
     locations: {
       addon: 'new-v1-addon',
       testApp: 'test-app',

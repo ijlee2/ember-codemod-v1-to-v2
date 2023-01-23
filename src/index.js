@@ -1,5 +1,5 @@
 import { migrateEmberAddon } from './migration/index.js';
 
-export function runCodemod(options) {
-  migrateEmberAddon(options);
+export function runCodemod(codemodOptions) {
+  migrateEmberAddon(codemodOptions);
 }

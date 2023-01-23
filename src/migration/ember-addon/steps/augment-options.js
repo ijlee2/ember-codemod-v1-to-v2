@@ -3,8 +3,8 @@ import { join } from 'node:path';
 
 import glob from 'glob';
 
-function analyzePackageJson(options) {
-  const { projectRoot } = options;
+function analyzePackageJson(codemodOptions) {
+  const { projectRoot } = codemodOptions;
 
   try {
     const packageJsonFile = readFileSync(
@@ -48,8 +48,8 @@ function analyzePackageJson(options) {
   }
 }
 
-function analyzePackageManager(options) {
-  const { projectRoot } = options;
+function analyzePackageManager(codemodOptions) {
+  const { projectRoot } = codemodOptions;
 
   const lockFiles = glob.sync('{package-lock.json,pnpm-lock.yaml,yarn.lock}', {
     cwd: projectRoot,
@@ -92,22 +92,22 @@ function deriveAddonLocation(addonPackage) {
   return packageName;
 }
 
-export function augmentOptions(options) {
-  const addonPackage = analyzePackageJson(options);
-  const packageManager = analyzePackageManager(options);
+export function augmentOptions(codemodOptions) {
+  const addonPackage = analyzePackageJson(codemodOptions);
+  const packageManager = analyzePackageManager(codemodOptions);
 
   return {
     locations: {
-      addon: options.addonLocation ?? deriveAddonLocation(addonPackage),
-      testApp: options.testAppLocation ?? 'test-app',
+      addon: codemodOptions.addonLocation ?? deriveAddonLocation(addonPackage),
+      testApp: codemodOptions.testAppLocation ?? 'test-app',
     },
     packageManager,
     packages: {
       addon: addonPackage,
       testApp: {
-        name: options.testAppName ?? 'test-app',
+        name: codemodOptions.testAppName ?? 'test-app',
       },
     },
-    projectRoot: options.projectRoot,
+    projectRoot: codemodOptions.projectRoot,
   };
 }

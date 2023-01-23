@@ -10,21 +10,21 @@ import {
 } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | index | ember-container-query > typescript', function () {
-  const options = {
+  const codemodOptions = {
     addonLocation: undefined,
     projectRoot: 'tmp/ember-container-query-typescript',
     testAppLocation: undefined,
     testAppName: undefined,
   };
 
-  loadFixture(inputProject, options);
+  loadFixture(inputProject, codemodOptions);
 
-  migrateEmberAddon(options);
+  migrateEmberAddon(codemodOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 
   // Check idempotence
-  migrateEmberAddon(options);
+  migrateEmberAddon(codemodOptions);
 
-  assertFixture(outputProject, options);
+  assertFixture(outputProject, codemodOptions);
 });
