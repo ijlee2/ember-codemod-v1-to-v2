@@ -1,7 +1,7 @@
-import { mapFilePaths } from '../../src/utils/map-file-paths.js';
-import { assert, test } from '../helpers/testing.js';
+import { mapFilePaths } from '../../../src/utils/files.js';
+import { assert, test } from '../../helpers/testing.js';
 
-test('utils | map-file-paths', function () {
+test('utils | files | map-file-paths', function () {
   const filePaths = [
     'addon/components/container-query.hbs',
     'addon/components/container-query.ts',

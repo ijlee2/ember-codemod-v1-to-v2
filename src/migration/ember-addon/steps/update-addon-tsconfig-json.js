@@ -5,7 +5,7 @@ import {
   convertToMap,
   convertToObject,
   sanitizeJson,
-} from '../../../utils/convert-json-object.js';
+} from '../../../utils/json.js';
 
 function updateCompilerOptions(tsconfigJson) {
   const compilerOptions = convertToMap(tsconfigJson['compilerOptions']);

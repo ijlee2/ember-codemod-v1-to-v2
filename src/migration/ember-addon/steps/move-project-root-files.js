@@ -1,7 +1,11 @@
 import glob from 'glob';
 
-import { copyFiles, moveFiles, removeFiles } from '../../../utils/files.js';
-import { mapFilePaths } from '../../../utils/map-file-paths.js';
+import {
+  copyFiles,
+  mapFilePaths,
+  moveFiles,
+  removeFiles,
+} from '../../../utils/files.js';
 
 function globPattern(files) {
   if (files.length <= 1) {
@@ -72,12 +76,7 @@ function moveToAddonAndTestApp(options) {
 
   copyFiles(pathMapping, options);
 
-  pathMapping = mapFilePaths(filePaths, {
-    from: '',
-    to: '',
-  });
-
-  removeFiles(pathMapping, options);
+  removeFiles(filePaths, options);
 }
 
 function moveToTestApp(options) {
@@ -111,12 +110,7 @@ function removeFromProjectRoot(options) {
     cwd: projectRoot,
   });
 
-  const pathMapping = mapFilePaths(filePaths, {
-    from: '',
-    to: '',
-  });
-
-  removeFiles(pathMapping, options);
+  removeFiles(filePaths, options);
 }
 
 export function moveProjectRootFiles(options) {

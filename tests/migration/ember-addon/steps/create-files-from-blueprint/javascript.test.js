@@ -1,6 +1,7 @@
 import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   codemodOptions,
+  context,
   options,
 } from '../../../../helpers/shared-test-setups/javascript.js';
 import {
@@ -18,23 +19,6 @@ test('migration | ember-addon | steps | create-files-from-blueprint > javascript
   );
 
   loadFixture(inputProject, codemodOptions);
-
-  const context = {
-    appReexports: [
-      'components/container-query.js',
-      'helpers/aspect-ratio.js',
-      'helpers/height.js',
-      'helpers/width.js',
-      'modifiers/container-query.js',
-    ],
-    publicEntrypoints: [
-      'components/container-query.js',
-      'helpers/aspect-ratio.js',
-      'helpers/height.js',
-      'helpers/width.js',
-      'modifiers/container-query.js',
-    ],
-  };
 
   createFilesFromBlueprint(context, options);
 

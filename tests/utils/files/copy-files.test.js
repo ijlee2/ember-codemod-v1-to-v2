@@ -5,7 +5,7 @@ import {
 } from '../../helpers/shared-test-setups/typescript.js';
 import { assertFixture, loadFixture, test } from '../../helpers/testing.js';
 
-test('utils | files > copyFiles', function () {
+test('utils | files | copy-files', function () {
   const inputProject = {
     '.editorconfig': 'some code for .editorconfig',
     '.eslintrc.js': 'some code for .eslintrc.js',

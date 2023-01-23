@@ -49,6 +49,7 @@
     "@babel/eslint-parser": "^7.19.1",
     "glob": "^8.1.0",
     "lodash.template": "^4.5.0",
+    "strip-json-comments": "^5.0.0",
     "yargs": "^17.6.2"
   },
   "devDependencies": {

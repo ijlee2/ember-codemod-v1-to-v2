@@ -1,7 +1,6 @@
 import glob from 'glob';
 
-import { moveFiles, removeFiles } from '../../../utils/files.js';
-import { mapFilePaths } from '../../../utils/map-file-paths.js';
+import { mapFilePaths, moveFiles, removeFiles } from '../../../utils/files.js';
 
 function moveAddonFolder(options) {
   const { locations, projectRoot } = options;
@@ -63,12 +62,7 @@ function removeAppFolder(options) {
     nodir: true,
   });
 
-  const pathMapping = mapFilePaths(filePaths, {
-    from: 'app',
-    to: 'app',
-  });
-
-  removeFiles(pathMapping, options);
+  removeFiles(filePaths, options);
 }
 
 export function moveAddonFiles(options) {

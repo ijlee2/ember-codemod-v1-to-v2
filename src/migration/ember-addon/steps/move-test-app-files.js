@@ -3,8 +3,7 @@ import { join } from 'node:path';
 
 import glob from 'glob';
 
-import { moveFiles } from '../../../utils/files.js';
-import { mapFilePaths } from '../../../utils/map-file-paths.js';
+import { mapFilePaths, moveFiles } from '../../../utils/files.js';
 
 function moveTestsFolder(options) {
   const { locations, projectRoot } = options;
