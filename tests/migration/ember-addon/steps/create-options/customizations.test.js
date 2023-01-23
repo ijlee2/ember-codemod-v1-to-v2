@@ -1,7 +1,7 @@
-import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { createOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | augment-options > customizations', function () {
+test('migration | ember-addon | steps | create-options > customizations', function () {
   const codemodOptions = {
     addonLocation: 'packages/new-v1-addon',
     projectRoot: 'tmp/new-v1-addon-customizations',
@@ -31,7 +31,7 @@ test('migration | ember-addon | steps | augment-options > customizations', funct
 
   loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(augmentOptions(codemodOptions), {
+  assert.deepEqual(createOptions(codemodOptions), {
     locations: {
       addon: 'packages/new-v1-addon',
       testApp: 'demo-app',

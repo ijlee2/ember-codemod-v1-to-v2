@@ -1,7 +1,7 @@
-import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { createOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | augment-options > pnpm', function () {
+test('migration | ember-addon | steps | create-options > scoped package', function () {
   const codemodOptions = {
     addonLocation: undefined,
     projectRoot: 'tmp/new-v1-addon-javascript',
@@ -12,7 +12,7 @@ test('migration | ember-addon | steps | augment-options > pnpm', function () {
   const inputProject = {
     'package.json': JSON.stringify(
       {
-        name: 'new-v1-addon',
+        name: '@ijlee2/ui-buttons',
         version: '0.0.0',
         dependencies: {
           'ember-cli-babel': '^7.26.11',
@@ -26,20 +26,20 @@ test('migration | ember-addon | steps | augment-options > pnpm', function () {
       null,
       2
     ),
-    'pnpm-lock.yaml': '',
+    'yarn.lock': '',
   };
 
   loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(augmentOptions(codemodOptions), {
+  assert.deepEqual(createOptions(codemodOptions), {
     locations: {
-      addon: 'new-v1-addon',
+      addon: 'ui-buttons',
       testApp: 'test-app',
     },
     packageManager: {
       isNpm: false,
-      isPnpm: true,
-      isYarn: false,
+      isPnpm: false,
+      isYarn: true,
     },
     packages: {
       addon: {
@@ -50,7 +50,7 @@ test('migration | ember-addon | steps | augment-options > pnpm', function () {
         hasGlint: false,
         hasTypeScript: false,
         isV1Addon: true,
-        name: 'new-v1-addon',
+        name: '@ijlee2/ui-buttons',
         version: '0.0.0',
       },
       testApp: {

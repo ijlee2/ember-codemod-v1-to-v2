@@ -1,10 +1,10 @@
-import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { createOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | augment-options > javascript', function () {
+test('migration | ember-addon | steps | create-options > glint', function () {
   const codemodOptions = {
     addonLocation: undefined,
-    projectRoot: 'tmp/new-v1-addon-javascript',
+    projectRoot: 'tmp/new-v1-addon-typescript',
     testAppLocation: undefined,
     testAppName: undefined,
   };
@@ -18,7 +18,10 @@ test('migration | ember-addon | steps | augment-options > javascript', function 
           'ember-cli-babel': '^7.26.11',
           'ember-cli-htmlbars': '^6.1.1',
         },
-        devDependencies: {},
+        devDependencies: {
+          '@glint/core': '^v1.0.0-beta.2',
+          typescript: '^4.9.4',
+        },
         'ember-addon': {
           configPath: 'tests/dummy/config',
         },
@@ -31,7 +34,7 @@ test('migration | ember-addon | steps | augment-options > javascript', function 
 
   loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(augmentOptions(codemodOptions), {
+  assert.deepEqual(createOptions(codemodOptions), {
     locations: {
       addon: 'new-v1-addon',
       testApp: 'test-app',
@@ -46,9 +49,11 @@ test('migration | ember-addon | steps | augment-options > javascript', function 
         dependencies: new Map([
           ['ember-cli-babel', '^7.26.11'],
           ['ember-cli-htmlbars', '^6.1.1'],
+          ['@glint/core', '^v1.0.0-beta.2'],
+          ['typescript', '^4.9.4'],
         ]),
-        hasGlint: false,
-        hasTypeScript: false,
+        hasGlint: true,
+        hasTypeScript: true,
         isV1Addon: true,
         name: 'new-v1-addon',
         version: '0.0.0',
@@ -57,6 +62,6 @@ test('migration | ember-addon | steps | augment-options > javascript', function 
         name: 'test-app',
       },
     },
-    projectRoot: 'tmp/new-v1-addon-javascript',
+    projectRoot: 'tmp/new-v1-addon-typescript',
   });
 });

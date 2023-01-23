@@ -1,7 +1,7 @@
-import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { createOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | augment-options > error handling (package version is missing)', function () {
+test('migration | ember-addon | steps | create-options > error handling (package version is missing)', function () {
   const codemodOptions = {
     addonLocation: undefined,
     projectRoot: 'tmp/new-v1-addon-javascript',
@@ -24,7 +24,7 @@ test('migration | ember-addon | steps | augment-options > error handling (packag
 
   assert.throws(
     () => {
-      augmentOptions(codemodOptions);
+      createOptions(codemodOptions);
     },
     (error) => {
       assert.strictEqual(

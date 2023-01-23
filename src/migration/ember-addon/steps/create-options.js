@@ -92,7 +92,7 @@ function deriveAddonLocation(addonPackage) {
   return packageName;
 }
 
-export function augmentOptions(codemodOptions) {
+export function createOptions(codemodOptions) {
   const addonPackage = analyzePackageJson(codemodOptions);
   const packageManager = analyzePackageManager(codemodOptions);
 

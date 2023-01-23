@@ -1,7 +1,7 @@
-import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { createOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | augment-options > error handling (package.json is not a valid JSON)', function () {
+test('migration | ember-addon | steps | create-options > error handling (package name is not valid)', function () {
   const codemodOptions = {
     addonLocation: undefined,
     projectRoot: 'tmp/new-v1-addon-javascript',
@@ -10,7 +10,14 @@ test('migration | ember-addon | steps | augment-options > error handling (packag
   };
 
   const inputProject = {
-    'package.json': '{\n  "name": }',
+    'package.json': JSON.stringify(
+      {
+        name: '@ijlee2/',
+        version: '0.0.0',
+      },
+      null,
+      2
+    ),
     'yarn.lock': '',
   };
 
@@ -18,12 +25,12 @@ test('migration | ember-addon | steps | augment-options > error handling (packag
 
   assert.throws(
     () => {
-      augmentOptions(codemodOptions);
+      createOptions(codemodOptions);
     },
     (error) => {
       assert.strictEqual(
         error.message,
-        'ERROR: package.json is missing or is not valid. (Unexpected token } in JSON at position 12)\n'
+        'ERROR: In package.json, the package name `@ijlee2/` is not valid.'
       );
 
       return true;

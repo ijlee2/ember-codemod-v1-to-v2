@@ -1,7 +1,7 @@
-import { augmentOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { createOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | augment-options > error handling (package.json is an empty file)', function () {
+test('migration | ember-addon | steps | create-options > error handling (package.json is an empty file)', function () {
   const augmentedOptions = {
     addonLocation: undefined,
     projectRoot: 'tmp/new-v1-addon-javascript',
@@ -18,7 +18,7 @@ test('migration | ember-addon | steps | augment-options > error handling (packag
 
   assert.throws(
     () => {
-      augmentOptions(augmentedOptions);
+      createOptions(augmentedOptions);
     },
     (error) => {
       assert.strictEqual(

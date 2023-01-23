@@ -1,6 +1,6 @@
 import {
   analyzeAddon,
-  augmentOptions,
+  createOptions,
   createFilesFromBlueprint,
   moveAddonFiles,
   moveProjectRootFiles,
@@ -13,7 +13,7 @@ import {
 } from './steps/index.js';
 
 export function migrateEmberAddon(codemodOptions) {
-  const augmentedOptions = augmentOptions(codemodOptions);
+  const augmentedOptions = createOptions(codemodOptions);
   const { isV1Addon } = augmentedOptions.packages.addon;
 
   // Guarantee idempotency
