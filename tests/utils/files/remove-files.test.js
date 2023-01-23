@@ -5,7 +5,7 @@ import {
 } from '../../helpers/shared-test-setups/typescript.js';
 import { assertFixture, loadFixture, test } from '../../helpers/testing.js';
 
-test('utils | files > removeFiles', function () {
+test('utils | files | remove-files', function () {
   const inputProject = {
     'ember-container-query': {
       src: {

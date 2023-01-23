@@ -5,7 +5,7 @@ import {
 } from '../../helpers/shared-test-setups/typescript.js';
 import { assertFixture, loadFixture, test } from '../../helpers/testing.js';
 
-test('utils | files > moveFiles', function () {
+test('utils | files | move-files', function () {
   const inputProject = {
     addon: {
       components: {
