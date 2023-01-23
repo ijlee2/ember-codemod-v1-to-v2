@@ -1,6 +1,7 @@
 import { analyzeAddon } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   codemodOptions,
+  context,
   options,
 } from '../../../../helpers/shared-test-setups/customizations.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
@@ -45,30 +46,5 @@ test('migration | ember-addon | steps | analyze-addon > customizations', functio
 
   loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(analyzeAddon(options), {
-    addon: {
-      appReexports: [
-        'components/container-query.js',
-        'helpers/aspect-ratio.js',
-        'helpers/height.js',
-        'helpers/width.js',
-        'modifiers/container-query.js',
-      ],
-      publicEntrypoints: [
-        'components/container-query.js',
-        'helpers/aspect-ratio.js',
-        'helpers/height.js',
-        'helpers/width.js',
-        'index.js',
-        'modifiers/container-query.js',
-        'template-registry.js',
-      ],
-    },
-    projectRoot: {
-      devDependencies: {
-        concurrently: '^7.6.0',
-        prettier: '^2.8.1',
-      },
-    },
-  });
+  assert.deepEqual(analyzeAddon(options), context);
 });

@@ -1,5 +1,8 @@
 import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/index.js';
-import { codemodOptions } from '../../../../helpers/shared-test-setups/typescript.js';
+import {
+  codemodOptions,
+  context,
+} from '../../../../helpers/shared-test-setups/typescript.js';
 import {
   assertFixture,
   convertFixtureToJson,
@@ -44,33 +47,6 @@ test('migration | ember-addon | steps | create-files-from-blueprint > pnpm', fun
       },
     },
     projectRoot: 'tmp/ember-container-query-typescript',
-  };
-
-  const context = {
-    addon: {
-      appReexports: [
-        'components/container-query.js',
-        'helpers/aspect-ratio.js',
-        'helpers/height.js',
-        'helpers/width.js',
-        'modifiers/container-query.js',
-      ],
-      publicEntrypoints: [
-        'components/container-query.js',
-        'helpers/aspect-ratio.js',
-        'helpers/height.js',
-        'helpers/width.js',
-        'index.js',
-        'modifiers/container-query.js',
-        'template-registry.js',
-      ],
-    },
-    projectRoot: {
-      devDependencies: {
-        concurrently: '^7.6.0',
-        prettier: '^2.8.1',
-      },
-    },
   };
 
   createFilesFromBlueprint(context, options);

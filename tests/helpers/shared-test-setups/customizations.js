@@ -5,6 +5,33 @@ const codemodOptions = {
   testAppName: 'demo-app-for-ember-container-query',
 };
 
+const context = {
+  addon: {
+    appReexports: [
+      'components/container-query.js',
+      'helpers/aspect-ratio.js',
+      'helpers/height.js',
+      'helpers/width.js',
+      'modifiers/container-query.js',
+    ],
+    publicEntrypoints: [
+      'components/container-query.js',
+      'helpers/aspect-ratio.js',
+      'helpers/height.js',
+      'helpers/width.js',
+      'index.js',
+      'modifiers/container-query.js',
+      'template-registry.js',
+    ],
+  },
+  projectRoot: {
+    devDependencies: {
+      concurrently: '^7.6.0',
+      prettier: '^2.8.1',
+    },
+  },
+};
+
 const options = {
   locations: {
     addon: 'packages/ember-container-query',
@@ -121,4 +148,4 @@ const options = {
   projectRoot: 'tmp/ember-container-query-customizations',
 };
 
-export { codemodOptions, options };
+export { codemodOptions, context, options };
