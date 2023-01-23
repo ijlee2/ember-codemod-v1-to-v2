@@ -2,6 +2,8 @@ import { join } from 'node:path';
 
 import glob from 'glob';
 
+import { decideVersion } from '../../../utils/blueprints.js';
+
 function getAppReexports(options) {
   const { projectRoot } = options;
 
@@ -10,6 +12,13 @@ function getAppReexports(options) {
   });
 
   return filePaths;
+}
+
+function getProjectRootDevDependencies(options) {
+  return {
+    concurrently: decideVersion('concurrently', options),
+    prettier: decideVersion('prettier', options),
+  };
 }
 
 function getPublicEntrypoints(options) {
@@ -26,5 +35,11 @@ export function analyzeAddon(options) {
   const appReexports = getAppReexports(options);
   const publicEntrypoints = getPublicEntrypoints(options);
 
-  return { appReexports, publicEntrypoints };
+  return {
+    appReexports,
+    publicEntrypoints,
+    projectRoot: {
+      devDependencies: getProjectRootDevDependencies(options),
+    },
+  };
 }

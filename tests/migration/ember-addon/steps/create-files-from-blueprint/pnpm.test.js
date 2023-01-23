@@ -63,6 +63,12 @@ test('migration | ember-addon | steps | create-files-from-blueprint > pnpm', fun
       'modifiers/container-query.js',
       'template-registry.js',
     ],
+    projectRoot: {
+      devDependencies: {
+        concurrently: '^7.6.0',
+        prettier: '^2.8.1',
+      },
+    },
   };
 
   createFilesFromBlueprint(context, options);

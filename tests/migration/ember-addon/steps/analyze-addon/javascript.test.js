@@ -58,5 +58,11 @@ test('migration | ember-addon | steps | analyze-addon > javascript', function ()
       'helpers/width.js',
       'modifiers/container-query.js',
     ],
+    projectRoot: {
+      devDependencies: {
+        concurrently: '^7.6.0',
+        prettier: '^2.8.1',
+      },
+    },
   });
 });

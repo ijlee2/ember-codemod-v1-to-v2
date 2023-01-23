@@ -34,6 +34,12 @@ test('migration | ember-addon | steps | create-files-from-blueprint > javascript
       'helpers/width.js',
       'modifiers/container-query.js',
     ],
+    projectRoot: {
+      devDependencies: {
+        concurrently: '^7.6.0',
+        prettier: '^2.8.1',
+      },
+    },
   };
 
   createFilesFromBlueprint(context, options);

@@ -62,5 +62,11 @@ test('migration | ember-addon | steps | analyze-addon > customizations', functio
       'modifiers/container-query.js',
       'template-registry.js',
     ],
+    projectRoot: {
+      devDependencies: {
+        concurrently: '^7.6.0',
+        prettier: '^2.8.1',
+      },
+    },
   });
 });
