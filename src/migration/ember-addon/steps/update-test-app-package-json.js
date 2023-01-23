@@ -1,11 +1,11 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
+import { decideVersion } from '../../../utils/blueprints.js';
 import {
   convertToMap,
   convertToObject,
 } from '../../../utils/convert-json-object.js';
-import { decideVersion } from '../../../utils/decide-version.js';
 
 function moveDependenciesToDevDependencies(packageJson, options) {
   const { packages } = options;
