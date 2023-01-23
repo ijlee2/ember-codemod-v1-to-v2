@@ -1,4 +1,7 @@
+import stripJsonComments from 'strip-json-comments';
+
 export function sanitizeJson(jsonFile) {
-  // Remove comments
-  return jsonFile.replace(new RegExp('//.*', 'gm'), '');
+  return stripJsonComments(jsonFile, {
+    whitespace: false,
+  });
 }

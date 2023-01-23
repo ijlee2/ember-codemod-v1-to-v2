@@ -20,7 +20,6 @@ test('utils | json | sanitize-json', function () {
     `}`,
   ].join('\n');
 
-  // TODO: Multiline comments, when not removed, will cause JSON.parse() to error.
   const expectedValue = [
     `{`,
     `  "extends": "@tsconfig/ember/tsconfig.json",`,
@@ -33,7 +32,7 @@ test('utils | json | sanitize-json', function () {
     `    `,
     `    "baseUrl": ".",`,
     `    "paths": {`,
-    `      /* ... */`,
+    `      `,
     `    }`,
     `  }`,
     `}`,
