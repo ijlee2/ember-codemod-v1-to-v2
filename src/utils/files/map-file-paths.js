@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 
-function renameDirectory(oldPath, { from, to }) {
+export function renameDirectory(oldPath, { from, to }) {
   if (from === '') {
     return join(to, oldPath);
   }
