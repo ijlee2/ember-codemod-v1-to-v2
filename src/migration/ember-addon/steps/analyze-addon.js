@@ -28,7 +28,7 @@ function getProjectRootDevDependencies(options) {
 function getPublicEntrypoints(options) {
   const { projectRoot } = options;
 
-  const filePaths = glob.sync('addon/**/*.{js,ts}', {
+  const filePaths = glob.sync('{addon,addon-test-support}/**/*.{js,ts}', {
     cwd: projectRoot,
   });
 
@@ -37,6 +37,12 @@ function getPublicEntrypoints(options) {
       return renameDirectory(filePath, {
         from: 'addon',
         to: '',
+      });
+    })
+    .map((filePath) => {
+      return renameDirectory(filePath, {
+        from: 'addon-test-support',
+        to: 'test-support',
       });
     })
     .map((filePath) => {
