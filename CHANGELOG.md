@@ -1,3 +1,12 @@
+## 0.2.0 (2023-01-27)
+
+### Enhancement
+* [#11](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/11) Added files from addon-test-support to addon.publicEntrypoints() ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.1.5 (2023-01-23)
 
 ### Bug Fix
