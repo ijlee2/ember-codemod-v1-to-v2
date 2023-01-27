@@ -1,17 +1,21 @@
-import { join } from 'node:path';
-
 import glob from 'glob';
 
 import { decideVersion } from '../../../utils/blueprints.js';
+import { renameDirectory } from '../../../utils/files.js';
 
 function getAppReexports(options) {
   const { projectRoot } = options;
 
-  const filePaths = glob.sync('**/*.js', {
-    cwd: join(projectRoot, 'app'),
+  const filePaths = glob.sync('app/**/*.js', {
+    cwd: projectRoot,
   });
 
-  return filePaths;
+  return filePaths.map((filePath) => {
+    return renameDirectory(filePath, {
+      from: 'app',
+      to: '',
+    });
+  });
 }
 
 function getProjectRootDevDependencies(options) {
@@ -24,11 +28,26 @@ function getProjectRootDevDependencies(options) {
 function getPublicEntrypoints(options) {
   const { projectRoot } = options;
 
-  const filePaths = glob.sync('**/*.{js,ts}', {
-    cwd: join(projectRoot, 'addon'),
+  const filePaths = glob.sync('{addon,addon-test-support}/**/*.{js,ts}', {
+    cwd: projectRoot,
   });
 
-  return filePaths.map((filePath) => filePath.replace(/ts$/, 'js'));
+  return filePaths
+    .map((filePath) => {
+      return renameDirectory(filePath, {
+        from: 'addon',
+        to: '',
+      });
+    })
+    .map((filePath) => {
+      return renameDirectory(filePath, {
+        from: 'addon-test-support',
+        to: 'test-support',
+      });
+    })
+    .map((filePath) => {
+      return filePath.replace(/ts$/, 'js');
+    });
 }
 
 export function analyzeAddon(options) {

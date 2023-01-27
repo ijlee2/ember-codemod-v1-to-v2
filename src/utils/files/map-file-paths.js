@@ -1,20 +1,25 @@
-function changeDirectory(oldPath, from, to) {
-  if (!oldPath.startsWith(from)) {
-    throw new RangeError(
-      `The provided path \`${oldPath}\` does not start with \`${from}\`.`
-    );
+import { join } from 'node:path';
+
+export function renameDirectory(oldPath, { from, to }) {
+  if (from === '') {
+    return join(to, oldPath);
   }
 
-  const relativePath = oldPath.replace(new RegExp(`^${from}/`), '');
-  const newPath = `${to}/${relativePath}`;
+  if (!oldPath.startsWith(`${from}/`)) {
+    return oldPath;
+  }
 
-  return [oldPath, newPath];
+  return join(to, oldPath.replace(`${from}/`, ''));
 }
 
 export function mapFilePaths(filePaths, directory) {
   const { from, to } = directory;
 
   return new Map(
-    filePaths.map((filePath) => changeDirectory(filePath, from, to))
+    filePaths.map((filePath) => {
+      const newPath = renameDirectory(filePath, { from, to });
+
+      return [filePath, newPath];
+    })
   );
 }
