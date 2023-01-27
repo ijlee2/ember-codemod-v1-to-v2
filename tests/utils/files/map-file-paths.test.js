@@ -1,54 +1,73 @@
 import { mapFilePaths } from '../../../src/utils/files.js';
 import { assert, test } from '../../helpers/testing.js';
 
-test('utils | files | map-file-paths', function () {
-  const filePaths = [
-    'addon/components/container-query.hbs',
-    'addon/components/container-query.ts',
-    'addon/helpers/aspect-ratio.ts',
-    'addon/helpers/height.ts',
-    'addon/helpers/width.ts',
-    'addon/modifiers/container-query.ts',
-    'addon/styles/container-query.css',
-    'addon/.gitkeep',
-    'addon/index.ts',
-    'addon/template-registry.ts',
-  ];
+test('utils | files | map-file-paths > base case', function () {
+  const filePaths = ['addon/some-folder/some-file.ts', 'addon/.gitkeep'];
 
   const pathMapping = mapFilePaths(filePaths, {
     from: 'addon',
-    to: 'ember-container-query/src',
+    to: 'new-location/src',
   });
 
   const expectedValue = new Map([
     [
-      'addon/components/container-query.hbs',
-      'ember-container-query/src/components/container-query.hbs',
+      'addon/some-folder/some-file.ts',
+      'new-location/src/some-folder/some-file.ts',
     ],
+    ['addon/.gitkeep', 'new-location/src/.gitkeep'],
+  ]);
+
+  assert.deepStrictEqual(pathMapping, expectedValue);
+});
+
+test('utils | files | map-file-paths > file paths are mapped from the project root', function () {
+  const filePaths = ['addon/some-folder/some-file.ts', 'addon/.gitkeep'];
+
+  const pathMapping = mapFilePaths(filePaths, {
+    from: '',
+    to: 'new-location/src',
+  });
+
+  const expectedValue = new Map([
     [
-      'addon/components/container-query.ts',
-      'ember-container-query/src/components/container-query.ts',
+      'addon/some-folder/some-file.ts',
+      'new-location/src/addon/some-folder/some-file.ts',
     ],
-    [
-      'addon/helpers/aspect-ratio.ts',
-      'ember-container-query/src/helpers/aspect-ratio.ts',
-    ],
-    ['addon/helpers/height.ts', 'ember-container-query/src/helpers/height.ts'],
-    ['addon/helpers/width.ts', 'ember-container-query/src/helpers/width.ts'],
-    [
-      'addon/modifiers/container-query.ts',
-      'ember-container-query/src/modifiers/container-query.ts',
-    ],
-    [
-      'addon/styles/container-query.css',
-      'ember-container-query/src/styles/container-query.css',
-    ],
-    ['addon/.gitkeep', 'ember-container-query/src/.gitkeep'],
-    ['addon/index.ts', 'ember-container-query/src/index.ts'],
-    [
-      'addon/template-registry.ts',
-      'ember-container-query/src/template-registry.ts',
-    ],
+    ['addon/.gitkeep', 'new-location/src/addon/.gitkeep'],
+  ]);
+
+  assert.deepStrictEqual(pathMapping, expectedValue);
+});
+
+test('utils | files | map-file-paths > file paths are mapped to the project root', function () {
+  const filePaths = ['addon/some-folder/some-file.ts', 'addon/.gitkeep'];
+
+  const pathMapping = mapFilePaths(filePaths, {
+    from: 'addon',
+    to: '',
+  });
+
+  const expectedValue = new Map([
+    ['addon/some-folder/some-file.ts', 'some-folder/some-file.ts'],
+    ['addon/.gitkeep', '.gitkeep'],
+  ]);
+
+  assert.deepStrictEqual(pathMapping, expectedValue);
+});
+
+test('utils | files | map-file-paths > file paths remain when there is no match', function () {
+  const filePaths = ['.addon/index.js', 'addon', 'addon.js', 'app/index.js'];
+
+  const pathMapping = mapFilePaths(filePaths, {
+    from: 'addon',
+    to: 'new-location/src',
+  });
+
+  const expectedValue = new Map([
+    ['.addon/index.js', '.addon/index.js'],
+    ['addon', 'addon'],
+    ['addon.js', 'addon.js'],
+    ['app/index.js', 'app/index.js'],
   ]);
 
   assert.deepStrictEqual(pathMapping, expectedValue);
