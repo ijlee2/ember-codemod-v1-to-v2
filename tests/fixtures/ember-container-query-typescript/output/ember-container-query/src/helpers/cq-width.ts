@@ -1,6 +1,6 @@
 import { deprecate } from '@ember/debug';
 
-import WidthHelper from '../helpers/width';
+import WidthHelper from './width';
 
 deprecate(
   'The {{cq-width}} helper has been renamed to {{width}}. Please update the helper name in your template.',
