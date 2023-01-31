@@ -1,3 +1,12 @@
+## 0.3.1 (2023-01-31)
+
+### Bug Fix
+* [#16](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/16) Listed the default condition as the last ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.3.0 (2023-01-31)
 
 ### Bug Fix
