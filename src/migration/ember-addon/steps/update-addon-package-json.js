@@ -90,8 +90,8 @@ function updateOtherFields(packageJson, options) {
     ? {
         '.': './dist/index.js',
         './*': {
-          default: './dist/*.js',
           types: './dist/*.d.ts',
+          default: './dist/*.js',
         },
         './addon-main.js': './addon-main.cjs',
       }
