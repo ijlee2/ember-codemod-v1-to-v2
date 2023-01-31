@@ -1,8 +1,8 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
-import type { Concert } from '../../data/concert';
-import concertData from '../../data/concert';
+import type { Concert } from 'dummy/data/concert';
+import concertData from 'dummy/data/concert';
 
 interface WidgetsWidget3ComponentSignature {}
 

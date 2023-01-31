@@ -3,8 +3,8 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import type { Dimensions } from 'ember-container-query/modifiers/container-query';
 
-import type { Image } from '../../../../data/concert';
-import { findBestFittingImage } from '../../../../utils/components/widgets/widget-3';
+import type { Image } from 'dummy/data/concert';
+import { findBestFittingImage } from 'dummy/utils/components/widgets/widget-3';
 
 interface WidgetsWidget3TourScheduleResponsiveImageComponentSignature {
   Args: {

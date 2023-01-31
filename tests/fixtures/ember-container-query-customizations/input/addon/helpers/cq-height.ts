@@ -1,6 +1,6 @@
 import { deprecate } from '@ember/debug';
 
-import HeightHelper from '../helpers/height';
+import HeightHelper from 'ember-container-query/helpers/height';
 
 deprecate(
   'The {{cq-height}} helper has been renamed to {{height}}. Please update the helper name in your template.',
