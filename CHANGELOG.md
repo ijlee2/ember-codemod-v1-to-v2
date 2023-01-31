@@ -1,3 +1,22 @@
+## 0.3.0 (2023-01-31)
+
+### Bug Fix
+* [#14](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/14) Downstreamed changes from @embroider/addon-blueprint ([@ijlee2](https://github.com/ijlee2))
+
+### Enhancement
+* [#15](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/15) Updated latestVersions and refactored code ([@ijlee2](https://github.com/ijlee2))
+* [#14](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/14) Downstreamed changes from @embroider/addon-blueprint ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#13](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/13) Updated development dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#12](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/12) Updated test fixtures ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.2.0 (2023-01-27)
 
 ### Enhancement
