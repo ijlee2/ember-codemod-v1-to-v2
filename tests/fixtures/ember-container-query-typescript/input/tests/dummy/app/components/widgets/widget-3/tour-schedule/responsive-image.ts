@@ -3,8 +3,8 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import type { Dimensions } from 'ember-container-query/modifiers/container-query';
 
-import type { Image } from '../../../../data/concert';
-import { findBestFittingImage } from '../../../../utils/components/widgets/widget-3';
+import type { Image } from 'dummy/data/concert';
+import { findBestFittingImage } from 'dummy/utils/components/widgets/widget-3';
 
 interface WidgetsWidget3TourScheduleResponsiveImageComponentSignature {
   Args: {
@@ -19,11 +19,5 @@ export default class WidgetsWidget3TourScheduleResponsiveImageComponent extends 
     const { images } = this.args;
 
     this.imageSource = findBestFittingImage(images, dimensions);
-  }
-}
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Widgets::Widget-3::TourSchedule::ResponsiveImage': typeof WidgetsWidget3TourScheduleResponsiveImageComponent;
   }
 }

@@ -2,7 +2,7 @@ import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
-import type { Summary } from '../../../utils/components/widgets/widget-2';
+import type { Summary } from 'dummy/utils/components/widgets/widget-2';
 
 interface WidgetsWidget2CaptionsComponentSignature {
   Args: {
@@ -36,11 +36,5 @@ export default class WidgetsWidget2CaptionsComponent extends Component<WidgetsWi
     const nextIndex = (currentIndex + increment + numSummaries) % numSummaries;
 
     this.currentIndex = nextIndex;
-  }
-}
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Widgets::Widget-2::Captions': typeof WidgetsWidget2CaptionsComponent;
   }
 }

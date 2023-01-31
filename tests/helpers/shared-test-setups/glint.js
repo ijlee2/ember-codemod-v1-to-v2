@@ -1,6 +1,6 @@
 const codemodOptions = {
   addonLocation: undefined,
-  projectRoot: 'tmp/ember-container-query-typescript',
+  projectRoot: 'tmp/ember-container-query-glint',
   testAppLocation: undefined,
   testAppName: undefined,
 };
@@ -145,7 +145,7 @@ const options = {
       name: 'test-app',
     },
   },
-  projectRoot: 'tmp/ember-container-query-typescript',
+  projectRoot: 'tmp/ember-container-query-glint',
 };
 
 export { codemodOptions, context, options };

@@ -1,8 +1,8 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
-import type { Concert } from '../../data/concert';
-import concertData from '../../data/concert';
+import type { Concert } from 'dummy/data/concert';
+import concertData from 'dummy/data/concert';
 
 interface WidgetsWidget3ComponentSignature {}
 
@@ -18,11 +18,5 @@ export default class WidgetsWidget3Component extends Component<WidgetsWidget3Com
 
   loadData(): void {
     this.concertData = concertData;
-  }
-}
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Widgets::Widget-3': typeof WidgetsWidget3Component;
   }
 }

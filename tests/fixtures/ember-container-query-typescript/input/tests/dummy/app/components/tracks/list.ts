@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 
-import type { Track } from '../../data/album';
+import type { Track } from 'dummy/data/album';
 
 interface TracksListComponentSignature {
   Args: {
@@ -24,11 +24,5 @@ export default class TracksListComponent extends Component<TracksListComponentSi
     }
 
     return Math.ceil(tracks.length / this.numColumns);
-  }
-}
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Tracks::List': typeof TracksListComponent;
   }
 }

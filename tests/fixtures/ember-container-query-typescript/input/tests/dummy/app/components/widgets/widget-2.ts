@@ -1,12 +1,12 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
-import musicRevenue from '../../data/music-revenue';
-import type { Data, Summary } from '../../utils/components/widgets/widget-2';
+import musicRevenue from 'dummy/data/music-revenue';
+import type { Data, Summary } from 'dummy/utils/components/widgets/widget-2';
 import {
   createDataForVisualization,
   createSummariesForCaptions,
-} from '../../utils/components/widgets/widget-2';
+} from 'dummy/utils/components/widgets/widget-2';
 
 interface WidgetsWidget2ComponentSignature {}
 
@@ -24,11 +24,5 @@ export default class WidgetsWidget2Component extends Component<WidgetsWidget2Com
   loadData(): void {
     this.data = createDataForVisualization(musicRevenue);
     this.summaries = createSummariesForCaptions(this.data);
-  }
-}
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Widgets::Widget-2': typeof WidgetsWidget2Component;
   }
 }

@@ -1,6 +1,6 @@
 import { deprecate } from '@ember/debug';
 
-import AspectRatioHelper from '../helpers/aspect-ratio';
+import AspectRatioHelper from './aspect-ratio';
 
 deprecate(
   'The {{cq-aspect-ratio}} helper has been renamed to {{aspect-ratio}}. Please update the helper name in your template.',

@@ -1,6 +1,6 @@
 import templateOnlyComponent from '@ember/component/template-only';
 
-import type { Track } from '../data/album';
+import type { Track } from 'dummy/data/album';
 
 interface TracksComponentSignature {
   Args: {
@@ -11,9 +11,3 @@ interface TracksComponentSignature {
 const TracksComponent = templateOnlyComponent<TracksComponentSignature>();
 
 export default TracksComponent;
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    Tracks: typeof TracksComponent;
-  }
-}

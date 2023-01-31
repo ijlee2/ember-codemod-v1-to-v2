@@ -12,9 +12,3 @@ export interface UiPageComponentSignature {
 const UiPageComponent = templateOnlyComponent<UiPageComponentSignature>();
 
 export default UiPageComponent;
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Ui::Page': typeof UiPageComponent;
-  }
-}

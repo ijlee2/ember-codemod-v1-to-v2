@@ -7,7 +7,7 @@ import type {
   Features,
   IndexSignatureParameter,
   QueryResults,
-} from '../modifiers/container-query';
+} from 'ember-container-query/modifiers/container-query';
 
 interface ContainerQueryComponentSignature<T extends IndexSignatureParameter> {
   Args: {

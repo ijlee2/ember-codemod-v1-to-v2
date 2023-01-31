@@ -2,7 +2,6 @@ import { action } from '@ember/object';
 import { guidFor } from '@ember/object/internals';
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { WithBoundArgs } from '@glint/template';
 
 import type UiFormCheckboxComponent from './form/checkbox';
 import type UiFormInputComponent from './form/input';
@@ -50,11 +49,5 @@ export default class UiFormComponent extends Component<UiFormComponentSignature>
       ...this.changeset,
       [key]: value,
     };
-  }
-}
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Ui::Form': typeof UiFormComponent;
   }
 }

@@ -13,6 +13,7 @@
 #---------
 
 ./codemod-test-fixture.sh -a "packages/ember-container-query" -t "demo-app" -T "demo-app-for-ember-container-query" ember-container-query-customizations
+./codemod-test-fixture.sh ember-container-query-glint
 ./codemod-test-fixture.sh ember-container-query-javascript
 ./codemod-test-fixture.sh ember-container-query-typescript
 ./codemod-test-fixture.sh -a "packages/new-v1-addon" -t "demo-app" -T "demo-app-for-new-v1-addon" new-v1-addon-customizations

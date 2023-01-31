@@ -12,9 +12,3 @@ const WidgetsWidget2StackedChartComponent =
   templateOnlyComponent<WidgetsWidget2StackedChartComponentSignature>();
 
 export default WidgetsWidget2StackedChartComponent;
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Widgets::Widget-2::StackedChart': typeof WidgetsWidget2StackedChartComponent;
-  }
-}
