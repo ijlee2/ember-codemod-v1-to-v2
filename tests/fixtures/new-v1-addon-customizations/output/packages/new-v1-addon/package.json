@@ -59,11 +59,21 @@
   },
   "exports": {
     ".": "./dist/index.js",
-    "./*": "./dist/*.js",
+    "./*": {
+      "default": "./dist/*.js",
+      "types": "./dist/*.d.ts"
+    },
     "./addon-main.js": "./addon-main.cjs"
   },
   "files": [
     "addon-main.cjs",
     "dist"
-  ]
+  ],
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/*"
+      ]
+    }
+  }
 }
