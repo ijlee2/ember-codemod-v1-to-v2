@@ -26,9 +26,3 @@ export default class WidgetsWidget2Component extends Component<WidgetsWidget2Com
     this.summaries = createSummariesForCaptions(this.data);
   }
 }
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Widgets::Widget-2': typeof WidgetsWidget2Component;
-  }
-}

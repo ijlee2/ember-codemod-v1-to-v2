@@ -21,9 +21,3 @@ export default class WidgetsWidget3TourScheduleResponsiveImageComponent extends 
     this.imageSource = findBestFittingImage(images, dimensions);
   }
 }
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Widgets::Widget-3::TourSchedule::ResponsiveImage': typeof WidgetsWidget3TourScheduleResponsiveImageComponent;
-  }
-}

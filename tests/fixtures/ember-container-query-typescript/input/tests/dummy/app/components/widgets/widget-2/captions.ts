@@ -38,9 +38,3 @@ export default class WidgetsWidget2CaptionsComponent extends Component<WidgetsWi
     this.currentIndex = nextIndex;
   }
 }
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Widgets::Widget-2::Captions': typeof WidgetsWidget2CaptionsComponent;
-  }
-}

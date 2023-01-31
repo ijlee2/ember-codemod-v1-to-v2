@@ -26,9 +26,3 @@ export default class TracksListComponent extends Component<TracksListComponentSi
     return Math.ceil(tracks.length / this.numColumns);
   }
 }
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Tracks::List': typeof TracksListComponent;
-  }
-}

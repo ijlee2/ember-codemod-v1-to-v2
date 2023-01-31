@@ -43,10 +43,3 @@ export default class UiFormTextareaComponent extends Component<UiFormTextareaCom
     onUpdate({ key, value });
   }
 }
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'Ui::Form::Textarea': typeof UiFormTextareaComponent;
-    'ui/form/textarea': typeof UiFormTextareaComponent;
-  }
-}

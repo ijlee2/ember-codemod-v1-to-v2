@@ -22,9 +22,3 @@ const DynamicCssGridModifier = modifier<DynamicCssGridModifierSignature>(
 );
 
 export default DynamicCssGridModifier;
-
-declare module '@glint/environment-ember-loose/registry' {
-  export default interface Registry {
-    'dynamic-css-grid': typeof DynamicCssGridModifier;
-  }
-}
