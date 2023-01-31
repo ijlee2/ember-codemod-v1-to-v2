@@ -19,11 +19,11 @@
 #
 #      Choice a. Keep most of the source code.
 #
-#        ./create-test-fixture.sh "../../Desktop/ember-container-query" ember-container-query-typescript
+#        ./create-test-fixture.sh "../../Desktop/ember-container-query" ember-container-query-glint
 #
 #      Choice b. Empty every file.
 #
-#        ./create-test-fixture.sh "../../Desktop/ember-container-query" ember-container-query-typescript true
+#        ./create-test-fixture.sh "../../Desktop/ember-container-query" ember-container-query-glint true
 #
 #---------
 

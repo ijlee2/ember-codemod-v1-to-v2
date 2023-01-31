@@ -15,7 +15,7 @@
 #
 #      Choice a. Run the codemod without the optional arguments.
 #
-#        ./codemod-test-fixture.sh ember-container-query-typescript
+#        ./codemod-test-fixture.sh ember-container-query-glint
 #
 #      Choice b. Run the codemod with the optional arguments. (For named arguments,
 #      do not include `=` between the flag and the value. Positional arguments must
@@ -40,7 +40,7 @@ FIXTURE=${@:$OPTIND:1}
 
 if [ ! $FIXTURE ]
 then
-  echo "ERROR: Please specify the fixture name (e.g. ember-container-query-typescript).\n"
+  echo "ERROR: Please specify the fixture name (e.g. ember-container-query-glint).\n"
   exit 1
 elif [ ! -d "tests/fixtures/$FIXTURE/input" ]
 then
