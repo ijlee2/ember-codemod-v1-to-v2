@@ -35,30 +35,27 @@ function copyToAddon(options) {
 function moveToAddonAndTestApp(options) {
   const { locations, packages, projectRoot } = options;
 
-  const files = packages.addon.hasTypeScript
-    ? [
-        '.eslintignore',
-        '.eslintrc.js',
-        '.gitignore',
-        '.prettierignore',
-        '.prettierrc.js',
-        '.stylelintrc.js',
-        '.template-lintrc.js',
-        'package.json',
-        'tsconfig.json',
-      ]
-    : [
-        '.eslintignore',
-        '.eslintrc.js',
-        '.gitignore',
-        '.prettierignore',
-        '.prettierrc.js',
-        '.stylelintrc.js',
-        '.template-lintrc.js',
-        'package.json',
-      ];
+  const files = new Set([
+    '.eslintignore',
+    '.eslintrc.cjs',
+    '.eslintrc.js',
+    '.gitignore',
+    '.prettierignore',
+    '.prettierrc.cjs',
+    '.prettierrc.js',
+    '.stylelintignore',
+    '.stylelintrc.cjs',
+    '.stylelintrc.js',
+    '.template-lintrc.cjs',
+    '.template-lintrc.js',
+    'package.json',
+  ]);
 
-  const filePaths = glob.sync(globPattern(files), {
+  if (packages.addon.hasTypeScript) {
+    files.add('tsconfig.json');
+  }
+
+  const filePaths = glob.sync(globPattern([...files]), {
     cwd: projectRoot,
   });
 

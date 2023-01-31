@@ -1,4 +1,4 @@
-import babel from '@rollup/plugin-babel';
+import { babel } from '@rollup/plugin-babel';
 import copy from 'rollup-plugin-copy';
 import { Addon } from '@embroider/addon-dev/rollup';
 
@@ -15,12 +15,12 @@ export default {
   plugins: [
     // These are the modules that users should be able to import from your
     // addon. Anything not listed here may get optimized away.
-    addon.publicEntrypoints([<%= context.addon.publicEntrypoints.map((filePath) => `'${filePath}'`).join(', ') %>]),
+    addon.publicEntrypoints(['components/container-query.js', 'helpers/aspect-ratio.js', 'helpers/height.js', 'helpers/width.js', 'modifiers/container-query.js']),
 
     // These are the modules that should get reexported into the traditional
     // "app" tree. Things in here should also be in publicEntrypoints above, but
     // not everything in publicEntrypoints necessarily needs to go here.
-    addon.appReexports([<%= context.addon.appReexports.map((filePath) => `'${filePath}'`).join(', ') %>]),
+    addon.appReexports(['components/container-query.js', 'helpers/aspect-ratio.js', 'helpers/cq-aspect-ratio.js', 'helpers/cq-height.js', 'helpers/cq-width.js', 'helpers/height.js', 'helpers/width.js', 'modifiers/container-query.js']),
 
     // Follow the V2 Addon rules about dependencies. Your code can import from
     // `dependencies` and `peerDependencies` as well as standard Ember-provided

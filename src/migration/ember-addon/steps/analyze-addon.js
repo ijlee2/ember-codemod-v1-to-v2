@@ -47,7 +47,8 @@ function getPublicEntrypoints(options) {
     })
     .map((filePath) => {
       return filePath.replace(/ts$/, 'js');
-    });
+    })
+    .sort();
 }
 
 export function analyzeAddon(options) {

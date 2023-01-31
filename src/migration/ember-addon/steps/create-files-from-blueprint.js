@@ -30,10 +30,7 @@ function getFilesToSkip(options) {
 
   const files = new Set();
 
-  if (packages.addon.hasTypeScript) {
-    files.add('__addonLocation__/rollup.config.js');
-  } else {
-    files.add('__addonLocation__/rollup.config.mjs');
+  if (!packages.addon.hasTypeScript) {
     files.add('__addonLocation__/unpublished-development-types/index.d.ts');
     files.add('__testAppLocation__/types/global.d.ts');
   }
