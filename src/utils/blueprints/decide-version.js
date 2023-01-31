@@ -20,7 +20,18 @@ export function decideVersion(packageName, options) {
   const { packages } = options;
 
   const installedVersion = packages.addon.dependencies.get(packageName);
-  const latestVersion = `^${latestVersions.get(packageName)}`;
 
-  return installedVersion ?? latestVersion;
+  if (installedVersion) {
+    return installedVersion;
+  }
+
+  const latestVersion = latestVersions.get(packageName);
+
+  if (!latestVersion) {
+    throw new RangeError(
+      `ERROR: The latest version of \`${packageName}\` is unknown.\n`
+    );
+  }
+
+  return `^${latestVersion}`;
 }
