@@ -76,7 +76,9 @@ function updateDevDependencies(packageJson, options) {
   packageJson['devDependencies'] = convertToObject(devDependencies);
 }
 
-function updateOtherFields(packageJson) {
+function updateOtherFields(packageJson, options) {
+  const { packages } = options;
+
   packageJson['ember-addon'] = {
     'app-js': {},
     main: 'addon-main.cjs',
@@ -84,13 +86,30 @@ function updateOtherFields(packageJson) {
     version: 2,
   };
 
-  packageJson['exports'] = {
-    '.': './dist/index.js',
-    './*': './dist/*.js',
-    './addon-main.js': './addon-main.cjs',
-  };
+  packageJson['exports'] = packages.addon.hasTypeScript
+    ? {
+        '.': './dist/index.js',
+        './*': {
+          default: './dist/*.js',
+          types: './dist/*.d.ts',
+        },
+        './addon-main.js': './addon-main.cjs',
+      }
+    : {
+        '.': './dist/index.js',
+        './*': './dist/*.js',
+        './addon-main.js': './addon-main.cjs',
+      };
 
   packageJson['files'] = ['addon-main.cjs', 'dist'];
+
+  if (packages.addon.hasTypeScript) {
+    packageJson['typesVersions'] = {
+      '*': {
+        '*': ['dist/*'],
+      },
+    };
+  }
 }
 
 function updateScripts(packageJson) {
@@ -117,7 +136,7 @@ export function updateAddonPackageJson(options) {
   updateDependencies(packageJson, options);
   updateDevDependencies(packageJson, options);
   updateScripts(packageJson);
-  updateOtherFields(packageJson);
+  updateOtherFields(packageJson, options);
 
   const newFile = JSON.stringify(packageJson, null, 2) + '\n';
 
