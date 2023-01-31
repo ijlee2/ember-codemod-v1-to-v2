@@ -11,5 +11,5 @@ test('utils | blueprints | decide-version > package is installed', function () {
 test('utils | blueprints | decide-version > package is not installed', function () {
   const version = decideVersion('rollup', options);
 
-  assert.strictEqual(version, '^3.10.0');
+  assert.strictEqual(version, '^3.12.0');
 });
