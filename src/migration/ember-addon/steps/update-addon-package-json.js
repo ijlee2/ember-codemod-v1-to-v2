@@ -79,7 +79,7 @@ function updateDevDependencies(packageJson, options) {
 function updateOtherFields(packageJson) {
   packageJson['ember-addon'] = {
     'app-js': {},
-    main: 'addon-main.js',
+    main: 'addon-main.cjs',
     type: 'addon',
     version: 2,
   };
@@ -87,10 +87,10 @@ function updateOtherFields(packageJson) {
   packageJson['exports'] = {
     '.': './dist/index.js',
     './*': './dist/*.js',
-    './addon-main.js': './addon-main.js',
+    './addon-main.js': './addon-main.cjs',
   };
 
-  packageJson['files'] = ['addon-main.js', 'dist'];
+  packageJson['files'] = ['addon-main.cjs', 'dist'];
 }
 
 function updateScripts(packageJson) {
