@@ -57,4 +57,4 @@ cp -r "tests/fixtures/$FIXTURE/input" "tests/fixtures/$FIXTURE/output"
   --test-app-location=$TEST_APP_LOCATION \
   --test-app-name=$TEST_APP_NAME
 
-# echo "SUCCESS: Updated the output of $FIXTURE.\n"
+echo "SUCCESS: Updated the output of $FIXTURE.\n"
