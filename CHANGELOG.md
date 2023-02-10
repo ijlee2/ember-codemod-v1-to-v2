@@ -1,3 +1,15 @@
+## 0.3.2 (2023-02-10)
+
+### Bug Fix
+* [#17](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/17) Documented the case of a scoped package ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#18](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/18) Installed eslint-plugin-n and eslint-plugin-import. Updated prettier. ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.3.1 (2023-01-31)
 
 ### Bug Fix
