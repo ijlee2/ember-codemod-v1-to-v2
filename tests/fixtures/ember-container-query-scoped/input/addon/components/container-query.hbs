@@ -1,0 +1,21 @@
+{{! @glint-ignore: ember-element-helper needs to provide Glint signature }}
+{{#let (element this.tagName) as |Tag|}}
+  <Tag
+    class="container-query"
+    data-test-container-query
+    {{container-query
+      dataAttributePrefix=@dataAttributePrefix
+      debounce=@debounce
+      features=@features
+      onQuery=this.updateState
+    }}
+    ...attributes
+  >
+    {{yield
+      (hash
+        dimensions=this.dimensions
+        features=this.queryResults
+      )
+    }}
+  </Tag>
+{{/let}}
