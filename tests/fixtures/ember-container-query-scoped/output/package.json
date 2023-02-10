@@ -6,7 +6,7 @@
   "license": "MIT",
   "author": "",
   "workspaces": [
-    "@ijlee2/ember-container-query",
+    "ember-container-query",
     "test-app"
   ],
   "scripts": {

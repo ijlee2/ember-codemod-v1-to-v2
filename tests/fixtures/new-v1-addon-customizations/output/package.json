@@ -6,8 +6,8 @@
   "license": "MIT",
   "author": "",
   "workspaces": [
-    "new-v1-addon",
-    "demo-app-for-new-v1-addon"
+    "packages/new-v1-addon",
+    "demo-app"
   ],
   "scripts": {
     "build": "yarn workspace new-v1-addon run build",
