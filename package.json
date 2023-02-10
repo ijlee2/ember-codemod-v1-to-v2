@@ -29,8 +29,8 @@
   },
   "scripts": {
     "changelog": "lerna-changelog",
-    "lint": "eslint . --cache --ext=.cjs,.js",
-    "lint:fix": "eslint . --ext=.cjs,.js --fix",
+    "lint": "eslint . --cache",
+    "lint:fix": "eslint . --fix",
     "start": "node ./src/index.js",
     "test": "mt tests --quiet"
   },
@@ -56,11 +56,13 @@
     "@sondr3/minitest": "^0.1.1",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "fixturify": "^3.0.0",
     "lerna-changelog": "^2.2.0",
-    "prettier": "^2.8.3"
+    "prettier": "^2.8.4"
   },
   "engines": {
     "node": ">= 16"
