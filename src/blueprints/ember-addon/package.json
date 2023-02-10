@@ -6,8 +6,8 @@
   "license": "MIT",
   "author": "",
   "workspaces": [
-    "<%= options.packages.addon.name %>",
-    "<%= options.packages.testApp.name %>"
+    "<%= options.locations.addon %>",
+    "<%= options.locations.testApp %>"
   ],
   "scripts": {
     "build": "npm run build --workspace <%= options.packages.addon.name %>",
@@ -31,8 +31,8 @@
   "license": "MIT",
   "author": "",
   "workspaces": [
-    "<%= options.packages.addon.name %>",
-    "<%= options.packages.testApp.name %>"
+    "<%= options.locations.addon %>",
+    "<%= options.locations.testApp %>"
   ],
   "scripts": {
     "build": "pnpm --filter <%= options.packages.addon.name %> build",
@@ -56,8 +56,8 @@
   "license": "MIT",
   "author": "",
   "workspaces": [
-    "<%= options.packages.addon.name %>",
-    "<%= options.packages.testApp.name %>"
+    "<%= options.locations.addon %>",
+    "<%= options.locations.testApp %>"
   ],
   "scripts": {
     "build": "yarn workspace <%= options.packages.addon.name %> run build",

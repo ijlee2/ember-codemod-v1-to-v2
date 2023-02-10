@@ -6,8 +6,8 @@
   "license": "MIT",
   "author": "",
   "workspaces": [
-    "ember-container-query",
-    "demo-app-for-ember-container-query"
+    "packages/ember-container-query",
+    "demo-app"
   ],
   "scripts": {
     "build": "yarn workspace ember-container-query run build",

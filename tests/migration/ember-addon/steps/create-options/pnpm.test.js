@@ -4,7 +4,7 @@ import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 test('migration | ember-addon | steps | create-options > pnpm', function () {
   const codemodOptions = {
     addonLocation: undefined,
-    projectRoot: 'tmp/new-v1-addon-javascript',
+    projectRoot: 'tmp/new-v1-addon-pnpm',
     testAppLocation: undefined,
     testAppName: undefined,
   };
@@ -57,6 +57,6 @@ test('migration | ember-addon | steps | create-options > pnpm', function () {
         name: 'test-app',
       },
     },
-    projectRoot: 'tmp/new-v1-addon-javascript',
+    projectRoot: 'tmp/new-v1-addon-pnpm',
   });
 });

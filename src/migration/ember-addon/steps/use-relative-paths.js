@@ -12,21 +12,22 @@ function normalizeRelativePath(relativePath) {
 }
 
 function updateFile(oldFile, { filePath, projectName, projectRoot }) {
-  const regex = new RegExp(`\\b${projectName}/(.*/)*(.*)\\b`, 'g');
+  const regex = new RegExp(`(?:'|")(${projectName}/(.*/)*(.*))(?:'|")`, 'g');
   const matchResults = [...oldFile.matchAll(regex)];
 
   let newFile = oldFile;
 
   matchResults.forEach((matchResult) => {
-    const [magicImportPath, remainingDirectories, fileName] = matchResult;
+    // eslint-disable-next-line no-unused-vars
+    const [_, oldPath, remainingDirectories, fileName] = matchResult;
 
     const from = dirname(filePath);
     const to = join(projectRoot, remainingDirectories);
 
     const relativePath = join(relative(from, to), fileName);
-    const trueImportPath = normalizeRelativePath(relativePath);
+    const newPath = normalizeRelativePath(relativePath);
 
-    newFile = newFile.replace(magicImportPath, trueImportPath);
+    newFile = newFile.replace(oldPath, newPath);
   });
 
   return newFile;

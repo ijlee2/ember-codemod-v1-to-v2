@@ -1,19 +1,13 @@
 import { createOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { codemodOptions } from '../../../../helpers/shared-test-setups/customizations.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | steps | create-options > customizations', function () {
-  const codemodOptions = {
-    addonLocation: 'packages/new-v1-addon',
-    projectRoot: 'tmp/new-v1-addon-customizations',
-    testAppLocation: 'demo-app',
-    testAppName: 'demo-app-for-new-v1-addon',
-  };
-
   const inputProject = {
     'package.json': JSON.stringify(
       {
-        name: 'new-v1-addon',
-        version: '0.0.0',
+        name: 'ember-container-query',
+        version: '3.2.0',
         dependencies: {
           'ember-cli-babel': '^7.26.11',
           'ember-cli-htmlbars': '^6.1.1',
@@ -33,7 +27,7 @@ test('migration | ember-addon | steps | create-options > customizations', functi
 
   assert.deepEqual(createOptions(codemodOptions), {
     locations: {
-      addon: 'packages/new-v1-addon',
+      addon: 'packages/ember-container-query',
       testApp: 'demo-app',
     },
     packageManager: {
@@ -50,13 +44,13 @@ test('migration | ember-addon | steps | create-options > customizations', functi
         hasGlint: false,
         hasTypeScript: false,
         isV1Addon: true,
-        name: 'new-v1-addon',
-        version: '0.0.0',
+        name: 'ember-container-query',
+        version: '3.2.0',
       },
       testApp: {
-        name: 'demo-app-for-new-v1-addon',
+        name: 'demo-app-for-ember-container-query',
       },
     },
-    projectRoot: 'tmp/new-v1-addon-customizations',
+    projectRoot: 'tmp/ember-container-query-customizations',
   });
 });

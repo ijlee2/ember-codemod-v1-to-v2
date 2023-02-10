@@ -1,0 +1,26 @@
+{
+  "name": "@ijlee2/ember-container-query",
+  "version": "3.2.0",
+  "private": true,
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "workspaces": [
+    "ember-container-query",
+    "test-app"
+  ],
+  "scripts": {
+    "build": "yarn workspace @ijlee2/ember-container-query run build",
+    "lint": "yarn workspaces run lint",
+    "lint:fix": "yarn workspaces run lint:fix",
+    "prepare": "yarn build",
+    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start:addon": "yarn workspace @ijlee2/ember-container-query run start",
+    "start:test-app": "yarn workspace test-app run start",
+    "test": "yarn workspaces run test"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "prettier": "^2.8.1"
+  }
+}
