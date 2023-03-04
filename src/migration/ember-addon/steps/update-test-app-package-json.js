@@ -10,16 +10,17 @@ function moveDependenciesToDevDependencies(packageJson, options) {
   const dependencies = convertToMap(packageJson['dependencies']);
   const devDependencies = convertToMap(packageJson['devDependencies']);
 
-  const packagesToMove = packages.addon.hasTypeScript
-    ? [
-        'ember-auto-import',
-        'ember-cli-babel',
-        'ember-cli-htmlbars',
-        'ember-cli-typescript',
-      ]
-    : ['ember-auto-import', 'ember-cli-babel', 'ember-cli-htmlbars'];
+  const packagesToMove = new Set([
+    'ember-auto-import',
+    'ember-cli-babel',
+    'ember-cli-htmlbars',
+  ]);
 
-  packagesToMove.forEach((packageName) => {
+  if (packages.addon.hasTypeScript) {
+    packagesToMove.add('ember-cli-typescript');
+  }
+
+  [...packagesToMove].forEach((packageName) => {
     const version = decideVersion(packageName, options);
 
     devDependencies.set(packageName, version);

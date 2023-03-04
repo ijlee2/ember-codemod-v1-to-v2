@@ -46,28 +46,23 @@ function updateDevDependencies(packageJson, options) {
   */
   devDependencies.clear();
 
-  const packagesToInstall = packages.addon.hasTypeScript
-    ? [
-        '@babel/core',
-        '@babel/plugin-proposal-class-properties',
-        '@babel/plugin-proposal-decorators',
-        '@babel/preset-typescript',
-        '@embroider/addon-dev',
-        'rollup',
-        'rollup-plugin-copy',
-        'rollup-plugin-ts',
-      ]
-    : [
-        '@babel/core',
-        '@babel/plugin-proposal-class-properties',
-        '@babel/plugin-proposal-decorators',
-        '@embroider/addon-dev',
-        '@rollup/plugin-babel',
-        'rollup',
-        'rollup-plugin-copy',
-      ];
+  const packagesToInstall = new Set([
+    '@babel/core',
+    '@babel/plugin-proposal-class-properties',
+    '@babel/plugin-proposal-decorators',
+    '@embroider/addon-dev',
+    '@rollup/plugin-babel',
+    'rollup',
+    'rollup-plugin-copy',
+  ]);
 
-  packagesToInstall.forEach((packageName) => {
+  if (packages.addon.hasTypeScript) {
+    packagesToInstall.add('@babel/preset-typescript');
+    packagesToInstall.add('rollup-plugin-ts');
+    packagesToInstall.delete('@rollup/plugin-babel');
+  }
+
+  [...packagesToInstall].sort().forEach((packageName) => {
     const version = decideVersion(packageName, options);
 
     devDependencies.set(packageName, version);
@@ -86,20 +81,22 @@ function updateOtherFields(packageJson, options) {
     version: 2,
   };
 
-  packageJson['exports'] = packages.addon.hasTypeScript
-    ? {
-        '.': './dist/index.js',
-        './*': {
-          types: './dist/*.d.ts',
-          default: './dist/*.js',
-        },
-        './addon-main.js': './addon-main.cjs',
-      }
-    : {
-        '.': './dist/index.js',
-        './*': './dist/*.js',
-        './addon-main.js': './addon-main.cjs',
-      };
+  if (packages.addon.hasTypeScript) {
+    packageJson['exports'] = {
+      '.': './dist/index.js',
+      './*': {
+        types: './dist/*.d.ts',
+        default: './dist/*.js',
+      },
+      './addon-main.js': './addon-main.cjs',
+    };
+  } else {
+    packageJson['exports'] = {
+      '.': './dist/index.js',
+      './*': './dist/*.js',
+      './addon-main.js': './addon-main.cjs',
+    };
+  }
 
   packageJson['files'] = ['addon-main.cjs', 'dist'];
 
