@@ -1,4 +1,4 @@
-import glob from 'glob';
+import { globSync } from 'glob';
 
 import {
   copyFiles,
@@ -20,7 +20,7 @@ function copyToAddon(options) {
 
   const files = ['LICENSE.md', 'README.md'];
 
-  const filePaths = glob.sync(globPattern(files), {
+  const filePaths = globSync(globPattern(files), {
     cwd: projectRoot,
   });
 
@@ -55,7 +55,7 @@ function moveToAddonAndTestApp(options) {
     files.add('tsconfig.json');
   }
 
-  const filePaths = glob.sync(globPattern([...files]), {
+  const filePaths = globSync(globPattern([...files]), {
     cwd: projectRoot,
   });
 
@@ -86,7 +86,7 @@ function moveToTestApp(options) {
     'testem.js',
   ];
 
-  const filePaths = glob.sync(globPattern(files), {
+  const filePaths = globSync(globPattern(files), {
     cwd: projectRoot,
   });
 
@@ -103,7 +103,7 @@ function removeFromProjectRoot(options) {
 
   const files = ['.npmignore', 'index.js'];
 
-  const filePaths = glob.sync(globPattern(files), {
+  const filePaths = globSync(globPattern(files), {
     cwd: projectRoot,
   });
 

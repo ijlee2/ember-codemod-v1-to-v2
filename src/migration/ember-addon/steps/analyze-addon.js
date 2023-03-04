@@ -1,4 +1,4 @@
-import glob from 'glob';
+import { globSync } from 'glob';
 
 import { decideVersion } from '../../../utils/blueprints.js';
 import { renameDirectory } from '../../../utils/files.js';
@@ -6,16 +6,18 @@ import { renameDirectory } from '../../../utils/files.js';
 function getAppReexports(options) {
   const { projectRoot } = options;
 
-  const filePaths = glob.sync('app/**/*.js', {
+  const filePaths = globSync('app/**/*.js', {
     cwd: projectRoot,
   });
 
-  return filePaths.map((filePath) => {
-    return renameDirectory(filePath, {
-      from: 'app',
-      to: '',
-    });
-  });
+  return filePaths
+    .map((filePath) => {
+      return renameDirectory(filePath, {
+        from: 'app',
+        to: '',
+      });
+    })
+    .sort();
 }
 
 function getProjectRootDevDependencies(options) {
@@ -28,7 +30,7 @@ function getProjectRootDevDependencies(options) {
 function getPublicEntrypoints(options) {
   const { projectRoot } = options;
 
-  const filePaths = glob.sync('{addon,addon-test-support}/**/*.{js,ts}', {
+  const filePaths = globSync('{addon,addon-test-support}/**/*.{js,ts}', {
     cwd: projectRoot,
   });
 
