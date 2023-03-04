@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import glob from 'glob';
+import { globSync } from 'glob';
 
 function analyzePackageJson(codemodOptions) {
   const { projectRoot } = codemodOptions;
@@ -51,7 +51,7 @@ function analyzePackageJson(codemodOptions) {
 function analyzePackageManager(codemodOptions) {
   const { projectRoot } = codemodOptions;
 
-  const lockFiles = glob.sync('{package-lock.json,pnpm-lock.yaml,yarn.lock}', {
+  const lockFiles = globSync('{package-lock.json,pnpm-lock.yaml,yarn.lock}', {
     cwd: projectRoot,
   });
 

@@ -1,14 +1,14 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import glob from 'glob';
+import { globSync } from 'glob';
 
 import { mapFilePaths, moveFiles } from '../../../utils/files.js';
 
 function moveTestsFolder(options) {
   const { locations, projectRoot } = options;
 
-  let filePaths = glob.sync('tests/dummy/**/*', {
+  let filePaths = globSync('tests/dummy/**/*', {
     cwd: projectRoot,
     dot: true,
     nodir: true,
@@ -21,7 +21,7 @@ function moveTestsFolder(options) {
 
   moveFiles(pathMapping, options);
 
-  filePaths = glob.sync('tests/**/*', {
+  filePaths = globSync('tests/**/*', {
     cwd: projectRoot,
     dot: true,
     ignore: 'tests/dummy/**/*',
@@ -43,7 +43,7 @@ function moveTypesFolder(options) {
     return;
   }
 
-  let filePaths = glob.sync('types/dummy/**/*', {
+  let filePaths = globSync('types/dummy/**/*', {
     cwd: projectRoot,
     dot: true,
     nodir: true,
@@ -56,7 +56,7 @@ function moveTypesFolder(options) {
 
   moveFiles(pathMapping, options);
 
-  filePaths = glob.sync('types/**/*', {
+  filePaths = globSync('types/**/*', {
     cwd: projectRoot,
     dot: true,
     ignore: 'types/dummy/**/*',
@@ -76,7 +76,7 @@ function renameDummy(options) {
 
   // File extensions had been specified, partly to encode assumptions
   // about Ember, and partly to avoid corrupting non-text files
-  const filePaths = glob.sync(`${locations.testApp}/**/*.{d.ts,html,js,ts}`, {
+  const filePaths = globSync(`${locations.testApp}/**/*.{d.ts,html,js,ts}`, {
     cwd: projectRoot,
     dot: true,
     nodir: true,

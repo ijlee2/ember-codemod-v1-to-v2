@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 
-import glob from 'glob';
+import { globSync } from 'glob';
 
 function normalizeRelativePath(relativePath) {
   if (!relativePath.startsWith('..')) {
@@ -38,7 +38,7 @@ function useRelativePathInAddonFolder(options) {
 
   // File extensions had been specified, partly to encode assumptions
   // about Ember, and partly to avoid corrupting non-text files
-  const filePaths = glob.sync('addon/**/*.{d.ts,js,ts}', {
+  const filePaths = globSync('addon/**/*.{d.ts,js,ts}', {
     cwd: projectRoot,
     dot: true,
     nodir: true,
@@ -63,7 +63,7 @@ function useRelativePathInTestsDummyFolder(options) {
 
   // File extensions had been specified, partly to encode assumptions
   // about Ember, and partly to avoid corrupting non-text files
-  const filePaths = glob.sync('tests/dummy/**/*.{d.ts,js,ts}', {
+  const filePaths = globSync('tests/dummy/**/*.{d.ts,js,ts}', {
     cwd: projectRoot,
     dot: true,
     nodir: true,

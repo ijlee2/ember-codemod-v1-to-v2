@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import glob from 'glob';
+import { globSync } from 'glob';
 
 import { processTemplate } from '../../../utils/blueprints.js';
 import { createFiles } from '../../../utils/files.js';
@@ -47,7 +47,7 @@ export function createFilesFromBlueprint(context, options) {
 
   const filesToSkip = getFilesToSkip(options);
 
-  const blueprintFilePaths = glob.sync('**/*', {
+  const blueprintFilePaths = globSync('**/*', {
     cwd: blueprintRoot,
     dot: true,
     ignore: filesToSkip,

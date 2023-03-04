@@ -1,11 +1,11 @@
-import glob from 'glob';
+import { globSync } from 'glob';
 
 import { mapFilePaths, moveFiles, removeFiles } from '../../../utils/files.js';
 
 function moveAddonFolder(options) {
   const { locations, projectRoot } = options;
 
-  const filePaths = glob.sync('addon/**/*', {
+  const filePaths = globSync('addon/**/*', {
     cwd: projectRoot,
     dot: true,
     nodir: true,
@@ -22,7 +22,7 @@ function moveAddonFolder(options) {
 function moveAddonTestSupportFolder(options) {
   const { locations, projectRoot } = options;
 
-  const filePaths = glob.sync('addon-test-support/**/*', {
+  const filePaths = globSync('addon-test-support/**/*', {
     cwd: projectRoot,
     dot: true,
     nodir: true,
@@ -39,7 +39,7 @@ function moveAddonTestSupportFolder(options) {
 function moveBlueprintsFolder(options) {
   const { locations, projectRoot } = options;
 
-  const filePaths = glob.sync('blueprints/**/*', {
+  const filePaths = globSync('blueprints/**/*', {
     cwd: projectRoot,
     dot: true,
     nodir: true,
@@ -56,7 +56,7 @@ function moveBlueprintsFolder(options) {
 function removeAppFolder(options) {
   const { projectRoot } = options;
 
-  const filePaths = glob.sync('app/**/*', {
+  const filePaths = globSync('app/**/*', {
     cwd: projectRoot,
     dot: true,
     nodir: true,
