@@ -20,13 +20,16 @@ function moveDependenciesToDevDependencies(packageJson, options) {
     packagesToMove.add('ember-cli-typescript');
   }
 
-  [...packagesToMove].sort().forEach((packageName) => {
-    const version = decideVersion(packageName, options);
+  [...packagesToMove]
+    .filter((packageName) => dependencies.has(packageName))
+    .sort()
+    .forEach((packageName) => {
+      const version = decideVersion(packageName, options);
 
-    devDependencies.set(packageName, version);
+      devDependencies.set(packageName, version);
 
-    dependencies.delete(packageName);
-  });
+      dependencies.delete(packageName);
+    });
 
   packageJson['dependencies'] = convertToObject(dependencies);
   packageJson['devDependencies'] = convertToObject(devDependencies);
