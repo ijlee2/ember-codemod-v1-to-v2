@@ -43,7 +43,7 @@ Step 5. Celebrate.
 
 <sup>1. Before running `ember-codemod-v1-to-v2`, consider [meeting the prerequisites](https://github.com/embroider-build/embroider/blob/v1.8.3/PORTING-ADDONS-TO-V2.md#part-3-prerequisites-for-v2-addon). You can run [`ember-codemod-pod-to-octane`](https://github.com/ijlee2/ember-codemod-pod-to-octane) to un-pod a v1 addon.</sup>
 
-<sup>2. Files such as `.eslintrc.js`, `.gitignore`, `babel.config.json` (addon only), `config/environment.js` (test-app only), `ember-cli-build.js` (test-app only), `package.json`, `rollup.config.js` (addon only), `tsconfig.json`, etc.</sup>
+<sup>2. Files such as `.eslintrc.js`, `.gitignore`, `babel.config.json` (addon only), `config/environment.js` (test-app only), `ember-cli-build.js` (test-app only), `package.json`, `rollup.config.mjs` (addon only), `tsconfig.json`, etc.</sup>
 
 
 ### Arguments
