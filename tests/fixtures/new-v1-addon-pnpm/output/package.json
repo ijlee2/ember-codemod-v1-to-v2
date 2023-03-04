@@ -5,10 +5,6 @@
   "repository": "",
   "license": "MIT",
   "author": "",
-  "workspaces": [
-    "new-v1-addon",
-    "test-app"
-  ],
   "scripts": {
     "build": "pnpm --filter new-v1-addon build",
     "lint": "pnpm --filter '*' lint",

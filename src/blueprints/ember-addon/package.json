@@ -30,10 +30,6 @@
   "repository": "",
   "license": "MIT",
   "author": "",
-  "workspaces": [
-    "<%= options.locations.addon %>",
-    "<%= options.locations.testApp %>"
-  ],
   "scripts": {
     "build": "pnpm --filter <%= options.packages.addon.name %> build",
     "lint": "pnpm --filter '*' lint",
