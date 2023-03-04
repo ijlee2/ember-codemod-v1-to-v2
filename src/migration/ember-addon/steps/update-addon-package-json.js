@@ -20,7 +20,7 @@ function updateDependencies(packageJson, options) {
 
   const packagesToInstall = ['@embroider/addon-shim'];
 
-  packagesToInstall.forEach((packageName) => {
+  packagesToInstall.sort().forEach((packageName) => {
     const version = decideVersion(packageName, options);
 
     dependencies.set(packageName, version);

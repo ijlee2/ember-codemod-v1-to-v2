@@ -20,7 +20,7 @@ function moveDependenciesToDevDependencies(packageJson, options) {
     packagesToMove.add('ember-cli-typescript');
   }
 
-  [...packagesToMove].forEach((packageName) => {
+  [...packagesToMove].sort().forEach((packageName) => {
     const version = decideVersion(packageName, options);
 
     devDependencies.set(packageName, version);
