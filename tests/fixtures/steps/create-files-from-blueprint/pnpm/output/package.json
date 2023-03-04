@@ -5,10 +5,6 @@
   "repository": "",
   "license": "MIT",
   "author": "",
-  "workspaces": [
-    "ember-container-query",
-    "test-app"
-  ],
   "scripts": {
     "build": "pnpm --filter ember-container-query build",
     "lint": "pnpm --filter '*' lint",
