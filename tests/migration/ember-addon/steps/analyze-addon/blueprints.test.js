@@ -5,14 +5,8 @@ import {
 } from '../../../../helpers/shared-test-setups/typescript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | analyze-addon > blueprints and test-support', function () {
+test('migration | ember-addon | steps | analyze-addon > blueprints', function () {
   const inputProject = {
-    'addon-test-support': {
-      components: {
-        'container-query.ts': '',
-      },
-      'index.ts': `export * from './components/container-query';\n`,
-    },
     blueprints: {
       'ember-container-query': {
         files: {
@@ -36,10 +30,7 @@ test('migration | ember-addon | steps | analyze-addon > blueprints and test-supp
     addon: {
       appReexports: [],
       publicAssets: [],
-      publicEntrypoints: [
-        'test-support/components/container-query.js',
-        'test-support/index.js',
-      ],
+      publicEntrypoints: [],
     },
     projectRoot: {
       devDependencies: {
