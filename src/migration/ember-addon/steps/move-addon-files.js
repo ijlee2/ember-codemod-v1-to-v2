@@ -53,6 +53,23 @@ function moveBlueprintsFolder(options) {
   moveFiles(pathMapping, options);
 }
 
+function movePublicFolder(options) {
+  const { locations, projectRoot } = options;
+
+  const filePaths = globSync('public/**/*', {
+    cwd: projectRoot,
+    dot: true,
+    nodir: true,
+  });
+
+  const pathMapping = mapFilePaths(filePaths, {
+    from: 'public',
+    to: `${locations.addon}/public`,
+  });
+
+  moveFiles(pathMapping, options);
+}
+
 function removeAppFolder(options) {
   const { projectRoot } = options;
 
@@ -69,5 +86,6 @@ export function moveAddonFiles(options) {
   moveAddonFolder(options);
   moveAddonTestSupportFolder(options);
   moveBlueprintsFolder(options);
+  movePublicFolder(options);
   removeAppFolder(options);
 }
