@@ -71,15 +71,38 @@ function updateDevDependencies(packageJson, options) {
   packageJson['devDependencies'] = convertToObject(devDependencies);
 }
 
-function updateOtherFields(packageJson, options) {
+function updateOtherFields(packageJson, context, options) {
   const { packages } = options;
+  const hasPublicAssets = context.addon.publicAssets.length > 0;
 
-  packageJson['ember-addon'] = {
-    'app-js': {},
-    main: 'addon-main.cjs',
-    type: 'addon',
-    version: 2,
-  };
+  if (hasPublicAssets) {
+    const publicAssetMapping = context.addon.publicAssets.reduce(
+      (accumulator, filePath) => {
+        const from = `./public/${filePath}`;
+        const to = `/${packages.addon.name}/${filePath}`;
+
+        accumulator[from] = to;
+
+        return accumulator;
+      },
+      {}
+    );
+
+    packageJson['ember-addon'] = {
+      'app-js': {},
+      main: 'addon-main.cjs',
+      'public-assets': publicAssetMapping,
+      type: 'addon',
+      version: 2,
+    };
+  } else {
+    packageJson['ember-addon'] = {
+      'app-js': {},
+      main: 'addon-main.cjs',
+      type: 'addon',
+      version: 2,
+    };
+  }
 
   if (packages.addon.hasTypeScript) {
     packageJson['exports'] = {
@@ -98,7 +121,11 @@ function updateOtherFields(packageJson, options) {
     };
   }
 
-  packageJson['files'] = ['addon-main.cjs', 'dist'];
+  if (hasPublicAssets) {
+    packageJson['files'] = ['addon-main.cjs', 'dist', 'public'];
+  } else {
+    packageJson['files'] = ['addon-main.cjs', 'dist'];
+  }
 
   if (packages.addon.hasTypeScript) {
     packageJson['typesVersions'] = {
@@ -123,7 +150,7 @@ function updateScripts(packageJson) {
   packageJson['scripts'] = convertToObject(scripts);
 }
 
-export function updateAddonPackageJson(options) {
+export function updateAddonPackageJson(context, options) {
   const { locations, projectRoot } = options;
 
   const oldPath = join(projectRoot, locations.addon, 'package.json');
@@ -133,7 +160,7 @@ export function updateAddonPackageJson(options) {
   updateDependencies(packageJson, options);
   updateDevDependencies(packageJson, options);
   updateScripts(packageJson);
-  updateOtherFields(packageJson, options);
+  updateOtherFields(packageJson, context, options);
 
   const newFile = JSON.stringify(packageJson, null, 2) + '\n';
 

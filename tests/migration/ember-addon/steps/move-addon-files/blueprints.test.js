@@ -9,14 +9,8 @@ import {
   test,
 } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | move-addon-files > blueprints and test-support', function () {
+test('migration | ember-addon | steps | move-addon-files > blueprints', function () {
   const inputProject = {
-    'addon-test-support': {
-      components: {
-        'container-query.ts': '',
-      },
-      'index.ts': `export * from './components/container-query';\n`,
-    },
     blueprints: {
       'ember-container-query': {
         files: {
@@ -49,14 +43,6 @@ test('migration | ember-addon | steps | move-addon-files > blueprints and test-s
             `};`,
             ``,
           ].join('\n'),
-        },
-      },
-      src: {
-        'test-support': {
-          components: {
-            'container-query.ts': '',
-          },
-          'index.ts': `export * from './components/container-query';\n`,
         },
       },
     },

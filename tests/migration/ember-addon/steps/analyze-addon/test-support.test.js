@@ -5,8 +5,15 @@ import {
 } from '../../../../helpers/shared-test-setups/typescript.js';
 import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
-test('migration | ember-addon | steps | analyze-addon > edge case (folders are missing)', function () {
-  const inputProject = {};
+test('migration | ember-addon | steps | analyze-addon > test-support', function () {
+  const inputProject = {
+    'addon-test-support': {
+      components: {
+        'container-query.ts': '',
+      },
+      'index.ts': `export * from './components/container-query';\n`,
+    },
+  };
 
   loadFixture(inputProject, codemodOptions);
 
@@ -14,7 +21,10 @@ test('migration | ember-addon | steps | analyze-addon > edge case (folders are m
     addon: {
       appReexports: [],
       publicAssets: [],
-      publicEntrypoints: [],
+      publicEntrypoints: [
+        'test-support/components/container-query.js',
+        'test-support/index.js',
+      ],
     },
     projectRoot: {
       devDependencies: {

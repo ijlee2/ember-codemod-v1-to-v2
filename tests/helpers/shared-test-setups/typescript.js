@@ -14,6 +14,7 @@ const context = {
       'helpers/width.js',
       'modifiers/container-query.js',
     ],
+    publicAssets: [],
     publicEntrypoints: [
       'components/container-query.js',
       'helpers/aspect-ratio.js',
