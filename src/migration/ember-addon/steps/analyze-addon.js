@@ -27,6 +27,25 @@ function getProjectRootDevDependencies(options) {
   };
 }
 
+function getPublicAssets(options) {
+  const { projectRoot } = options;
+
+  const filePaths = globSync('public/**/*', {
+    cwd: projectRoot,
+    dot: true,
+    nodir: true,
+  });
+
+  return filePaths
+    .map((filePath) => {
+      return renameDirectory(filePath, {
+        from: 'public',
+        to: '',
+      });
+    })
+    .sort();
+}
+
 function getPublicEntrypoints(options) {
   const { projectRoot } = options;
 
@@ -57,6 +76,7 @@ export function analyzeAddon(options) {
   return {
     addon: {
       appReexports: getAppReexports(options),
+      publicAssets: getPublicAssets(options),
       publicEntrypoints: getPublicEntrypoints(options),
     },
     projectRoot: {
