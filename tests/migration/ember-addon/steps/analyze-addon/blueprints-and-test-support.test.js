@@ -35,6 +35,7 @@ test('migration | ember-addon | steps | analyze-addon > blueprints and test-supp
   assert.deepEqual(analyzeAddon(options), {
     addon: {
       appReexports: [],
+      publicAssets: [],
       publicEntrypoints: [
         'test-support/components/container-query.js',
         'test-support/index.js',

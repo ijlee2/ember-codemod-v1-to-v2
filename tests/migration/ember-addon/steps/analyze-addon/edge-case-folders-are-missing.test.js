@@ -13,6 +13,7 @@ test('migration | ember-addon | steps | analyze-addon > edge case (folders are m
   assert.deepEqual(analyzeAddon(options), {
     addon: {
       appReexports: [],
+      publicAssets: [],
       publicEntrypoints: [],
     },
     projectRoot: {
