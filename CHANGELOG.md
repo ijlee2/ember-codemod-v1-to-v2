@@ -1,3 +1,20 @@
+## 0.4.0 (2023-03-06)
+
+### Bug Fix
+* [#22](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/22) Downstreamed changes from @embroider/addon-blueprint ([@ijlee2](https://github.com/ijlee2))
+* [#21](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/21) Move packages from dependencies to devDependencies only when the package exists  ([@ijlee2](https://github.com/ijlee2))
+
+### Enhancement
+* [#23](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/23) Accounted for public assets ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#20](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/20) Update dependencies to the latest version ([@ijlee2](https://github.com/ijlee2))
+* [#19](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/19) Chore(deps): Bump http-cache-semantics from 4.1.0 to 4.1.1 ([@dependabot[bot]](https://github.com/apps/dependabot))
+
+#### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.3.2 (2023-02-10)
 
 ### Bug Fix
