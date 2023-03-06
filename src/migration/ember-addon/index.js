@@ -34,7 +34,7 @@ export function migrateEmberAddon(codemodOptions) {
   createFilesFromBlueprint(context, options);
 
   // Fine-tune individual files
-  updateAddonPackageJson(options);
+  updateAddonPackageJson(context, options);
   updateAddonTsconfigJson(options);
   updateTestAppPackageJson(options);
   updateTestAppTsconfigJson(options);
