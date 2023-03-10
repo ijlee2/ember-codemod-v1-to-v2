@@ -1,12 +1,10 @@
-import { globSync } from 'glob';
-
 import { decideVersion } from '../../../utils/blueprints.js';
-import { renameDirectory } from '../../../utils/files.js';
+import { findFiles, renameDirectory } from '../../../utils/files.js';
 
 function getAppReexports(options) {
   const { projectRoot } = options;
 
-  const filePaths = globSync('app/**/*.js', {
+  const filePaths = findFiles('app/**/*.js', {
     cwd: projectRoot,
   });
 
@@ -30,10 +28,9 @@ function getProjectRootDevDependencies(options) {
 function getPublicAssets(options) {
   const { projectRoot } = options;
 
-  const filePaths = globSync('public/**/*', {
+  const filePaths = findFiles('public/**/*', {
     cwd: projectRoot,
-    dot: true,
-    nodir: true,
+    matchFilesOnly: true,
   });
 
   return filePaths
@@ -49,7 +46,7 @@ function getPublicAssets(options) {
 function getPublicEntrypoints(options) {
   const { projectRoot } = options;
 
-  const filePaths = globSync('{addon,addon-test-support}/**/*.{js,ts}', {
+  const filePaths = findFiles('{addon,addon-test-support}/**/*.{js,ts}', {
     cwd: projectRoot,
   });
 

@@ -1,14 +1,16 @@
-import { globSync } from 'glob';
-
-import { mapFilePaths, moveFiles, removeFiles } from '../../../utils/files.js';
+import {
+  findFiles,
+  mapFilePaths,
+  moveFiles,
+  removeFiles,
+} from '../../../utils/files.js';
 
 function moveAddonFolder(options) {
   const { locations, projectRoot } = options;
 
-  const filePaths = globSync('addon/**/*', {
+  const filePaths = findFiles('addon/**/*', {
     cwd: projectRoot,
-    dot: true,
-    nodir: true,
+    matchFilesOnly: true,
   });
 
   const pathMapping = mapFilePaths(filePaths, {
@@ -22,10 +24,9 @@ function moveAddonFolder(options) {
 function moveAddonTestSupportFolder(options) {
   const { locations, projectRoot } = options;
 
-  const filePaths = globSync('addon-test-support/**/*', {
+  const filePaths = findFiles('addon-test-support/**/*', {
     cwd: projectRoot,
-    dot: true,
-    nodir: true,
+    matchFilesOnly: true,
   });
 
   const pathMapping = mapFilePaths(filePaths, {
@@ -39,10 +40,9 @@ function moveAddonTestSupportFolder(options) {
 function moveBlueprintsFolder(options) {
   const { locations, projectRoot } = options;
 
-  const filePaths = globSync('blueprints/**/*', {
+  const filePaths = findFiles('blueprints/**/*', {
     cwd: projectRoot,
-    dot: true,
-    nodir: true,
+    matchFilesOnly: true,
   });
 
   const pathMapping = mapFilePaths(filePaths, {
@@ -56,10 +56,9 @@ function moveBlueprintsFolder(options) {
 function movePublicFolder(options) {
   const { locations, projectRoot } = options;
 
-  const filePaths = globSync('public/**/*', {
+  const filePaths = findFiles('public/**/*', {
     cwd: projectRoot,
-    dot: true,
-    nodir: true,
+    matchFilesOnly: true,
   });
 
   const pathMapping = mapFilePaths(filePaths, {
@@ -73,10 +72,9 @@ function movePublicFolder(options) {
 function removeAppFolder(options) {
   const { projectRoot } = options;
 
-  const filePaths = globSync('app/**/*', {
+  const filePaths = findFiles('app/**/*', {
     cwd: projectRoot,
-    dot: true,
-    nodir: true,
+    matchFilesOnly: true,
   });
 
   removeFiles(filePaths, options);

@@ -1,17 +1,14 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { globSync } from 'glob';
-
-import { mapFilePaths, moveFiles } from '../../../utils/files.js';
+import { findFiles, mapFilePaths, moveFiles } from '../../../utils/files.js';
 
 function moveTestsFolder(options) {
   const { locations, projectRoot } = options;
 
-  let filePaths = globSync('tests/dummy/**/*', {
+  let filePaths = findFiles('tests/dummy/**/*', {
     cwd: projectRoot,
-    dot: true,
-    nodir: true,
+    matchFilesOnly: true,
   });
 
   let pathMapping = mapFilePaths(filePaths, {
@@ -21,11 +18,10 @@ function moveTestsFolder(options) {
 
   moveFiles(pathMapping, options);
 
-  filePaths = globSync('tests/**/*', {
+  filePaths = findFiles('tests/**/*', {
     cwd: projectRoot,
-    dot: true,
-    ignore: 'tests/dummy/**/*',
-    nodir: true,
+    ignoreList: ['tests/dummy/**/*'],
+    matchFilesOnly: true,
   });
 
   pathMapping = mapFilePaths(filePaths, {
@@ -43,10 +39,9 @@ function moveTypesFolder(options) {
     return;
   }
 
-  let filePaths = globSync('types/dummy/**/*', {
+  let filePaths = findFiles('types/dummy/**/*', {
     cwd: projectRoot,
-    dot: true,
-    nodir: true,
+    matchFilesOnly: true,
   });
 
   let pathMapping = mapFilePaths(filePaths, {
@@ -56,11 +51,10 @@ function moveTypesFolder(options) {
 
   moveFiles(pathMapping, options);
 
-  filePaths = globSync('types/**/*', {
+  filePaths = findFiles('types/**/*', {
     cwd: projectRoot,
-    dot: true,
-    ignore: 'types/dummy/**/*',
-    nodir: true,
+    ignoreList: ['types/dummy/**/*'],
+    matchFilesOnly: true,
   });
 
   pathMapping = mapFilePaths(filePaths, {
@@ -76,10 +70,9 @@ function renameDummy(options) {
 
   // File extensions had been specified, partly to encode assumptions
   // about Ember, and partly to avoid corrupting non-text files
-  const filePaths = globSync(`${locations.testApp}/**/*.{d.ts,html,js,ts}`, {
+  const filePaths = findFiles(`${locations.testApp}/**/*.{d.ts,html,js,ts}`, {
     cwd: projectRoot,
-    dot: true,
-    nodir: true,
+    matchFilesOnly: true,
   });
 
   filePaths.forEach((filePath) => {
