@@ -1,3 +1,15 @@
+## 0.4.1 (2023-03-10)
+
+### Bug Fix
+* [#25](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/25) Removed the useRelativePaths step ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#24](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/24) Wrapped globSync and extracted blueprintRoot ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.4.0 (2023-03-06)
 
 ### Bug Fix
