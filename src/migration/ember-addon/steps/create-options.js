@@ -1,7 +1,26 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { globSync } from 'glob';
+import { findFiles, unionize } from '../../../utils/files.js';
+
+function validatePackageJson({ name, version }) {
+  if (!name) {
+    throw new SyntaxError('Package name is missing.');
+  }
+
+  if (name.includes('/')) {
+    // eslint-disable-next-line no-unused-vars
+    const [_scope, packageName] = name.split('/');
+
+    if (!packageName) {
+      throw new SyntaxError('Package name is missing.');
+    }
+  }
+
+  if (!version) {
+    throw new SyntaxError('Package version is missing.');
+  }
+}
 
 function analyzePackageJson(codemodOptions) {
   const { projectRoot } = codemodOptions;
@@ -20,13 +39,7 @@ function analyzePackageJson(codemodOptions) {
       version,
     } = JSON.parse(packageJsonFile);
 
-    if (!name) {
-      throw new SyntaxError('Package name is missing.');
-    }
-
-    if (!version) {
-      throw new SyntaxError('Package version is missing.');
-    }
+    validatePackageJson({ name, version });
 
     const projectDependencies = new Map([
       ...Object.entries(dependencies ?? {}),
@@ -51,11 +64,19 @@ function analyzePackageJson(codemodOptions) {
 function analyzePackageManager(codemodOptions) {
   const { projectRoot } = codemodOptions;
 
-  const lockFiles = globSync('{package-lock.json,pnpm-lock.yaml,yarn.lock}', {
+  const mapping = new Map([
+    ['package-lock.json', 'npm'],
+    ['pnpm-lock.yaml', 'pnpm'],
+    ['yarn.lock', 'yarn'],
+  ]);
+
+  const lockFiles = [...mapping.keys()];
+
+  const filePaths = findFiles(unionize(lockFiles), {
     cwd: projectRoot,
   });
 
-  if (lockFiles.length !== 1) {
+  if (filePaths.length !== 1) {
     console.warn('WARNING: Package manager is unknown. Yarn will be assumed.');
 
     return {
@@ -65,12 +86,12 @@ function analyzePackageManager(codemodOptions) {
     };
   }
 
-  const [lockFile] = lockFiles;
+  const packageManager = mapping.get(filePaths[0]);
 
   return {
-    isNpm: lockFile === 'package-lock.json',
-    isPnpm: lockFile === 'pnpm-lock.yaml',
-    isYarn: lockFile === 'yarn.lock',
+    isNpm: packageManager === 'npm',
+    isPnpm: packageManager === 'pnpm',
+    isYarn: packageManager === 'yarn',
   };
 }
 
@@ -81,13 +102,7 @@ function deriveAddonLocation(addonPackage) {
   }
 
   // eslint-disable-next-line no-unused-vars
-  const [scope, packageName] = addonPackage.name.split('/');
-
-  if (!packageName) {
-    throw new SyntaxError(
-      `ERROR: In package.json, the package name \`${addonPackage.name}\` is not valid.`
-    );
-  }
+  const [_scope, packageName] = addonPackage.name.split('/');
 
   return packageName;
 }

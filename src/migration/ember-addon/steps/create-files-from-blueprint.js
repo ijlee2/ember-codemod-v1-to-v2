@@ -1,20 +1,8 @@
 import { readFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { join } from 'node:path';
 
-import { globSync } from 'glob';
-
-import { processTemplate } from '../../../utils/blueprints.js';
-import { createFiles } from '../../../utils/files.js';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-function getBlueprintRoot() {
-  const codemodRoot = join(__dirname, '../../../..');
-
-  return join(codemodRoot, 'src/blueprints/ember-addon');
-}
+import { blueprintRoot, processTemplate } from '../../../utils/blueprints.js';
+import { createFiles, findFiles } from '../../../utils/files.js';
 
 function getFilePath(blueprintFilePath, options) {
   const { locations } = options;
@@ -43,15 +31,11 @@ function getFilesToSkip(options) {
 }
 
 export function createFilesFromBlueprint(context, options) {
-  const blueprintRoot = getBlueprintRoot();
-
   const filesToSkip = getFilesToSkip(options);
 
-  const blueprintFilePaths = globSync('**/*', {
+  const blueprintFilePaths = findFiles('**/*', {
     cwd: blueprintRoot,
-    dot: true,
-    ignore: filesToSkip,
-    nodir: true,
+    ignoreList: filesToSkip,
   });
 
   const fileMapping = new Map(

@@ -24,7 +24,7 @@ test('migration | ember-addon | steps | create-options > error handling (package
     (error) => {
       assert.strictEqual(
         error.message,
-        'ERROR: In package.json, the package name `@ijlee2/` is not valid.'
+        'ERROR: package.json is missing or is not valid. (Package name is missing.)\n'
       );
 
       return true;

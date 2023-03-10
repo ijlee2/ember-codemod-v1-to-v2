@@ -108,6 +108,9 @@ function updateOtherFields(packageJson, context, options) {
     packageJson['exports'] = {
       '.': './dist/index.js',
       './*': {
+        /*
+          This object has an order dependency. The `default` key must appear last.
+        */
         types: './dist/*.d.ts',
         default: './dist/*.js',
       },

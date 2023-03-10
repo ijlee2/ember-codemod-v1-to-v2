@@ -1,26 +1,18 @@
-import { globSync } from 'glob';
-
 import {
   copyFiles,
+  findFiles,
   mapFilePaths,
   moveFiles,
   removeFiles,
+  unionize,
 } from '../../../utils/files.js';
-
-function globPattern(files) {
-  if (files.length <= 1) {
-    return files.join(',');
-  }
-
-  return `{${files.join(',')}}`;
-}
 
 function copyToAddon(options) {
   const { locations, projectRoot } = options;
 
   const files = ['LICENSE.md', 'README.md'];
 
-  const filePaths = globSync(globPattern(files), {
+  const filePaths = findFiles(unionize(files), {
     cwd: projectRoot,
   });
 
@@ -55,7 +47,7 @@ function moveToAddonAndTestApp(options) {
     files.add('tsconfig.json');
   }
 
-  const filePaths = globSync(globPattern([...files]), {
+  const filePaths = findFiles(unionize([...files]), {
     cwd: projectRoot,
   });
 
@@ -86,7 +78,7 @@ function moveToTestApp(options) {
     'testem.js',
   ];
 
-  const filePaths = globSync(globPattern(files), {
+  const filePaths = findFiles(unionize(files), {
     cwd: projectRoot,
   });
 
@@ -103,7 +95,7 @@ function removeFromProjectRoot(options) {
 
   const files = ['.npmignore', 'index.js'];
 
-  const filePaths = globSync(globPattern(files), {
+  const filePaths = findFiles(unionize(files), {
     cwd: projectRoot,
   });
 
