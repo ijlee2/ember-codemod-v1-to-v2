@@ -8,4 +8,3 @@ export * from './update-addon-package-json.js';
 export * from './update-addon-tsconfig-json.js';
 export * from './update-test-app-package-json.js';
 export * from './update-test-app-tsconfig-json.js';
-export * from './use-relative-paths.js';

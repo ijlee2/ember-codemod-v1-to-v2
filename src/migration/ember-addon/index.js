@@ -9,7 +9,6 @@ import {
   updateAddonTsconfigJson,
   updateTestAppPackageJson,
   updateTestAppTsconfigJson,
-  useRelativePaths,
 } from './steps/index.js';
 
 export function migrateEmberAddon(codemodOptions) {
@@ -23,7 +22,6 @@ export function migrateEmberAddon(codemodOptions) {
 
   // Prepare for migration
   const context = analyzeAddon(options);
-  useRelativePaths(options);
 
   // Preserve code
   moveAddonFiles(options);
