@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { findFiles } from '../../../utils/files.js';
+import { findFiles, unionize } from '../../../utils/files.js';
 
 function analyzePackageJson(codemodOptions) {
   const { projectRoot } = codemodOptions;
@@ -51,11 +51,19 @@ function analyzePackageJson(codemodOptions) {
 function analyzePackageManager(codemodOptions) {
   const { projectRoot } = codemodOptions;
 
-  const lockFiles = findFiles('{package-lock.json,pnpm-lock.yaml,yarn.lock}', {
+  const mapping = new Map([
+    ['package-lock.json', 'npm'],
+    ['pnpm-lock.yaml', 'pnpm'],
+    ['yarn.lock', 'yarn'],
+  ]);
+
+  const lockFiles = [...mapping.keys()];
+
+  const filePaths = findFiles(unionize(lockFiles), {
     cwd: projectRoot,
   });
 
-  if (lockFiles.length !== 1) {
+  if (filePaths.length !== 1) {
     console.warn('WARNING: Package manager is unknown. Yarn will be assumed.');
 
     return {
@@ -65,12 +73,12 @@ function analyzePackageManager(codemodOptions) {
     };
   }
 
-  const [lockFile] = lockFiles;
+  const packageManager = mapping.get(filePaths[0]);
 
   return {
-    isNpm: lockFile === 'package-lock.json',
-    isPnpm: lockFile === 'pnpm-lock.yaml',
-    isYarn: lockFile === 'yarn.lock',
+    isNpm: packageManager === 'npm',
+    isPnpm: packageManager === 'pnpm',
+    isYarn: packageManager === 'yarn',
   };
 }
 

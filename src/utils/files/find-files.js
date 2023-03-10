@@ -18,3 +18,11 @@ export function findFiles(pattern, { cwd, ignoreList = [] }) {
 
   return filePaths;
 }
+
+export function unionize(files) {
+  if (files.length <= 1) {
+    return files.join(',');
+  }
+
+  return `{${files.join(',')}}`;
+}
