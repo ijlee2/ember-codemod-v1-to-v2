@@ -1,10 +1,10 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import musicRevenue from '../../data/music-revenue';
+import musicRevenue from 'test-app/data/music-revenue';
 import {
   createDataForVisualization,
   createSummariesForCaptions,
-} from '../../utils/components/widgets/widget-2';
+} from 'test-app/utils/components/widgets/widget-2';
 
 export default class WidgetsWidget2Component extends Component {
   @tracked data = [];

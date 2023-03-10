@@ -1,5 +1,5 @@
 import Application from '@ember/application';
-import config from './config/environment';
+import config from 'test-app/config/environment';
 import loadInitializers from 'ember-load-initializers';
 import Resolver from 'ember-resolver';
 

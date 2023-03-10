@@ -8,7 +8,6 @@ _Codemod to convert Ember addons to v2 addon format_
 ## Features
 
 - Scaffolds files according to [`@embroider/addon-blueprint`](https://github.com/embroider-build/addon-blueprint)
-- Switches Ember's "magic" import paths to relative paths
 - Preserves your code whenever possible
 - Supports [`ember-cli-typescript`](https://docs.ember-cli-typescript.com/) and [`glint`](https://typed-ember.gitbook.io/glint/)
 - Focuses on maintainability and extensibility
@@ -116,7 +115,7 @@ You can also look at another codemod called [`ember-addon-migrator`](https://git
 
 ## Contributing
 
-If you have an open-sourced addon that I can use as a test fixture, reach out to me on [Discord](https://discord.gg/emberjs) at `ijlee2`. Please star this project so that I can gauge its importance to you and the Ember community. ⭐
+If you have an open-sourced addon (v1 or v2) that I can use as a reference, reach out to me on [Discord](https://discord.gg/emberjs) at `ijlee2`. Please star this project so that I can gauge its importance to you and the Ember community. ⭐
 
 
 ## Credits

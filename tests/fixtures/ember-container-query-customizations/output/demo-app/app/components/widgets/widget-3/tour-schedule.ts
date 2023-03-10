@@ -1,6 +1,6 @@
 import templateOnlyComponent from '@ember/component/template-only';
 
-import type { Concert } from '../../../data/concert';
+import type { Concert } from 'demo-app-for-ember-container-query/data/concert';
 
 export interface WidgetsWidget3TourScheduleComponentSignature {
   Args: {

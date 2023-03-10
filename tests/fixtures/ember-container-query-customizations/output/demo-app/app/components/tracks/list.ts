@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
 
-import type { Track } from '../../data/album';
+import type { Track } from 'demo-app-for-ember-container-query/data/album';
 
 interface TracksListComponentSignature {
   Args: {
