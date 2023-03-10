@@ -3,6 +3,25 @@ import { join } from 'node:path';
 
 import { findFiles, unionize } from '../../../utils/files.js';
 
+function validatePackageJson({ name, version }) {
+  if (!name) {
+    throw new SyntaxError('Package name is missing.');
+  }
+
+  if (name.includes('/')) {
+    // eslint-disable-next-line no-unused-vars
+    const [_scope, packageName] = name.split('/');
+
+    if (!packageName) {
+      throw new SyntaxError('Package name is missing.');
+    }
+  }
+
+  if (!version) {
+    throw new SyntaxError('Package version is missing.');
+  }
+}
+
 function analyzePackageJson(codemodOptions) {
   const { projectRoot } = codemodOptions;
 
@@ -20,13 +39,7 @@ function analyzePackageJson(codemodOptions) {
       version,
     } = JSON.parse(packageJsonFile);
 
-    if (!name) {
-      throw new SyntaxError('Package name is missing.');
-    }
-
-    if (!version) {
-      throw new SyntaxError('Package version is missing.');
-    }
+    validatePackageJson({ name, version });
 
     const projectDependencies = new Map([
       ...Object.entries(dependencies ?? {}),
@@ -89,13 +102,7 @@ function deriveAddonLocation(addonPackage) {
   }
 
   // eslint-disable-next-line no-unused-vars
-  const [scope, packageName] = addonPackage.name.split('/');
-
-  if (!packageName) {
-    throw new SyntaxError(
-      `ERROR: In package.json, the package name \`${addonPackage.name}\` is not valid.`
-    );
-  }
+  const [_scope, packageName] = addonPackage.name.split('/');
 
   return packageName;
 }
