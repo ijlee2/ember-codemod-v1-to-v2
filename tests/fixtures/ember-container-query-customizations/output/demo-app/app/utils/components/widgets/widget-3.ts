@@ -1,4 +1,4 @@
-import type { Image } from '../../../data/concert';
+import type { Image } from 'demo-app-for-ember-container-query/data/concert';
 
 export type ContainerDimensions = {
   aspectRatio: number;

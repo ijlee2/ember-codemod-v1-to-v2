@@ -11,7 +11,7 @@ import Modifier from 'ember-modifier';
 import {
   COLOR_PALETTE,
   formatRevenue,
-} from '../utils/components/widgets/widget-2';
+} from 'test-app/utils/components/widgets/widget-2';
 
 const musicFormats = Object.keys(COLOR_PALETTE);
 const paletteColors = Object.values(COLOR_PALETTE);

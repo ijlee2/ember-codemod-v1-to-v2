@@ -1,12 +1,12 @@
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 
-import musicRevenue from '../../data/music-revenue';
-import type { Data, Summary } from '../../utils/components/widgets/widget-2';
+import musicRevenue from 'demo-app-for-ember-container-query/data/music-revenue';
+import type { Data, Summary } from 'demo-app-for-ember-container-query/utils/components/widgets/widget-2';
 import {
   createDataForVisualization,
   createSummariesForCaptions,
-} from '../../utils/components/widgets/widget-2';
+} from 'demo-app-for-ember-container-query/utils/components/widgets/widget-2';
 
 interface WidgetsWidget2ComponentSignature {}
 

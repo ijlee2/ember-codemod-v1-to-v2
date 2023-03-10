@@ -1,6 +1,6 @@
 import { ModifierLike } from '@glint/template';
 
-import type { Data } from '../utils/components/widgets/widget-2';
+import type { Data } from 'test-app/utils/components/widgets/widget-2';
 
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry {
