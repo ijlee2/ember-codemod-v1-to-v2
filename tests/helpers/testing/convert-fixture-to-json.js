@@ -3,12 +3,12 @@ import { join } from 'node:path';
 
 import { findFiles } from '../../../src/utils/files.js';
 
-function updateJson(json, { keys, projectRoot }) {
+function updateJson(json, { currentDirectory, keys }) {
   const key = keys.shift();
   const isFile = keys.length === 0;
 
   if (isFile) {
-    json[key] = readFileSync(join(projectRoot, key), 'utf8');
+    json[key] = readFileSync(join(currentDirectory, key), 'utf8');
 
     return;
   }
@@ -18,29 +18,29 @@ function updateJson(json, { keys, projectRoot }) {
   }
 
   updateJson(json[key], {
+    currentDirectory: join(currentDirectory, key),
     keys,
-    projectRoot: join(projectRoot, key),
   });
 }
 
-function createJson(filePaths = [], projectRoot) {
+function createJson(filePaths = [], currentDirectory) {
   const json = {};
 
   filePaths.forEach((filePath) => {
     const keys = filePath.split('/');
 
-    updateJson(json, { keys, projectRoot });
+    updateJson(json, { currentDirectory, keys });
   });
 
   return json;
 }
 
 export function convertFixtureToJson(projectRoot) {
-  const absolutePath = `${process.cwd()}/tests/fixtures/${projectRoot}`;
+  const currentDirectory = `${process.cwd()}/tests/fixtures/${projectRoot}`;
 
   const filePaths = findFiles('**/*', {
-    cwd: absolutePath,
+    cwd: currentDirectory,
   });
 
-  return createJson(filePaths, absolutePath);
+  return createJson(filePaths, currentDirectory);
 }
