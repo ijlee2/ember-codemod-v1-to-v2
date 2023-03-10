@@ -8,7 +8,6 @@ function moveTestsFolder(options) {
 
   let filePaths = findFiles('tests/dummy/**/*', {
     cwd: projectRoot,
-    matchFilesOnly: true,
   });
 
   let pathMapping = mapFilePaths(filePaths, {
@@ -21,7 +20,6 @@ function moveTestsFolder(options) {
   filePaths = findFiles('tests/**/*', {
     cwd: projectRoot,
     ignoreList: ['tests/dummy/**/*'],
-    matchFilesOnly: true,
   });
 
   pathMapping = mapFilePaths(filePaths, {
@@ -41,7 +39,6 @@ function moveTypesFolder(options) {
 
   let filePaths = findFiles('types/dummy/**/*', {
     cwd: projectRoot,
-    matchFilesOnly: true,
   });
 
   let pathMapping = mapFilePaths(filePaths, {
@@ -54,7 +51,6 @@ function moveTypesFolder(options) {
   filePaths = findFiles('types/**/*', {
     cwd: projectRoot,
     ignoreList: ['types/dummy/**/*'],
-    matchFilesOnly: true,
   });
 
   pathMapping = mapFilePaths(filePaths, {
@@ -72,7 +68,6 @@ function renameDummy(options) {
   // about Ember, and partly to avoid corrupting non-text files
   const filePaths = findFiles(`${locations.testApp}/**/*.{d.ts,html,js,ts}`, {
     cwd: projectRoot,
-    matchFilesOnly: true,
   });
 
   filePaths.forEach((filePath) => {

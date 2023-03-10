@@ -40,7 +40,6 @@ export function convertFixtureToJson(projectRoot) {
 
   const filePaths = findFiles('**/*', {
     cwd: absolutePath,
-    matchFilesOnly: true,
   });
 
   return createJson(filePaths, absolutePath);

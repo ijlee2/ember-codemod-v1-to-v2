@@ -48,7 +48,6 @@ export function createFilesFromBlueprint(context, options) {
   const blueprintFilePaths = findFiles('**/*', {
     cwd: blueprintRoot,
     ignoreList: filesToSkip,
-    matchFilesOnly: true,
   });
 
   const fileMapping = new Map(

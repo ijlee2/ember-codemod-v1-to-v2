@@ -10,7 +10,6 @@ function moveAddonFolder(options) {
 
   const filePaths = findFiles('addon/**/*', {
     cwd: projectRoot,
-    matchFilesOnly: true,
   });
 
   const pathMapping = mapFilePaths(filePaths, {
@@ -26,7 +25,6 @@ function moveAddonTestSupportFolder(options) {
 
   const filePaths = findFiles('addon-test-support/**/*', {
     cwd: projectRoot,
-    matchFilesOnly: true,
   });
 
   const pathMapping = mapFilePaths(filePaths, {
@@ -42,7 +40,6 @@ function moveBlueprintsFolder(options) {
 
   const filePaths = findFiles('blueprints/**/*', {
     cwd: projectRoot,
-    matchFilesOnly: true,
   });
 
   const pathMapping = mapFilePaths(filePaths, {
@@ -58,7 +55,6 @@ function movePublicFolder(options) {
 
   const filePaths = findFiles('public/**/*', {
     cwd: projectRoot,
-    matchFilesOnly: true,
   });
 
   const pathMapping = mapFilePaths(filePaths, {
@@ -74,7 +70,6 @@ function removeAppFolder(options) {
 
   const filePaths = findFiles('app/**/*', {
     cwd: projectRoot,
-    matchFilesOnly: true,
   });
 
   removeFiles(filePaths, options);

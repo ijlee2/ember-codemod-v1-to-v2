@@ -30,7 +30,6 @@ function getPublicAssets(options) {
 
   const filePaths = findFiles('public/**/*', {
     cwd: projectRoot,
-    matchFilesOnly: true,
   });
 
   return filePaths
