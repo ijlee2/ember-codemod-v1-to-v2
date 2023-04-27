@@ -44,7 +44,7 @@ export function createFilesFromBlueprint(context, options) {
 
       const blueprintFile = readFileSync(
         join(blueprintRoot, blueprintFilePath),
-        'utf8'
+        'utf8',
       );
 
       const file = processTemplate(blueprintFile, {
@@ -53,7 +53,7 @@ export function createFilesFromBlueprint(context, options) {
       });
 
       return [filePath, file];
-    })
+    }),
   );
 
   createFiles(fileMapping, options);

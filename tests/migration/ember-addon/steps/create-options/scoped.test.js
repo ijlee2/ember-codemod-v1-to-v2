@@ -21,7 +21,7 @@ test('migration | ember-addon | steps | create-options > scoped', function () {
         },
       },
       null,
-      2
+      2,
     ),
     'yarn.lock': '',
   };

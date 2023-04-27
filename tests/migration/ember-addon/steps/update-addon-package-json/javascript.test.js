@@ -13,11 +13,11 @@ import {
 
 test('migration | ember-addon | steps | update-addon-package-json > javascript', function () {
   const inputProject = convertFixtureToJson(
-    'steps/update-addon-package-json/javascript/input'
+    'steps/update-addon-package-json/javascript/input',
   );
 
   const outputProject = convertFixtureToJson(
-    'steps/update-addon-package-json/javascript/output'
+    'steps/update-addon-package-json/javascript/output',
   );
 
   loadFixture(inputProject, codemodOptions);

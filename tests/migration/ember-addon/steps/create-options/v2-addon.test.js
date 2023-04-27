@@ -12,7 +12,7 @@ test('migration | ember-addon | steps | create-options > v2 addon', function () 
         workspaces: ['ember-container-query', 'test-app'],
       },
       null,
-      2
+      2,
     ),
     'yarn.lock': '',
   };

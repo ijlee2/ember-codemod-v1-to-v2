@@ -24,7 +24,7 @@ test('migration | ember-addon | steps | create-options > npm', function () {
         },
       },
       null,
-      2
+      2,
     ),
     'package-lock.json': '',
   };

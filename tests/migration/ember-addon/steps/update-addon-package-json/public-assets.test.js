@@ -12,11 +12,11 @@ import {
 
 test('migration | ember-addon | steps | update-addon-package-json > public-assets', function () {
   const inputProject = convertFixtureToJson(
-    'steps/update-addon-package-json/public-assets/input'
+    'steps/update-addon-package-json/public-assets/input',
   );
 
   const outputProject = convertFixtureToJson(
-    'steps/update-addon-package-json/public-assets/output'
+    'steps/update-addon-package-json/public-assets/output',
   );
 
   const context = {

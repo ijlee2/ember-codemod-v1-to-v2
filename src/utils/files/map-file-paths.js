@@ -20,6 +20,6 @@ export function mapFilePaths(filePaths, directory) {
       const newPath = renameDirectory(filePath, { from, to });
 
       return [filePath, newPath];
-    })
+    }),
   );
 }

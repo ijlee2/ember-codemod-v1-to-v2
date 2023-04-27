@@ -18,7 +18,7 @@ test('migration | ember-addon | steps | create-options > customizations', functi
         },
       },
       null,
-      2
+      2,
     ),
     'yarn.lock': '',
   };

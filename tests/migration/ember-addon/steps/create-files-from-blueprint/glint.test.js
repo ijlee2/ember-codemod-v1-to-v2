@@ -15,7 +15,7 @@ test('migration | ember-addon | steps | create-files-from-blueprint > glint', fu
   const inputProject = {};
 
   const outputProject = convertFixtureToJson(
-    'steps/create-files-from-blueprint/glint/output'
+    'steps/create-files-from-blueprint/glint/output',
   );
 
   loadFixture(inputProject, codemodOptions);

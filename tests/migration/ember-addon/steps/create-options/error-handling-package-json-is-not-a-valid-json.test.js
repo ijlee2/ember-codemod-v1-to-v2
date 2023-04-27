@@ -17,10 +17,10 @@ test('migration | ember-addon | steps | create-options > error handling (package
     (error) => {
       assert.strictEqual(
         error.message,
-        'ERROR: package.json is missing or is not valid. (Unexpected token } in JSON at position 12)\n'
+        'ERROR: package.json is missing or is not valid. (Unexpected token } in JSON at position 12)\n',
       );
 
       return true;
-    }
+    },
   );
 });
