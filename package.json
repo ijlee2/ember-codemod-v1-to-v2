@@ -45,14 +45,14 @@
     }
   },
   "dependencies": {
-    "@babel/core": "^7.21.0",
-    "@babel/eslint-parser": "^7.19.1",
     "glob": "^9.2.1",
     "lodash.template": "^4.5.0",
     "strip-json-comments": "^5.0.0",
     "yargs": "^17.7.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/eslint-parser": "^7.19.1",
     "@sondr3/minitest": "^0.1.1",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
