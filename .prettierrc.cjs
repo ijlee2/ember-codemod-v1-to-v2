@@ -1,6 +1,14 @@
 'use strict';
 
 module.exports = {
-  printWidth: 80,
-  singleQuote: true,
+  overrides: [
+    {
+      files: '*.{cjs,js}',
+      options: {
+        printWidth: 80,
+        singleQuote: true,
+        trailingComma: 'all',
+      },
+    },
+  ],
 };
