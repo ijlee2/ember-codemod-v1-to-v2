@@ -20,8 +20,7 @@
     "test": "npm run test --workspaces --if-present"
   },
   "devDependencies": {
-    "concurrently": "<%= context.projectRoot.devDependencies['concurrently'] %>",
-    "prettier": "<%= context.projectRoot.devDependencies['prettier'] %>"
+    "concurrently": "<%= context.projectRoot.devDependencies['concurrently'] %>"
   }
 }<% } else if (options.packageManager.isPnpm) { %>{
   "name": "<%= options.packages.addon.name %>",
@@ -41,8 +40,7 @@
     "test": "pnpm --filter '*' test"
   },
   "devDependencies": {
-    "concurrently": "<%= context.projectRoot.devDependencies['concurrently'] %>",
-    "prettier": "<%= context.projectRoot.devDependencies['prettier'] %>"
+    "concurrently": "<%= context.projectRoot.devDependencies['concurrently'] %>"
   }
 }<% } else if (options.packageManager.isYarn) { %>{
   "name": "<%= options.packages.addon.name %>",
@@ -66,7 +64,6 @@
     "test": "yarn workspaces run test"
   },
   "devDependencies": {
-    "concurrently": "<%= context.projectRoot.devDependencies['concurrently'] %>",
-    "prettier": "<%= context.projectRoot.devDependencies['prettier'] %>"
+    "concurrently": "<%= context.projectRoot.devDependencies['concurrently'] %>"
   }
 }<% } %>

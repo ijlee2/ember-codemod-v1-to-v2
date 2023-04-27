@@ -21,7 +21,6 @@ function getAppReexports(options) {
 function getProjectRootDevDependencies(options) {
   return {
     concurrently: decideVersion('concurrently', options),
-    prettier: decideVersion('prettier', options),
   };
 }
 

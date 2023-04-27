@@ -10,7 +10,6 @@ const latestVersions = new Map([
   ['ember-auto-import', '2.6.3'],
   ['ember-cli-babel', '7.26.11'],
   ['ember-cli-htmlbars', '6.2.0'],
-  ['prettier', '2.8.8'],
   ['rollup', '3.21.0'],
   ['rollup-plugin-copy', '3.4.0'],
   ['rollup-plugin-ts', '3.2.0'],
