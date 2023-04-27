@@ -4,10 +4,10 @@ import { fileURLToPath } from 'node:url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-function getBlueprintRoot() {
+function getBlueprintsRoot() {
   const srcDirectory = join(__dirname, '../..');
 
-  return join(srcDirectory, 'blueprints/ember-addon');
+  return join(srcDirectory, 'blueprints');
 }
 
-export const blueprintRoot = getBlueprintRoot();
+export const blueprintsRoot = getBlueprintsRoot();
