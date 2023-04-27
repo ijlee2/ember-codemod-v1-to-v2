@@ -1,3 +1,15 @@
+## 0.5.0 (2023-04-27)
+
+### Enhancement
+* [#28](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/28) Updated blueprints for workspace root ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#27](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/27) Updated glob to v10 ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.4.1 (2023-03-10)
 
 ### Bug Fix
