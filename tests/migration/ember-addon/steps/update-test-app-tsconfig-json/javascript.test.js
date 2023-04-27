@@ -12,11 +12,11 @@ import {
 
 test('migration | ember-addon | steps | update-test-app-tsconfig-json > javascript', function () {
   const inputProject = convertFixtureToJson(
-    'steps/update-test-app-tsconfig-json/javascript/input'
+    'steps/update-test-app-tsconfig-json/javascript/input',
   );
 
   const outputProject = convertFixtureToJson(
-    'steps/update-test-app-tsconfig-json/javascript/output'
+    'steps/update-test-app-tsconfig-json/javascript/output',
   );
 
   loadFixture(inputProject, codemodOptions);

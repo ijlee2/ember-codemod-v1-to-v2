@@ -20,7 +20,7 @@ test('migration | ember-addon | steps | create-options > typescript', function (
         },
       },
       null,
-      2
+      2,
     ),
     'yarn.lock': '',
   };

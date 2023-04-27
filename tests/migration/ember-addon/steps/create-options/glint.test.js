@@ -21,7 +21,7 @@ test('migration | ember-addon | steps | create-options > glint', function () {
         },
       },
       null,
-      2
+      2,
     ),
     'yarn.lock': '',
   };

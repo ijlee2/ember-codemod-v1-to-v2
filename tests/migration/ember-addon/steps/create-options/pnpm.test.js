@@ -24,7 +24,7 @@ test('migration | ember-addon | steps | create-options > pnpm', function () {
         },
       },
       null,
-      2
+      2,
     ),
     'pnpm-lock.yaml': '',
   };

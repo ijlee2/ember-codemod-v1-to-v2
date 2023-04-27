@@ -22,10 +22,10 @@ test('utils | blueprints | decide-version > package is not installed and we forg
     (error) => {
       assert.strictEqual(
         error.message,
-        'ERROR: The latest version of `some-package-not-part-of-blueprint` is unknown.\n'
+        'ERROR: The latest version of `some-package-not-part-of-blueprint` is unknown.\n',
       );
 
       return true;
-    }
+    },
   );
 });

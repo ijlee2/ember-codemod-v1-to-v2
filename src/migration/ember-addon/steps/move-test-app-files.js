@@ -76,7 +76,7 @@ function renameDummy(options) {
 
     const newFile = oldFile.replace(
       new RegExp('dummy', 'g'),
-      packages.testApp.name
+      packages.testApp.name,
     );
 
     writeFileSync(oldPath, newFile, 'utf8');

@@ -85,7 +85,7 @@ function updateOtherFields(packageJson, context, options) {
 
         return accumulator;
       },
-      {}
+      {},
     );
 
     packageJson['ember-addon'] = {
@@ -147,7 +147,7 @@ function updateScripts(packageJson) {
   scripts.set('start', 'rollup --config --watch');
   scripts.set(
     'test',
-    "echo 'A v2 addon does not have tests, run tests in test-app'"
+    "echo 'A v2 addon does not have tests, run tests in test-app'",
   );
 
   packageJson['scripts'] = convertToObject(scripts);

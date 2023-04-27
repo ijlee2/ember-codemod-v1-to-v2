@@ -4,7 +4,7 @@
 #
 #  A. Purpose
 #
-#    Fix all test fixtures after updating the source code of ember-codemod-v1-to-v2. 
+#    Fix all test fixtures after updating the source code of ember-codemod-v1-to-v2.
 #
 #  B. Usage
 #

@@ -12,11 +12,11 @@ import {
 
 test('migration | ember-addon | steps | update-test-app-tsconfig-json > glint', function () {
   const inputProject = convertFixtureToJson(
-    'steps/update-test-app-tsconfig-json/glint/input'
+    'steps/update-test-app-tsconfig-json/glint/input',
   );
 
   const outputProject = convertFixtureToJson(
-    'steps/update-test-app-tsconfig-json/glint/output'
+    'steps/update-test-app-tsconfig-json/glint/output',
   );
 
   loadFixture(inputProject, codemodOptions);

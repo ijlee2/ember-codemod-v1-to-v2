@@ -31,7 +31,6 @@
     "changelog": "lerna-changelog",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --fix",
-    "start": "node ./src/index.js",
     "test": "mt tests --quiet"
   },
   "changelog": {
@@ -45,24 +44,24 @@
     }
   },
   "dependencies": {
-    "@babel/core": "^7.21.0",
-    "@babel/eslint-parser": "^7.19.1",
-    "glob": "^9.2.1",
+    "glob": "^10.2.2",
     "lodash.template": "^4.5.0",
     "strip-json-comments": "^5.0.0",
     "yargs": "^17.7.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/eslint-parser": "^7.21.3",
     "@sondr3/minitest": "^0.1.1",
-    "eslint": "^8.35.0",
-    "eslint-config-prettier": "^8.6.0",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "fixturify": "^3.0.0",
     "lerna-changelog": "^2.2.0",
-    "prettier": "^2.8.4"
+    "prettier": "^2.8.8"
   },
   "engines": {
     "node": ">= 16"

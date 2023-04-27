@@ -63,7 +63,7 @@ function updateOtherFields(packageJson, options) {
   delete packageJson['ember-addon'];
 
   packageJson['keywords'] = (packageJson['keywords'] ?? []).filter(
-    (keyword) => keyword !== 'ember-addon'
+    (keyword) => keyword !== 'ember-addon',
   );
 
   packageJson['name'] = packages.testApp.name;

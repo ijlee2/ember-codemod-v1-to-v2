@@ -9,7 +9,7 @@ test('migration | ember-addon | steps | create-options > error handling (package
         name: 'ember-container-query',
       },
       null,
-      2
+      2,
     ),
     'yarn.lock': '',
   };
@@ -23,10 +23,10 @@ test('migration | ember-addon | steps | create-options > error handling (package
     (error) => {
       assert.strictEqual(
         error.message,
-        'ERROR: package.json is missing or is not valid. (Package version is missing.)\n'
+        'ERROR: package.json is missing or is not valid. (Package version is missing.)\n',
       );
 
       return true;
-    }
+    },
   );
 });

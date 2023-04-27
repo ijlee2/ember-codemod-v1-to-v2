@@ -14,7 +14,7 @@ test('migration | ember-addon | steps | create-files-from-blueprint > npm', func
   const inputProject = {};
 
   const outputProject = convertFixtureToJson(
-    'steps/create-files-from-blueprint/npm/output'
+    'steps/create-files-from-blueprint/npm/output',
   );
 
   loadFixture(inputProject, codemodOptions);
