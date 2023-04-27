@@ -31,7 +31,6 @@
     "changelog": "lerna-changelog",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --fix",
-    "start": "node ./src/index.js",
     "test": "mt tests --quiet"
   },
   "changelog": {
