@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { findFiles } from '../../../src/utils/files.js';
+import { globSync } from 'glob';
 
 function updateJson(json, { currentDirectory, keys }) {
   const key = keys.shift();
@@ -38,8 +38,10 @@ function createJson(filePaths = [], currentDirectory) {
 export function convertFixtureToJson(projectRoot) {
   const currentDirectory = `${process.cwd()}/tests/fixtures/${projectRoot}`;
 
-  const filePaths = findFiles('**/*', {
+  const filePaths = globSync('**/*', {
     cwd: currentDirectory,
+    dot: true,
+    nodir: true,
   });
 
   return createJson(filePaths, currentDirectory);
