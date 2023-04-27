@@ -26,7 +26,6 @@ const context = {
   projectRoot: {
     devDependencies: {
       concurrently: '^7.6.0',
-      prettier: '^2.8.1',
     },
   },
 };
