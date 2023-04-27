@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { blueprintRoot, processTemplate } from '../../../utils/blueprints.js';
+import { blueprintsRoot, processTemplate } from '../../../utils/blueprints.js';
 import { createFiles, findFiles } from '../../../utils/files.js';
 
 function getFilePath(blueprintFilePath, options) {
@@ -32,9 +32,10 @@ function getFilesToSkip(options) {
 
 export function createFilesFromBlueprint(context, options) {
   const filesToSkip = getFilesToSkip(options);
+  const emberAddonBlueprintsRoot = join(blueprintsRoot, 'ember-addon');
 
   const blueprintFilePaths = findFiles('**/*', {
-    cwd: blueprintRoot,
+    cwd: emberAddonBlueprintsRoot,
     ignoreList: filesToSkip,
   });
 
@@ -43,7 +44,7 @@ export function createFilesFromBlueprint(context, options) {
       const filePath = getFilePath(blueprintFilePath, options);
 
       const blueprintFile = readFileSync(
-        join(blueprintRoot, blueprintFilePath),
+        join(emberAddonBlueprintsRoot, blueprintFilePath),
         'utf8',
       );
 

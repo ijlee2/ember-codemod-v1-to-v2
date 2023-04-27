@@ -96,8 +96,9 @@ function analyzePackageManager(codemodOptions) {
 }
 
 function deriveAddonLocation(addonPackage) {
-  // Package is not scoped
-  if (!addonPackage.name.includes('/')) {
+  const hasScope = addonPackage.name.includes('/');
+
+  if (!hasScope) {
     return addonPackage.name;
   }
 

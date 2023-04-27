@@ -29,7 +29,6 @@ test('migration | ember-addon | steps | analyze-addon > test-support', function 
     projectRoot: {
       devDependencies: {
         concurrently: '^7.6.0',
-        prettier: '^2.8.1',
       },
     },
   });
