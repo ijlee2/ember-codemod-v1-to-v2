@@ -1,8 +1,8 @@
 const latestVersions = new Map([
-  ['@babel/core', '7.21.4'],
+  ['@babel/core', '7.21.8'],
   ['@babel/plugin-proposal-class-properties', '7.18.6'],
   ['@babel/plugin-proposal-decorators', '7.21.0'],
-  ['@babel/preset-typescript', '7.21.4'],
+  ['@babel/preset-typescript', '7.21.5'],
   ['@babel/runtime', '7.21.5'],
   ['@embroider/addon-dev', '3.0.0'],
   ['@embroider/addon-shim', '1.8.4'],
@@ -11,7 +11,7 @@ const latestVersions = new Map([
   ['ember-auto-import', '2.6.3'],
   ['ember-cli-babel', '7.26.11'],
   ['ember-cli-htmlbars', '6.2.0'],
-  ['rollup', '3.21.0'],
+  ['rollup', '3.21.3'],
   ['rollup-plugin-copy', '3.4.0'],
   ['rollup-plugin-ts', '3.2.0'],
 ]);
