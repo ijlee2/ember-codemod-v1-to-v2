@@ -47,11 +47,11 @@
     "glob": "^10.2.2",
     "lodash.template": "^4.5.0",
     "strip-json-comments": "^5.0.0",
-    "yargs": "^17.7.1"
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.4",
-    "@babel/eslint-parser": "^7.21.3",
+    "@babel/core": "^7.21.8",
+    "@babel/eslint-parser": "^7.21.8",
     "@sondr3/minitest": "^0.1.1",
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
