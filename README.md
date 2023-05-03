@@ -115,6 +115,8 @@ You can also look at another codemod called [`ember-addon-migrator`](https://git
 
 ## Contributing
 
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
 If you have an open-sourced addon (v1 or v2) that I can use as a reference, reach out to me on [Discord](https://discord.gg/emberjs) at `ijlee2`. Please star this project so that I can gauge its importance to you and the Ember community. ⭐
 
 
