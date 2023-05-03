@@ -3,6 +3,7 @@ const latestVersions = new Map([
   ['@babel/plugin-proposal-class-properties', '7.18.6'],
   ['@babel/plugin-proposal-decorators', '7.21.0'],
   ['@babel/preset-typescript', '7.21.4'],
+  ['@babel/runtime', '7.21.5'],
   ['@embroider/addon-dev', '3.0.0'],
   ['@embroider/addon-shim', '1.8.4'],
   ['@rollup/plugin-babel', '6.0.3'],
