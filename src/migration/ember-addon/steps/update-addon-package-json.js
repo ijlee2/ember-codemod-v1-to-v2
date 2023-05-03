@@ -50,6 +50,7 @@ function updateDevDependencies(packageJson, options) {
     '@babel/core',
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-decorators',
+    '@babel/runtime',
     '@embroider/addon-dev',
     '@rollup/plugin-babel',
     'rollup',
