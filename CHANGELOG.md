@@ -1,3 +1,15 @@
+## 0.5.1 (2023-05-03)
+
+### Bug Fix
+* [#29](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/29) Downstreamed changes from @embroider/addon-blueprint#113. Added CONTRIBUTING.md. ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#29](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/29) Downstreamed changes from @embroider/addon-blueprint#113. Added CONTRIBUTING.md. ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.5.0 (2023-04-27)
 
 ### Enhancement
@@ -35,7 +47,7 @@
 * [#20](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/20) Update dependencies to the latest version ([@ijlee2](https://github.com/ijlee2))
 * [#19](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/19) Chore(deps): Bump http-cache-semantics from 4.1.0 to 4.1.1 ([@dependabot[bot]](https://github.com/apps/dependabot))
 
-#### Committers: 1
+### Committers: 1
 - Isaac Lee ([@ijlee2](https://github.com/ijlee2))
 
 
