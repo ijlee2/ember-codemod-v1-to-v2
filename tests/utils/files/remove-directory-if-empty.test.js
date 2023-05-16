@@ -16,10 +16,7 @@ test('utils | files | remove-directory-if-empty > parent directories are empty',
 
   loadFixture(inputProject, codemodOptions);
 
-  removeDirectoryIfEmpty({
-    oldPath: 'addon/components/container-query.ts',
-    projectRoot: options.projectRoot,
-  });
+  removeDirectoryIfEmpty('addon/components/container-query.ts', options);
 
   assertFixture(outputProject, codemodOptions);
 });
@@ -40,10 +37,7 @@ test('utils | files | remove-directory-if-empty > a parent directory is not empt
 
   loadFixture(inputProject, codemodOptions);
 
-  removeDirectoryIfEmpty({
-    oldPath: 'addon/components/container-query.ts',
-    projectRoot: options.projectRoot,
-  });
+  removeDirectoryIfEmpty('addon/components/container-query.ts', options);
 
   assertFixture(outputProject, codemodOptions);
 });

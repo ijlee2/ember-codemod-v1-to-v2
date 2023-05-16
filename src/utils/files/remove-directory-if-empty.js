@@ -1,8 +1,10 @@
 import { readdirSync, rmSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 
-export function removeDirectoryIfEmpty({ oldPath, projectRoot }) {
-  const directories = dirname(oldPath).split('/');
+export function removeDirectoryIfEmpty(filePath, options) {
+  const { projectRoot } = options;
+
+  const directories = dirname(filePath).split('/');
   const depth = directories.length;
 
   for (let i = 0; i < depth; i++) {

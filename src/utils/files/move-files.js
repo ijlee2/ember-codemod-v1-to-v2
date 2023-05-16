@@ -13,6 +13,6 @@ export function moveFiles(filePathMap, options) {
 
     createDirectory(newPath);
     renameSync(oldPath, newPath);
-    removeDirectoryIfEmpty({ oldPath: oldFilePath, projectRoot });
+    removeDirectoryIfEmpty(oldFilePath, options);
   });
 }

@@ -10,6 +10,6 @@ export function removeFiles(oldPaths, options) {
     const oldAbsolutePath = join(projectRoot, oldPath);
 
     rmSync(oldAbsolutePath);
-    removeDirectoryIfEmpty({ oldPath, projectRoot });
+    removeDirectoryIfEmpty(oldPath, options);
   });
 }
