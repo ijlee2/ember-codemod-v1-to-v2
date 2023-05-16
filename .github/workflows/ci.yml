@@ -11,7 +11,7 @@ env:
 
 jobs:
   lint:
-    name: Lint files
+    name: Lint
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -31,8 +31,8 @@ jobs:
         run: yarn lint
 
 
-  test-app:
-    name: Test app
+  test:
+    name: Test
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
