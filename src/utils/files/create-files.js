@@ -3,13 +3,13 @@ import { join } from 'node:path';
 
 import { createDirectory } from './create-directory.js';
 
-export function createFiles(fileMapping, options) {
+export function createFiles(fileMap, options) {
   const { projectRoot } = options;
 
-  fileMapping.forEach((file, newPath) => {
-    const newAbsolutePath = join(projectRoot, newPath);
+  fileMap.forEach((file, filePath) => {
+    const path = join(projectRoot, filePath);
 
-    createDirectory(newAbsolutePath);
-    writeFileSync(newAbsolutePath, file, 'utf8');
+    createDirectory(path);
+    writeFileSync(path, file, 'utf8');
   });
 }

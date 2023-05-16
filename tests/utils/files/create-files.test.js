@@ -22,7 +22,7 @@ test('utils | files | create-files', function () {
 
   loadFixture(inputProject, codemodOptions);
 
-  const fileMapping = new Map([
+  const fileMap = new Map([
     [
       'ember-container-query/unpublished-development-types/index.d.ts',
       'some code for index.d.ts',
@@ -34,7 +34,7 @@ test('utils | files | create-files', function () {
     ['package.json', 'some code for package.json'],
   ]);
 
-  createFiles(fileMapping, options);
+  createFiles(fileMap, options);
 
   assertFixture(outputProject, codemodOptions);
 });

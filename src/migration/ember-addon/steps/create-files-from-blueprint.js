@@ -39,7 +39,7 @@ export function createFilesFromBlueprint(context, options) {
     ignoreList: filesToSkip,
   });
 
-  const fileMapping = new Map(
+  const fileMap = new Map(
     blueprintFilePaths.map((blueprintFilePath) => {
       const filePath = getFilePath(blueprintFilePath, options);
 
@@ -57,5 +57,5 @@ export function createFilesFromBlueprint(context, options) {
     }),
   );
 
-  createFiles(fileMapping, options);
+  createFiles(fileMap, options);
 }
