@@ -3,14 +3,14 @@ import { join } from 'node:path';
 
 import { createDirectory } from './create-directory.js';
 
-export function copyFiles(pathMapping, options) {
+export function copyFiles(filePathMap, options) {
   const { projectRoot } = options;
 
-  pathMapping.forEach((newPath, oldPath) => {
-    const oldAbsolutePath = join(projectRoot, oldPath);
-    const newAbsolutePath = join(projectRoot, newPath);
+  filePathMap.forEach((newFilePath, oldFilePath) => {
+    const oldPath = join(projectRoot, oldFilePath);
+    const newPath = join(projectRoot, newFilePath);
 
-    createDirectory(newAbsolutePath);
-    copyFileSync(oldAbsolutePath, newAbsolutePath);
+    createDirectory(newPath);
+    copyFileSync(oldPath, newPath);
   });
 }

@@ -25,12 +25,12 @@ test('utils | files | copy-files', function () {
 
   loadFixture(inputProject, codemodOptions);
 
-  const migrationStrategy = new Map([
+  const filePathMap = new Map([
     ['.eslintrc.js', 'ember-container-query/.eslintrc.js'],
     ['package.json', 'ember-container-query/package.json'],
   ]);
 
-  copyFiles(migrationStrategy, options);
+  copyFiles(filePathMap, options);
 
   assertFixture(outputProject, codemodOptions);
 });

@@ -16,12 +16,12 @@ function copyToAddon(options) {
     cwd: projectRoot,
   });
 
-  const pathMapping = mapFilePaths(filePaths, {
+  const filePathMap = mapFilePaths(filePaths, {
     from: '',
     to: locations.addon,
   });
 
-  copyFiles(pathMapping, options);
+  copyFiles(filePathMap, options);
 }
 
 function moveToAddonAndTestApp(options) {
@@ -51,19 +51,19 @@ function moveToAddonAndTestApp(options) {
     cwd: projectRoot,
   });
 
-  let pathMapping = mapFilePaths(filePaths, {
+  let filePathMap = mapFilePaths(filePaths, {
     from: '',
     to: locations.addon,
   });
 
-  copyFiles(pathMapping, options);
+  copyFiles(filePathMap, options);
 
-  pathMapping = mapFilePaths(filePaths, {
+  filePathMap = mapFilePaths(filePaths, {
     from: '',
     to: locations.testApp,
   });
 
-  copyFiles(pathMapping, options);
+  copyFiles(filePathMap, options);
 
   removeFiles(filePaths, options);
 }
