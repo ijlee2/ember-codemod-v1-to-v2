@@ -1,25 +1,23 @@
 import { join } from 'node:path';
 
-export function renameDirectory(oldPath, { from, to }) {
+export function renameDirectory(oldFilePath, { from, to }) {
   if (from === '') {
-    return join(to, oldPath);
+    return join(to, oldFilePath);
   }
 
-  if (!oldPath.startsWith(`${from}/`)) {
-    return oldPath;
+  if (!oldFilePath.startsWith(`${from}/`)) {
+    return oldFilePath;
   }
 
-  return join(to, oldPath.replace(`${from}/`, ''));
+  return join(to, oldFilePath.replace(`${from}/`, ''));
 }
 
-export function mapFilePaths(filePaths, directory) {
-  const { from, to } = directory;
-
+export function mapFilePaths(filePaths, { from, to }) {
   return new Map(
-    filePaths.map((filePath) => {
-      const newPath = renameDirectory(filePath, { from, to });
+    filePaths.map((oldFilePath) => {
+      const newFilePath = renameDirectory(oldFilePath, { from, to });
 
-      return [filePath, newPath];
+      return [oldFilePath, newFilePath];
     }),
   );
 }

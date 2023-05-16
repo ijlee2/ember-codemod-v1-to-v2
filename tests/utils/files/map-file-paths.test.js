@@ -4,7 +4,7 @@ import { assert, test } from '../../helpers/testing.js';
 test('utils | files | map-file-paths > base case', function () {
   const filePaths = ['addon/some-folder/some-file.ts', 'addon/.gitkeep'];
 
-  const pathMapping = mapFilePaths(filePaths, {
+  const filePathMap = mapFilePaths(filePaths, {
     from: 'addon',
     to: 'new-location/src',
   });
@@ -17,13 +17,13 @@ test('utils | files | map-file-paths > base case', function () {
     ['addon/.gitkeep', 'new-location/src/.gitkeep'],
   ]);
 
-  assert.deepStrictEqual(pathMapping, expectedValue);
+  assert.deepStrictEqual(filePathMap, expectedValue);
 });
 
 test('utils | files | map-file-paths > file paths are mapped from the project root', function () {
   const filePaths = ['addon/some-folder/some-file.ts', 'addon/.gitkeep'];
 
-  const pathMapping = mapFilePaths(filePaths, {
+  const filePathMap = mapFilePaths(filePaths, {
     from: '',
     to: 'new-location/src',
   });
@@ -36,13 +36,13 @@ test('utils | files | map-file-paths > file paths are mapped from the project ro
     ['addon/.gitkeep', 'new-location/src/addon/.gitkeep'],
   ]);
 
-  assert.deepStrictEqual(pathMapping, expectedValue);
+  assert.deepStrictEqual(filePathMap, expectedValue);
 });
 
 test('utils | files | map-file-paths > file paths are mapped to the project root', function () {
   const filePaths = ['addon/some-folder/some-file.ts', 'addon/.gitkeep'];
 
-  const pathMapping = mapFilePaths(filePaths, {
+  const filePathMap = mapFilePaths(filePaths, {
     from: 'addon',
     to: '',
   });
@@ -52,13 +52,13 @@ test('utils | files | map-file-paths > file paths are mapped to the project root
     ['addon/.gitkeep', '.gitkeep'],
   ]);
 
-  assert.deepStrictEqual(pathMapping, expectedValue);
+  assert.deepStrictEqual(filePathMap, expectedValue);
 });
 
 test('utils | files | map-file-paths > file paths remain when there is no match', function () {
   const filePaths = ['.addon/index.js', 'addon', 'addon.js', 'app/index.js'];
 
-  const pathMapping = mapFilePaths(filePaths, {
+  const filePathMap = mapFilePaths(filePaths, {
     from: 'addon',
     to: 'new-location/src',
   });
@@ -70,5 +70,5 @@ test('utils | files | map-file-paths > file paths remain when there is no match'
     ['app/index.js', 'app/index.js'],
   ]);
 
-  assert.deepStrictEqual(pathMapping, expectedValue);
+  assert.deepStrictEqual(filePathMap, expectedValue);
 });
