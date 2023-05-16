@@ -4,15 +4,15 @@ import { join } from 'node:path';
 import { createDirectory } from './create-directory.js';
 import { removeDirectoryIfEmpty } from './remove-directory-if-empty.js';
 
-export function moveFiles(pathMapping, options) {
+export function moveFiles(filePathMap, options) {
   const { projectRoot } = options;
 
-  pathMapping.forEach((newPath, oldPath) => {
-    const oldAbsolutePath = join(projectRoot, oldPath);
-    const newAbsolutePath = join(projectRoot, newPath);
+  filePathMap.forEach((newFilePath, oldFilePath) => {
+    const oldPath = join(projectRoot, oldFilePath);
+    const newPath = join(projectRoot, newFilePath);
 
-    createDirectory(newAbsolutePath);
-    renameSync(oldAbsolutePath, newAbsolutePath);
-    removeDirectoryIfEmpty({ oldPath, projectRoot });
+    createDirectory(newPath);
+    renameSync(oldPath, newPath);
+    removeDirectoryIfEmpty({ oldPath: oldFilePath, projectRoot });
   });
 }

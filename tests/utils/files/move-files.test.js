@@ -40,7 +40,7 @@ test('utils | files | move-files', function () {
 
   loadFixture(inputProject, codemodOptions);
 
-  const migrationStrategy = new Map([
+  const filePathMap = new Map([
     [
       'addon/components/container-query.hbs',
       'ember-container-query/src/components/container-query.hbs',
@@ -51,7 +51,7 @@ test('utils | files | move-files', function () {
     ],
   ]);
 
-  moveFiles(migrationStrategy, options);
+  moveFiles(filePathMap, options);
 
   assertFixture(outputProject, codemodOptions);
 });

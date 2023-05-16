@@ -12,12 +12,12 @@ function moveAddonFolder(options) {
     cwd: projectRoot,
   });
 
-  const pathMapping = mapFilePaths(filePaths, {
+  const filePathMap = mapFilePaths(filePaths, {
     from: 'addon',
     to: `${locations.addon}/src`,
   });
 
-  moveFiles(pathMapping, options);
+  moveFiles(filePathMap, options);
 }
 
 function moveAddonTestSupportFolder(options) {
@@ -27,12 +27,12 @@ function moveAddonTestSupportFolder(options) {
     cwd: projectRoot,
   });
 
-  const pathMapping = mapFilePaths(filePaths, {
+  const filePathMap = mapFilePaths(filePaths, {
     from: 'addon-test-support',
     to: `${locations.addon}/src/test-support`,
   });
 
-  moveFiles(pathMapping, options);
+  moveFiles(filePathMap, options);
 }
 
 function moveBlueprintsFolder(options) {
@@ -42,12 +42,12 @@ function moveBlueprintsFolder(options) {
     cwd: projectRoot,
   });
 
-  const pathMapping = mapFilePaths(filePaths, {
+  const filePathMap = mapFilePaths(filePaths, {
     from: 'blueprints',
     to: `${locations.addon}/blueprints`,
   });
 
-  moveFiles(pathMapping, options);
+  moveFiles(filePathMap, options);
 }
 
 function movePublicFolder(options) {
@@ -57,12 +57,12 @@ function movePublicFolder(options) {
     cwd: projectRoot,
   });
 
-  const pathMapping = mapFilePaths(filePaths, {
+  const filePathMap = mapFilePaths(filePaths, {
     from: 'public',
     to: `${locations.addon}/public`,
   });
 
-  moveFiles(pathMapping, options);
+  moveFiles(filePathMap, options);
 }
 
 function removeAppFolder(options) {

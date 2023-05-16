@@ -82,12 +82,12 @@ function moveToTestApp(options) {
     cwd: projectRoot,
   });
 
-  const pathMapping = mapFilePaths(filePaths, {
+  const filePathMap = mapFilePaths(filePaths, {
     from: '',
     to: locations.testApp,
   });
 
-  moveFiles(pathMapping, options);
+  moveFiles(filePathMap, options);
 }
 
 function removeFromProjectRoot(options) {

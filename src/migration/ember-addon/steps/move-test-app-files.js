@@ -10,24 +10,24 @@ function moveTestsFolder(options) {
     cwd: projectRoot,
   });
 
-  let pathMapping = mapFilePaths(filePaths, {
+  let filePathMap = mapFilePaths(filePaths, {
     from: 'tests/dummy',
     to: locations.testApp,
   });
 
-  moveFiles(pathMapping, options);
+  moveFiles(filePathMap, options);
 
   filePaths = findFiles('tests/**/*', {
     cwd: projectRoot,
     ignoreList: ['tests/dummy/**/*'],
   });
 
-  pathMapping = mapFilePaths(filePaths, {
+  filePathMap = mapFilePaths(filePaths, {
     from: 'tests',
     to: `${locations.testApp}/tests`,
   });
 
-  moveFiles(pathMapping, options);
+  moveFiles(filePathMap, options);
 }
 
 function moveTypesFolder(options) {
@@ -41,24 +41,24 @@ function moveTypesFolder(options) {
     cwd: projectRoot,
   });
 
-  let pathMapping = mapFilePaths(filePaths, {
+  let filePathMap = mapFilePaths(filePaths, {
     from: 'types/dummy',
     to: `${locations.testApp}/types/${packages.testApp.name}`,
   });
 
-  moveFiles(pathMapping, options);
+  moveFiles(filePathMap, options);
 
   filePaths = findFiles('types/**/*', {
     cwd: projectRoot,
     ignoreList: ['types/dummy/**/*'],
   });
 
-  pathMapping = mapFilePaths(filePaths, {
+  filePathMap = mapFilePaths(filePaths, {
     from: 'types',
     to: `${locations.testApp}/types`,
   });
 
-  moveFiles(pathMapping, options);
+  moveFiles(filePathMap, options);
 }
 
 function renameDummy(options) {
