@@ -16,7 +16,7 @@ export function findFiles(pattern, { cwd, ignoreList = [] }) {
     nodir: true,
   });
 
-  return filePaths;
+  return filePaths.sort();
 }
 
 export function unionize(files) {
