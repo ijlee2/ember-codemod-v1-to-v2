@@ -3,13 +3,13 @@ import { join } from 'node:path';
 
 import { removeDirectoryIfEmpty } from './remove-directory-if-empty.js';
 
-export function removeFiles(oldPaths, options) {
+export function removeFiles(filePaths, options) {
   const { projectRoot } = options;
 
-  oldPaths.forEach((oldPath) => {
-    const oldAbsolutePath = join(projectRoot, oldPath);
+  filePaths.forEach((filePath) => {
+    const path = join(projectRoot, filePath);
 
-    rmSync(oldAbsolutePath);
-    removeDirectoryIfEmpty(oldPath, options);
+    rmSync(path);
+    removeDirectoryIfEmpty(filePath, options);
   });
 }
