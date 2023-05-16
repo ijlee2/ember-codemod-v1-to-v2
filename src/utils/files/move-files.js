@@ -1,6 +1,7 @@
-import { existsSync, mkdirSync, renameSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { renameSync } from 'node:fs';
+import { join } from 'node:path';
 
+import { createDirectory } from './create-directory.js';
 import { removeDirectoryIfEmpty } from './remove-directory-if-empty.js';
 
 export function moveFiles(pathMapping, options) {
@@ -8,14 +9,9 @@ export function moveFiles(pathMapping, options) {
 
   pathMapping.forEach((newPath, oldPath) => {
     const oldAbsolutePath = join(projectRoot, oldPath);
-
     const newAbsolutePath = join(projectRoot, newPath);
-    const newDirectory = dirname(newAbsolutePath);
 
-    if (!existsSync(newDirectory)) {
-      mkdirSync(newDirectory, { recursive: true });
-    }
-
+    createDirectory(newAbsolutePath);
     renameSync(oldAbsolutePath, newAbsolutePath);
     removeDirectoryIfEmpty({ oldPath, projectRoot });
   });

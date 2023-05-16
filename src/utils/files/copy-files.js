@@ -1,19 +1,16 @@
-import { copyFileSync, existsSync, mkdirSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { copyFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+import { createDirectory } from './create-directory.js';
 
 export function copyFiles(pathMapping, options) {
   const { projectRoot } = options;
 
   pathMapping.forEach((newPath, oldPath) => {
     const oldAbsolutePath = join(projectRoot, oldPath);
-
     const newAbsolutePath = join(projectRoot, newPath);
-    const newDirectory = dirname(newAbsolutePath);
 
-    if (!existsSync(newDirectory)) {
-      mkdirSync(newDirectory, { recursive: true });
-    }
-
+    createDirectory(newAbsolutePath);
     copyFileSync(oldAbsolutePath, newAbsolutePath);
   });
 }

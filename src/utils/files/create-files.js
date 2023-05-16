@@ -1,17 +1,15 @@
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
-import { dirname, join } from 'node:path';
+import { writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+
+import { createDirectory } from './create-directory.js';
 
 export function createFiles(fileMapping, options) {
   const { projectRoot } = options;
 
   fileMapping.forEach((file, newPath) => {
     const newAbsolutePath = join(projectRoot, newPath);
-    const newDirectory = dirname(newAbsolutePath);
 
-    if (!existsSync(newDirectory)) {
-      mkdirSync(newDirectory, { recursive: true });
-    }
-
+    createDirectory(newAbsolutePath);
     writeFileSync(newAbsolutePath, file, 'utf8');
   });
 }
