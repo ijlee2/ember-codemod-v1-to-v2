@@ -17,31 +17,21 @@
   },
   "license": "MIT",
   "author": "Isaac J. Lee",
-  "main": "src/index.js",
   "type": "module",
+  "main": "src/index.js",
   "bin": "./bin/ember-codemod-v1-to-v2.js",
+  "directories": {
+    "test": "tests"
+  },
   "files": [
     "bin/",
     "src/"
   ],
-  "directories": {
-    "test": "tests"
-  },
   "scripts": {
     "changelog": "lerna-changelog",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --fix",
     "test": "mt tests --quiet"
-  },
-  "changelog": {
-    "labels": {
-      "breaking": "Breaking Change",
-      "bug": "Bug Fix",
-      "enhance: code": "Enhancement",
-      "enhance: dependency": "Internal",
-      "enhance: documentation": "Documentation",
-      "user feedback": "User Feedback"
-    }
   },
   "dependencies": {
     "@codemod-utils/blueprints": "^0.1.1",
@@ -66,5 +56,15 @@
   },
   "engines": {
     "node": ">= 16"
+  },
+  "changelog": {
+    "labels": {
+      "breaking": "Breaking Change",
+      "bug": "Bug Fix",
+      "enhance: code": "Enhancement",
+      "enhance: dependency": "Internal",
+      "enhance: documentation": "Documentation",
+      "user feedback": "User Feedback"
+    }
   }
 }
