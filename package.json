@@ -44,6 +44,9 @@
     }
   },
   "dependencies": {
+    "@codemod-utils/blueprints": "^0.1.1",
+    "@codemod-utils/files": "^0.1.0",
+    "@codemod-utils/json": "^0.1.1",
     "glob": "^10.2.2",
     "lodash.template": "^4.5.0",
     "strip-json-comments": "^5.0.0",
@@ -52,6 +55,7 @@
   "devDependencies": {
     "@babel/core": "^7.21.8",
     "@babel/eslint-parser": "^7.21.8",
+    "@codemod-utils/tests": "^0.1.0",
     "@sondr3/minitest": "^0.1.1",
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
