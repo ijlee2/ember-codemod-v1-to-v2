@@ -1,4 +1,4 @@
-import { decideVersion } from '../../../utils/blueprints.js';
+import { getVersion } from '../../../utils/blueprints.js';
 import { findFiles, renameDirectory } from '../../../utils/files.js';
 
 function getAppReexports(options) {
@@ -20,7 +20,7 @@ function getAppReexports(options) {
 
 function getProjectRootDevDependencies(options) {
   return {
-    concurrently: decideVersion('concurrently', options),
+    concurrently: getVersion('concurrently', options),
   };
 }
 
