@@ -1,64 +1,28 @@
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
-
 import { findFiles, unionize } from '@codemod-utils/files';
-
-function validatePackageJson({ name, version }) {
-  if (!name) {
-    throw new SyntaxError('Package name is missing.');
-  }
-
-  if (name.includes('/')) {
-    // eslint-disable-next-line no-unused-vars
-    const [_scope, packageName] = name.split('/');
-
-    if (!packageName) {
-      throw new SyntaxError('Package name is missing.');
-    }
-  }
-
-  if (!version) {
-    throw new SyntaxError('Package version is missing.');
-  }
-}
+import { readPackageJson } from '@codemod-utils/json';
 
 function analyzePackageJson(codemodOptions) {
-  const { projectRoot } = codemodOptions;
+  const {
+    dependencies,
+    devDependencies,
+    'ember-addon': emberAddon,
+    name,
+    version,
+  } = readPackageJson(codemodOptions);
 
-  try {
-    const packageJsonFile = readFileSync(
-      join(projectRoot, 'package.json'),
-      'utf8',
-    );
+  const projectDependencies = new Map([
+    ...Object.entries(dependencies ?? {}),
+    ...Object.entries(devDependencies ?? {}),
+  ]);
 
-    const {
-      dependencies,
-      devDependencies,
-      'ember-addon': emberAddon,
-      name,
-      version,
-    } = JSON.parse(packageJsonFile);
-
-    validatePackageJson({ name, version });
-
-    const projectDependencies = new Map([
-      ...Object.entries(dependencies ?? {}),
-      ...Object.entries(devDependencies ?? {}),
-    ]);
-
-    return {
-      dependencies: projectDependencies,
-      hasGlint: projectDependencies.has('@glint/core'),
-      hasTypeScript: projectDependencies.has('typescript'),
-      isV1Addon: Boolean(emberAddon),
-      name,
-      version,
-    };
-  } catch (e) {
-    throw new SyntaxError(
-      `ERROR: package.json is missing or is not valid. (${e.message})\n`,
-    );
-  }
+  return {
+    dependencies: projectDependencies,
+    hasGlint: projectDependencies.has('@glint/core'),
+    hasTypeScript: projectDependencies.has('typescript'),
+    isV1Addon: Boolean(emberAddon),
+    name,
+    version,
+  };
 }
 
 function analyzePackageManager(codemodOptions) {

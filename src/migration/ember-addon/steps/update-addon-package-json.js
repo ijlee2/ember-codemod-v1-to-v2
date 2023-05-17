@@ -1,8 +1,9 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
+import { convertToMap, convertToObject } from '@codemod-utils/json';
+
 import { getVersion } from '../../../utils/blueprints.js';
-import { convertToMap, convertToObject } from '../../../utils/json.js';
 
 function updateDependencies(packageJson, options) {
   const dependencies = convertToMap(packageJson['dependencies']);
