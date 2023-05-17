@@ -14,12 +14,15 @@ Before you make a new issue, please search for similar issues. It's possible tha
 
 ## List outdated dependencies 🔗
 
-When you ran `yarn outdated`, what did you see?
+When you ran `pnpm outdated`, what did you see?
 
-| Package | Current version | Latest version |
-|---|---|---|
-| @babel/core | 7.17.0 | 7.18.9 |
-| @babel/eslint-parser | 7.17.0 | 7.18.9 |
+```sh
+┌────────────────────────┬─────────┬────────┐
+│ Package                │ Current │ Latest │
+├────────────────────────┼─────────┼────────┤
+│ @sondr3/minitest (dev) │ 0.1.1   │ 0.1.2  │
+└────────────────────────┴─────────┴────────┘
+```
 
 
 ## Risk analysis ⚠️
