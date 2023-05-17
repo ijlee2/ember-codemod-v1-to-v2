@@ -1,17 +1,10 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { blueprintsRoot, processTemplate } from '../../../utils/blueprints.js';
-import { createFiles, findFiles } from '../../../utils/files.js';
+import { processTemplate } from '@codemod-utils/blueprints';
+import { createFiles, findFiles } from '@codemod-utils/files';
 
-function getFilePath(blueprintFilePath, options) {
-  const { locations } = options;
-
-  return blueprintFilePath
-    .replace('__addonLocation__', locations.addon)
-    .replace('__gitignore__', '.gitignore')
-    .replace('__testAppLocation__', locations.testApp);
-}
+import { blueprintsRoot } from '../../../utils/blueprints.js';
 
 function getFilesToSkip(options) {
   const { packageManager, packages } = options;
@@ -30,23 +23,29 @@ function getFilesToSkip(options) {
   return [...files];
 }
 
+function resolveBlueprintFilePath(blueprintFilePath, options) {
+  const { locations } = options;
+
+  return blueprintFilePath
+    .replace('__addonLocation__', locations.addon)
+    .replace('__gitignore__', '.gitignore')
+    .replace('__testAppLocation__', locations.testApp);
+}
+
 export function createFilesFromBlueprint(context, options) {
   const filesToSkip = getFilesToSkip(options);
-  const emberAddonBlueprintsRoot = join(blueprintsRoot, 'ember-addon');
+  const cwd = join(blueprintsRoot, 'ember-addon');
 
   const blueprintFilePaths = findFiles('**/*', {
-    cwd: emberAddonBlueprintsRoot,
+    cwd,
     ignoreList: filesToSkip,
   });
 
-  const fileMapping = new Map(
+  const fileMap = new Map(
     blueprintFilePaths.map((blueprintFilePath) => {
-      const filePath = getFilePath(blueprintFilePath, options);
+      const filePath = resolveBlueprintFilePath(blueprintFilePath, options);
 
-      const blueprintFile = readFileSync(
-        join(emberAddonBlueprintsRoot, blueprintFilePath),
-        'utf8',
-      );
+      const blueprintFile = readFileSync(join(cwd, blueprintFilePath), 'utf8');
 
       const file = processTemplate(blueprintFile, {
         context,
@@ -57,5 +56,5 @@ export function createFilesFromBlueprint(context, options) {
     }),
   );
 
-  createFiles(fileMapping, options);
+  createFiles(fileMap, options);
 }

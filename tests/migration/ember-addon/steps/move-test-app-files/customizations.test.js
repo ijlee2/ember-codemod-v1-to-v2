@@ -1,13 +1,10 @@
+import { assertFixture, loadFixture, test } from '@codemod-utils/tests';
+
 import { moveTestAppFiles } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   codemodOptions,
   options,
 } from '../../../../helpers/shared-test-setups/customizations.js';
-import {
-  assertFixture,
-  loadFixture,
-  test,
-} from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | steps | move-test-app-files > customizations', function () {
   const inputProject = {

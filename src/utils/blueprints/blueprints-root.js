@@ -1,13 +1,8 @@
-import { dirname, join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { join } from 'node:path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import { getFilePath } from '@codemod-utils/blueprints';
 
-function getBlueprintsRoot() {
-  const srcDirectory = join(__dirname, '../..');
+const fileURL = import.meta.url;
+const srcDirectory = join(getFilePath(fileURL), '../..');
 
-  return join(srcDirectory, 'blueprints');
-}
-
-export const blueprintsRoot = getBlueprintsRoot();
+export const blueprintsRoot = join(srcDirectory, 'blueprints');

@@ -1,9 +1,10 @@
+import { assert, loadFixture, test } from '@codemod-utils/tests';
+
 import { analyzeAddon } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   codemodOptions,
   options,
 } from '../../../../helpers/shared-test-setups/typescript.js';
-import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | steps | analyze-addon > test-support', function () {
   const inputProject = {

@@ -1,3 +1,5 @@
+import { decideVersion } from '@codemod-utils/blueprints';
+
 const latestVersions = new Map([
   ['@babel/core', '7.21.8'],
   ['@babel/plugin-proposal-class-properties', '7.18.6'],
@@ -16,22 +18,11 @@ const latestVersions = new Map([
   ['rollup-plugin-ts', '3.2.0'],
 ]);
 
-export function decideVersion(packageName, options) {
+export function getVersion(packageName, options) {
   const { packages } = options;
 
-  const installedVersion = packages.addon.dependencies.get(packageName);
-
-  if (installedVersion) {
-    return installedVersion;
-  }
-
-  const latestVersion = latestVersions.get(packageName);
-
-  if (!latestVersion) {
-    throw new RangeError(
-      `ERROR: The latest version of \`${packageName}\` is unknown.\n`,
-    );
-  }
-
-  return `^${latestVersion}`;
+  return decideVersion(packageName, {
+    dependencies: packages.addon.dependencies,
+    latestVersions,
+  });
 }

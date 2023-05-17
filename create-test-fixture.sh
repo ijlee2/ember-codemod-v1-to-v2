@@ -51,7 +51,7 @@ fi
 mkdir -p "tests/fixtures/$DESTINATION/input"
 mkdir -p "tests/fixtures/$DESTINATION/output"
 
-echo "import { convertFixtureToJson } from '../../helpers/testing.js';
+echo "import { convertFixtureToJson } from '@codemod-utils/tests';
 
 const inputProject = convertFixtureToJson('$DESTINATION/input');
 const outputProject = convertFixtureToJson('$DESTINATION/output');

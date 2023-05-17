@@ -1,14 +1,15 @@
-import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/index.js';
-import {
-  codemodOptions,
-  context,
-} from '../../../../helpers/shared-test-setups/typescript.js';
 import {
   assertFixture,
   convertFixtureToJson,
   loadFixture,
   test,
-} from '../../../../helpers/testing.js';
+} from '@codemod-utils/tests';
+
+import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/index.js';
+import {
+  codemodOptions,
+  context,
+} from '../../../../helpers/shared-test-setups/typescript.js';
 
 test('migration | ember-addon | steps | create-files-from-blueprint > pnpm', function () {
   const inputProject = {};

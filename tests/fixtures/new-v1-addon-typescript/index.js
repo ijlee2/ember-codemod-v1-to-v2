@@ -1,4 +1,4 @@
-import { convertFixtureToJson } from '../../helpers/testing.js';
+import { convertFixtureToJson } from '@codemod-utils/tests';
 
 const inputProject = convertFixtureToJson('new-v1-addon-typescript/input');
 const outputProject = convertFixtureToJson('new-v1-addon-typescript/output');

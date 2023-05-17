@@ -1,5 +1,6 @@
-import { decideVersion } from '../../../utils/blueprints.js';
-import { findFiles, renameDirectory } from '../../../utils/files.js';
+import { findFiles, renameDirectory } from '@codemod-utils/files';
+
+import { getVersion } from '../../../utils/blueprints.js';
 
 function getAppReexports(options) {
   const { projectRoot } = options;
@@ -20,7 +21,7 @@ function getAppReexports(options) {
 
 function getProjectRootDevDependencies(options) {
   return {
-    concurrently: decideVersion('concurrently', options),
+    concurrently: getVersion('concurrently', options),
   };
 }
 

@@ -1,11 +1,9 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import {
-  convertToMap,
-  convertToObject,
-  sanitizeJson,
-} from '../../../utils/json.js';
+import { convertToMap, convertToObject } from '@codemod-utils/json';
+
+import { sanitizeJson } from '../../../utils/json.js';
 
 function updateCompilerOptions(tsconfigJson) {
   const compilerOptions = convertToMap(tsconfigJson['compilerOptions']);
