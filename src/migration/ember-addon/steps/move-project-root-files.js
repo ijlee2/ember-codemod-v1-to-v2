@@ -5,7 +5,7 @@ import {
   moveFiles,
   removeFiles,
   unionize,
-} from '../../../utils/files.js';
+} from '@codemod-utils/files';
 
 function copyToAddon(options) {
   const { locations, projectRoot } = options;

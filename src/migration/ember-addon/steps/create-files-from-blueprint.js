@@ -2,9 +2,9 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 import { processTemplate } from '@codemod-utils/blueprints';
+import { createFiles, findFiles } from '@codemod-utils/files';
 
 import { blueprintsRoot } from '../../../utils/blueprints.js';
-import { createFiles, findFiles } from '../../../utils/files.js';
 
 function getFilesToSkip(options) {
   const { packageManager, packages } = options;

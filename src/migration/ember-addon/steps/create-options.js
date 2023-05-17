@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { findFiles, unionize } from '../../../utils/files.js';
+import { findFiles, unionize } from '@codemod-utils/files';
 
 function validatePackageJson({ name, version }) {
   if (!name) {

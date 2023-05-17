@@ -3,7 +3,7 @@ import {
   mapFilePaths,
   moveFiles,
   removeFiles,
-} from '../../../utils/files.js';
+} from '@codemod-utils/files';
 
 function moveAddonFolder(options) {
   const { locations, projectRoot } = options;

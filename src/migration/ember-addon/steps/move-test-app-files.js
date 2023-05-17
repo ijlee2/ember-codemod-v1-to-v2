@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { findFiles, mapFilePaths, moveFiles } from '../../../utils/files.js';
+import { findFiles, mapFilePaths, moveFiles } from '@codemod-utils/files';
 
 function moveTestsFolder(options) {
   const { locations, projectRoot } = options;
