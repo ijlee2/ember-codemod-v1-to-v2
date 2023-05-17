@@ -22,10 +22,10 @@ Here are some guidelines to help you and everyone else.
     cd ember-codemod-v1-to-v2
     ```
 
-1. Use `yarn` to install dependencies.
+1. Use [`pnpm`](https://pnpm.io/installation) to install dependencies.
 
     ```sh
-    yarn install
+    pnpm install
     ```
 
 </details>
@@ -37,13 +37,13 @@ Here are some guidelines to help you and everyone else.
 1. When you write code, please check that it meets the linting rules.
 
     ```sh
-    yarn lint
+    pnpm lint
     ```
 
 1. You can run `lint:fix` to automatically fix linting errors.
 
     ```sh
-    yarn lint:fix
+    pnpm lint:fix
     ```
 
 </details>
@@ -55,7 +55,7 @@ Here are some guidelines to help you and everyone else.
 1. When you write code, please check that all tests continue to pass.
 
     ```sh
-    yarn test
+    pnpm test
     ```
 
 </details>
@@ -70,10 +70,16 @@ Here are some guidelines to help you and everyone else.
 1. Create a pull request, in which you update the package version and `CHANGELOG`.
 
     ```sh
-    GITHUB_AUTH=<YOUR_PERSONAL_ACCESS_TOKEN> yarn changelog
+    GITHUB_AUTH=<YOUR_PERSONAL_ACCESS_TOKEN> pnpm changelog
     ```
 
-1. Create a tag such as `1.0.0` (the name satisfies the regular expression `^\d+\.\d+\.\d+`).
+1. [Create a tag](https://github.com/ijlee2/ember-codemod-v1-to-v2/releases/new) such as `1.0.0` (the name satisfies the regular expression `^\d+\.\d+\.\d+`).
+
+1. Publish the package.
+
+    ```sh
+    pnpm publish
+    ```
 
 </details>
 
@@ -135,7 +141,7 @@ Here are some suggestions to help you start:
     - Report bug
     - Report outdated dependency
 
-1. When reporting a bug, please provide details to help me understand what's going on. If possible, please use the latest version of `ember-codemod-v1-to-v2` and set up a public demo that I and (other people) can check the code.
+1. When reporting a bug, please provide details to help me understand what's going on. If possible, please use the latest version of `ember-codemod-v1-to-v2` and set up a public demo that I (and others) can check the code.
 
 </details>
 

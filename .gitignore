@@ -1,12 +1,11 @@
 # compiled output
-/dist/
-/tmp/
+dist/
+tmp/
 
 # dependencies
-/node_modules/
+node_modules/
 
 # misc
-/.DS_Store
-/.env*
-/.eslintcache
-/yarn-error.log
+.DS_Store
+.env*
+.eslintcache
