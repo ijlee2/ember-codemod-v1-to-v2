@@ -1,3 +1,15 @@
+## 0.5.2 (2023-05-17)
+
+### Enhancement
+* [#30](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/30) Refactored utilities ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#31](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/31) Migrated to pnpm ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.5.1 (2023-05-03)
 
 ### Bug Fix
