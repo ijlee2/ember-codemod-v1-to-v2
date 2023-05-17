@@ -1,5 +1,6 @@
+import { assert, test } from '@codemod-utils/tests';
+
 import { sanitizeJson } from '../../../src/utils/json.js';
-import { assert, test } from '../../helpers/testing.js';
 
 test('utils | json | sanitize-json', function () {
   const jsonFile = [

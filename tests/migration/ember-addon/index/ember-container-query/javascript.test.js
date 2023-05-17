@@ -1,13 +1,10 @@
+import { assertFixture, loadFixture, test } from '@codemod-utils/tests';
+
 import { migrateEmberAddon } from '../../../../../src/migration/ember-addon/index.js';
 import {
   inputProject,
   outputProject,
 } from '../../../../fixtures/ember-container-query-javascript/index.js';
-import {
-  assertFixture,
-  loadFixture,
-  test,
-} from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | index | ember-container-query > javascript', function () {
   const codemodOptions = {

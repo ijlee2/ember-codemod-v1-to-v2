@@ -1,6 +1,7 @@
+import { assert, loadFixture, test } from '@codemod-utils/tests';
+
 import { createOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
 import { codemodOptions } from '../../../../helpers/shared-test-setups/customizations.js';
-import { assert, loadFixture, test } from '../../../../helpers/testing.js';
 
 test('migration | ember-addon | steps | create-options > customizations', function () {
   const inputProject = {
