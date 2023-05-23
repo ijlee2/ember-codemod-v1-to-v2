@@ -1,3 +1,12 @@
+## 0.6.0 (2023-05-23)
+
+### Enhancement
+* [#32](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/32) Set allowDeclareFields for TS projects to true by default ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.5.2 (2023-05-17)
 
 ### Enhancement
