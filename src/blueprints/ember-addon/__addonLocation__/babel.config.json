@@ -1,7 +1,8 @@
 {
 <% if (options.packages.addon.hasTypeScript) { %>  "presets": [["@babel/preset-typescript"]],
 <% } %>  "plugins": [
-    "@embroider/addon-dev/template-colocation-plugin",
+    "@embroider/addon-dev/template-colocation-plugin",<% if (options.packages.addon.hasTypeScript) { %>
+    ["@babel/plugin-transform-typescript", { "allowDeclareFields": true }],<% } %>
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
     "@babel/plugin-proposal-class-properties"
   ]
