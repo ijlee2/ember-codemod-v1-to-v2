@@ -1,3 +1,17 @@
+## 0.6.1 (2023-05-31)
+
+### Bug Fix
+* [#35](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/35) Revert "Set decoratorsBeforeExport to true" ([@ijlee2](https://github.com/ijlee2))
+
+### Enhancement
+* [#36](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/36) Addressed syntax deprecation from @babel/plugin-proposal-decorators ([@ijlee2](https://github.com/ijlee2))
+* [#34](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/34) Set decoratorsBeforeExport to true ([@ijlee2](https://github.com/ijlee2))
+* [#33](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/33) Updated latestVersions ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.6.0 (2023-05-23)
 
 ### Enhancement

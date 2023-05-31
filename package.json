@@ -1,6 +1,6 @@
 {
   "name": "ember-codemod-v1-to-v2",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Codemod to convert Ember addons to v2 addon format",
   "keywords": [
     "codemod",
