@@ -11,5 +11,5 @@ import {
 test('migration | ember-addon | steps | analyze-addon > typescript', function () {
   loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(analyzeAddon(options), context);
+  assert.deepStrictEqual(analyzeAddon(options), context);
 });

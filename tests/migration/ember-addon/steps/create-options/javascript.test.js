@@ -26,7 +26,7 @@ test('migration | ember-addon | steps | create-options > javascript', function (
 
   loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(createOptions(codemodOptions), {
+  assert.deepStrictEqual(createOptions(codemodOptions), {
     locations: {
       addon: 'ember-container-query',
       testApp: 'test-app',

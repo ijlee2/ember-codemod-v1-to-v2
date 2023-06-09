@@ -27,7 +27,7 @@ test('migration | ember-addon | steps | analyze-addon > blueprints', function ()
 
   loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(analyzeAddon(options), {
+  assert.deepStrictEqual(analyzeAddon(options), {
     addon: {
       appReexports: [],
       publicAssets: [],
