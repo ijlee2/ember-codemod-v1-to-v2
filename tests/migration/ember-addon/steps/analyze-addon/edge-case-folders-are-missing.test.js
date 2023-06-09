@@ -11,7 +11,7 @@ test('migration | ember-addon | steps | analyze-addon > edge case (folders are m
 
   loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(analyzeAddon(options), {
+  assert.deepStrictEqual(analyzeAddon(options), {
     addon: {
       appReexports: [],
       publicAssets: [],

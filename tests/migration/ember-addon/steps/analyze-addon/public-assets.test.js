@@ -24,7 +24,7 @@ test('migration | ember-addon | steps | analyze-addon > public-assets', function
 
   loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(analyzeAddon(options), {
+  assert.deepStrictEqual(analyzeAddon(options), {
     addon: {
       appReexports: [],
       publicAssets: [

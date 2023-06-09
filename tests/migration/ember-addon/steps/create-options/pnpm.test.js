@@ -32,7 +32,7 @@ test('migration | ember-addon | steps | create-options > pnpm', function () {
 
   loadFixture(inputProject, codemodOptions);
 
-  assert.deepEqual(createOptions(codemodOptions), {
+  assert.deepStrictEqual(createOptions(codemodOptions), {
     locations: {
       addon: 'new-v1-addon',
       testApp: 'test-app',
