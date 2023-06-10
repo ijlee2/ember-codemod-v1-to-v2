@@ -1,4 +1,4 @@
-import { findFiles, renameDirectory } from '@codemod-utils/files';
+import { findFiles, renamePathByDirectory } from '@codemod-utils/files';
 
 import { getVersion } from '../../../utils/blueprints.js';
 
@@ -11,7 +11,7 @@ function getAppReexports(options) {
 
   return filePaths
     .map((filePath) => {
-      return renameDirectory(filePath, {
+      return renamePathByDirectory(filePath, {
         from: 'app',
         to: '',
       });
@@ -34,7 +34,7 @@ function getPublicAssets(options) {
 
   return filePaths
     .map((filePath) => {
-      return renameDirectory(filePath, {
+      return renamePathByDirectory(filePath, {
         from: 'public',
         to: '',
       });
@@ -51,13 +51,13 @@ function getPublicEntrypoints(options) {
 
   return filePaths
     .map((filePath) => {
-      return renameDirectory(filePath, {
+      return renamePathByDirectory(filePath, {
         from: 'addon',
         to: '',
       });
     })
     .map((filePath) => {
-      return renameDirectory(filePath, {
+      return renamePathByDirectory(filePath, {
         from: 'addon-test-support',
         to: 'test-support',
       });
