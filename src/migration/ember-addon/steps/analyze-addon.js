@@ -6,7 +6,7 @@ function getAppReexports(options) {
   const { projectRoot } = options;
 
   const filePaths = findFiles('app/**/*.js', {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   return filePaths
@@ -29,7 +29,7 @@ function getPublicAssets(options) {
   const { projectRoot } = options;
 
   const filePaths = findFiles('public/**/*', {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   return filePaths
@@ -46,7 +46,7 @@ function getPublicEntrypoints(options) {
   const { projectRoot } = options;
 
   const filePaths = findFiles('{addon,addon-test-support}/**/*.{js,ts}', {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   return filePaths

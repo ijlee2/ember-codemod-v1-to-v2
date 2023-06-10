@@ -13,7 +13,7 @@ function copyToAddon(options) {
   const files = ['LICENSE.md', 'README.md'];
 
   const filePaths = findFiles(unionize(files), {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   const filePathMap = mapFilePaths(filePaths, {
@@ -48,7 +48,7 @@ function moveToAddonAndTestApp(options) {
   }
 
   const filePaths = findFiles(unionize([...files]), {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   let filePathMap = mapFilePaths(filePaths, {
@@ -79,7 +79,7 @@ function moveToTestApp(options) {
   ];
 
   const filePaths = findFiles(unionize(files), {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   const filePathMap = mapFilePaths(filePaths, {
@@ -96,7 +96,7 @@ function removeFromProjectRoot(options) {
   const files = ['.npmignore', 'index.js'];
 
   const filePaths = findFiles(unionize(files), {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   removeFiles(filePaths, options);

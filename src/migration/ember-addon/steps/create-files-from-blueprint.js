@@ -37,8 +37,8 @@ export function createFilesFromBlueprint(context, options) {
   const cwd = join(blueprintsRoot, 'ember-addon');
 
   const blueprintFilePaths = findFiles('**/*', {
-    cwd,
     ignoreList: filesToSkip,
+    projectRoot: cwd,
   });
 
   const fileMap = new Map(
