@@ -1,7 +1,11 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { convertToMap, convertToObject } from '@codemod-utils/json';
+import {
+  convertToMap,
+  convertToObject,
+  readPackageJson,
+} from '@codemod-utils/json';
 
 import { getVersion } from '../../../utils/blueprints.js';
 
@@ -75,16 +79,17 @@ function updateOtherFields(packageJson, options) {
 export function updateTestAppPackageJson(options) {
   const { locations, projectRoot } = options;
 
-  const oldPath = join(projectRoot, locations.testApp, 'package.json');
-  const oldFile = readFileSync(oldPath, 'utf8');
-  const packageJson = JSON.parse(oldFile);
+  const packageJson = readPackageJson({
+    projectRoot: join(projectRoot, locations.testApp),
+  });
 
   moveDependenciesToDevDependencies(packageJson, options);
   updateDependencies(packageJson);
   updateDevDependencies(packageJson, options);
   updateOtherFields(packageJson, options);
 
-  const newFile = JSON.stringify(packageJson, null, 2) + '\n';
+  const destination = join(projectRoot, locations.testApp, 'package.json');
+  const file = JSON.stringify(packageJson, null, 2) + '\n';
 
-  writeFileSync(oldPath, newFile, 'utf8');
+  writeFileSync(destination, file, 'utf8');
 }
