@@ -1,3 +1,12 @@
+## 0.6.3 (2023-06-10)
+
+### Internal
+* [#39](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/39) Separated validation concerns ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.6.2 (2023-06-10)
 
 ### Enhancement
