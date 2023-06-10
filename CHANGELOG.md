@@ -1,3 +1,15 @@
+## 0.6.2 (2023-06-10)
+
+### Enhancement
+* [#37](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/37) Replace assert.deepEqual with assert.deepStrictEqual ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#38](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/38) Update dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.6.1 (2023-05-31)
 
 ### Bug Fix
