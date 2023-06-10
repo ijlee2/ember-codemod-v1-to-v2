@@ -8,8 +8,8 @@ dependencies:
     specifier: ^0.3.1
     version: 0.3.1
   '@codemod-utils/json':
-    specifier: ^0.1.2
-    version: 0.1.2
+    specifier: ^0.2.0
+    version: 0.2.0
   strip-json-comments:
     specifier: ^5.0.0
     version: 5.0.0
@@ -288,8 +288,8 @@ packages:
       glob: 10.2.7
     dev: false
 
-  /@codemod-utils/json@0.1.2:
-    resolution: {integrity: sha512-G05WyxlngqbrQK+quudBjJbHK/a2omNzqL7/oNrkc09IascvVM27Fb6GcNrOTIPU2atvP+zi9jDmZlIWiarHcA==}
+  /@codemod-utils/json@0.2.0:
+    resolution: {integrity: sha512-ysdsEs6X9TjHHjM36znyj2njmsccil94bMJ90whTn3HH2KCJnMt0SpjFDZk+dJOQP0SFpc9lG5JLA+UwVCit8A==}
     engines: {node: 16.* || >= 18}
     dev: false
 
