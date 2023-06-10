@@ -37,7 +37,7 @@ function analyzePackageManager(codemodOptions) {
   const lockFiles = [...mapping.keys()];
 
   const filePaths = findFiles(unionize(lockFiles), {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   if (filePaths.length !== 1) {

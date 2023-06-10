@@ -1,4 +1,4 @@
-import { findFiles, renameDirectory } from '@codemod-utils/files';
+import { findFiles, renamePathByDirectory } from '@codemod-utils/files';
 
 import { getVersion } from '../../../utils/blueprints.js';
 
@@ -6,12 +6,12 @@ function getAppReexports(options) {
   const { projectRoot } = options;
 
   const filePaths = findFiles('app/**/*.js', {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   return filePaths
     .map((filePath) => {
-      return renameDirectory(filePath, {
+      return renamePathByDirectory(filePath, {
         from: 'app',
         to: '',
       });
@@ -29,12 +29,12 @@ function getPublicAssets(options) {
   const { projectRoot } = options;
 
   const filePaths = findFiles('public/**/*', {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   return filePaths
     .map((filePath) => {
-      return renameDirectory(filePath, {
+      return renamePathByDirectory(filePath, {
         from: 'public',
         to: '',
       });
@@ -46,18 +46,18 @@ function getPublicEntrypoints(options) {
   const { projectRoot } = options;
 
   const filePaths = findFiles('{addon,addon-test-support}/**/*.{js,ts}', {
-    cwd: projectRoot,
+    projectRoot,
   });
 
   return filePaths
     .map((filePath) => {
-      return renameDirectory(filePath, {
+      return renamePathByDirectory(filePath, {
         from: 'addon',
         to: '',
       });
     })
     .map((filePath) => {
-      return renameDirectory(filePath, {
+      return renamePathByDirectory(filePath, {
         from: 'addon-test-support',
         to: 'test-support',
       });

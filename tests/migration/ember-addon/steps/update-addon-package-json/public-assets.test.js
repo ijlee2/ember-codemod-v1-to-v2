@@ -9,7 +9,7 @@ import { updateAddonPackageJson } from '../../../../../src/migration/ember-addon
 import {
   codemodOptions,
   options,
-} from '../../../../helpers/shared-test-setups/javascript.js';
+} from '../../../../helpers/shared-test-setups/typescript.js';
 
 test('migration | ember-addon | steps | update-addon-package-json > public-assets', function () {
   const inputProject = convertFixtureToJson(
