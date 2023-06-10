@@ -1,14 +1,20 @@
 import { findFiles, unionize } from '@codemod-utils/files';
-import { readPackageJson } from '@codemod-utils/json';
+import { readPackageJson, validatePackageJson } from '@codemod-utils/json';
 
 function analyzePackageJson(codemodOptions) {
+  const { projectRoot } = codemodOptions;
+
+  const packageJson = readPackageJson({ projectRoot });
+
+  validatePackageJson(packageJson);
+
   const {
     dependencies,
     devDependencies,
     'ember-addon': emberAddon,
     name,
     version,
-  } = readPackageJson(codemodOptions);
+  } = packageJson;
 
   const projectDependencies = new Map([
     ...Object.entries(dependencies ?? {}),
