@@ -34,16 +34,16 @@
     "test": "mt tests --quiet"
   },
   "dependencies": {
-    "@codemod-utils/blueprints": "^0.1.2",
-    "@codemod-utils/files": "^0.3.1",
-    "@codemod-utils/json": "^0.2.0",
+    "@codemod-utils/blueprints": "^0.2.0",
+    "@codemod-utils/files": "^0.4.0",
+    "@codemod-utils/json": "^0.3.0",
     "strip-json-comments": "^5.0.0",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/eslint-parser": "^7.22.5",
-    "@codemod-utils/tests": "^0.1.2",
+    "@codemod-utils/tests": "^0.2.1",
     "@sondr3/minitest": "^0.1.1",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
