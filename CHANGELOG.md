@@ -1,4 +1,4 @@
-## 0.7.1-alpha.1 (2023-06-12)
+## 0.7.1 (2023-06-12)
 
 ### Bug Fix
 * [#42](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/42) Patch #41 ([@ijlee2](https://github.com/ijlee2))
