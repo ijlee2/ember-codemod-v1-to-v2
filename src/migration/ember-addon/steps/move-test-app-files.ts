@@ -3,7 +3,9 @@ import { join } from 'node:path';
 
 import { findFiles, mapFilePaths, moveFiles } from '@codemod-utils/files';
 
-function moveTestsFolder(options) {
+import type { Options } from '../../../types/index.js';
+
+function moveTestsFolder(options: Options): void {
   const { locations, projectRoot } = options;
 
   let filePaths = findFiles('tests/dummy/**/*', {
@@ -30,7 +32,7 @@ function moveTestsFolder(options) {
   moveFiles(filePathMap, options);
 }
 
-function moveTypesFolder(options) {
+function moveTypesFolder(options: Options): void {
   const { locations, packages, projectRoot } = options;
 
   if (!packages.addon.hasTypeScript) {
@@ -61,7 +63,7 @@ function moveTypesFolder(options) {
   moveFiles(filePathMap, options);
 }
 
-function renameDummy(options) {
+function renameDummy(options: Options): void {
   const { locations, packages, projectRoot } = options;
 
   // File extensions had been specified, partly to encode assumptions
@@ -83,7 +85,7 @@ function renameDummy(options) {
   });
 }
 
-export function moveTestAppFiles(options) {
+export function moveTestAppFiles(options: Options): void {
   moveTestsFolder(options);
   moveTypesFolder(options);
   renameDummy(options);

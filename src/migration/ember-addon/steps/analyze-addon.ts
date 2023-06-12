@@ -1,8 +1,9 @@
 import { findFiles, renamePathByDirectory } from '@codemod-utils/files';
 
+import type { Context, Options } from '../../../types/index.js';
 import { getVersion } from '../../../utils/blueprints.js';
 
-function getAppReexports(options) {
+function getAppReexports(options: Options): string[] {
   const { projectRoot } = options;
 
   const filePaths = findFiles('app/**/*.js', {
@@ -19,13 +20,15 @@ function getAppReexports(options) {
     .sort();
 }
 
-function getProjectRootDevDependencies(options) {
+function getProjectRootDevDependencies(
+  options: Options,
+): Record<string, string> {
   return {
     concurrently: getVersion('concurrently', options),
   };
 }
 
-function getPublicAssets(options) {
+function getPublicAssets(options: Options): string[] {
   const { projectRoot } = options;
 
   const filePaths = findFiles('public/**/*', {
@@ -42,7 +45,7 @@ function getPublicAssets(options) {
     .sort();
 }
 
-function getPublicEntrypoints(options) {
+function getPublicEntrypoints(options: Options): string[] {
   const { projectRoot } = options;
 
   const filePaths = findFiles('{addon,addon-test-support}/**/*.{js,ts}', {
@@ -68,7 +71,7 @@ function getPublicEntrypoints(options) {
     .sort();
 }
 
-export function analyzeAddon(options) {
+export function analyzeAddon(options: Options): Context {
   return {
     addon: {
       appReexports: getAppReexports(options),

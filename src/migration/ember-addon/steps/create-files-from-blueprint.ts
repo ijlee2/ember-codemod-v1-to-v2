@@ -4,9 +4,10 @@ import { join } from 'node:path';
 import { processTemplate } from '@codemod-utils/blueprints';
 import { createFiles, findFiles } from '@codemod-utils/files';
 
+import type { Context, Options } from '../../../types/index.js';
 import { blueprintsRoot } from '../../../utils/blueprints.js';
 
-function getFilesToSkip(options) {
+function getFilesToSkip(options: Options): string[] {
   const { packageManager, packages } = options;
 
   const files = new Set();
@@ -20,10 +21,13 @@ function getFilesToSkip(options) {
     files.add('pnpm-workspace.yaml');
   }
 
-  return [...files];
+  return [...files] as string[];
 }
 
-function resolveBlueprintFilePath(blueprintFilePath, options) {
+function resolveBlueprintFilePath(
+  blueprintFilePath: string,
+  options: Options,
+): string {
   const { locations } = options;
 
   return blueprintFilePath
@@ -32,7 +36,10 @@ function resolveBlueprintFilePath(blueprintFilePath, options) {
     .replace('__testAppLocation__', locations.testApp);
 }
 
-export function createFilesFromBlueprint(context, options) {
+export function createFilesFromBlueprint(
+  context: Context,
+  options: Options,
+): void {
   const filesToSkip = getFilesToSkip(options);
   const cwd = join(blueprintsRoot, 'ember-addon');
 

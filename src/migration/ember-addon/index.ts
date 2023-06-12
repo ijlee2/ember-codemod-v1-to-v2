@@ -1,3 +1,4 @@
+import type { CodemodOptions } from '../../types/index.js';
 import {
   analyzeAddon,
   createFilesFromBlueprint,
@@ -11,7 +12,7 @@ import {
   updateTestAppTsconfigJson,
 } from './steps/index.js';
 
-export function migrateEmberAddon(codemodOptions) {
+export function migrateEmberAddon(codemodOptions: CodemodOptions): void {
   const options = createOptions(codemodOptions);
   const { isV1Addon } = options.packages.addon;
 

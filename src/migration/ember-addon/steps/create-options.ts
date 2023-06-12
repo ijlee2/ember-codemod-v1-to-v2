@@ -1,7 +1,12 @@
 import { findFiles, unionize } from '@codemod-utils/files';
 import { readPackageJson, validatePackageJson } from '@codemod-utils/json';
 
-function analyzePackageJson(codemodOptions) {
+import type { CodemodOptions, Options } from '../../../types/index.js';
+
+type AddonPackage = Options['packages']['addon'];
+type PackageManager = Options['packageManager'];
+
+function analyzePackageJson(codemodOptions: CodemodOptions): AddonPackage {
   const { projectRoot } = codemodOptions;
 
   const packageJson = readPackageJson({ projectRoot });
@@ -28,10 +33,10 @@ function analyzePackageJson(codemodOptions) {
     isV1Addon: Boolean(emberAddon),
     name,
     version,
-  };
+  } as unknown as AddonPackage;
 }
 
-function analyzePackageManager(codemodOptions) {
+function analyzePackageManager(codemodOptions: CodemodOptions): PackageManager {
   const { projectRoot } = codemodOptions;
 
   const mapping = new Map([
@@ -56,7 +61,7 @@ function analyzePackageManager(codemodOptions) {
     };
   }
 
-  const packageManager = mapping.get(filePaths[0]);
+  const packageManager = mapping.get(filePaths[0]!);
 
   return {
     isNpm: packageManager === 'npm',
@@ -65,7 +70,7 @@ function analyzePackageManager(codemodOptions) {
   };
 }
 
-function deriveAddonLocation(addonPackage) {
+function deriveAddonLocation(addonPackage: AddonPackage): string {
   const hasScope = addonPackage.name.includes('/');
 
   if (!hasScope) {
@@ -75,10 +80,10 @@ function deriveAddonLocation(addonPackage) {
   // eslint-disable-next-line no-unused-vars
   const [_scope, packageName] = addonPackage.name.split('/');
 
-  return packageName;
+  return packageName!;
 }
 
-export function createOptions(codemodOptions) {
+export function createOptions(codemodOptions: CodemodOptions): Options {
   const addonPackage = analyzePackageJson(codemodOptions);
   const packageManager = analyzePackageManager(codemodOptions);
 

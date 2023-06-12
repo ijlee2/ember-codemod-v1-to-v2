@@ -7,9 +7,13 @@ import {
   readPackageJson,
 } from '@codemod-utils/json';
 
+import type { Options, PackageJson } from '../../../types/index.js';
 import { getVersion } from '../../../utils/blueprints.js';
 
-function moveDependenciesToDevDependencies(packageJson, options) {
+function moveDependenciesToDevDependencies(
+  packageJson: PackageJson,
+  options: Options,
+): void {
   const { packages } = options;
 
   const dependencies = convertToMap(packageJson['dependencies']);
@@ -40,7 +44,7 @@ function moveDependenciesToDevDependencies(packageJson, options) {
   packageJson['devDependencies'] = convertToObject(devDependencies);
 }
 
-function updateDependencies(packageJson) {
+function updateDependencies(packageJson: PackageJson): void {
   const dependencies = convertToMap(packageJson['dependencies']);
 
   /*
@@ -52,7 +56,10 @@ function updateDependencies(packageJson) {
   packageJson['dependencies'] = convertToObject(dependencies);
 }
 
-function updateDevDependencies(packageJson, options) {
+function updateDevDependencies(
+  packageJson: PackageJson,
+  options: Options,
+): void {
   const { packages } = options;
 
   const devDependencies = convertToMap(packageJson['devDependencies']);
@@ -62,13 +69,13 @@ function updateDevDependencies(packageJson, options) {
   packageJson['devDependencies'] = convertToObject(devDependencies);
 }
 
-function updateOtherFields(packageJson, options) {
+function updateOtherFields(packageJson: PackageJson, options: Options): void {
   const { packages } = options;
 
   delete packageJson['ember-addon'];
 
   packageJson['keywords'] = (packageJson['keywords'] ?? []).filter(
-    (keyword) => keyword !== 'ember-addon',
+    (keyword: string) => keyword !== 'ember-addon',
   );
 
   packageJson['name'] = packages.testApp.name;
@@ -76,7 +83,7 @@ function updateOtherFields(packageJson, options) {
   packageJson['private'] = true;
 }
 
-export function updateTestAppPackageJson(options) {
+export function updateTestAppPackageJson(options: Options): void {
   const { locations, projectRoot } = options;
 
   const packageJson = readPackageJson({

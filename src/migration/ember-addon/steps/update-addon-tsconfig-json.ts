@@ -3,9 +3,10 @@ import { join } from 'node:path';
 
 import { convertToMap, convertToObject } from '@codemod-utils/json';
 
+import type { Options, TsconfigJson } from '../../../types/index.js';
 import { sanitizeJson } from '../../../utils/json.js';
 
-function updateCompilerOptions(tsconfigJson) {
+function updateCompilerOptions(tsconfigJson: TsconfigJson): void {
   const compilerOptions = convertToMap(tsconfigJson['compilerOptions']);
 
   compilerOptions.delete('baseUrl');
@@ -14,11 +15,11 @@ function updateCompilerOptions(tsconfigJson) {
   tsconfigJson['compilerOptions'] = convertToObject(compilerOptions);
 }
 
-function updateInclude(tsconfigJson) {
+function updateInclude(tsconfigJson: TsconfigJson): void {
   tsconfigJson['include'] = ['src/**/*', 'unpublished-development-types/**/*'];
 }
 
-export function updateAddonTsconfigJson(options) {
+export function updateAddonTsconfigJson(options: Options): void {
   const { locations, packages, projectRoot } = options;
 
   if (!packages.addon.hasTypeScript) {

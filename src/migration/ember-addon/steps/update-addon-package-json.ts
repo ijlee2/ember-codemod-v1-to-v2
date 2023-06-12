@@ -7,9 +7,10 @@ import {
   readPackageJson,
 } from '@codemod-utils/json';
 
+import type { Context, Options, PackageJson } from '../../../types/index.js';
 import { getVersion } from '../../../utils/blueprints.js';
 
-function updateDependencies(packageJson, options) {
+function updateDependencies(packageJson: PackageJson, options: Options): void {
   const dependencies = convertToMap(packageJson['dependencies']);
 
   const packagesToDelete = [
@@ -34,7 +35,10 @@ function updateDependencies(packageJson, options) {
   packageJson['dependencies'] = convertToObject(dependencies);
 }
 
-function updateDevDependencies(packageJson, options) {
+function updateDevDependencies(
+  packageJson: PackageJson,
+  options: Options,
+): void {
   const { packages } = options;
 
   const devDependencies = convertToMap(packageJson['devDependencies']);
@@ -77,7 +81,11 @@ function updateDevDependencies(packageJson, options) {
   packageJson['devDependencies'] = convertToObject(devDependencies);
 }
 
-function updateOtherFields(packageJson, context, options) {
+function updateOtherFields(
+  packageJson: PackageJson,
+  context: Context,
+  options: Options,
+): void {
   const { packages } = options;
   const hasPublicAssets = context.addon.publicAssets.length > 0;
 
@@ -91,7 +99,7 @@ function updateOtherFields(packageJson, context, options) {
 
         return accumulator;
       },
-      {},
+      {} as Record<string, string>,
     );
 
     packageJson['ember-addon'] = {
@@ -145,8 +153,8 @@ function updateOtherFields(packageJson, context, options) {
   }
 }
 
-function updateScripts(packageJson) {
-  const scripts = convertToMap(packageJson.scripts);
+function updateScripts(packageJson: PackageJson): void {
+  const scripts = convertToMap(packageJson['scripts']);
 
   scripts.set('build', 'rollup --config');
   scripts.set('prepack', 'rollup --config');
@@ -159,7 +167,10 @@ function updateScripts(packageJson) {
   packageJson['scripts'] = convertToObject(scripts);
 }
 
-export function updateAddonPackageJson(context, options) {
+export function updateAddonPackageJson(
+  context: Context,
+  options: Options,
+): void {
   const { locations, projectRoot } = options;
 
   const packageJson = readPackageJson({

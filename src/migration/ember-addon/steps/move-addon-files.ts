@@ -5,7 +5,9 @@ import {
   removeFiles,
 } from '@codemod-utils/files';
 
-function moveAddonFolder(options) {
+import type { Options } from '../../../types/index.js';
+
+function moveAddonFolder(options: Options): void {
   const { locations, projectRoot } = options;
 
   const filePaths = findFiles('addon/**/*', {
@@ -20,7 +22,7 @@ function moveAddonFolder(options) {
   moveFiles(filePathMap, options);
 }
 
-function moveAddonTestSupportFolder(options) {
+function moveAddonTestSupportFolder(options: Options): void {
   const { locations, projectRoot } = options;
 
   const filePaths = findFiles('addon-test-support/**/*', {
@@ -35,7 +37,7 @@ function moveAddonTestSupportFolder(options) {
   moveFiles(filePathMap, options);
 }
 
-function moveBlueprintsFolder(options) {
+function moveBlueprintsFolder(options: Options): void {
   const { locations, projectRoot } = options;
 
   const filePaths = findFiles('blueprints/**/*', {
@@ -50,7 +52,7 @@ function moveBlueprintsFolder(options) {
   moveFiles(filePathMap, options);
 }
 
-function movePublicFolder(options) {
+function movePublicFolder(options: Options): void {
   const { locations, projectRoot } = options;
 
   const filePaths = findFiles('public/**/*', {
@@ -65,7 +67,7 @@ function movePublicFolder(options) {
   moveFiles(filePathMap, options);
 }
 
-function removeAppFolder(options) {
+function removeAppFolder(options: Options): void {
   const { projectRoot } = options;
 
   const filePaths = findFiles('app/**/*', {
@@ -75,7 +77,7 @@ function removeAppFolder(options) {
   removeFiles(filePaths, options);
 }
 
-export function moveAddonFiles(options) {
+export function moveAddonFiles(options: Options): void {
   moveAddonFolder(options);
   moveAddonTestSupportFolder(options);
   moveBlueprintsFolder(options);

@@ -1,11 +1,17 @@
-const codemodOptions = {
+import type {
+  CodemodOptions,
+  Context,
+  Options,
+} from '../../../src/types/index.js';
+
+const codemodOptions: CodemodOptions = {
   addonLocation: undefined,
   projectRoot: 'tmp/ember-container-query-typescript',
   testAppLocation: undefined,
   testAppName: undefined,
 };
 
-const context = {
+const context: Context = {
   addon: {
     appReexports: [
       'components/container-query.js',
@@ -37,7 +43,7 @@ const context = {
   },
 };
 
-const options = {
+const options: Options = {
   locations: {
     addon: 'ember-container-query',
     testApp: 'test-app',

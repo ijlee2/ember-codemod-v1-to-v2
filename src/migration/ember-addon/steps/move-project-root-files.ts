@@ -7,7 +7,9 @@ import {
   unionize,
 } from '@codemod-utils/files';
 
-function copyToAddon(options) {
+import type { Options } from '../../../types/index.js';
+
+function copyToAddon(options: Options): void {
   const { locations, projectRoot } = options;
 
   const files = ['LICENSE.md', 'README.md'];
@@ -24,7 +26,7 @@ function copyToAddon(options) {
   copyFiles(filePathMap, options);
 }
 
-function moveToAddonAndTestApp(options) {
+function moveToAddonAndTestApp(options: Options): void {
   const { locations, packages, projectRoot } = options;
 
   const files = new Set([
@@ -68,7 +70,7 @@ function moveToAddonAndTestApp(options) {
   removeFiles(filePaths, options);
 }
 
-function moveToTestApp(options) {
+function moveToTestApp(options: Options): void {
   const { locations, projectRoot } = options;
 
   const files = [
@@ -90,7 +92,7 @@ function moveToTestApp(options) {
   moveFiles(filePathMap, options);
 }
 
-function removeFromProjectRoot(options) {
+function removeFromProjectRoot(options: Options): void {
   const { projectRoot } = options;
 
   const files = ['.npmignore', 'index.js'];
@@ -102,7 +104,7 @@ function removeFromProjectRoot(options) {
   removeFiles(filePaths, options);
 }
 
-export function moveProjectRootFiles(options) {
+export function moveProjectRootFiles(options: Options): void {
   copyToAddon(options);
   moveToAddonAndTestApp(options);
   moveToTestApp(options);

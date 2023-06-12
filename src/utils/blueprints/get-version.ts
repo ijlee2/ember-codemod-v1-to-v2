@@ -1,5 +1,7 @@
 import { decideVersion } from '@codemod-utils/blueprints';
 
+import type { Options } from '../../types/index.js';
+
 const latestVersions = new Map([
   ['@babel/core', '7.22.5'],
   ['@babel/plugin-proposal-class-properties', '7.18.6'],
@@ -18,7 +20,7 @@ const latestVersions = new Map([
   ['rollup-plugin-ts', '3.2.0'],
 ]);
 
-export function getVersion(packageName, options) {
+export function getVersion(packageName: string, options: Options): string {
   const { packages } = options;
 
   return decideVersion(packageName, {
