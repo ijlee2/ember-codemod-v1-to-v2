@@ -5,7 +5,7 @@ import {
   test,
 } from '@codemod-utils/tests';
 
-import { updateTestAppTsconfigJson } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { updateTestAppTsConfigJson } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   codemodOptions,
   options,
@@ -22,7 +22,7 @@ test('migration | ember-addon | steps | update-test-app-tsconfig-json > typescri
 
   loadFixture(inputProject, codemodOptions);
 
-  updateTestAppTsconfigJson(options);
+  updateTestAppTsConfigJson(options);
 
   assertFixture(outputProject, codemodOptions);
 });

@@ -3,16 +3,16 @@ import { join } from 'node:path';
 
 import { convertToMap, convertToObject } from '@codemod-utils/json';
 
-import type { Options, TsconfigJson } from '../../../types/index.js';
+import type { Options, TsConfigJson } from '../../../types/index.js';
 import { sanitizeJson } from '../../../utils/json.js';
 
 function updateCompilerOptions(
-  tsconfigJson: TsconfigJson,
+  tsConfigJson: TsConfigJson,
   options: Options,
 ): void {
   const { packages } = options;
 
-  const compilerOptions = convertToMap(tsconfigJson['compilerOptions']);
+  const compilerOptions = convertToMap(tsConfigJson['compilerOptions']);
 
   compilerOptions.set('paths', {
     [`${packages.testApp.name}/tests/*`]: ['tests/*'],
@@ -20,14 +20,14 @@ function updateCompilerOptions(
     '*': ['types/*'],
   });
 
-  tsconfigJson['compilerOptions'] = convertToObject(compilerOptions);
+  tsConfigJson['compilerOptions'] = convertToObject(compilerOptions);
 }
 
-function updateInclude(tsconfigJson: TsconfigJson): void {
-  tsconfigJson['include'] = ['app/**/*', 'tests/**/*', 'types/**/*'];
+function updateInclude(tsConfigJson: TsConfigJson): void {
+  tsConfigJson['include'] = ['app/**/*', 'tests/**/*', 'types/**/*'];
 }
 
-export function updateTestAppTsconfigJson(options: Options): void {
+export function updateTestAppTsConfigJson(options: Options): void {
   const { locations, packages, projectRoot } = options;
 
   if (!packages.addon.hasTypeScript) {
@@ -36,12 +36,12 @@ export function updateTestAppTsconfigJson(options: Options): void {
 
   const oldPath = join(projectRoot, locations.testApp, 'tsconfig.json');
   const oldFile = readFileSync(oldPath, 'utf8');
-  const tsconfigJson = JSON.parse(sanitizeJson(oldFile));
+  const tsConfigJson = JSON.parse(sanitizeJson(oldFile));
 
-  updateCompilerOptions(tsconfigJson, options);
-  updateInclude(tsconfigJson);
+  updateCompilerOptions(tsConfigJson, options);
+  updateInclude(tsConfigJson);
 
-  const newFile = JSON.stringify(tsconfigJson, null, 2) + '\n';
+  const newFile = JSON.stringify(tsConfigJson, null, 2) + '\n';
 
   writeFileSync(oldPath, newFile, 'utf8');
 }

@@ -5,7 +5,7 @@ import {
   test,
 } from '@codemod-utils/tests';
 
-import { updateAddonTsconfigJson } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { updateAddonTsConfigJson } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   codemodOptions,
   options,
@@ -22,7 +22,7 @@ test('migration | ember-addon | steps | update-addon-tsconfig-json > glint', fun
 
   loadFixture(inputProject, codemodOptions);
 
-  updateAddonTsconfigJson(options);
+  updateAddonTsConfigJson(options);
 
   assertFixture(outputProject, codemodOptions);
 });

@@ -1,7 +1,4 @@
-import type {
-  PackageJson,
-  TsConfigJson as TsconfigJson,
-} from '@codemod-utils/json';
+import type { PackageJson, TsConfigJson } from '@codemod-utils/json';
 
 type CodemodOptions = {
   addonLocation: string | undefined;
@@ -47,4 +44,4 @@ type Options = {
   projectRoot: string;
 };
 
-export type { CodemodOptions, Context, Options, PackageJson, TsconfigJson };
+export type { CodemodOptions, Context, Options, PackageJson, TsConfigJson };

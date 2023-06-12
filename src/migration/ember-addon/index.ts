@@ -7,9 +7,9 @@ import {
   moveProjectRootFiles,
   moveTestAppFiles,
   updateAddonPackageJson,
-  updateAddonTsconfigJson,
+  updateAddonTsConfigJson,
   updateTestAppPackageJson,
-  updateTestAppTsconfigJson,
+  updateTestAppTsConfigJson,
 } from './steps/index.js';
 
 export function migrateEmberAddon(codemodOptions: CodemodOptions): void {
@@ -34,7 +34,7 @@ export function migrateEmberAddon(codemodOptions: CodemodOptions): void {
 
   // Fine-tune individual files
   updateAddonPackageJson(context, options);
-  updateAddonTsconfigJson(options);
+  updateAddonTsConfigJson(options);
   updateTestAppPackageJson(options);
-  updateTestAppTsconfigJson(options);
+  updateTestAppTsConfigJson(options);
 }
