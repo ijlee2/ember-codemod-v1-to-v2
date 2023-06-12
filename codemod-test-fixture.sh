@@ -51,7 +51,7 @@ fi
 rm -r "tests/fixtures/$FIXTURE/output"
 cp -r "tests/fixtures/$FIXTURE/input" "tests/fixtures/$FIXTURE/output"
 
-./bin/ember-codemod-v1-to-v2.js \
+./dist/bin/ember-codemod-v1-to-v2.js \
   --addon-location=$ADDON_LOCATION \
   --root="tests/fixtures/$FIXTURE/output" \
   --test-app-location=$TEST_APP_LOCATION \

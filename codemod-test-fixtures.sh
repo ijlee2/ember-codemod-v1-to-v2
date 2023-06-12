@@ -12,6 +12,9 @@
 #
 #---------
 
+# Compile TypeScript
+pnpm build
+
 ./codemod-test-fixture.sh -a "packages/ember-container-query" -t "demo-app" -T "demo-app-for-ember-container-query" ember-container-query-customizations
 ./codemod-test-fixture.sh ember-container-query-glint
 ./codemod-test-fixture.sh ember-container-query-javascript

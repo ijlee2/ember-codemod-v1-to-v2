@@ -102,7 +102,12 @@ To better meet your needs, consider cloning the repo and running the codemod loc
 
 ```sh
 cd <your/cloned/repo>
-./bin/ember-codemod-v1-to-v2.js --root=<your/project/path>
+
+# Compile TypeScript
+pnpm build
+
+# Run codemod
+./dist/bin/ember-codemod-v1-to-v2.js --root=<your/project/path>
 ```
 
 You can also look at another codemod called [`ember-addon-migrator`](https://github.com/NullVoxPopuli/ember-addon-migrator).

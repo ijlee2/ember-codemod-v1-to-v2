@@ -1,5 +1,6 @@
 # compiled output
 /dist/
+/dist-for-testing/
 /tmp/
 
 # dependencies
@@ -8,5 +9,5 @@
 # misc
 !.*
 .*/
-/src/blueprints/
+/blueprints/
 /tests/fixtures/
