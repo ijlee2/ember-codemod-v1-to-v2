@@ -10,5 +10,5 @@
     "outDir": "dist-for-testing"
   },
   "include": ["bin", "src", "tests"],
-  "exclude": ["src/blueprints", "tests/fixtures"]
+  "exclude": ["tests/fixtures"]
 }
