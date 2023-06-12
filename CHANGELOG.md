@@ -1,3 +1,15 @@
+## 0.7.0 (2023-06-12)
+
+### Enhancement
+* [#41](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/41) Introduced TypeScript ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#40](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/40) Updated @codemod-utils packages ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.6.3 (2023-06-10)
 
 ### Internal
