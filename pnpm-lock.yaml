@@ -8,11 +8,11 @@ dependencies:
     specifier: ^0.2.0
     version: 0.2.0
   '@codemod-utils/files':
-    specifier: ^0.4.0
-    version: 0.4.0
+    specifier: ^0.4.1
+    version: 0.4.1
   '@codemod-utils/json':
-    specifier: ^0.3.0
-    version: 0.3.0
+    specifier: ^0.3.1
+    version: 0.3.1
   strip-json-comments:
     specifier: ^5.0.0
     version: 5.0.0
@@ -25,8 +25,8 @@ devDependencies:
     specifier: ^7.22.5
     version: 7.22.5
   '@codemod-utils/tests':
-    specifier: ^0.2.1
-    version: 0.2.1(@sondr3/minitest@0.1.1)
+    specifier: ^0.2.2
+    version: 0.2.2(@sondr3/minitest@0.1.1)
   '@sondr3/minitest':
     specifier: ^0.1.1
     version: 0.1.1
@@ -307,22 +307,22 @@ packages:
       lodash.template: 4.5.0
     dev: false
 
-  /@codemod-utils/files@0.4.0:
-    resolution: {integrity: sha512-chGn+42QqzMP+OrH5fS9SdzUXOPCJhRUkzVd9rzcCCDjhqqK44YvqfhZxE+sAO173BrbmXqjLYqDRdWBUviKGA==}
+  /@codemod-utils/files@0.4.1:
+    resolution: {integrity: sha512-uMfkkerctw9VfoRxh/LBsbeKiFYJ/eg4xsSocfgqNfuOnPkAQybcdzx9G8QWzMMLSV4GqCQ7yTLfmiOrTwS6kQ==}
     engines: {node: 16.* || >= 18}
     dependencies:
       glob: 10.2.7
     dev: false
 
-  /@codemod-utils/json@0.3.0:
-    resolution: {integrity: sha512-mwua6fsKxhemCMoSLhJuRVGdD6bIYiryietw4P6nE/GY88TxOy2oBckjY9wJysUGIpqp+dSkLnyEe/CVzvBynQ==}
+  /@codemod-utils/json@0.3.1:
+    resolution: {integrity: sha512-e/aYyQxisAguz9GUS4tShS0drLuDK+D9LuB9tTD6jU/KC8AciSl86C5ulwViVnfX/q3n7C/zY+N7G8ra9X8shQ==}
     engines: {node: 16.* || >= 18}
     dependencies:
       type-fest: 3.11.1
     dev: false
 
-  /@codemod-utils/tests@0.2.1(@sondr3/minitest@0.1.1):
-    resolution: {integrity: sha512-nW5RrzkWTipx6H+q3P1NOSm919jP8vyIvoONzFAifdapwdKIuphmUKEVDFmRz6ztrlRH/vUYGK1P8OOA47/Saw==}
+  /@codemod-utils/tests@0.2.2(@sondr3/minitest@0.1.1):
+    resolution: {integrity: sha512-a6j3RPqyVsNdgHNgcHDkVbjlXFIc58Cie3o3gobtJPeOONVkBfK4XLDpqJ2jJBQOg8paTmyrfdz/1JCoV891xQ==}
     engines: {node: 16.* || >= 18}
     peerDependencies:
       '@sondr3/minitest': ^0.1.1
