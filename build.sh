@@ -2,7 +2,7 @@
 
 ENVIRONMENT=$1
 
-if [ $ENVIRONMENT == "--production" ]
+if [ $ENVIRONMENT = "--production" ]
 then
   # Clean slate
   rm -rf "dist"
@@ -16,7 +16,7 @@ then
 
   echo "SUCCESS: Built dist.\n"
 
-elif [ $ENVIRONMENT == "--test" ]
+elif [ $ENVIRONMENT = "--test" ]
 then
   # Clean slate
   rm -rf "dist-for-testing"
