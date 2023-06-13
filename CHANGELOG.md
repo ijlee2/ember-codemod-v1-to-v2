@@ -1,13 +1,7 @@
-## 0.7.2-alpha.2 (2023-06-13)
+## 0.7.2 (2023-06-13)
 
 ### Bug Fix
 * [#44](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/44) Wrote a shell script to simplify the build and test scripts ([@ijlee2](https://github.com/ijlee2))
-
-### Committers: 1
-- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
-
-
-## 0.7.2-alpha.1 (2023-06-13)
 
 ### Enhancement
 * [#43](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/43) Updated project structure ([@ijlee2](https://github.com/ijlee2))
