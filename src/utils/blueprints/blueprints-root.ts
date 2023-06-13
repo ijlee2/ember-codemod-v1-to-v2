@@ -6,5 +6,5 @@ const fileURL = import.meta.url;
 
 export const blueprintsRoot: string = join(
   getFilePath(fileURL),
-  '../../../../blueprints',
+  '../../blueprints',
 );
