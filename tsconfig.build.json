@@ -9,5 +9,6 @@
     "moduleResolution": "NodeNext",
     "outDir": "dist"
   },
-  "include": ["bin", "src"]
+  "include": ["bin", "src"],
+  "exclude": ["src/blueprints"]
 }
