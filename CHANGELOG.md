@@ -1,3 +1,12 @@
+## 0.7.2-alpha.1 (2023-06-13)
+
+### Enhancement
+* [#43](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/43) Updated project structure ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.7.1 (2023-06-12)
 
 ### Bug Fix
