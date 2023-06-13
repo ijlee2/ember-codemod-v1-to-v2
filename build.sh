@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+COMMAND="ember-codemod-v1-to-v2"
 ENVIRONMENT=$1
 
 if [ $ENVIRONMENT = "--production" ]
@@ -11,8 +12,12 @@ then
   tsc --project "tsconfig.build.json"
 
   # Configure files
-  chmod +x "dist/bin/ember-codemod-v1-to-v2.js"
-  cp -r "src/blueprints" "dist/src/blueprints"
+  chmod +x "dist/bin/$COMMAND.js"
+
+  if [ -d "src/blueprints" ]
+  then
+    cp -r "src/blueprints" "dist/src/blueprints"
+  fi
 
   echo "SUCCESS: Built dist.\n"
 
@@ -25,7 +30,10 @@ then
   tsc --project "tsconfig.json"
 
   # Configure files
-  cp -r "src/blueprints" "dist-for-testing/src/blueprints"
+  if [ -d "src/blueprints" ]
+  then
+    cp -r "src/blueprints" "dist-for-testing/src/blueprints"
+  fi
 
   echo "SUCCESS: Built dist-for-testing.\n"
 
