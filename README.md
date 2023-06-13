@@ -20,7 +20,7 @@ You can check [`ember-container-query`](https://github.com/ijlee2/ember-containe
 Step 1. Quickly migrate to [v2 format](https://github.com/embroider-build/embroider/blob/main/ADDON-AUTHOR-GUIDE.md).<sup>1</sup>
 
 ```sh
-cd <your/project/path>
+cd <path/to/your/project>
 npx ember-codemod-v1-to-v2 <arguments>
 ```
 
@@ -38,8 +38,6 @@ Step 3. Review the test-app package.
 
 Step 4. Review the workspace root including CI/CD.
 
-Step 5. Celebrate.
-
 <sup>1. Before running `ember-codemod-v1-to-v2`, consider [meeting the prerequisites](https://github.com/embroider-build/embroider/blob/v1.8.3/PORTING-ADDONS-TO-V2.md#part-3-prerequisites-for-v2-addon). You can run [`ember-codemod-pod-to-octane`](https://github.com/ijlee2/ember-codemod-pod-to-octane) to un-pod a v1 addon.</sup>
 
 <sup>2. Files such as `.eslintrc.js`, `.gitignore`, `babel.config.json` (addon only), `config/environment.js` (test-app only), `ember-cli-build.js` (test-app only), `package.json`, `rollup.config.mjs` (addon only), `tsconfig.json`, etc.</sup>
@@ -52,10 +50,10 @@ In most cases, I recommend running the codemod without any arguments (i.e. allow
 <details>
 <summary>Optional: Specify the addon location</summary>
 
-By default, the package name decides where the addon package lives. Pass `--addon-location` to override the logic. This may be useful if you have a scoped package.
+By default, the package name decides where the addon package lives. Pass `--addon-location` to override the logic. This may be useful if you have a workspace with many addons.
 
 ```sh
-npx ember-codemod-v1-to-v2 --addon-location="packages/ui-buttons"
+npx ember-codemod-v1-to-v2 --addon-location="packages/ui/buttons"
 ```
 
 </details>
@@ -66,7 +64,7 @@ npx ember-codemod-v1-to-v2 --addon-location="packages/ui-buttons"
 Pass `--root` to run the codemod on a project somewhere else (i.e. not in the current directory).
 
 ```sh
-npx ember-codemod-v1-to-v2 --root=<your/project/path>
+npx ember-codemod-v1-to-v2 --root=<path/to/your/project>
 ```
 
 </details>
@@ -77,7 +75,7 @@ npx ember-codemod-v1-to-v2 --root=<your/project/path>
 By default, the test-app package lives in the folder `test-app`. Pass `--test-app-location` to override the logic.
 
 ```sh
-npx ember-codemod-v1-to-v2 --test-app-location="docs"
+npx ember-codemod-v1-to-v2 --test-app-location="docs-app"
 ```
 
 </details>
@@ -101,13 +99,13 @@ The codemod is designed to cover typical uses of an Ember addon. It is not desig
 To better meet your needs, consider cloning the repo and running the codemod locally.
 
 ```sh
-cd <your/cloned/repo>
+cd <path/to/cloned/repo>
 
 # Compile TypeScript
 pnpm build
 
 # Run codemod
-./dist/bin/ember-codemod-v1-to-v2.js --root=<your/project/path>
+./dist/bin/ember-codemod-v1-to-v2.js --root=<path/to/your/project>
 ```
 
 You can also look at another codemod called [`ember-addon-migrator`](https://github.com/NullVoxPopuli/ember-addon-migrator).
