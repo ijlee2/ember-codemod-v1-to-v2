@@ -5,23 +5,23 @@ import {
   test,
 } from '@codemod-utils/tests';
 
-import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { createFilesFromBlueprints } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   codemodOptions,
   context,
   options,
 } from '../../../../helpers/shared-test-setups/customizations.js';
 
-test('migration | ember-addon | steps | create-files-from-blueprint > customizations', function () {
+test('migration | ember-addon | steps | create-files-from-blueprints > customizations', function () {
   const inputProject = {};
 
   const outputProject = convertFixtureToJson(
-    'steps/create-files-from-blueprint/customizations/output',
+    'steps/create-files-from-blueprints/customizations/output',
   );
 
   loadFixture(inputProject, codemodOptions);
 
-  createFilesFromBlueprint(context, options);
+  createFilesFromBlueprints(context, options);
 
   assertFixture(outputProject, codemodOptions);
 });

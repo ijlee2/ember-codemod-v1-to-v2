@@ -5,17 +5,17 @@ import {
   test,
 } from '@codemod-utils/tests';
 
-import { createFilesFromBlueprint } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { createFilesFromBlueprints } from '../../../../../src/migration/ember-addon/steps/index.js';
 import {
   codemodOptions,
   context,
 } from '../../../../helpers/shared-test-setups/typescript.js';
 
-test('migration | ember-addon | steps | create-files-from-blueprint > npm', function () {
+test('migration | ember-addon | steps | create-files-from-blueprints > pnpm', function () {
   const inputProject = {};
 
   const outputProject = convertFixtureToJson(
-    'steps/create-files-from-blueprint/npm/output',
+    'steps/create-files-from-blueprints/pnpm/output',
   );
 
   loadFixture(inputProject, codemodOptions);
@@ -26,8 +26,8 @@ test('migration | ember-addon | steps | create-files-from-blueprint > npm', func
       testApp: 'test-app',
     },
     packageManager: {
-      isNpm: true,
-      isPnpm: false,
+      isNpm: false,
+      isPnpm: true,
       isYarn: false,
     },
     packages: {
@@ -50,7 +50,7 @@ test('migration | ember-addon | steps | create-files-from-blueprint > npm', func
     projectRoot: 'tmp/ember-container-query-typescript',
   };
 
-  createFilesFromBlueprint(context, options);
+  createFilesFromBlueprints(context, options);
 
   assertFixture(outputProject, codemodOptions);
 });
