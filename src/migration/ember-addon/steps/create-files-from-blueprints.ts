@@ -36,7 +36,7 @@ function resolveBlueprintFilePath(
     .replace('__testAppLocation__', locations.testApp);
 }
 
-export function createFilesFromBlueprint(
+export function createFilesFromBlueprints(
   context: Context,
   options: Options,
 ): void {

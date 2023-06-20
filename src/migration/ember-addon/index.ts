@@ -1,7 +1,7 @@
 import type { CodemodOptions } from '../../types/index.js';
 import {
   analyzeAddon,
-  createFilesFromBlueprint,
+  createFilesFromBlueprints,
   createOptions,
   moveAddonFiles,
   moveProjectRootFiles,
@@ -29,8 +29,8 @@ export function migrateEmberAddon(codemodOptions: CodemodOptions): void {
   moveTestAppFiles(options);
   moveProjectRootFiles(options);
 
-  // Get the latest code from blueprint
-  createFilesFromBlueprint(context, options);
+  // Get the latest code from blueprints
+  createFilesFromBlueprints(context, options);
 
   // Fine-tune individual files
   updateAddonPackageJson(context, options);
