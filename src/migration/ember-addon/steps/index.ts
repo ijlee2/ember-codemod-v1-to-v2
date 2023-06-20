@@ -1,5 +1,5 @@
 export * from './analyze-addon.js';
-export * from './create-files-from-blueprint.js';
+export * from './create-files-from-blueprints.js';
 export * from './create-options.js';
 export * from './move-addon-files.js';
 export * from './move-project-root-files.js';
