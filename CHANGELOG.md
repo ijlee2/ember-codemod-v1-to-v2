@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.7.3 (2023-06-21)
+
+### Enhancement
+* [#46](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/46) Renamed method and updated development dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#47](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/47) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#46](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/46) Renamed method and updated development dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.7.2 (2023-06-13)
 
 ### Bug Fix
