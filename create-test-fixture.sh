@@ -4,13 +4,13 @@
 #
 #  A. Purpose
 #
-#    Bring in a v1 addon as a test candidate for ember-codemod-v1-to-v2. 
+#    Copy an existing project to tests/fixtures.
 #
 #  B. Usage
 #
 #    ./create-test-fixture.sh <PATH-TO-SOURCE> <FIXTURE-NAME> [CREATE-EMPTY-FILES]
 #
-#    Step 1. Ensure that the addon is available on your local machine.
+#    Step 1. Ensure that the project is available on your local machine.
 #
 #      cd ~/Desktop
 #      git clone git@github.com:ijlee2/ember-container-query.git
@@ -19,11 +19,11 @@
 #
 #      Choice a. Keep most of the source code.
 #
-#        ./create-test-fixture.sh "../../Desktop/ember-container-query" ember-container-query-glint
+#        ./create-test-fixture.sh "../../Desktop/ember-container-query/docs-app" ember-container-query
 #
 #      Choice b. Empty every file.
 #
-#        ./create-test-fixture.sh "../../Desktop/ember-container-query" ember-container-query-glint true
+#        ./create-test-fixture.sh "../../Desktop/ember-container-query/docs-app" ember-container-query true
 #
 #---------
 
@@ -102,12 +102,6 @@ else
       truncate -s 0 "tests/fixtures/$DESTINATION/output/$file"
     fi
   done
-
-  # Uncomment to empty files that may cause trouble in tests (e.g. images)
-  # DISALLOWED_EXTENSIONS="gif|jpeg|jpg|png|svg"
-
-  # find -E "tests/fixtures/$DESTINATION/input" -iregex ".*\.($DISALLOWED_EXTENSIONS)$" -exec truncate -s 0 {} \;
-  # find -E "tests/fixtures/$DESTINATION/output" -iregex ".*\.($DISALLOWED_EXTENSIONS)$" -exec truncate -s 0 {} \;
 
   echo "SUCCESS: Emptied select files.\n"  
 fi

@@ -28,7 +28,7 @@ FIXTURE=${@:$OPTIND:1}
 
 if [ ! $FIXTURE ]
 then
-  echo "ERROR: Please specify the fixture name (e.g. ember-container-query-glint).\n"
+  echo "ERROR: Please specify the fixture name.\n"
   exit 1
 elif [ ! -d "tests/fixtures/$FIXTURE/input" ]
 then
