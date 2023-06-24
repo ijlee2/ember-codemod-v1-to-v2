@@ -57,7 +57,7 @@ const inputProject = convertFixtureToJson('$DESTINATION/input');
 const outputProject = convertFixtureToJson('$DESTINATION/output');
 
 export { inputProject, outputProject };" \
-  > "tests/fixtures/$DESTINATION/index.js"
+  > "tests/fixtures/$DESTINATION/index.ts"
 
 echo "SUCCESS: Scaffolded the input and output folders.\n"
 
