@@ -125,7 +125,7 @@ If you have an open-sourced addon (v1 or v2) that I can use as a reference, reac
 
 ## Credits
 
-The codemod steps were based on [Migrating an Ember addon to the next-gen v2 format](https://www.kaliber5.de/de/blog/v2-addon_en) and [Guide: Porting an Addon to v2](https://github.com/embroider-build/embroider/blob/v1.8.3/PORTING-ADDONS-TO-V2.md). The blueprints were derived from [`@embroider/addon-blueprint`](https://github.com/embroider-build/addon-blueprint).
+The codemod steps were based on [Migrating an Ember addon to the next-gen v2 format](https://www.kaliber5.de/de/blog/v2-addon_en) and [Guide: Porting an Addon to v2](https://github.com/embroider-build/embroider/blob/v3.1.1-core/docs/porting-addons-to-v2.md). The blueprints were derived from [`@embroider/addon-blueprint`](https://github.com/embroider-build/addon-blueprint).
 
 
 ## License
