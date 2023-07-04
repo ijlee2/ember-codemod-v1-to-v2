@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.7.4 (2023-07-04)
+
+### Enhancement
+* [#50](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/50) Updated latestVersions ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#49](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/49) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#48](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/48) Allowed index.ts in tests/fixtures ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.7.3 (2023-06-21)
 
 ### Enhancement
