@@ -147,7 +147,7 @@ const options: Options = {
         ['typescript', '^4.9.4'],
         ['webpack', '^5.75.0'],
       ]),
-      hasGlint: false,
+      hasGlint: true,
       hasTypeScript: true,
       isV1Addon: true,
       name: 'ember-container-query',

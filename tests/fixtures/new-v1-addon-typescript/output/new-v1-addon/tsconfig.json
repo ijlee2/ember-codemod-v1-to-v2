@@ -1,6 +1,11 @@
 {
   "extends": "@tsconfig/ember/tsconfig.json",
-  "compilerOptions": {},
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "declarations",
+    "emitDeclarationOnly": true,
+    "noEmit": false
+  },
   "include": [
     "src/**/*",
     "unpublished-development-types/**/*"

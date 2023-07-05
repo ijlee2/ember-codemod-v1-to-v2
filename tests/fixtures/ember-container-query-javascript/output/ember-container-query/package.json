@@ -66,6 +66,8 @@
     "@babel/runtime": "^7.22.6",
     "@embroider/addon-dev": "^3.1.1",
     "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "concurrently": "^7.6.0",
     "rollup": "^3.26.0",
     "rollup-plugin-copy": "^3.4.0"
   },
