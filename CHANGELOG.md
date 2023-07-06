@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.8.0 (2023-07-06)
+
+### Enhancement
+* [#53](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/53) Updated blueprints for .gitignore ([@ijlee2](https://github.com/ijlee2))
+* [#52](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/52) Refactored code ([@ijlee2](https://github.com/ijlee2))
+* [#51](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/51) Remove rollup-plugin-ts ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.7.4 (2023-07-04)
 
 ### Enhancement
