@@ -49,7 +49,7 @@ function moveToAddonAndTestApp(options: Options): void {
     files.add('tsconfig.json');
   }
 
-  const filePaths = findFiles(unionize([...files]), {
+  const filePaths = findFiles(unionize(Array.from(files)), {
     projectRoot,
   });
 

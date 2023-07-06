@@ -24,8 +24,10 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "rollup --config",
+    "build": "concurrently \"npm:build:*\" --names \"build:\"",
+    "build:js": "rollup --config",
     "build:test": "ember build --environment=test",
+    "build:types": "glint --declaration",
     "changelog": "lerna-changelog",
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
     "lint:css": "stylelint \"tests/dummy/app/**/*.css\" --cache",
@@ -39,7 +41,9 @@
     "lint:types": "glint",
     "postpack": "ember ts:clean",
     "prepack": "rollup --config",
-    "start": "rollup --config --watch",
+    "start": "concurrently \"npm:start:*\" --names \"start:\"",
+    "start:js": "rollup --config --watch --no-watch.clearScreen",
+    "start:types": "glint --declaration --watch",
     "test": "echo 'A v2 addon does not have tests, run tests in test-app'",
     "test:ember": "ember test",
     "test:ember-compatibility": "./node_modules/.bin/ember try:one"
@@ -69,9 +73,11 @@
     "@babel/preset-typescript": "^7.22.5",
     "@babel/runtime": "^7.22.6",
     "@embroider/addon-dev": "^3.1.1",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "concurrently": "^7.6.0",
     "rollup": "^3.26.0",
-    "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-ts": "^3.2.0"
+    "rollup-plugin-copy": "^3.4.0"
   },
   "engines": {
     "node": "14.* || 16.* || >= 18"
@@ -86,21 +92,25 @@
     "version": 2
   },
   "exports": {
-    ".": "./dist/index.js",
+    ".": {
+      "types": "./declarations/index.d.ts",
+      "default": "./dist/index.js"
+    },
     "./*": {
-      "types": "./dist/*.d.ts",
+      "types": "./declarations/*.d.ts",
       "default": "./dist/*.js"
     },
     "./addon-main.js": "./addon-main.cjs"
   },
   "files": [
     "addon-main.cjs",
+    "declarations",
     "dist"
   ],
   "typesVersions": {
     "*": {
       "*": [
-        "dist/*"
+        "declarations/*"
       ]
     }
   }

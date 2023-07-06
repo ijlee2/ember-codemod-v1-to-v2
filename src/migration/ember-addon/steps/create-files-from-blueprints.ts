@@ -10,7 +10,7 @@ import { blueprintsRoot } from '../../../utils/blueprints.js';
 function getFilesToSkip(options: Options): string[] {
   const { packageManager, packages } = options;
 
-  const files = new Set();
+  const files = new Set<string>();
 
   if (!packages.addon.hasTypeScript) {
     files.add('__addonLocation__/unpublished-development-types/index.d.ts');
@@ -21,7 +21,7 @@ function getFilesToSkip(options: Options): string[] {
     files.add('pnpm-workspace.yaml');
   }
 
-  return [...files] as string[];
+  return Array.from(files);
 }
 
 function resolveBlueprintFilePath(

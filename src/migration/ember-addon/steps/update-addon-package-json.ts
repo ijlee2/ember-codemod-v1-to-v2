@@ -62,21 +62,23 @@ function updateDevDependencies(
     '@babel/runtime',
     '@embroider/addon-dev',
     '@rollup/plugin-babel',
+    '@rollup/plugin-node-resolve',
+    'concurrently',
     'rollup',
     'rollup-plugin-copy',
   ]);
 
   if (packages.addon.hasTypeScript) {
     packagesToInstall.add('@babel/preset-typescript');
-    packagesToInstall.add('rollup-plugin-ts');
-    packagesToInstall.delete('@rollup/plugin-babel');
   }
 
-  [...packagesToInstall].sort().forEach((packageName) => {
-    const version = getVersion(packageName, options);
+  Array.from(packagesToInstall)
+    .sort()
+    .forEach((packageName) => {
+      const version = getVersion(packageName, options);
 
-    devDependencies.set(packageName, version);
-  });
+      devDependencies.set(packageName, version);
+    });
 
   packageJson['devDependencies'] = convertToObject(devDependencies);
 }
@@ -120,12 +122,15 @@ function updateOtherFields(
 
   if (packages.addon.hasTypeScript) {
     packageJson['exports'] = {
-      '.': './dist/index.js',
+      '.': {
+        types: './declarations/index.d.ts',
+        default: './dist/index.js',
+      },
       './*': {
         /*
           This object has an order dependency. The `default` key must appear last.
         */
-        types: './dist/*.d.ts',
+        types: './declarations/*.d.ts',
         default: './dist/*.js',
       },
       './addon-main.js': './addon-main.cjs',
@@ -138,31 +143,69 @@ function updateOtherFields(
     };
   }
 
+  const files = new Set(['addon-main.cjs', 'dist']);
+
   if (hasPublicAssets) {
-    packageJson['files'] = ['addon-main.cjs', 'dist', 'public'];
-  } else {
-    packageJson['files'] = ['addon-main.cjs', 'dist'];
+    files.add('public');
   }
+
+  if (packages.addon.hasTypeScript) {
+    files.add('declarations');
+  }
+
+  packageJson['files'] = Array.from(files).sort();
 
   if (packages.addon.hasTypeScript) {
     packageJson['typesVersions'] = {
       '*': {
-        '*': ['dist/*'],
+        '*': ['declarations/*'],
       },
     };
   }
 }
 
-function updateScripts(packageJson: PackageJson): void {
+function updateScripts(packageJson: PackageJson, options: Options): void {
+  const { packages } = options;
+
   const scripts = convertToMap(packageJson['scripts']);
 
-  scripts.set('build', 'rollup --config');
-  scripts.set('prepack', 'rollup --config');
-  scripts.set('start', 'rollup --config --watch');
-  scripts.set(
-    'test',
-    "echo 'A v2 addon does not have tests, run tests in test-app'",
-  );
+  if (packages.addon.hasTypeScript) {
+    scripts.set('build', 'concurrently "npm:build:*" --names "build:"');
+    scripts.set('build:js', 'rollup --config');
+    scripts.set(
+      'build:types',
+      packages.addon.hasGlint ? 'glint --declaration' : 'tsc',
+    );
+
+    scripts.set(
+      'lint:types',
+      packages.addon.hasGlint
+        ? 'glint'
+        : 'tsc --emitDeclarationOnly false --noEmit',
+    );
+
+    scripts.set('prepack', 'rollup --config');
+
+    scripts.set('start', 'concurrently "npm:start:*" --names "start:"');
+    scripts.set('start:js', 'rollup --config --watch --no-watch.clearScreen');
+    scripts.set(
+      'start:types',
+      packages.addon.hasGlint ? 'glint --declaration --watch' : 'tsc --watch',
+    );
+
+    scripts.set(
+      'test',
+      "echo 'A v2 addon does not have tests, run tests in test-app'",
+    );
+  } else {
+    scripts.set('build', 'rollup --config');
+    scripts.set('prepack', 'rollup --config');
+    scripts.set('start', 'rollup --config --watch');
+    scripts.set(
+      'test',
+      "echo 'A v2 addon does not have tests, run tests in test-app'",
+    );
+  }
 
   packageJson['scripts'] = convertToObject(scripts);
 }
@@ -179,7 +222,7 @@ export function updateAddonPackageJson(
 
   updateDependencies(packageJson, options);
   updateDevDependencies(packageJson, options);
-  updateScripts(packageJson);
+  updateScripts(packageJson, options);
   updateOtherFields(packageJson, context, options);
 
   const destination = join(projectRoot, locations.addon, 'package.json');

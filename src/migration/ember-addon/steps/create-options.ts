@@ -45,7 +45,7 @@ function analyzePackageManager(codemodOptions: CodemodOptions): PackageManager {
     ['yarn.lock', 'yarn'],
   ]);
 
-  const lockFiles = [...mapping.keys()];
+  const lockFiles = Array.from(mapping.keys());
 
   const filePaths = findFiles(unionize(lockFiles), {
     projectRoot,
