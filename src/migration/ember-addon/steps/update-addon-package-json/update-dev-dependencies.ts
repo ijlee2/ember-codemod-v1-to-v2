@@ -40,13 +40,11 @@ export function updateDevDependencies(
     packagesToInstall.add('@babel/preset-typescript');
   }
 
-  Array.from(packagesToInstall)
-    .sort()
-    .forEach((packageName) => {
-      const version = getVersion(packageName, options);
+  Array.from(packagesToInstall).forEach((packageName) => {
+    const version = getVersion(packageName, options);
 
-      devDependencies.set(packageName, version);
-    });
+    devDependencies.set(packageName, version);
+  });
 
   packageJson['devDependencies'] = convertToObject(devDependencies);
 }

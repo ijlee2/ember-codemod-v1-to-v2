@@ -31,7 +31,6 @@ function moveDependenciesToDevDependencies(
 
   Array.from(packagesToMove)
     .filter((packageName) => dependencies.has(packageName))
-    .sort()
     .forEach((packageName) => {
       const version = getVersion(packageName, options);
 
