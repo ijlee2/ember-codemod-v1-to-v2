@@ -76,10 +76,7 @@ function renameDummy(options: Options): void {
     const oldPath = join(projectRoot, filePath);
     const oldFile = readFileSync(oldPath, 'utf8');
 
-    const newFile = oldFile.replace(
-      new RegExp('dummy', 'g'),
-      packages.testApp.name,
-    );
+    const newFile = oldFile.replace(/dummy/g, packages.testApp.name);
 
     writeFileSync(oldPath, newFile, 'utf8');
   });

@@ -66,7 +66,7 @@ function getPublicEntrypoints(options: Options): string[] {
       });
     })
     .map((filePath) => {
-      return filePath.replace(/ts$/, 'js');
+      return filePath.replace(/(?<!\.d)\.ts$/, '.js');
     })
     .sort();
 }
