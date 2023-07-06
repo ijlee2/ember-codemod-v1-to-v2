@@ -37,6 +37,7 @@ module.exports = {
       ],
       rules: {
         '@typescript-eslint/array-type': 'error',
+        '@typescript-eslint/no-non-null-assertion': 'off',
       },
     },
     // TypeScript and JavaScript files
