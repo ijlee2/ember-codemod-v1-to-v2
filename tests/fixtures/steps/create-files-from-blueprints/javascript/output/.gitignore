@@ -1,5 +1,9 @@
 # compiled output
+declarations/
 dist/
+
+# npm/pnpm/yarn pack output
+*.tgz
 
 # dependencies
 node_modules/
