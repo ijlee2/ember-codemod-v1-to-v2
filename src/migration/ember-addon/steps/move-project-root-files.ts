@@ -27,9 +27,9 @@ function copyToAddon(options: Options): void {
 }
 
 function moveToAddonAndTestApp(options: Options): void {
-  const { locations, packages, projectRoot } = options;
+  const { locations, projectRoot } = options;
 
-  const files = new Set([
+  const files = [
     '.eslintignore',
     '.eslintrc.cjs',
     '.eslintrc.js',
@@ -43,13 +43,10 @@ function moveToAddonAndTestApp(options: Options): void {
     '.template-lintrc.cjs',
     '.template-lintrc.js',
     'package.json',
-  ]);
+    'tsconfig.json',
+  ];
 
-  if (packages.addon.hasTypeScript) {
-    files.add('tsconfig.json');
-  }
-
-  const filePaths = findFiles(unionize(Array.from(files)), {
+  const filePaths = findFiles(unionize(files), {
     projectRoot,
   });
 

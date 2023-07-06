@@ -21,9 +21,9 @@ function analyzePackageJson(codemodOptions: CodemodOptions): AddonPackage {
     version,
   } = packageJson;
 
-  const projectDependencies = new Map([
-    ...Object.entries(dependencies ?? {}),
-    ...Object.entries(devDependencies ?? {}),
+  const projectDependencies = new Map<string, string>([
+    ...(Object.entries(dependencies ?? {}) as [string, string][]),
+    ...(Object.entries(devDependencies ?? {}) as [string, string][]),
   ]);
 
   return {
@@ -31,9 +31,9 @@ function analyzePackageJson(codemodOptions: CodemodOptions): AddonPackage {
     hasGlint: projectDependencies.has('@glint/core'),
     hasTypeScript: projectDependencies.has('typescript'),
     isV1Addon: Boolean(emberAddon),
-    name,
-    version,
-  } as unknown as AddonPackage;
+    name: name!,
+    version: version!,
+  };
 }
 
 function analyzePackageManager(codemodOptions: CodemodOptions): PackageManager {
@@ -77,10 +77,9 @@ function deriveAddonLocation(addonPackage: AddonPackage): string {
     return addonPackage.name;
   }
 
-  // eslint-disable-next-line no-unused-vars
-  const [_scope, packageName] = addonPackage.name.split('/');
+  const packageName = addonPackage.name.split('/')[1]!;
 
-  return packageName!;
+  return packageName;
 }
 
 export function createOptions(codemodOptions: CodemodOptions): Options {
