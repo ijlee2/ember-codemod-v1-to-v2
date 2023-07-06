@@ -3,10 +3,3 @@
 # will also appear in published NPM packages.
 /LICENSE.md
 /README.md
-
-# compiled output
-/declarations/
-/dist/
-
-# dependencies
-/node_modules/
