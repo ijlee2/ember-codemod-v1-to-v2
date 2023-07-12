@@ -39,14 +39,14 @@
   },
   "dependencies": {
     "@codemod-utils/blueprints": "^0.2.1",
-    "@codemod-utils/files": "^0.5.1",
-    "@codemod-utils/json": "^0.3.2",
-    "strip-json-comments": "^5.0.0",
+    "@codemod-utils/files": "^0.5.2",
+    "@codemod-utils/json": "^0.3.4",
+    "strip-json-comments": "^5.0.1",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.6",
-    "@codemod-utils/tests": "^0.2.4",
+    "@babel/core": "^7.22.8",
+    "@codemod-utils/tests": "^0.2.5",
     "@sondr3/minitest": "^0.1.1",
     "@tsconfig/esm": "^1.0.4",
     "@tsconfig/node16": "^16.1.0",
