@@ -53,7 +53,7 @@ In most cases, I recommend running the codemod without any arguments (i.e. allow
 By default, the package name decides where the addon package lives. Pass `--addon-location` to override the logic. This may be useful if you have a workspace with many addons.
 
 ```sh
-npx ember-codemod-v1-to-v2 --addon-location="packages/ui/buttons"
+npx ember-codemod-v1-to-v2 --addon-location packages/ui/buttons
 ```
 
 </details>
@@ -64,7 +64,7 @@ npx ember-codemod-v1-to-v2 --addon-location="packages/ui/buttons"
 Pass `--root` to run the codemod on a project somewhere else (i.e. not in the current directory).
 
 ```sh
-npx ember-codemod-v1-to-v2 --root=<path/to/your/project>
+npx ember-codemod-v1-to-v2 --root <path/to/your/project>
 ```
 
 </details>
@@ -75,7 +75,7 @@ npx ember-codemod-v1-to-v2 --root=<path/to/your/project>
 By default, the test-app package lives in the folder `test-app`. Pass `--test-app-location` to override the logic.
 
 ```sh
-npx ember-codemod-v1-to-v2 --test-app-location="docs-app"
+npx ember-codemod-v1-to-v2 --test-app-location docs-app
 ```
 
 </details>
@@ -86,7 +86,7 @@ npx ember-codemod-v1-to-v2 --test-app-location="docs-app"
 By default, the test-app package is named `test-app`. Pass `--test-app-name` to override the logic. This may be useful if you have a workspace with many addons.
 
 ```sh
-npx ember-codemod-v1-to-v2 --test-app-name="test-app-for-ui-buttons"
+npx ember-codemod-v1-to-v2 --test-app-name test-app-for-ui-buttons
 ```
 
 </details>
@@ -105,7 +105,7 @@ cd <path/to/cloned/repo>
 pnpm build
 
 # Run codemod
-./dist/bin/ember-codemod-v1-to-v2.js --root=<path/to/your/project>
+./dist/bin/ember-codemod-v1-to-v2.js --root <path/to/your/project>
 ```
 
 You can also look at another codemod called [`ember-addon-migrator`](https://github.com/NullVoxPopuli/ember-addon-migrator).

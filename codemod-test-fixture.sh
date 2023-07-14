@@ -15,15 +15,15 @@
 #
 #---------
 
-# Read the named arguments
-while getopts ":a:" flag
+# Get named arguments for the binary
+while getopts ":N:" flag
 do
   case $flag in
-    a) ARGUMENTS=$OPTARG;;
+    N) NAMED_ARGUMENTS=$OPTARG;;
   esac
 done
 
-# Read the positional arguments
+# Get fixture name
 FIXTURE=${@:$OPTIND:1}
 
 if [ ! $FIXTURE ]
@@ -39,6 +39,6 @@ fi
 rm -r "tests/fixtures/$FIXTURE/output"
 cp -r "tests/fixtures/$FIXTURE/input" "tests/fixtures/$FIXTURE/output"
 
-./dist/bin/ember-codemod-v1-to-v2.js $ARGUMENTS --root="tests/fixtures/$FIXTURE/output"
+./dist/bin/ember-codemod-v1-to-v2.js $NAMED_ARGUMENTS --root="tests/fixtures/$FIXTURE/output"
 
 echo "SUCCESS: Updated the output of $FIXTURE.\n"
