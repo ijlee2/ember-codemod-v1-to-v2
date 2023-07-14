@@ -25,8 +25,8 @@ export function updateDevDependencies(
 
   const packagesToInstall = new Set([
     '@babel/core',
-    '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-decorators',
+    '@babel/plugin-transform-class-properties',
     '@babel/runtime',
     '@embroider/addon-dev',
     '@rollup/plugin-babel',
