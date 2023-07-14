@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.9.0 (2023-07-14)
+
+### Enhancement
+* [#56](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/56) Replaced @babel/plugin-proposal-class-properties with @babel/plugin-transform-class-properties ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#55](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/55) Patched #54 ([@ijlee2](https://github.com/ijlee2))
+* [#54](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/54) Supported @typescript-eslint@v6 and prettier@v3 ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.8.0 (2023-07-06)
 
 ### Enhancement
