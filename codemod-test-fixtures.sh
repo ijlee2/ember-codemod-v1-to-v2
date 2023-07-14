@@ -16,7 +16,7 @@
 pnpm build
 
 ./codemod-test-fixture.sh \
-  -a "--addon-location packages/ember-container-query --test-app-location demo-app --test-app-name demo-app-for-ember-container-query" \
+  -N "--addon-location packages/ember-container-query --test-app-location demo-app --test-app-name demo-app-for-ember-container-query" \
   ember-container-query-customizations
 
 ./codemod-test-fixture.sh \
@@ -32,7 +32,7 @@ pnpm build
   ember-container-query-typescript
 
 ./codemod-test-fixture.sh \
-  -a "--addon-location packages/new-v1-addon --test-app-location demo-app --test-app-name demo-app-for-new-v1-addon" \
+  -N "--addon-location packages/new-v1-addon --test-app-location demo-app --test-app-name demo-app-for-new-v1-addon" \
   new-v1-addon-customizations
 
 ./codemod-test-fixture.sh \
