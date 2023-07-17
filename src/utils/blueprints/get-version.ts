@@ -11,7 +11,6 @@ const latestVersions = new Map([
   ['@embroider/addon-dev', '3.1.1'],
   ['@embroider/addon-shim', '1.8.5'],
   ['@rollup/plugin-babel', '6.0.3'],
-  ['@rollup/plugin-node-resolve', '15.1.0'],
   ['concurrently', '8.2.0'],
   ['ember-auto-import', '2.6.3'],
   ['ember-cli-babel', '7.26.11'],

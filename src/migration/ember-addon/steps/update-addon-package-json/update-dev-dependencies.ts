@@ -30,7 +30,6 @@ export function updateDevDependencies(
     '@babel/runtime',
     '@embroider/addon-dev',
     '@rollup/plugin-babel',
-    '@rollup/plugin-node-resolve',
     'concurrently',
     'rollup',
     'rollup-plugin-copy',
