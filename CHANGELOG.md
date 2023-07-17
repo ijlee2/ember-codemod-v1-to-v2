@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.9.1 (2023-07-17)
+
+### Bug Fix
+* [#57](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/57) Downstreamed bug fix from @embroider/addon-blueprint#155 ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#58](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/58) Updated development dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.9.0 (2023-07-14)
 
 ### Enhancement
