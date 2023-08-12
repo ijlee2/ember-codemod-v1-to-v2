@@ -1,5 +1,5 @@
 <% if (options.packageManager.isNpm) { %>{
-  "name": "<%= options.packages.addon.name %>",
+  "name": "workspace-root",
   "version": "<%= options.packages.addon.version %>",
   "private": true,
   "repository": "",
@@ -23,7 +23,7 @@
     "concurrently": "<%= context.projectRoot.devDependencies['concurrently'] %>"
   }
 }<% } else if (options.packageManager.isPnpm) { %>{
-  "name": "<%= options.packages.addon.name %>",
+  "name": "workspace-root",
   "version": "<%= options.packages.addon.version %>",
   "private": true,
   "repository": "",
@@ -43,7 +43,7 @@
     "concurrently": "<%= context.projectRoot.devDependencies['concurrently'] %>"
   }
 }<% } else if (options.packageManager.isYarn) { %>{
-  "name": "<%= options.packages.addon.name %>",
+  "name": "workspace-root",
   "version": "<%= options.packages.addon.version %>",
   "private": true,
   "repository": "",
