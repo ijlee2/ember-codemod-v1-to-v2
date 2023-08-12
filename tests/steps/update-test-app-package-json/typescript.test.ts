@@ -5,7 +5,7 @@ import {
   test,
 } from '@codemod-utils/tests';
 
-import { updateTestAppPackageJson } from '../../../src/migration/ember-addon/steps/index.js';
+import { updateTestAppPackageJson } from '../../../src/steps/index.js';
 import {
   codemodOptions,
   options,

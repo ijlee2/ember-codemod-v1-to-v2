@@ -1,6 +1,6 @@
 import { assertFixture, loadFixture, test } from '@codemod-utils/tests';
 
-import { migrateEmberAddon } from '../../../src/migration/ember-addon/index.js';
+import { runCodemod } from '../../../src/index.js';
 import {
   inputProject,
   outputProject,
@@ -16,12 +16,12 @@ test('migration | ember-addon | index | new-v1-addon > pnpm', function () {
 
   loadFixture(inputProject, codemodOptions);
 
-  migrateEmberAddon(codemodOptions);
+  runCodemod(codemodOptions);
 
   assertFixture(outputProject, codemodOptions);
 
   // Check idempotence
-  migrateEmberAddon(codemodOptions);
+  runCodemod(codemodOptions);
 
   assertFixture(outputProject, codemodOptions);
 });

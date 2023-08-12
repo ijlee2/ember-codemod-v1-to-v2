@@ -1,6 +1,6 @@
 import { assert, loadFixture, test } from '@codemod-utils/tests';
 
-import { analyzeAddon } from '../../../src/migration/ember-addon/steps/index.js';
+import { analyzeAddon } from '../../../src/steps/index.js';
 import { inputProject } from '../../fixtures/ember-container-query-customizations/index.js';
 import {
   codemodOptions,

@@ -1,6 +1,6 @@
 import { assertFixture, loadFixture, test } from '@codemod-utils/tests';
 
-import { moveTestAppFiles } from '../../../src/migration/ember-addon/steps/index.js';
+import { moveTestAppFiles } from '../../../src/steps/index.js';
 import {
   codemodOptions,
   options,
