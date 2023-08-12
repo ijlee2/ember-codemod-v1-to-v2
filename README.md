@@ -27,6 +27,7 @@ npx ember-codemod-v1-to-v2 <arguments>
 Step 2. Review the addon package.
 
 - [x] Update the configuration files.<sup>2</sup>
+- [x] Relative import paths must specify the file extension `.js` or `.ts`.
 - [x] Colocate stylesheets (if any). Let each component import the relevant stylesheet in the backing class.
 - [x] Confirm that you can run all scripts in `package.json`.
 
