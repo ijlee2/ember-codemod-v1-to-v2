@@ -6,7 +6,7 @@ import {
   outputProject,
 } from '../../fixtures/ember-container-query-customizations/index.js';
 
-test('migration | ember-addon | index | ember-container-query > customizations', function () {
+test('index | ember-container-query > customizations', function () {
   const codemodOptions = {
     addonLocation: 'packages/ember-container-query',
     projectRoot: 'tmp/ember-container-query-customizations',

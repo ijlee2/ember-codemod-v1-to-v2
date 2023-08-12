@@ -6,7 +6,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/typescript.js';
 
-test('migration | ember-addon | steps | move-project-root-files > edge case (folders are missing)', function () {
+test('steps | move-project-root-files > edge case (folders are missing)', function () {
   const inputProject = {};
 
   const outputProject = {};

@@ -8,7 +8,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/customizations.js';
 
-test('migration | ember-addon | steps | analyze-addon > customizations', function () {
+test('steps | analyze-addon > customizations', function () {
   loadFixture(inputProject, codemodOptions);
 
   assert.deepStrictEqual(analyzeAddon(options), context);

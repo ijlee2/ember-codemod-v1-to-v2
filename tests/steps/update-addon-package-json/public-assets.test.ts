@@ -11,7 +11,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/typescript.js';
 
-test('migration | ember-addon | steps | update-addon-package-json > public-assets', function () {
+test('steps | update-addon-package-json > public-assets', function () {
   const inputProject = convertFixtureToJson(
     'steps/update-addon-package-json/public-assets/input',
   );

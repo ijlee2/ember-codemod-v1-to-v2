@@ -8,7 +8,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/typescript.js';
 
-test('migration | ember-addon | steps | analyze-addon > typescript', function () {
+test('steps | analyze-addon > typescript', function () {
   loadFixture(inputProject, codemodOptions);
 
   assert.deepStrictEqual(analyzeAddon(options), context);

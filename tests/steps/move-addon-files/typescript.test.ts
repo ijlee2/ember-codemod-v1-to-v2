@@ -6,7 +6,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/typescript.js';
 
-test('migration | ember-addon | steps | move-addon-files > typescript', function () {
+test('steps | move-addon-files > typescript', function () {
   const inputProject = {
     addon: {
       components: {

@@ -6,7 +6,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/typescript.js';
 
-test('migration | ember-addon | steps | analyze-addon > edge case (folders are missing)', function () {
+test('steps | analyze-addon > edge case (folders are missing)', function () {
   const inputProject = {};
 
   loadFixture(inputProject, codemodOptions);

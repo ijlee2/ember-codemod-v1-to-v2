@@ -8,7 +8,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/glint.js';
 
-test('migration | ember-addon | steps | analyze-addon > glint', function () {
+test('steps | analyze-addon > glint', function () {
   loadFixture(inputProject, codemodOptions);
 
   assert.deepStrictEqual(analyzeAddon(options), context);

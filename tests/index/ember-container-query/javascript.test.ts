@@ -6,7 +6,7 @@ import {
   outputProject,
 } from '../../fixtures/ember-container-query-javascript/index.js';
 
-test('migration | ember-addon | index | ember-container-query > javascript', function () {
+test('index | ember-container-query > javascript', function () {
   const codemodOptions = {
     addonLocation: undefined,
     projectRoot: 'tmp/ember-container-query-javascript',

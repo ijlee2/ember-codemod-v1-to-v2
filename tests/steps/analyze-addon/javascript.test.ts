@@ -8,7 +8,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/javascript.js';
 
-test('migration | ember-addon | steps | analyze-addon > javascript', function () {
+test('steps | analyze-addon > javascript', function () {
   loadFixture(inputProject, codemodOptions);
 
   assert.deepStrictEqual(analyzeAddon(options), context);

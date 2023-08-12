@@ -11,7 +11,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/typescript.js';
 
-test('migration | ember-addon | steps | update-test-app-package-json > typescript', function () {
+test('steps | update-test-app-package-json > typescript', function () {
   const inputProject = convertFixtureToJson(
     'steps/update-test-app-package-json/typescript/input',
   );

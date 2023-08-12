@@ -6,7 +6,7 @@ import {
   outputProject,
 } from '../../fixtures/new-v1-addon-npm/index.js';
 
-test('migration | ember-addon | index | new-v1-addon > npm', function () {
+test('index | new-v1-addon > npm', function () {
   const codemodOptions = {
     addonLocation: undefined,
     projectRoot: 'tmp/new-v1-addon-npm',

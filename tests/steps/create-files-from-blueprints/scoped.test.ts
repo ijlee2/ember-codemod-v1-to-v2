@@ -12,7 +12,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/scoped.js';
 
-test('migration | ember-addon | steps | create-files-from-blueprints > scoped', function () {
+test('steps | create-files-from-blueprints > scoped', function () {
   const inputProject = {};
 
   const outputProject = convertFixtureToJson(

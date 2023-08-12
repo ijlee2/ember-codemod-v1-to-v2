@@ -11,7 +11,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/glint.js';
 
-test('migration | ember-addon | steps | update-test-app-tsconfig-json > glint', function () {
+test('steps | update-test-app-tsconfig-json > glint', function () {
   const inputProject = convertFixtureToJson(
     'steps/update-test-app-tsconfig-json/glint/input',
   );

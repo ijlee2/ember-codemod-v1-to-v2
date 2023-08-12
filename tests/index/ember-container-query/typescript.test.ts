@@ -6,7 +6,7 @@ import {
   outputProject,
 } from '../../fixtures/ember-container-query-typescript/index.js';
 
-test('migration | ember-addon | index | ember-container-query > typescript', function () {
+test('index | ember-container-query > typescript', function () {
   const codemodOptions = {
     addonLocation: undefined,
     projectRoot: 'tmp/ember-container-query-typescript',

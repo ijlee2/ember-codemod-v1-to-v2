@@ -6,7 +6,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/typescript.js';
 
-test('migration | ember-addon | steps | move-addon-files > public-assets', function () {
+test('steps | move-addon-files > public-assets', function () {
   const inputProject = {
     public: {
       assets: {

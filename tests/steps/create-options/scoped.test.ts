@@ -3,7 +3,7 @@ import { assert, loadFixture, test } from '@codemod-utils/tests';
 import { createOptions } from '../../../src/steps/index.js';
 import { codemodOptions } from '../../helpers/shared-test-setups/scoped.js';
 
-test('migration | ember-addon | steps | create-options > scoped', function () {
+test('steps | create-options > scoped', function () {
   const inputProject = {
     'package.json': JSON.stringify(
       {

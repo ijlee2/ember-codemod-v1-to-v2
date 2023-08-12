@@ -6,7 +6,7 @@ import {
   outputProject,
 } from '../../fixtures/ember-container-query-glint/index.js';
 
-test('migration | ember-addon | index | ember-container-query > glint', function () {
+test('index | ember-container-query > glint', function () {
   const codemodOptions = {
     addonLocation: undefined,
     projectRoot: 'tmp/ember-container-query-glint',

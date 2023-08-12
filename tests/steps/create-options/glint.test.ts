@@ -3,7 +3,7 @@ import { assert, loadFixture, test } from '@codemod-utils/tests';
 import { createOptions } from '../../../src/steps/index.js';
 import { codemodOptions } from '../../helpers/shared-test-setups/glint.js';
 
-test('migration | ember-addon | steps | create-options > glint', function () {
+test('steps | create-options > glint', function () {
   const inputProject = {
     'package.json': JSON.stringify(
       {

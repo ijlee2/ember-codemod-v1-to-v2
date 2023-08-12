@@ -12,7 +12,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/glint.js';
 
-test('migration | ember-addon | steps | create-files-from-blueprints > glint', function () {
+test('steps | create-files-from-blueprints > glint', function () {
   const inputProject = {};
 
   const outputProject = convertFixtureToJson(

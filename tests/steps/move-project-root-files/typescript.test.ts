@@ -6,7 +6,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/typescript.js';
 
-test('migration | ember-addon | steps | move-project-root-files > typescript', function () {
+test('steps | move-project-root-files > typescript', function () {
   const inputProject = {
     '.editorconfig': 'some code for .editorconfig',
     '.ember-cli': 'some code for .ember-cli',

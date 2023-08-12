@@ -6,7 +6,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/typescript.js';
 
-test('migration | ember-addon | steps | analyze-addon > blueprints', function () {
+test('steps | analyze-addon > blueprints', function () {
   const inputProject = {
     blueprints: {
       'ember-container-query': {

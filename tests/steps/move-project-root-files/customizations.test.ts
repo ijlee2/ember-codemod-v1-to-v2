@@ -6,7 +6,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/customizations.js';
 
-test('migration | ember-addon | steps | move-project-root-files > customizations', function () {
+test('steps | move-project-root-files > customizations', function () {
   const inputProject = {
     '.editorconfig': 'some code for .editorconfig',
     '.ember-cli': 'some code for .ember-cli',

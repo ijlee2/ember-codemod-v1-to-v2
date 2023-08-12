@@ -12,7 +12,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/customizations.js';
 
-test('migration | ember-addon | steps | update-addon-package-json > customizations', function () {
+test('steps | update-addon-package-json > customizations', function () {
   const inputProject = convertFixtureToJson(
     'steps/update-addon-package-json/customizations/input',
   );

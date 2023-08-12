@@ -8,7 +8,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/scoped.js';
 
-test('migration | ember-addon | steps | analyze-addon > scoped', function () {
+test('steps | analyze-addon > scoped', function () {
   loadFixture(inputProject, codemodOptions);
 
   assert.deepStrictEqual(analyzeAddon(options), context);

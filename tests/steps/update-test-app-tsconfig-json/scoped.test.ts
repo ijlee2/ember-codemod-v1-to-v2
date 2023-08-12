@@ -11,7 +11,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/scoped.js';
 
-test('migration | ember-addon | steps | update-test-app-tsconfig-json > scoped', function () {
+test('steps | update-test-app-tsconfig-json > scoped', function () {
   const inputProject = convertFixtureToJson(
     'steps/update-test-app-tsconfig-json/scoped/input',
   );

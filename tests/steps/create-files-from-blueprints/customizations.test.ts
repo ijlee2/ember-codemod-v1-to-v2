@@ -12,7 +12,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/customizations.js';
 
-test('migration | ember-addon | steps | create-files-from-blueprints > customizations', function () {
+test('steps | create-files-from-blueprints > customizations', function () {
   const inputProject = {};
 
   const outputProject = convertFixtureToJson(

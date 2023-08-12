@@ -6,7 +6,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/customizations.js';
 
-test('migration | ember-addon | steps | move-addon-files > customizations', function () {
+test('steps | move-addon-files > customizations', function () {
   const inputProject = {
     addon: {
       components: {

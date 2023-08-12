@@ -12,7 +12,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/typescript.js';
 
-test('migration | ember-addon | steps | create-files-from-blueprints > typescript', function () {
+test('steps | create-files-from-blueprints > typescript', function () {
   const inputProject = {};
 
   const outputProject = convertFixtureToJson(

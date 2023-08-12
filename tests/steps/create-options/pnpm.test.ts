@@ -2,7 +2,7 @@ import { assert, loadFixture, test } from '@codemod-utils/tests';
 
 import { createOptions } from '../../../src/steps/index.js';
 
-test('migration | ember-addon | steps | create-options > pnpm', function () {
+test('steps | create-options > pnpm', function () {
   const codemodOptions = {
     addonLocation: undefined,
     projectRoot: 'tmp/new-v1-addon-pnpm',

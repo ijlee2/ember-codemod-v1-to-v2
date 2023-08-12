@@ -6,7 +6,7 @@ import {
   options,
 } from '../../helpers/shared-test-setups/javascript.js';
 
-test('migration | ember-addon | steps | move-test-app-files > javascript', function () {
+test('steps | move-test-app-files > javascript', function () {
   const inputProject = {
     tests: {
       acceptance: {

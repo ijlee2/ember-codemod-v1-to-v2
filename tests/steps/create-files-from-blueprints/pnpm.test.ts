@@ -11,7 +11,7 @@ import {
   context,
 } from '../../helpers/shared-test-setups/typescript.js';
 
-test('migration | ember-addon | steps | create-files-from-blueprints > pnpm', function () {
+test('steps | create-files-from-blueprints > pnpm', function () {
   const inputProject = {};
 
   const outputProject = convertFixtureToJson(
