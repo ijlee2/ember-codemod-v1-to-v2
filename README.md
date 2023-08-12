@@ -48,6 +48,7 @@ Step 4. Review the workspace root including CI/CD.
 In most cases, I recommend running the codemod without any arguments (i.e. allow the default values). This is to help different Ember projects converge to one layout.
 
 <details>
+
 <summary>Optional: Specify the addon location</summary>
 
 By default, the package name decides where the addon package lives. Pass `--addon-location` to override the logic. This may be useful if you have a workspace with many addons.
@@ -58,7 +59,9 @@ npx ember-codemod-v1-to-v2 --addon-location packages/ui/buttons
 
 </details>
 
+
 <details>
+
 <summary>Optional: Specify the project root</summary>
 
 Pass `--root` to run the codemod on a project somewhere else (i.e. not in the current directory).
@@ -69,7 +72,9 @@ npx ember-codemod-v1-to-v2 --root <path/to/your/project>
 
 </details>
 
+
 <details>
+
 <summary>Optional: Specify the test-app location</summary>
 
 By default, the test-app package lives in the folder `test-app`. Pass `--test-app-location` to override the logic.
@@ -80,7 +85,9 @@ npx ember-codemod-v1-to-v2 --test-app-location docs-app
 
 </details>
 
+
 <details>
+
 <summary>Optional: Specify the test-app name</summary>
 
 By default, the test-app package is named `test-app`. Pass `--test-app-name` to override the logic. This may be useful if you have a workspace with many addons.
