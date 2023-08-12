@@ -5,11 +5,11 @@ import {
   test,
 } from '@codemod-utils/tests';
 
-import { updateTestAppTsConfigJson } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { updateTestAppTsConfigJson } from '../../../src/migration/ember-addon/steps/index.js';
 import {
   codemodOptions,
   options,
-} from '../../../../helpers/shared-test-setups/glint.js';
+} from '../../helpers/shared-test-setups/glint.js';
 
 test('migration | ember-addon | steps | update-test-app-tsconfig-json > glint', function () {
   const inputProject = convertFixtureToJson(

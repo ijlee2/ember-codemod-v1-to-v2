@@ -1,10 +1,10 @@
 import { assertFixture, loadFixture, test } from '@codemod-utils/tests';
 
-import { moveAddonFiles } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { moveAddonFiles } from '../../../src/migration/ember-addon/steps/index.js';
 import {
   codemodOptions,
   options,
-} from '../../../../helpers/shared-test-setups/typescript.js';
+} from '../../helpers/shared-test-setups/typescript.js';
 
 test('migration | ember-addon | steps | move-addon-files > public-assets', function () {
   const inputProject = {

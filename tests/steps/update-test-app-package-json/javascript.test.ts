@@ -5,11 +5,11 @@ import {
   test,
 } from '@codemod-utils/tests';
 
-import { updateTestAppPackageJson } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { updateTestAppPackageJson } from '../../../src/migration/ember-addon/steps/index.js';
 import {
   codemodOptions,
   options,
-} from '../../../../helpers/shared-test-setups/javascript.js';
+} from '../../helpers/shared-test-setups/javascript.js';
 
 test('migration | ember-addon | steps | update-test-app-package-json > javascript', function () {
   const inputProject = convertFixtureToJson(

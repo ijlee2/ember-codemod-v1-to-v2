@@ -5,12 +5,12 @@ import {
   test,
 } from '@codemod-utils/tests';
 
-import { createFilesFromBlueprints } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { createFilesFromBlueprints } from '../../../src/migration/ember-addon/steps/index.js';
 import {
   codemodOptions,
   context,
   options,
-} from '../../../../helpers/shared-test-setups/javascript.js';
+} from '../../helpers/shared-test-setups/javascript.js';
 
 test('migration | ember-addon | steps | create-files-from-blueprints > javascript', function () {
   const inputProject = {};

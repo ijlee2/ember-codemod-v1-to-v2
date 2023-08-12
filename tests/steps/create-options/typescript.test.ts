@@ -1,7 +1,7 @@
 import { assert, loadFixture, test } from '@codemod-utils/tests';
 
-import { createOptions } from '../../../../../src/migration/ember-addon/steps/index.js';
-import { codemodOptions } from '../../../../helpers/shared-test-setups/typescript.js';
+import { createOptions } from '../../../src/migration/ember-addon/steps/index.js';
+import { codemodOptions } from '../../helpers/shared-test-setups/typescript.js';
 
 test('migration | ember-addon | steps | create-options > typescript', function () {
   const inputProject = {

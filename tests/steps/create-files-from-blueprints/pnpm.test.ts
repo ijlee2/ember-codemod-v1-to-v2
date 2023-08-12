@@ -5,11 +5,11 @@ import {
   test,
 } from '@codemod-utils/tests';
 
-import { createFilesFromBlueprints } from '../../../../../src/migration/ember-addon/steps/index.js';
+import { createFilesFromBlueprints } from '../../../src/migration/ember-addon/steps/index.js';
 import {
   codemodOptions,
   context,
-} from '../../../../helpers/shared-test-setups/typescript.js';
+} from '../../helpers/shared-test-setups/typescript.js';
 
 test('migration | ember-addon | steps | create-files-from-blueprints > pnpm', function () {
   const inputProject = {};
