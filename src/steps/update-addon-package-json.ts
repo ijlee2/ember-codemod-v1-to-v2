@@ -3,7 +3,7 @@ import { join } from 'node:path';
 
 import { readPackageJson } from '@codemod-utils/json';
 
-import type { Context, Options } from '../../../types/index.js';
+import type { Context, Options } from '../types/index.js';
 import {
   updateDependencies,
   updateDevDependencies,

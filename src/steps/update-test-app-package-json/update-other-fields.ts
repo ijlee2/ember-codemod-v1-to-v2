@@ -1,4 +1,4 @@
-import type { Options, PackageJson } from '../../../../types/index.js';
+import type { Options, PackageJson } from '../../types/index.js';
 
 export function updateOtherFields(
   packageJson: PackageJson,

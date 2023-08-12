@@ -4,8 +4,8 @@ import { join } from 'node:path';
 import { processTemplate } from '@codemod-utils/blueprints';
 import { createFiles, findFiles } from '@codemod-utils/files';
 
-import type { Context, Options } from '../../../types/index.js';
-import { blueprintsRoot } from '../../../utils/blueprints.js';
+import type { Context, Options } from '../types/index.js';
+import { blueprintsRoot } from '../utils/blueprints.js';
 
 function getFilesToSkip(options: Options): string[] {
   const { packageManager, packages } = options;

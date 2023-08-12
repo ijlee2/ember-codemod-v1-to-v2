@@ -1,7 +1,7 @@
 import { findFiles, unionize } from '@codemod-utils/files';
 import { readPackageJson, validatePackageJson } from '@codemod-utils/json';
 
-import type { CodemodOptions, Options } from '../../../types/index.js';
+import type { CodemodOptions, Options } from '../types/index.js';
 
 type AddonPackage = Options['packages']['addon'];
 type PackageManager = Options['packageManager'];

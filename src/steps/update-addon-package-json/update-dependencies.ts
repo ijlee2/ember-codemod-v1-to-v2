@@ -1,7 +1,7 @@
 import { convertToMap, convertToObject } from '@codemod-utils/json';
 
-import type { Options, PackageJson } from '../../../../types/index.js';
-import { getVersion } from '../../../../utils/blueprints.js';
+import type { Options, PackageJson } from '../../types/index.js';
+import { getVersion } from '../../utils/blueprints.js';
 
 export function updateDependencies(
   packageJson: PackageJson,

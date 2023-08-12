@@ -5,7 +5,7 @@ import {
   removeFiles,
 } from '@codemod-utils/files';
 
-import type { Options } from '../../../types/index.js';
+import type { Options } from '../types/index.js';
 
 function moveAddonFolder(options: Options): void {
   const { locations, projectRoot } = options;

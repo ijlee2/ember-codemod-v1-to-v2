@@ -1,6 +1,6 @@
 import { convertToMap, convertToObject } from '@codemod-utils/json';
 
-import type { Options, PackageJson } from '../../../../types/index.js';
+import type { Options, PackageJson } from '../../types/index.js';
 
 export function updateScripts(
   packageJson: PackageJson,

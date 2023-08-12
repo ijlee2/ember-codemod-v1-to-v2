@@ -1,7 +1,7 @@
 import { findFiles, renamePathByDirectory } from '@codemod-utils/files';
 
-import type { Context, Options } from '../../../types/index.js';
-import { getVersion } from '../../../utils/blueprints.js';
+import type { Context, Options } from '../types/index.js';
+import { getVersion } from '../utils/blueprints.js';
 
 function getAppReexports(options: Options): string[] {
   const { projectRoot } = options;

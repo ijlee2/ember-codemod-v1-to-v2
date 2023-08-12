@@ -3,8 +3,8 @@ import { join } from 'node:path';
 
 import { convertToMap, convertToObject } from '@codemod-utils/json';
 
-import type { Options, TsConfigJson } from '../../../types/index.js';
-import { sanitizeJson } from '../../../utils/json.js';
+import type { Options, TsConfigJson } from '../types/index.js';
+import { sanitizeJson } from '../utils/json.js';
 
 function updateCompilerOptions(
   tsConfigJson: TsConfigJson,

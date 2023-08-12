@@ -1,4 +1,4 @@
-import type { Context, Options, PackageJson } from '../../../../types/index.js';
+import type { Context, Options, PackageJson } from '../../types/index.js';
 
 type Data = {
   hasPublicAssets: boolean;
