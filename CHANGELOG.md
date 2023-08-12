@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.10.0 (2023-08-12)
+
+### Breaking Change
+* [#62](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/62) Updated blueprints to match @embroider/addon-blueprint@2.2.0 ([@ijlee2](https://github.com/ijlee2))
+
+### Bug Fix
+* [#61](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/61) Configured allowImportingTsExtensions in the addon's tsconfig.json ([@ijlee2](https://github.com/ijlee2))
+
+### Enhancement
+* [#62](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/62) Updated blueprints to match @embroider/addon-blueprint@2.2.0 ([@ijlee2](https://github.com/ijlee2))
+* [#60](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/60) Simplified folder structure ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#59](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/59) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.9.1 (2023-07-17)
 
 ### Bug Fix
