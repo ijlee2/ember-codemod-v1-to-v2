@@ -1,15 +1,10 @@
-# compiled output
-declarations/
-dist/
-
-# npm/pnpm/yarn pack output
-*.tgz
+# See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
 node_modules/
 
 # misc
-/.env*
-/.pnpm-debug.log
-/npm-debug.log*
-/yarn-error.log
+.env*
+.pnpm-debug.log
+npm-debug.log*
+yarn-error.log
