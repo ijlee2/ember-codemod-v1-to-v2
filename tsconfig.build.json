@@ -1,8 +1,7 @@
 {
   "extends": [
     "@tsconfig/node16/tsconfig",
-    "@tsconfig/strictest/tsconfig",
-    "@tsconfig/esm/tsconfig"
+    "@tsconfig/strictest/tsconfig"
   ],
   "compilerOptions": {
     "declaration": false,
