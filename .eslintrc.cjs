@@ -2,20 +2,17 @@
 
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     project: true,
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint', 'simple-import-sort', 'typescript-sort-keys'],
+  plugins: ['simple-import-sort'],
   extends: [
     'eslint:recommended',
     'plugin:import/recommended',
-    'plugin:import/typescript',
     'plugin:n/recommended',
     'plugin:prettier/recommended',
-    'plugin:typescript-sort-keys/recommended',
   ],
   rules: {
     curly: 'error',
@@ -32,16 +29,20 @@ module.exports = {
     // TypeScript files
     {
       files: ['**/*.{cts,ts}'],
-      extends: ['plugin:@typescript-eslint/recommended-type-checked'],
+      parser: '@typescript-eslint/parser',
+      extends: [
+        'plugin:@typescript-eslint/recommended',
+        'plugin:import/typescript',
+        'plugin:typescript-sort-keys/recommended',
+      ],
       rules: {
         '@typescript-eslint/array-type': 'error',
-        '@typescript-eslint/no-unsafe-argument': 'off',
-        '@typescript-eslint/no-unsafe-assignment': 'off',
+        'import/no-duplicates': 'error',
       },
     },
-    // TypeScript and JavaScript files
+    // JavaScript files
     {
-      files: ['**/*.{cjs,cts,js,ts}'],
+      files: ['**/*.{cjs,js}'],
       rules: {
         'import/no-duplicates': 'error',
       },
@@ -53,10 +54,7 @@ module.exports = {
         browser: false,
         node: true,
       },
-      extends: [
-        'plugin:@typescript-eslint/disable-type-checked',
-        'plugin:n/recommended',
-      ],
+      extends: ['plugin:n/recommended'],
     },
   ],
 };
