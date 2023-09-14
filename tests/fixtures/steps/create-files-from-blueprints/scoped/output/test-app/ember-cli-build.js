@@ -8,6 +8,9 @@ module.exports = function (defaults) {
     autoImport: {
       watchDependencies: ['@ijlee2/ember-container-query'],
     },
+    'ember-cli-babel': {
+      enableTypeScriptTransform: true,
+    },
   });
 
   const { maybeEmbroider } = require('@embroider/test-setup');

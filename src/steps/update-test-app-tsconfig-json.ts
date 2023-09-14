@@ -23,8 +23,8 @@ function updateCompilerOptions(
   tsConfigJson['compilerOptions'] = convertToObject(compilerOptions);
 }
 
-function updateInclude(tsConfigJson: TsConfigJson): void {
-  tsConfigJson['include'] = ['app/**/*', 'tests/**/*', 'types/**/*'];
+function removeInclude(tsConfigJson: TsConfigJson) {
+  delete tsConfigJson['include'];
 }
 
 export function updateTestAppTsConfigJson(options: Options): void {
@@ -39,7 +39,7 @@ export function updateTestAppTsConfigJson(options: Options): void {
   const tsConfigJson = JSON.parse(sanitizeJson(oldFile));
 
   updateCompilerOptions(tsConfigJson, options);
-  updateInclude(tsConfigJson);
+  removeInclude(tsConfigJson);
 
   const newFile = JSON.stringify(tsConfigJson, null, 2) + '\n';
 

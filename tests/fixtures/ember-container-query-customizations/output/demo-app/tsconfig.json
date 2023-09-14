@@ -15,11 +15,6 @@
     },
     "skipLibCheck": true
   },
-  "include": [
-    "app/**/*",
-    "tests/**/*",
-    "types/**/*"
-  ],
   "glint": {
     "environment": "ember-loose"
   }

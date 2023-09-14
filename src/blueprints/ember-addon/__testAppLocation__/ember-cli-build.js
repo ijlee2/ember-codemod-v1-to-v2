@@ -7,7 +7,10 @@ module.exports = function (defaults) {
     // Add options here
     autoImport: {
       watchDependencies: ['<%= options.packages.addon.name %>'],
-    },
+    },<% if (options.packages.addon.hasTypeScript) { %>
+    'ember-cli-babel': {
+      enableTypeScriptTransform: true,
+    },<% } %>
   });
 
   const { maybeEmbroider } = require('@embroider/test-setup');

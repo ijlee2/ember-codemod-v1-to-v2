@@ -8,6 +8,9 @@ module.exports = function (defaults) {
     autoImport: {
       watchDependencies: ['new-v1-addon'],
     },
+    'ember-cli-babel': {
+      enableTypeScriptTransform: true,
+    },
   });
 
   const { maybeEmbroider } = require('@embroider/test-setup');

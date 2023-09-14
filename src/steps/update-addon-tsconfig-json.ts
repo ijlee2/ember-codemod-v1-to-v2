@@ -19,9 +19,11 @@ function updateCompilerOptions(
 
   if (packages.addon.hasGlint) {
     compilerOptions.set('allowImportingTsExtensions', true);
+    compilerOptions.set('allowJs', true);
     compilerOptions.set('declarationDir', 'declarations');
   } else {
     compilerOptions.set('allowImportingTsExtensions', true);
+    compilerOptions.set('allowJs', true);
     compilerOptions.set('declaration', true);
     compilerOptions.set('declarationDir', 'declarations');
     compilerOptions.set('emitDeclarationOnly', true);
