@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.0.0 (2023-09-14)
+
+### Breaking Change
+* [#65](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/65) Dropped Node 16 support and marked stable ([@ijlee2](https://github.com/ijlee2))
+
+### Enhancement
+* [#66](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/66) Updated blueprints ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#65](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/65) Dropped Node 16 support and marked stable ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 0.11.0 (2023-09-02)
 
 ### Enhancement
