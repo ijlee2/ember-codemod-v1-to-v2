@@ -4,7 +4,6 @@ import {
   mapFilePaths,
   moveFiles,
   removeFiles,
-  unionize,
 } from '@codemod-utils/files';
 
 import type { Options } from '../types/index.js';
@@ -14,7 +13,7 @@ function copyToAddon(options: Options): void {
 
   const files = ['LICENSE.md', 'README.md'];
 
-  const filePaths = findFiles(unionize(files), {
+  const filePaths = findFiles(files, {
     projectRoot,
   });
 
@@ -46,7 +45,7 @@ function moveToAddonAndTestApp(options: Options): void {
     'tsconfig.json',
   ];
 
-  const filePaths = findFiles(unionize(files), {
+  const filePaths = findFiles(files, {
     projectRoot,
   });
 
@@ -77,7 +76,7 @@ function moveToTestApp(options: Options): void {
     'testem.js',
   ];
 
-  const filePaths = findFiles(unionize(files), {
+  const filePaths = findFiles(files, {
     projectRoot,
   });
 
@@ -94,7 +93,7 @@ function removeFromProjectRoot(options: Options): void {
 
   const files = ['.npmignore', 'index.js'];
 
-  const filePaths = findFiles(unionize(files), {
+  const filePaths = findFiles(files, {
     projectRoot,
   });
 

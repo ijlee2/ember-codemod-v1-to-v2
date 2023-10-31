@@ -28,41 +28,42 @@
   ],
   "scripts": {
     "build": "./build.sh --production",
-    "changelog": "lerna-changelog",
     "lint": "concurrently \"npm:lint:*(!fix)\" --names \"lint:\"",
     "lint:fix": "concurrently \"npm:lint:*:fix\" --names \"fix:\"",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "lint:types": "tsc --noEmit",
     "prepare": "pnpm build",
+    "release:changelog": "lerna-changelog",
+    "release:publish": "pnpm publish",
     "test": "./build.sh --test && mt dist-for-testing --quiet"
   },
   "dependencies": {
-    "@codemod-utils/blueprints": "^1.0.0",
-    "@codemod-utils/files": "^1.0.0",
-    "@codemod-utils/json": "^1.0.0",
+    "@codemod-utils/blueprints": "^1.1.0",
+    "@codemod-utils/files": "^1.1.0",
+    "@codemod-utils/json": "^1.1.1",
     "strip-json-comments": "^5.0.1",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.17",
-    "@codemod-utils/tests": "^1.0.0",
+    "@babel/core": "^7.23.2",
+    "@codemod-utils/tests": "^1.1.1",
     "@sondr3/minitest": "^0.1.2",
     "@tsconfig/node18": "^18.2.2",
     "@tsconfig/strictest": "^2.0.2",
-    "@types/node": "^18.17.15",
-    "@types/yargs": "^17.0.24",
-    "@typescript-eslint/eslint-plugin": "^6.7.0",
-    "@typescript-eslint/parser": "^6.7.0",
-    "concurrently": "^8.2.1",
-    "eslint": "^8.49.0",
+    "@types/node": "^18.18.7",
+    "@types/yargs": "^17.0.29",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-import-resolver-typescript": "^3.6.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-n": "^16.1.0",
-    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.2.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "eslint-plugin-typescript-sort-keys": "^3.0.0",
+    "eslint-plugin-typescript-sort-keys": "^3.1.0",
     "lerna-changelog": "^2.2.0",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2"
@@ -81,7 +82,7 @@
   },
   "pnpm": {
     "overrides": {
-      "eslint-plugin-import@2.28.1>tsconfig-paths": "^4.2.0"
+      "eslint-plugin-import@2.29.0>tsconfig-paths": "^4.2.0"
     }
   }
 }

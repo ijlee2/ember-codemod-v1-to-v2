@@ -14,7 +14,7 @@ Here are some guidelines to help you and everyone else.
 1. Fork and clone this repo.
 
     ```sh
-    git clone git@github.com:<your GitHub handle>/ember-codemod-v1-to-v2.git
+    git clone git@github.com:<your-github-handle>/ember-codemod-v1-to-v2.git
     ```
 
 1. Change directory.
@@ -70,10 +70,10 @@ Here are some guidelines to help you and everyone else.
 
 1. Generate a [personal access token](https://github.com/settings/tokens/) in GitHub, with default values for scopes (none selected).
 
-1. Run the `changelog` script. This generates a text that you can add to `CHANGELOG.md`.
+1. Run the `release:changelog` script. This generates a text that you can add to `CHANGELOG.md`.
 
     ```sh
-    GITHUB_AUTH=<YOUR_PERSONAL_ACCESS_TOKEN> pnpm changelog
+    GITHUB_AUTH=<YOUR_PERSONAL_ACCESS_TOKEN> pnpm release:changelog
     ```
 
 1. The package follows [semantic versioning](https://semver.org/). Update the version in `package.json` accordingly.
@@ -83,7 +83,7 @@ Here are some guidelines to help you and everyone else.
 1. Publish the package.
 
     ```sh
-    pnpm publish
+    pnpm release:package
     ```
 
 </details>

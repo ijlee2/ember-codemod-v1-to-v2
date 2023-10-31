@@ -1,4 +1,4 @@
-import { findFiles, unionize } from '@codemod-utils/files';
+import { findFiles } from '@codemod-utils/files';
 import { readPackageJson, validatePackageJson } from '@codemod-utils/json';
 
 import type { CodemodOptions, Options } from '../types/index.js';
@@ -47,7 +47,7 @@ function analyzePackageManager(codemodOptions: CodemodOptions): PackageManager {
 
   const lockFiles = Array.from(mapping.keys());
 
-  const filePaths = findFiles(unionize(lockFiles), {
+  const filePaths = findFiles(lockFiles, {
     projectRoot,
   });
 
