@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.1 (2023-10-31)
+
+### Internal
+* [#67](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/67) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.0.0 (2023-09-14)
 
 ### Breaking Change

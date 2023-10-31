@@ -83,7 +83,7 @@ Here are some guidelines to help you and everyone else.
 1. Publish the package.
 
     ```sh
-    pnpm release:package
+    pnpm release:publish
     ```
 
 </details>
