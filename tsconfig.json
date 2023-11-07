@@ -6,7 +6,8 @@
   "compilerOptions": {
     "declaration": false,
     "moduleResolution": "NodeNext",
-    "outDir": "dist-for-testing"
+    "outDir": "dist-for-testing",
+    "verbatimModuleSyntax": true
   },
   "include": ["bin", "src", "tests"],
   "exclude": ["src/blueprints", "tests/fixtures"]
