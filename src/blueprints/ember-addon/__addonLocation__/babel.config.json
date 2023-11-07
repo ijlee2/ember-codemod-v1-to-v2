@@ -1,15 +1,23 @@
-<% if (options.packages.addon.hasTypeScript) { %>{
-  "presets": [["@babel/preset-typescript"]],
+{
   "plugins": [
-    "@embroider/addon-dev/template-colocation-plugin",
-    ["@babel/plugin-transform-typescript", { "allowDeclareFields": true }],
+<% if (options.packages.addon.hasTypeScript) { %>    [
+      "@babel/plugin-transform-typescript",
+      {
+        "allExtensions": true,
+        "allowDeclareFields": true,
+        "onlyRemoveTypeImports": true
+      }
+    ],
+<% } %>    "@embroider/addon-dev/template-colocation-plugin",
+    "@babel/plugin-transform-class-static-block",
+    [
+      "babel-plugin-ember-template-compilation",
+      {
+        "targetFormat": "hbs",
+        "transforms": []
+      }
+    ],
     ["@babel/plugin-proposal-decorators", { "version": "legacy" }],
     "@babel/plugin-transform-class-properties"
   ]
-}<% } else { %>{
-  "plugins": [
-    "@embroider/addon-dev/template-colocation-plugin",
-    ["@babel/plugin-proposal-decorators", { "version": "legacy" }],
-    "@babel/plugin-transform-class-properties"
-  ]
-}<% } %>
+}

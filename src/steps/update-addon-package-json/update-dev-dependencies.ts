@@ -27,16 +27,18 @@ export function updateDevDependencies(
     '@babel/core',
     '@babel/plugin-proposal-decorators',
     '@babel/plugin-transform-class-properties',
+    '@babel/plugin-transform-class-static-block',
     '@babel/runtime',
     '@embroider/addon-dev',
     '@rollup/plugin-babel',
+    'babel-plugin-ember-template-compilation',
     'concurrently',
     'rollup',
     'rollup-plugin-copy',
   ]);
 
   if (packages.addon.hasTypeScript) {
-    packagesToInstall.add('@babel/preset-typescript');
+    packagesToInstall.add('@babel/plugin-transform-typescript');
   }
 
   Array.from(packagesToInstall).forEach((packageName) => {
