@@ -26,12 +26,10 @@ test('steps | analyze-addon > public-assets', function () {
 
   assert.deepStrictEqual(analyzeAddon(options), {
     addon: {
-      appReexports: [],
       publicAssets: [
         'assets/documents/some-file.pdf',
         'assets/images/v1/some-file.svg',
       ],
-      publicEntrypoints: [],
     },
     projectRoot: {
       devDependencies: {

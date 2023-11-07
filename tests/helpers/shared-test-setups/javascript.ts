@@ -13,27 +13,7 @@ const codemodOptions: CodemodOptions = {
 
 const context: Context = {
   addon: {
-    appReexports: [
-      'components/container-query.js',
-      'helpers/aspect-ratio.js',
-      'helpers/cq-aspect-ratio.js',
-      'helpers/cq-height.js',
-      'helpers/cq-width.js',
-      'helpers/height.js',
-      'helpers/width.js',
-      'modifiers/container-query.js',
-    ],
     publicAssets: [],
-    publicEntrypoints: [
-      'components/container-query.js',
-      'helpers/aspect-ratio.js',
-      'helpers/cq-aspect-ratio.js',
-      'helpers/cq-height.js',
-      'helpers/cq-width.js',
-      'helpers/height.js',
-      'helpers/width.js',
-      'modifiers/container-query.js',
-    ],
   },
   projectRoot: {
     devDependencies: {

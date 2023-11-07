@@ -9,9 +9,7 @@ type CodemodOptions = {
 
 type Context = {
   addon: {
-    appReexports: string[];
     publicAssets: string[];
-    publicEntrypoints: string[];
   };
   projectRoot: {
     devDependencies: Record<string, string>;
