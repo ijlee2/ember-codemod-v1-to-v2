@@ -6,7 +6,8 @@
   "compilerOptions": {
     "declaration": false,
     "moduleResolution": "NodeNext",
-    "outDir": "dist"
+    "outDir": "dist",
+    "verbatimModuleSyntax": true
   },
   "include": ["bin", "src"],
   "exclude": ["src/blueprints"]
