@@ -13,6 +13,7 @@ const latestVersions = new Map([
   ['@embroider/addon-shim', '1.8.6'],
   ['@embroider/test-setup', '3.0.2'],
   ['@rollup/plugin-babel', '6.0.4'],
+  ['@tsconfig/ember', '3.0.2'],
   ['babel-plugin-ember-template-compilation', '2.2.1'],
   ['concurrently', '8.2.2'],
   ['ember-auto-import', '2.6.3'],
