@@ -20,12 +20,7 @@ test('steps | analyze-addon > test-support', function () {
 
   assert.deepStrictEqual(analyzeAddon(options), {
     addon: {
-      appReexports: [],
       publicAssets: [],
-      publicEntrypoints: [
-        'test-support/components/container-query.js',
-        'test-support/index.js',
-      ],
     },
     projectRoot: {
       devDependencies: {

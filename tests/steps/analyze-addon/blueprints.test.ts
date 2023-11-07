@@ -29,9 +29,7 @@ test('steps | analyze-addon > blueprints', function () {
 
   assert.deepStrictEqual(analyzeAddon(options), {
     addon: {
-      appReexports: [],
       publicAssets: [],
-      publicEntrypoints: [],
     },
     projectRoot: {
       devDependencies: {

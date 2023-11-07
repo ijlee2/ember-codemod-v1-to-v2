@@ -25,6 +25,10 @@ export function updateScripts(
         : 'tsc --emitDeclarationOnly false --noEmit',
     );
 
+    if (scripts.get('postpack') === 'ember ts:clean') {
+      scripts.delete('postpack');
+    }
+
     scripts.set('prepack', 'rollup --config');
 
     scripts.set('start', 'concurrently "npm:start:*" --names "start:"');

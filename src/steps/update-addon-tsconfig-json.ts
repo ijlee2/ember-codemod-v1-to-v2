@@ -6,26 +6,24 @@ import { convertToMap, convertToObject } from '@codemod-utils/json';
 import type { Options, TsConfigJson } from '../types/index.js';
 import { sanitizeJson } from '../utils/json.js';
 
-function updateCompilerOptions(
+function setExtends(tsConfigJson: TsConfigJson): void {
+  tsConfigJson['extends'] = '@tsconfig/ember/tsconfig.json';
+}
+
+function setCompilerOptions(
   tsConfigJson: TsConfigJson,
   options: Options,
 ): void {
   const { packages } = options;
 
-  const compilerOptions = convertToMap(tsConfigJson['compilerOptions']);
+  const compilerOptions = convertToMap();
 
-  compilerOptions.delete('baseUrl');
-  compilerOptions.delete('paths');
+  compilerOptions.set('allowImportingTsExtensions', true);
+  compilerOptions.set('allowJs', true);
+  compilerOptions.set('declarationDir', 'declarations');
 
-  if (packages.addon.hasGlint) {
-    compilerOptions.set('allowImportingTsExtensions', true);
-    compilerOptions.set('allowJs', true);
-    compilerOptions.set('declarationDir', 'declarations');
-  } else {
-    compilerOptions.set('allowImportingTsExtensions', true);
-    compilerOptions.set('allowJs', true);
+  if (!packages.addon.hasGlint) {
     compilerOptions.set('declaration', true);
-    compilerOptions.set('declarationDir', 'declarations');
     compilerOptions.set('emitDeclarationOnly', true);
     compilerOptions.set('noEmit', false);
   }
@@ -33,7 +31,7 @@ function updateCompilerOptions(
   tsConfigJson['compilerOptions'] = convertToObject(compilerOptions);
 }
 
-function updateInclude(tsConfigJson: TsConfigJson): void {
+function setInclude(tsConfigJson: TsConfigJson): void {
   tsConfigJson['include'] = ['src/**/*', 'unpublished-development-types/**/*'];
 }
 
@@ -48,8 +46,9 @@ export function updateAddonTsConfigJson(options: Options): void {
   const oldFile = readFileSync(oldPath, 'utf8');
   const tsConfigJson = JSON.parse(sanitizeJson(oldFile));
 
-  updateCompilerOptions(tsConfigJson, options);
-  updateInclude(tsConfigJson);
+  setExtends(tsConfigJson);
+  setCompilerOptions(tsConfigJson, options);
+  setInclude(tsConfigJson);
 
   const newFile = JSON.stringify(tsConfigJson, null, 2) + '\n';
 

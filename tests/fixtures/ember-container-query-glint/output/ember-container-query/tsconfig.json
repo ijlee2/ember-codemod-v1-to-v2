@@ -3,8 +3,7 @@
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "allowJs": true,
-    "declarationDir": "declarations",
-    "skipLibCheck": true
+    "declarationDir": "declarations"
   },
   "include": [
     "src/**/*",

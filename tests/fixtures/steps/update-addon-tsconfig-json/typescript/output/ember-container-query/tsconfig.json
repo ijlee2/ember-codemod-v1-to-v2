@@ -6,8 +6,7 @@
     "declaration": true,
     "declarationDir": "declarations",
     "emitDeclarationOnly": true,
-    "noEmit": false,
-    "skipLibCheck": true
+    "noEmit": false
   },
   "include": [
     "src/**/*",

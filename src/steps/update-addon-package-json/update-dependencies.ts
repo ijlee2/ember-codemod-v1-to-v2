@@ -9,14 +9,18 @@ export function updateDependencies(
 ): void {
   const dependencies = convertToMap(packageJson['dependencies']);
 
-  const packagesToDelete = [
+  const packagesToDelete = new Set([
     '@embroider/macros',
     'ember-auto-import',
     'ember-cli-babel',
     'ember-cli-htmlbars',
-  ];
+  ]);
 
-  packagesToDelete.forEach((packageName) => {
+  if (options.packages.addon.hasTypeScript) {
+    packagesToDelete.add('ember-cli-typescript');
+  }
+
+  Array.from(packagesToDelete).forEach((packageName) => {
     dependencies.delete(packageName);
   });
 
