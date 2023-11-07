@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.1.0 (2023-11-07)
+
+### Enhancement
+* [#68](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/68) Downstreamed changes from @embroider/addon-blueprint@2.7.0 ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#69](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/69) Set verbatimModuleSyntax to true ([@ijlee2](https://github.com/ijlee2))
+
+### Documentation
+* [#69](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/69) Set verbatimModuleSyntax to true ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.0.1 (2023-10-31)
 
 ### Internal
