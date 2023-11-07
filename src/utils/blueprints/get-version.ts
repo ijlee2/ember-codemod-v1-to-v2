@@ -20,6 +20,7 @@ const latestVersions = new Map([
   ['ember-cli-htmlbars', '6.3.0'],
   ['rollup', '4.3.0'],
   ['rollup-plugin-copy', '3.5.0'],
+  ['typescript', '5.2.2'],
 ]);
 
 export function getVersion(packageName: string, options: Options): string {
