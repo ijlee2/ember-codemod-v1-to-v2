@@ -54,6 +54,7 @@
   },
   "dependencies": {
     "@embroider/addon-shim": "^1.8.6",
+    "decorator-transforms": "^1.0.1",
     "ember-element-helper": "^0.6.1",
     "ember-modifier": "^3.2.7",
     "ember-resize-observer-service": "^1.1.0",
@@ -61,9 +62,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",
-    "@babel/plugin-proposal-decorators": "^7.20.7",
-    "@babel/plugin-transform-class-properties": "^7.22.5",
-    "@babel/plugin-transform-class-static-block": "^7.22.11",
     "@babel/runtime": "^7.23.2",
     "@embroider/addon-dev": "^4.1.1",
     "@rollup/plugin-babel": "^6.0.4",
