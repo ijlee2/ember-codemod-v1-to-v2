@@ -4,9 +4,6 @@ import type { Options } from '../../types/index.js';
 
 const latestVersions = new Map([
   ['@babel/core', '7.23.2'],
-  ['@babel/plugin-proposal-decorators', '7.22.15'],
-  ['@babel/plugin-transform-class-properties', '7.22.5'],
-  ['@babel/plugin-transform-class-static-block', '7.22.11'],
   ['@babel/plugin-transform-typescript', '7.22.15'],
   ['@babel/runtime', '7.23.2'],
   ['@embroider/addon-dev', '4.1.1'],
@@ -16,6 +13,7 @@ const latestVersions = new Map([
   ['@tsconfig/ember', '3.0.2'],
   ['babel-plugin-ember-template-compilation', '2.2.1'],
   ['concurrently', '8.2.2'],
+  ['decorator-transforms', '1.0.1'],
   ['ember-auto-import', '2.6.3'],
   ['ember-cli-babel', '8.1.0'],
   ['ember-cli-htmlbars', '6.3.0'],

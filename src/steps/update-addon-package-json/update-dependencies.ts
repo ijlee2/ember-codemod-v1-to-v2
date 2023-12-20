@@ -24,7 +24,7 @@ export function updateDependencies(
     dependencies.delete(packageName);
   });
 
-  const packagesToInstall = ['@embroider/addon-shim'];
+  const packagesToInstall = ['@embroider/addon-shim', 'decorator-transforms'];
 
   packagesToInstall.forEach((packageName) => {
     const version = getVersion(packageName, options);
