@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.0 (2023-12-20)
+
+### Enhancement
+* [#71](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/71) Downstreamed changes from @embroider/addon-blueprint@2.11.0 ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#72](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/72) Update CI and lint-related packages ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.1.1 (2023-12-18)
 
 ### Internal
