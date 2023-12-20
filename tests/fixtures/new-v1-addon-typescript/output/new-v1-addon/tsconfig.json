@@ -6,7 +6,8 @@
     "declaration": true,
     "declarationDir": "declarations",
     "emitDeclarationOnly": true,
-    "noEmit": false
+    "noEmit": false,
+    "rootDir": "./src"
   },
   "include": [
     "src/**/*",
