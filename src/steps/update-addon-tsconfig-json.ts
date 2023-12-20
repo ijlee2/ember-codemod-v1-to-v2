@@ -21,6 +21,7 @@ function setCompilerOptions(
   compilerOptions.set('allowImportingTsExtensions', true);
   compilerOptions.set('allowJs', true);
   compilerOptions.set('declarationDir', 'declarations');
+  compilerOptions.set('rootDir', './src');
 
   if (!packages.addon.hasGlint) {
     compilerOptions.set('declaration', true);
