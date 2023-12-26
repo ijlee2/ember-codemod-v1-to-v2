@@ -23,10 +23,12 @@ test('steps | update-addon-package-json > public-assets', function () {
 
   const context: Context = {
     addon: {
-      publicAssets: [
-        'assets/documents/some-file.pdf',
-        'assets/images/v1/some-file.svg',
-      ],
+      publicAssets: {
+        './public/assets/documents/some-file.pdf':
+          '/ember-container-query/assets/documents/some-file.pdf',
+        './public/assets/images/v1/some-file.svg':
+          '/ember-container-query/assets/images/v1/some-file.svg',
+      },
     },
     projectRoot: {
       devDependencies: {

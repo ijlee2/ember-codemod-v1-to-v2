@@ -26,10 +26,12 @@ test('steps | analyze-addon > public-assets', function () {
 
   assert.deepStrictEqual(analyzeAddon(options), {
     addon: {
-      publicAssets: [
-        'assets/documents/some-file.pdf',
-        'assets/images/v1/some-file.svg',
-      ],
+      publicAssets: {
+        './public/assets/documents/some-file.pdf':
+          '/ember-container-query/assets/documents/some-file.pdf',
+        './public/assets/images/v1/some-file.svg':
+          '/ember-container-query/assets/images/v1/some-file.svg',
+      },
     },
     projectRoot: {
       devDependencies: {

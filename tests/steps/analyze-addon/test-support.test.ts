@@ -20,7 +20,7 @@ test('steps | analyze-addon > test-support', function () {
 
   assert.deepStrictEqual(analyzeAddon(options), {
     addon: {
-      publicAssets: [],
+      publicAssets: {},
     },
     projectRoot: {
       devDependencies: {
