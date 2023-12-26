@@ -1,6 +1,7 @@
 import type { Context, Options, PackageJson } from '../../types/index.js';
 
 type Data = {
+  hasBlueprints: boolean;
   hasPublicAssets: boolean;
   hasTypeScript: boolean;
   publicAssets: Record<string, string>;
@@ -59,9 +60,13 @@ function updateExports(packageJson: PackageJson, data: Data): void {
 }
 
 function updateFiles(packageJson: PackageJson, data: Data): void {
-  const { hasPublicAssets, hasTypeScript } = data;
+  const { hasBlueprints, hasPublicAssets, hasTypeScript } = data;
 
   const files = new Set(['addon-main.cjs', 'dist']);
+
+  if (hasBlueprints) {
+    files.add('blueprints');
+  }
 
   if (hasPublicAssets) {
     files.add('public');
@@ -99,6 +104,7 @@ export function updateOtherFields(
   const hasPublicAssets = Object.keys(addon.publicAssets).length > 0;
 
   const data = {
+    hasBlueprints: addon.hasBlueprints,
     hasPublicAssets,
     hasTypeScript: packages.addon.hasTypeScript,
     publicAssets: addon.publicAssets,
