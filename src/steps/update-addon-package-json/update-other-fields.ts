@@ -3,16 +3,17 @@ import type { Context, Options, PackageJson } from '../../types/index.js';
 type Data = {
   hasPublicAssets: boolean;
   hasTypeScript: boolean;
-  publicAssetMapping: Record<string, string>;
+  publicAssets: Record<string, string>;
 };
 
 function updateEmberAddon(packageJson: PackageJson, data: Data): void {
-  const { hasPublicAssets, publicAssetMapping } = data;
+  const { hasPublicAssets, publicAssets } = data;
 
-  if (!hasPublicAssets) {
+  if (hasPublicAssets) {
     packageJson['ember-addon'] = {
       'app-js': {},
       main: 'addon-main.cjs',
+      'public-assets': publicAssets,
       type: 'addon',
       version: 2,
     };
@@ -23,7 +24,6 @@ function updateEmberAddon(packageJson: PackageJson, data: Data): void {
   packageJson['ember-addon'] = {
     'app-js': {},
     main: 'addon-main.cjs',
-    'public-assets': publicAssetMapping,
     type: 'addon',
     version: 2,
   };
@@ -93,26 +93,15 @@ export function updateOtherFields(
   context: Context,
   options: Options,
 ): void {
+  const { addon } = context;
   const { packages } = options;
 
-  const publicAssetMapping = context.addon.publicAssets.reduce(
-    (accumulator, filePath) => {
-      const from = `./public/${filePath}`;
-      const to = `/${packages.addon.name}/${filePath}`;
-
-      accumulator[from] = to;
-
-      return accumulator;
-    },
-    {} as Record<string, string>,
-  );
-
-  const hasPublicAssets = Object.keys(publicAssetMapping).length > 0;
+  const hasPublicAssets = Object.keys(addon.publicAssets).length > 0;
 
   const data = {
     hasPublicAssets,
     hasTypeScript: packages.addon.hasTypeScript,
-    publicAssetMapping,
+    publicAssets: addon.publicAssets,
   };
 
   updateEmberAddon(packageJson, data);

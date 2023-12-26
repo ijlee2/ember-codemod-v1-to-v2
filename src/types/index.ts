@@ -9,7 +9,7 @@ type CodemodOptions = {
 
 type Context = {
   addon: {
-    publicAssets: string[];
+    publicAssets: Record<string, string>;
   };
   projectRoot: {
     devDependencies: Record<string, string>;

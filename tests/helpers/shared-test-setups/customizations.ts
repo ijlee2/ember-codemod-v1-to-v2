@@ -13,7 +13,7 @@ const codemodOptions: CodemodOptions = {
 
 const context: Context = {
   addon: {
-    publicAssets: [],
+    publicAssets: {},
   },
   projectRoot: {
     devDependencies: {
