@@ -1,4 +1,4 @@
-import { findFiles, renamePathByDirectory } from '@codemod-utils/files';
+import { findFiles } from '@codemod-utils/files';
 
 import type { Context, Options } from '../types/index.js';
 import { getVersion } from '../utils/blueprints.js';
@@ -11,19 +11,24 @@ function getProjectRootDevDependencies(
   };
 }
 
-function getPublicAssets(options: Options): string[] {
-  const { projectRoot } = options;
+function getPublicAssets(options: Options): Record<string, string> {
+  const { packages, projectRoot } = options;
 
   const filePaths = findFiles('public/**/*', {
     projectRoot,
   });
 
-  return filePaths.map((filePath) => {
-    return renamePathByDirectory(filePath, {
-      from: 'public',
-      to: '',
-    });
-  });
+  return filePaths.reduce(
+    (accumulator, filePath) => {
+      const from = `./${filePath}`;
+      const to = `/${packages.addon.name}/${filePath.replace(/^public\//, '')}`;
+
+      accumulator[from] = to;
+
+      return accumulator;
+    },
+    {} as Record<string, string>,
+  );
 }
 
 export function analyzeAddon(options: Options): Context {
