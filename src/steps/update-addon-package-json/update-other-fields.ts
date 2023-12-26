@@ -98,16 +98,14 @@ export function updateOtherFields(
   context: Context,
   options: Options,
 ): void {
-  const { addon } = context;
-  const { packages } = options;
-
-  const hasPublicAssets = Object.keys(addon.publicAssets).length > 0;
+  const { hasBlueprints, publicAssets } = context.addon;
+  const { hasTypeScript } = options.packages.addon;
 
   const data = {
-    hasBlueprints: addon.hasBlueprints,
-    hasPublicAssets,
-    hasTypeScript: packages.addon.hasTypeScript,
-    publicAssets: addon.publicAssets,
+    hasBlueprints,
+    hasPublicAssets: Object.keys(publicAssets).length > 0,
+    hasTypeScript,
+    publicAssets,
   };
 
   updateEmberAddon(packageJson, data);
