@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.1 (2023-12-26)
+
+### Bug Fix
+* [#74](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/74) Added blueprints to package.json's files ([@ijlee2](https://github.com/ijlee2))
+
+### Enhancement
+* [#73](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/73) Allowed the analyze-addon step to define ember-addon.public-assets ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.2.0 (2023-12-20)
 
 ### Enhancement
