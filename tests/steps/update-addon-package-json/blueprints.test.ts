@@ -12,24 +12,19 @@ import {
   options,
 } from '../../helpers/shared-test-setups/typescript.js';
 
-test('steps | update-addon-package-json > public-assets', function () {
+test('steps | update-addon-package-json > blueprints', function () {
   const inputProject = convertFixtureToJson(
-    'steps/update-addon-package-json/public-assets/input',
+    'steps/update-addon-package-json/blueprints/input',
   );
 
   const outputProject = convertFixtureToJson(
-    'steps/update-addon-package-json/public-assets/output',
+    'steps/update-addon-package-json/blueprints/output',
   );
 
   const context: Context = {
     addon: {
-      hasBlueprints: false,
-      publicAssets: {
-        './public/assets/documents/some-file.pdf':
-          '/ember-container-query/assets/documents/some-file.pdf',
-        './public/assets/images/v1/some-file.svg':
-          '/ember-container-query/assets/images/v1/some-file.svg',
-      },
+      hasBlueprints: true,
+      publicAssets: {},
     },
     projectRoot: {
       devDependencies: {

@@ -1,6 +1,7 @@
 import type { Context, Options, PackageJson } from '../../types/index.js';
 
 type Data = {
+  hasBlueprints: boolean;
   hasPublicAssets: boolean;
   hasTypeScript: boolean;
   publicAssets: Record<string, string>;
@@ -59,9 +60,13 @@ function updateExports(packageJson: PackageJson, data: Data): void {
 }
 
 function updateFiles(packageJson: PackageJson, data: Data): void {
-  const { hasPublicAssets, hasTypeScript } = data;
+  const { hasBlueprints, hasPublicAssets, hasTypeScript } = data;
 
   const files = new Set(['addon-main.cjs', 'dist']);
+
+  if (hasBlueprints) {
+    files.add('blueprints');
+  }
 
   if (hasPublicAssets) {
     files.add('public');
@@ -93,15 +98,14 @@ export function updateOtherFields(
   context: Context,
   options: Options,
 ): void {
-  const { addon } = context;
-  const { packages } = options;
-
-  const hasPublicAssets = Object.keys(addon.publicAssets).length > 0;
+  const { hasBlueprints, publicAssets } = context.addon;
+  const { hasTypeScript } = options.packages.addon;
 
   const data = {
-    hasPublicAssets,
-    hasTypeScript: packages.addon.hasTypeScript,
-    publicAssets: addon.publicAssets,
+    hasBlueprints,
+    hasPublicAssets: Object.keys(publicAssets).length > 0,
+    hasTypeScript,
+    publicAssets,
   };
 
   updateEmberAddon(packageJson, data);

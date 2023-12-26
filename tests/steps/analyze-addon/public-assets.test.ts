@@ -26,6 +26,7 @@ test('steps | analyze-addon > public-assets', function () {
 
   assert.deepStrictEqual(analyzeAddon(options), {
     addon: {
+      hasBlueprints: false,
       publicAssets: {
         './public/assets/documents/some-file.pdf':
           '/ember-container-query/assets/documents/some-file.pdf',
