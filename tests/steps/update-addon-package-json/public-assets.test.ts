@@ -6,6 +6,7 @@ import {
 } from '@codemod-utils/tests';
 
 import { updateAddonPackageJson } from '../../../src/steps/index.js';
+import type { Context } from '../../../src/types/index.js';
 import {
   codemodOptions,
   options,
@@ -20,14 +21,12 @@ test('steps | update-addon-package-json > public-assets', function () {
     'steps/update-addon-package-json/public-assets/output',
   );
 
-  const context = {
+  const context: Context = {
     addon: {
-      appReexports: [],
       publicAssets: [
         'assets/documents/some-file.pdf',
         'assets/images/v1/some-file.svg',
       ],
-      publicEntrypoints: [],
     },
     projectRoot: {
       devDependencies: {
