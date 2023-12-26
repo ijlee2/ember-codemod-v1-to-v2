@@ -13,6 +13,7 @@ test('steps | analyze-addon > edge case (folders are missing)', function () {
 
   assert.deepStrictEqual(analyzeAddon(options), {
     addon: {
+      hasBlueprints: false,
       publicAssets: {},
     },
     projectRoot: {

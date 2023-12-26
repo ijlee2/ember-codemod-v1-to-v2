@@ -31,9 +31,20 @@ function getPublicAssets(options: Options): Record<string, string> {
   );
 }
 
+function hasBlueprints(options: Options): boolean {
+  const { projectRoot } = options;
+
+  const filePaths = findFiles('blueprints/**/*', {
+    projectRoot,
+  });
+
+  return filePaths.length > 0;
+}
+
 export function analyzeAddon(options: Options): Context {
   return {
     addon: {
+      hasBlueprints: hasBlueprints(options),
       publicAssets: getPublicAssets(options),
     },
     projectRoot: {

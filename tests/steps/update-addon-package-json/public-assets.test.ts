@@ -23,6 +23,7 @@ test('steps | update-addon-package-json > public-assets', function () {
 
   const context: Context = {
     addon: {
+      hasBlueprints: false,
       publicAssets: {
         './public/assets/documents/some-file.pdf':
           '/ember-container-query/assets/documents/some-file.pdf',
