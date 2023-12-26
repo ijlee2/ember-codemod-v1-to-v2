@@ -18,14 +18,12 @@ function getPublicAssets(options: Options): string[] {
     projectRoot,
   });
 
-  return filePaths
-    .map((filePath) => {
-      return renamePathByDirectory(filePath, {
-        from: 'public',
-        to: '',
-      });
-    })
-    .sort();
+  return filePaths.map((filePath) => {
+    return renamePathByDirectory(filePath, {
+      from: 'public',
+      to: '',
+    });
+  });
 }
 
 export function analyzeAddon(options: Options): Context {
