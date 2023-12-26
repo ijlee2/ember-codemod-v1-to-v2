@@ -9,15 +9,17 @@ import {
 test('steps | analyze-addon > blueprints', function () {
   const inputProject = {
     blueprints: {
-      'ember-container-query': {
+      'some-command': {
         files: {
           'some-folder': {
             'some-file.ts': '',
           },
         },
-        'index.ts': [
+        'index.js': [
+          `'use strict';`,
+          ``,
           `module.exports = {`,
-          `  normalizeEntityName() {},`,
+          `  description: 'Generates something',`,
           `};`,
           ``,
         ].join('\n'),
