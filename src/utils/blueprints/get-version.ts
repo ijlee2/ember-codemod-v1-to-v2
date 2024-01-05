@@ -3,9 +3,9 @@ import { decideVersion } from '@codemod-utils/blueprints';
 import type { Options } from '../../types/index.js';
 
 const latestVersions = new Map([
-  ['@babel/core', '7.23.6'],
+  ['@babel/core', '7.23.7'],
   ['@babel/plugin-transform-typescript', '7.23.6'],
-  ['@babel/runtime', '7.23.6'],
+  ['@babel/runtime', '7.23.7'],
   ['@embroider/addon-dev', '4.1.3'],
   ['@embroider/addon-shim', '1.8.7'],
   ['@embroider/test-setup', '3.0.3'],
@@ -13,11 +13,11 @@ const latestVersions = new Map([
   ['@tsconfig/ember', '3.0.3'],
   ['babel-plugin-ember-template-compilation', '2.2.1'],
   ['concurrently', '8.2.2'],
-  ['decorator-transforms', '1.0.1'],
-  ['ember-auto-import', '2.7.1'],
+  ['decorator-transforms', '1.0.3'],
+  ['ember-auto-import', '2.7.2'],
   ['ember-cli-babel', '8.1.0'],
   ['ember-cli-htmlbars', '6.3.0'],
-  ['rollup', '4.9.1'],
+  ['rollup', '4.9.3'],
   ['rollup-plugin-copy', '3.5.0'],
   ['typescript', '5.3.3'],
 ]);
