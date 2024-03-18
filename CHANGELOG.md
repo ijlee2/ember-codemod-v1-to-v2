@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.4 (2024-03-18)
+
+### Enhancement
+* [#79](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/79) Updated latestVersions ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#78](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/78) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.2.3 (2024-02-21)
 
 ### Internal
