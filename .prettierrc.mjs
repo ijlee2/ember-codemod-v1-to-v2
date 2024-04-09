@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = {
+export default {
   overrides: [
     {
       files: '*.{cjs,cts,js,mjs,mts,ts}',

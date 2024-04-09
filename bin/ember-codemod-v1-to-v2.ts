@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// eslint-disable-next-line n/shebang
 'use strict';
 
 import yargs from 'yargs';
