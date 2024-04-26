@@ -43,7 +43,7 @@
     "start": "concurrently \"npm:start:*\" --names \"start:\"",
     "start:js": "rollup --config --watch --no-watch.clearScreen",
     "start:types": "glint --declaration --watch",
-    "test": "echo 'A v2 addon does not have tests, run tests in test-app'",
+    "test": "echo 'A v2 addon does not have tests, run tests in demo-app'",
     "test:ember": "ember test",
     "test:ember-compatibility": "./node_modules/.bin/ember try:one"
   },
