@@ -15,33 +15,43 @@ _Codemod to convert Ember addons to v2 addon format_
 
 ## Usage
 
-You can check [`ember-container-query`](https://github.com/ijlee2/ember-container-query/pull/151) as a reference.
+For examples, see [`ember-container-query`](https://github.com/ijlee2/ember-container-query/pull/151/commits) and [`ember-render-helpers`](https://github.com/buschtoens/ember-render-helpers/pull/447/commits).
 
-Step 1. Quickly migrate to [v2 format](https://github.com/embroider-build/embroider/blob/main/ADDON-AUTHOR-GUIDE.md).<sup>1</sup>
+Step 1. Quickly migrate to [v2 format](https://github.com/embroider-build/embroider/blob/v4.3.1-%40embroider/addon-dev/docs/addon-author-guide.md).
 
 ```sh
 cd <path/to/your/project>
 npx ember-codemod-v1-to-v2 <arguments>
 ```
 
+> [!IMPORTANT]
+>
+> Before you run `ember-codemod-v1-to-v2`, I recommend that you address existing tech debts (one at a time). That is, treat the v2 migration as its own thing.
+>
+> Here are examples of what you may want to work on first:
+>
+> - [Meet prerequisites for v2 addon](https://github.com/embroider-build/embroider/blob/v4.3.1-%40embroider/addon-dev/docs/porting-addons-to-v2.md#part-3-prerequisites-for-v2-addon).
+> - [Un-pod v1 addon](https://github.com/ijlee2/ember-codemod-pod-to-octane).
+> - Update dependencies.
+> - Switch `npm` or `yarn` to `pnpm`.
+
 Step 2. Review the addon package.
 
-- [x] Update the configuration files.<sup>2</sup>
+- [x] Update the configuration files.<sup>1</sup>
+- [x] Install missing dependencies.
 - [x] Relative import paths must specify the file extension `.js` or `.ts`.
 - [x] Colocate stylesheets (if any). Let each component import the relevant stylesheet in the backing class.
 - [x] Confirm that you can run all scripts in `package.json`.
 
 Step 3. Review the test-app package.
 
-- [x] Update the configuration files.<sup>2</sup>
+- [x] Update the configuration files.<sup>1</sup>
 - [x] Rename the remaining instances of `dummy` to `test-app`.
 - [x] Confirm that you can run all scripts in `package.json`.
 
 Step 4. Review the workspace root including CI/CD.
 
-<sup>1. Before running `ember-codemod-v1-to-v2`, consider [meeting the prerequisites](https://github.com/embroider-build/embroider/blob/v1.8.3/PORTING-ADDONS-TO-V2.md#part-3-prerequisites-for-v2-addon). You can run [`ember-codemod-pod-to-octane`](https://github.com/ijlee2/ember-codemod-pod-to-octane) to un-pod a v1 addon.</sup>
-
-<sup>2. Files such as `.eslintrc.js`, `.gitignore`, `babel.config.json` (addon only), `config/environment.js` (test-app only), `ember-cli-build.js` (test-app only), `package.json`, `rollup.config.mjs` (addon only), `tsconfig.json`, etc.</sup>
+<sup>1. Files such as `.eslintrc.js`, `.gitignore`, `babel.config.json` (addon only), `config/environment.js` (test-app only), `ember-cli-build.js` (test-app only), `package.json`, `rollup.config.mjs` (addon only), `tsconfig.json`, etc.</sup>
 
 
 ### Arguments
@@ -133,7 +143,7 @@ If you have an open-sourced addon (v1 or v2) that I can use as a reference, reac
 
 ## Credits
 
-The codemod steps were based on [Migrating an Ember addon to the next-gen v2 format](https://www.kaliber5.de/de/blog/v2-addon_en) and [Guide: Porting an Addon to v2](https://github.com/embroider-build/embroider/blob/v3.1.3-core/docs/porting-addons-to-v2.md). The blueprints were derived from [`@embroider/addon-blueprint`](https://github.com/embroider-build/addon-blueprint).
+The codemod steps were based on [Migrating an Ember addon to the next-gen v2 format](https://www.kaliber5.de/de/blog/v2-addon_en) and [Guide: Porting an Addon to v2](https://github.com/embroider-build/embroider/blob/v4.3.1-%40embroider/addon-dev/docs/porting-addons-to-v2.md). The blueprints were derived from [`@embroider/addon-blueprint`](https://github.com/embroider-build/addon-blueprint).
 
 
 ## License
