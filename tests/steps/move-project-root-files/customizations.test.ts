@@ -50,17 +50,10 @@ test('steps | move-project-root-files > customizations', function () {
     },
     packages: {
       'ember-container-query': {
-        '.eslintignore': 'some code for .eslintignore',
-        '.eslintrc.js': 'some code for .eslintrc.js',
-        '.gitignore': 'some code for .gitignore',
-        '.prettierignore': 'some code for .prettierignore',
-        '.prettierrc.js': 'some code for .prettierrc.js',
         '.stylelintrc.js': 'some code for .stylelintrc.js',
-        '.template-lintrc.js': 'some code for .template-lintrc.js',
         'LICENSE.md': 'some code for LICENSE.md',
         'package.json': 'some code for package.json',
         'README.md': 'some code for README.md',
-        'tsconfig.json': 'some code for tsconfig.json',
       },
     },
     '.editorconfig': 'some code for .editorconfig',
