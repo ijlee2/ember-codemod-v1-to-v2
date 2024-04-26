@@ -4,6 +4,9 @@
     "allowImportingTsExtensions": true,
     "allowJs": true,
     "declarationDir": "declarations",
+    "emitDeclarationOnly": true,
+    "noEmit": false,
+    "noEmitOnError": false,
     "rootDir": "./src"
   },
   "include": [
@@ -11,6 +14,8 @@
     "unpublished-development-types/**/*"
   ],
   "glint": {
-    "environment": "ember-loose"
+    "environment": [
+      "ember-loose"
+    ]
   }
 }

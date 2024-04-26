@@ -28,22 +28,7 @@ function copyToAddon(options: Options): void {
 function moveToAddonAndTestApp(options: Options): void {
   const { locations, projectRoot } = options;
 
-  const files = [
-    '.eslintignore',
-    '.eslintrc.cjs',
-    '.eslintrc.js',
-    '.gitignore',
-    '.prettierignore',
-    '.prettierrc.cjs',
-    '.prettierrc.js',
-    '.stylelintignore',
-    '.stylelintrc.cjs',
-    '.stylelintrc.js',
-    '.template-lintrc.cjs',
-    '.template-lintrc.js',
-    'package.json',
-    'tsconfig.json',
-  ];
+  const files = ['.stylelintignore', '.stylelintrc.{cjs,js}', 'package.json'];
 
   const filePaths = findFiles(files, {
     projectRoot,
@@ -71,9 +56,16 @@ function moveToTestApp(options: Options): void {
 
   const files = [
     '.ember-cli',
+    '.eslintignore',
+    '.eslintrc.{cjs,js}',
+    '.gitignore',
+    '.prettierignore',
+    '.prettierrc.{cjs,js}',
+    '.template-lintrc.{cjs,js}',
     '.watchmanconfig',
     'ember-cli-build.js',
     'testem.js',
+    'tsconfig.json',
   ];
 
   const filePaths = findFiles(files, {

@@ -1,7 +1,7 @@
 import { convertToMap, convertToObject } from '@codemod-utils/json';
 
 import type { Options, PackageJson } from '../../types/index.js';
-import { getVersion } from '../../utils/blueprints.js';
+import { getLatestVersion } from '../../utils/blueprints.js';
 
 export function updateDependencies(
   packageJson: PackageJson,
@@ -27,7 +27,7 @@ export function updateDependencies(
   const packagesToInstall = ['@embroider/addon-shim', 'decorator-transforms'];
 
   packagesToInstall.forEach((packageName) => {
-    const version = getVersion(packageName, options);
+    const version = getLatestVersion(packageName);
 
     dependencies.set(packageName, version);
   });

@@ -2,7 +2,6 @@
 // These will *not* be published as part of your addon, so be careful that your published code does not rely on them!
 <% if (options.packages.addon.hasGlint) { %>
 import '@glint/environment-ember-loose';
-// import '@glint/environment-ember-template-imports';
 
 declare module '@glint/environment-ember-loose/registry' {
   // Remove this once entries have been added! 👇

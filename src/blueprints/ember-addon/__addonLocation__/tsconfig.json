@@ -1,0 +1,21 @@
+{
+  "extends": "@tsconfig/ember/tsconfig.json",
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "allowJs": true,
+    "declarationDir": "declarations",
+    "emitDeclarationOnly": true,
+    "noEmit": false,
+    "noEmitOnError": false,
+    "rootDir": "./src"
+  },
+  "include": [
+    "src/**/*",
+    "unpublished-development-types/**/*"
+  ]<% if (options.packages.addon.hasGlint) { %>,
+  "glint": {
+    "environment": [
+      "ember-loose"
+    ]
+  }<% } %>
+}
