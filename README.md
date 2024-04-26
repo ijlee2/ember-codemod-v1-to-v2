@@ -55,7 +55,7 @@ In most cases, I recommend running the codemod without any arguments (i.e. allow
 By default, the package name decides where the addon package lives. Pass `--addon-location` to override the logic. This may be useful if you have a workspace with many addons.
 
 ```sh
-npx ember-codemod-v1-to-v2 --addon-location packages/ui/buttons
+npx ember-codemod-v1-to-v2 --addon-location packages/ui/button
 ```
 
 </details>
@@ -94,7 +94,7 @@ npx ember-codemod-v1-to-v2 --test-app-location docs-app
 By default, the test-app package is named `test-app`. Pass `--test-app-name` to override the logic. This may be useful if you have a workspace with many addons.
 
 ```sh
-npx ember-codemod-v1-to-v2 --test-app-name test-app-for-ui-buttons
+npx ember-codemod-v1-to-v2 --test-app-name test-app-for-ui-button
 ```
 
 </details>
