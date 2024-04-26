@@ -10,46 +10,50 @@ export function updateScripts(
 
   const scripts = convertToMap(packageJson['scripts']);
 
+  /*
+    The codemod sets the scripts that v2 addons need. End-developers
+    must add scripts that their v1 addon needed.
+  */
+  scripts.clear();
+
+  scripts.set('lint', "concurrently 'npm:lint:*(!fix)' --names 'lint:'");
+  scripts.set('lint:fix', "concurrently 'npm:lint:*:fix' --names 'fix:'");
+  scripts.set(
+    'lint:hbs',
+    'ember-template-lint . --no-error-on-unmatched-pattern',
+  );
+  scripts.set(
+    'lint:hbs:fix',
+    'ember-template-lint . --fix --no-error-on-unmatched-pattern',
+  );
+  scripts.set('lint:js', 'eslint . --cache');
+  scripts.set('lint:js:fix', 'eslint . --fix');
+  scripts.set(
+    'test',
+    `echo 'A v2 addon does not have tests, run tests in ${locations.testApp}'`,
+  );
+
   if (packages.addon.hasTypeScript) {
-    scripts.set('build', 'concurrently "npm:build:*" --names "build:"');
+    scripts.set('build', 'concurrently "npm:build:*"');
     scripts.set('build:js', 'rollup --config');
-    scripts.set(
-      'build:types',
-      packages.addon.hasGlint ? 'glint --declaration' : 'tsc',
-    );
-
-    scripts.set(
-      'lint:types',
-      packages.addon.hasGlint
-        ? 'glint'
-        : 'tsc --emitDeclarationOnly false --noEmit',
-    );
-
-    if (scripts.get('postpack') === 'ember ts:clean') {
-      scripts.delete('postpack');
-    }
-
-    scripts.set('prepack', 'rollup --config');
-
-    scripts.set('start', 'concurrently "npm:start:*" --names "start:"');
+    scripts.delete('postpack');
+    scripts.set('prepack', "concurrently 'npm:build:*'");
+    scripts.set('start', 'concurrently "npm:start:*"');
     scripts.set('start:js', 'rollup --config --watch --no-watch.clearScreen');
-    scripts.set(
-      'start:types',
-      packages.addon.hasGlint ? 'glint --declaration --watch' : 'tsc --watch',
-    );
 
-    scripts.set(
-      'test',
-      `echo 'A v2 addon does not have tests, run tests in ${locations.testApp}'`,
-    );
+    if (packages.addon.hasGlint) {
+      scripts.set('build:types', 'glint --declaration');
+      scripts.set('lint:types', 'glint');
+      scripts.set('start:types', 'glint --declaration --watch');
+    } else {
+      scripts.set('build:types', 'tsc');
+      scripts.set('lint:types', 'tsc --emitDeclarationOnly false --noEmit');
+      scripts.set('start:types', 'tsc --watch');
+    }
   } else {
     scripts.set('build', 'rollup --config');
     scripts.set('prepack', 'rollup --config');
     scripts.set('start', 'rollup --config --watch');
-    scripts.set(
-      'test',
-      `echo 'A v2 addon does not have tests, run tests in ${locations.testApp}'`,
-    );
   }
 
   packageJson['scripts'] = convertToObject(scripts);
