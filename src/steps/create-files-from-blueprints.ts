@@ -18,7 +18,7 @@ function getFilesToSkip(options: Options): string[] {
     files.add('__testAppLocation__/types/global.d.ts');
   }
 
-  if (!packageManager.isPnpm) {
+  if (packageManager !== 'pnpm') {
     files.add('pnpm-workspace.yaml');
   }
 
