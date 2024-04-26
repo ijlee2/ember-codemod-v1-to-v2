@@ -6,7 +6,7 @@ export function updateScripts(
   packageJson: PackageJson,
   options: Options,
 ): void {
-  const { packages } = options;
+  const { locations, packages } = options;
 
   const scripts = convertToMap(packageJson['scripts']);
 
@@ -40,7 +40,7 @@ export function updateScripts(
 
     scripts.set(
       'test',
-      "echo 'A v2 addon does not have tests, run tests in test-app'",
+      `echo 'A v2 addon does not have tests, run tests in ${locations.testApp}'`,
     );
   } else {
     scripts.set('build', 'rollup --config');
@@ -48,7 +48,7 @@ export function updateScripts(
     scripts.set('start', 'rollup --config --watch');
     scripts.set(
       'test',
-      "echo 'A v2 addon does not have tests, run tests in test-app'",
+      `echo 'A v2 addon does not have tests, run tests in ${locations.testApp}'`,
     );
   }
 
