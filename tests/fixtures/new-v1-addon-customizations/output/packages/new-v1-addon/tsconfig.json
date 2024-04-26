@@ -3,10 +3,10 @@
   "compilerOptions": {
     "allowImportingTsExtensions": true,
     "allowJs": true,
-    "declaration": true,
     "declarationDir": "declarations",
     "emitDeclarationOnly": true,
     "noEmit": false,
+    "noEmitOnError": false,
     "rootDir": "./src"
   },
   "include": [
