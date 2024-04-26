@@ -37,11 +37,7 @@ test('steps | create-options > npm', function () {
       addon: 'new-v1-addon',
       testApp: 'test-app',
     },
-    packageManager: {
-      isNpm: true,
-      isPnpm: false,
-      isYarn: false,
-    },
+    packageManager: 'npm',
     packages: {
       addon: {
         dependencies: new Map([
