@@ -1,4 +1,4 @@
-<% if (options.packageManager.isNpm) { %>{
+<% if (options.packageManager === 'npm') { %>{
   "name": "workspace-root",
   "version": "<%= options.packages.addon.version %>",
   "private": true,
@@ -22,7 +22,7 @@
   "devDependencies": {
     "concurrently": "<%= context.projectRoot.devDependencies['concurrently'] %>"
   }
-}<% } else if (options.packageManager.isPnpm) { %>{
+}<% } else if (options.packageManager === 'pnpm') { %>{
   "name": "workspace-root",
   "version": "<%= options.packages.addon.version %>",
   "private": true,
@@ -34,7 +34,7 @@
     "lint": "pnpm --filter '*' lint",
     "lint:fix": "pnpm --filter '*' lint:fix",
     "prepare": "pnpm build",
-    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start": "concurrently 'pnpm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "pnpm --filter <%= options.packages.addon.name %> start",
     "start:test-app": "pnpm --filter <%= options.packages.testApp.name %> start",
     "test": "pnpm --filter '*' test"
@@ -42,7 +42,7 @@
   "devDependencies": {
     "concurrently": "<%= context.projectRoot.devDependencies['concurrently'] %>"
   }
-}<% } else if (options.packageManager.isYarn) { %>{
+}<% } else if (options.packageManager === 'yarn') { %>{
   "name": "workspace-root",
   "version": "<%= options.packages.addon.version %>",
   "private": true,
@@ -58,7 +58,7 @@
     "lint": "yarn workspaces run lint",
     "lint:fix": "yarn workspaces run lint:fix",
     "prepare": "yarn build",
-    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start": "concurrently 'yarn:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "yarn workspace <%= options.packages.addon.name %> run start",
     "start:test-app": "yarn workspace <%= options.packages.testApp.name %> run start",
     "test": "yarn workspaces run test"

@@ -25,11 +25,7 @@ test('steps | create-files-from-blueprints > npm', function () {
       addon: 'ember-container-query',
       testApp: 'test-app',
     },
-    packageManager: {
-      isNpm: true,
-      isPnpm: false,
-      isYarn: false,
-    },
+    packageManager: 'npm' as const,
     packages: {
       addon: {
         dependencies: new Map([

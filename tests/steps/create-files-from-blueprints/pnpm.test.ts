@@ -25,11 +25,7 @@ test('steps | create-files-from-blueprints > pnpm', function () {
       addon: 'ember-container-query',
       testApp: 'test-app',
     },
-    packageManager: {
-      isNpm: false,
-      isPnpm: true,
-      isYarn: false,
-    },
+    packageManager: 'pnpm' as const,
     packages: {
       addon: {
         dependencies: new Map([

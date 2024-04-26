@@ -22,11 +22,7 @@ type Options = {
     addon: string;
     testApp: string;
   };
-  packageManager: {
-    isNpm: boolean;
-    isPnpm: boolean;
-    isYarn: boolean;
-  };
+  packageManager: 'npm' | 'pnpm' | 'yarn';
   packages: {
     addon: {
       dependencies: Map<string, string>;

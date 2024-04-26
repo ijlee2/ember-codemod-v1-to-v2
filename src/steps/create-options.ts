@@ -39,13 +39,13 @@ function analyzePackageJson(codemodOptions: CodemodOptions): AddonPackage {
 function analyzePackageManager(codemodOptions: CodemodOptions): PackageManager {
   const { projectRoot } = codemodOptions;
 
-  const mapping = new Map([
-    ['package-lock.json', 'npm'],
-    ['pnpm-lock.yaml', 'pnpm'],
-    ['yarn.lock', 'yarn'],
-  ]);
+  const mapping = {
+    'package-lock.json': 'npm',
+    'pnpm-lock.yaml': 'pnpm',
+    'yarn.lock': 'yarn',
+  } as const;
 
-  const lockFiles = Array.from(mapping.keys());
+  const lockFiles = Object.keys(mapping);
 
   const filePaths = findFiles(lockFiles, {
     projectRoot,
@@ -54,20 +54,12 @@ function analyzePackageManager(codemodOptions: CodemodOptions): PackageManager {
   if (filePaths.length !== 1) {
     console.warn('WARNING: Package manager is unknown. Yarn will be assumed.');
 
-    return {
-      isNpm: false,
-      isPnpm: false,
-      isYarn: true,
-    };
+    return 'yarn';
   }
 
-  const packageManager = mapping.get(filePaths[0]!);
+  const lockfile = filePaths[0] as keyof typeof mapping;
 
-  return {
-    isNpm: packageManager === 'npm',
-    isPnpm: packageManager === 'pnpm',
-    isYarn: packageManager === 'yarn',
-  };
+  return mapping[lockfile];
 }
 
 function deriveAddonLocation(addonPackage: AddonPackage): string {

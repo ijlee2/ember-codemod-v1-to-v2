@@ -25,11 +25,7 @@ test('steps | create-options > v2 addon', function () {
       addon: 'ember-container-query',
       testApp: 'test-app',
     },
-    packageManager: {
-      isNpm: false,
-      isPnpm: false,
-      isYarn: true,
-    },
+    packageManager: 'yarn',
     packages: {
       addon: {
         dependencies: new Map(),

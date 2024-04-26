@@ -34,11 +34,7 @@ test('steps | create-options > glint', function () {
       addon: 'ember-container-query',
       testApp: 'test-app',
     },
-    packageManager: {
-      isNpm: false,
-      isPnpm: false,
-      isYarn: true,
-    },
+    packageManager: 'yarn',
     packages: {
       addon: {
         dependencies: new Map([
