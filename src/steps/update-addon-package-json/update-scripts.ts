@@ -40,11 +40,11 @@ export function updateScripts(
   );
 
   if (packages.addon.hasTypeScript) {
-    scripts.set('build', `concurrently "${packageManager}:build:*"`);
+    scripts.set('build', `concurrently '${packageManager}:build:*'`);
     scripts.set('build:js', 'rollup --config');
     scripts.delete('postpack');
     scripts.set('prepack', `concurrently '${packageManager}:build:*'`);
-    scripts.set('start', `concurrently "${packageManager}:start:*"`);
+    scripts.set('start', `concurrently '${packageManager}:start:*'`);
     scripts.set('start:js', 'rollup --config --watch --no-watch.clearScreen');
 
     if (packages.addon.hasGlint) {
