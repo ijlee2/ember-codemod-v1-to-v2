@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.3.0 (2024-04-26)
+
+### Bug Fix
+* [#83](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/83) Removed hardcoded package manager names ([@ijlee2](https://github.com/ijlee2))
+* [#81](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/81) Removed hardcoded locations for test-app ([@ijlee2](https://github.com/ijlee2))
+
+### Enhancement
+* [#82](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/82) Allowed codemod to set linters for the v2 addon ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#80](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/80) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.2.4 (2024-03-18)
 
 ### Enhancement
