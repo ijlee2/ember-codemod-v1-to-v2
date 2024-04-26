@@ -1,10 +1,9 @@
 import { assert, test } from '@codemod-utils/tests';
 
-import { getVersion } from '../../../src/utils/blueprints.js';
+import { getLatestVersion, getVersion } from '../../../src/utils/blueprints.js';
 import { options } from '../../helpers/shared-test-setups/typescript.js';
 
 test('utils | blueprints | get-version', function () {
-  const version = getVersion('prettier', options);
-
-  assert.strictEqual(version, '^2.8.1');
+  assert.strictEqual(getLatestVersion('prettier'), '^3.2.5');
+  assert.strictEqual(getVersion('prettier', options), '^2.8.1');
 });
