@@ -6,7 +6,7 @@ export function updateScripts(
   packageJson: PackageJson,
   options: Options,
 ): void {
-  const { locations, packages } = options;
+  const { locations, packageManager, packages } = options;
 
   const scripts = convertToMap(packageJson['scripts']);
 
@@ -16,8 +16,14 @@ export function updateScripts(
   */
   scripts.clear();
 
-  scripts.set('lint', "concurrently 'npm:lint:*(!fix)' --names 'lint:'");
-  scripts.set('lint:fix', "concurrently 'npm:lint:*:fix' --names 'fix:'");
+  scripts.set(
+    'lint',
+    `concurrently '${packageManager}:lint:*(!fix)' --names 'lint:'`,
+  );
+  scripts.set(
+    'lint:fix',
+    `concurrently '${packageManager}:lint:*:fix' --names 'fix:'`,
+  );
   scripts.set(
     'lint:hbs',
     'ember-template-lint . --no-error-on-unmatched-pattern',
@@ -34,11 +40,11 @@ export function updateScripts(
   );
 
   if (packages.addon.hasTypeScript) {
-    scripts.set('build', 'concurrently "npm:build:*"');
+    scripts.set('build', `concurrently "${packageManager}:build:*"`);
     scripts.set('build:js', 'rollup --config');
     scripts.delete('postpack');
-    scripts.set('prepack', "concurrently 'npm:build:*'");
-    scripts.set('start', 'concurrently "npm:start:*"');
+    scripts.set('prepack', `concurrently '${packageManager}:build:*'`);
+    scripts.set('start', `concurrently "${packageManager}:start:*"`);
     scripts.set('start:js', 'rollup --config --watch --no-watch.clearScreen');
 
     if (packages.addon.hasGlint) {
