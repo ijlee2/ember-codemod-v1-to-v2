@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.3.1 (2024-06-07)
+
+### Internal
+* [#85](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/85) Updated latestVersions ([@ijlee2](https://github.com/ijlee2))
+* [#84](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/84) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.3.0 (2024-04-26)
 
 ### Bug Fix
