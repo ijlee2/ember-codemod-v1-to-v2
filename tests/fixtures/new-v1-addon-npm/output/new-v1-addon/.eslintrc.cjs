@@ -2,30 +2,46 @@
 
 module.exports = {
   root: true,
-  parser: '@babel/eslint-parser',
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    babelOptions: {
-      root: __dirname,
-    },
-  },
-  plugins: ['ember'],
-  extends: [
-    'eslint:recommended',
-    'plugin:ember/recommended',
-    'plugin:prettier/recommended',
-  ],
-  env: {
-    browser: true,
-  },
-  rules: {},
+  // Only use overrides
+  // https://github.com/ember-cli/eslint-plugin-ember?tab=readme-ov-file#gtsgjs
   overrides: [
-    // require relative imports use full extensions
     {
-      files: ['src/**/*.{js,gjs}'],
+      files: ['**/*.js'],
+      env: { browser: true },
+      parser: '@babel/eslint-parser',
+      parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        babelOptions: {
+          root: __dirname,
+        },
+      },
+      plugins: ['ember', 'import'],
+      extends: [
+        'eslint:recommended',
+        'plugin:ember/recommended',
+        'plugin:prettier/recommended',
+      ],
       rules: {
+        // require relative imports use full extensions
         'import/extensions': ['error', 'always', { ignorePackages: true }],
+        // Add any custom rules here
+      },
+    },
+    {
+      files: ['**/*.gjs'],
+      parser: 'ember-eslint-parser',
+      plugins: ['ember', 'import'],
+      extends: [
+        'eslint:recommended',
+        'plugin:ember/recommended',
+        'plugin:ember/recommended-gjs',
+        'plugin:prettier/recommended',
+      ],
+      rules: {
+        // require relative imports use full extensions
+        'import/extensions': ['error', 'always', { ignorePackages: true }],
+        // Add any custom rules here
       },
     },
     // node files
@@ -44,7 +60,11 @@ module.exports = {
         node: true,
       },
       plugins: ['n'],
-      extends: ['plugin:n/recommended'],
+      extends: [
+        'eslint:recommended',
+        'plugin:n/recommended',
+        'plugin:prettier/recommended',
+      ],
     },
   ],
 };
