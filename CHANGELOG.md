@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.4.0 (2024-08-14)
+
+### Enhancement
+* [#88](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/88) Updated blueprints ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#88](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/88) Updated blueprints ([@ijlee2](https://github.com/ijlee2))
+* [#87](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/87) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+* [#86](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/86) Used pnpm@9 to manage dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.3.1 (2024-06-07)
 
 ### Internal
