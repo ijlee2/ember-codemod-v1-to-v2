@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.4.1 (2024-08-28)
+
+### Internal
+* [#89](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/89) Downstreamed changes from @codemod-utils/cli@2.0.1 ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.4.0 (2024-08-14)
 
 ### Enhancement
