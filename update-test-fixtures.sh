@@ -54,6 +54,13 @@ cp -r "tests/fixtures/ember-container-query-typescript/input" "tests/fixtures/em
   --root "tests/fixtures/ember-container-query-typescript/output"
 
 # Update fixtures
+rm -r "tests/fixtures/hello-world/output"
+cp -r "tests/fixtures/hello-world/input" "tests/fixtures/hello-world/output"
+
+./dist/bin/ember-codemod-v1-to-v2.js \
+  --root "tests/fixtures/hello-world/output"
+
+# Update fixtures
 rm -r "tests/fixtures/new-v1-addon-customizations/output"
 cp -r "tests/fixtures/new-v1-addon-customizations/input" "tests/fixtures/new-v1-addon-customizations/output"
 
