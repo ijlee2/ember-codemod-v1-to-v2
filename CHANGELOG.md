@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.5.0 (2024-09-05)
+
+### Bug Fix
+* [#90](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/90) Corrected the addon file locations for TypeScript projects ([@ijlee2](https://github.com/ijlee2))
+
+### Enhancement
+* [#90](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/90) Corrected the addon file locations for TypeScript projects ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.4.1 (2024-08-28)
 
 ### Internal
