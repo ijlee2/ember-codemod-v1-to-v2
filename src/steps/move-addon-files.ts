@@ -25,7 +25,19 @@ function moveAddonFolder(options: Options): void {
 function moveAddonTestSupportFolder(options: Options): void {
   const { locations, projectRoot } = options;
 
-  const filePaths = findFiles('addon-test-support/**/*', {
+  let filePaths = findFiles('addon-test-support/index.{js,ts}', {
+    projectRoot,
+  });
+
+  if (filePaths.length === 1) {
+    const oldPath = filePaths[0]!;
+    const newPath = `${locations.addon}/src/test-support${oldPath.endsWith('.ts') ? '.ts' : 'js'}`;
+
+    moveFiles(new Map([[oldPath, newPath]]), options);
+  }
+
+  filePaths = findFiles('addon-test-support/**/*', {
+    ignoreList: ['addon-test-support/index.{js,ts}'],
     projectRoot,
   });
 

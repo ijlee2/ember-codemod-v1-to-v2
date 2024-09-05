@@ -23,8 +23,8 @@ test('steps | move-addon-files > test-support', function () {
           components: {
             'container-query.ts': '',
           },
-          'index.ts': `export * from './components/container-query';\n`,
         },
+        'test-support.ts': `export * from './components/container-query';\n`,
       },
     },
   };
