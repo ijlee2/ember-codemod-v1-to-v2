@@ -15,7 +15,8 @@
   ],
   "glint": {
     "environment": [
-      "ember-loose"
+      "ember-loose",
+      "ember-template-imports"
     ]
   }
 }

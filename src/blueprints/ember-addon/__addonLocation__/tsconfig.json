@@ -15,7 +15,8 @@
   ]<% if (options.packages.addon.hasGlint) { %>,
   "glint": {
     "environment": [
-      "ember-loose"
+      "ember-loose",
+      "ember-template-imports"
     ]
   }<% } %>
 }

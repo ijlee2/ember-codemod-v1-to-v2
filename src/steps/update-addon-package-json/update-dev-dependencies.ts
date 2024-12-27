@@ -41,9 +41,6 @@ export function updateDevDependencies(
     packagesToInstall.delete('@babel/eslint-parser');
     packagesToInstall.add('@babel/plugin-transform-typescript');
     packagesToInstall.add('@tsconfig/ember');
-    packagesToInstall.add('@types/ember__component');
-    packagesToInstall.add('@types/ember__object');
-    packagesToInstall.add('@types/ember__service');
     packagesToInstall.add('@typescript-eslint/eslint-plugin');
     packagesToInstall.add('@typescript-eslint/parser');
     packagesToInstall.add('typescript');
@@ -52,7 +49,9 @@ export function updateDevDependencies(
   if (packages.addon.hasGlint) {
     packagesToInstall.add('@glint/core');
     packagesToInstall.add('@glint/environment-ember-loose');
+    packagesToInstall.add('@glint/environment-ember-template-imports');
     packagesToInstall.add('@glint/template');
+    packagesToInstall.add('ember-source');
   }
 
   Array.from(packagesToInstall).forEach((packageName) => {
