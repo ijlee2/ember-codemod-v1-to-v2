@@ -39,35 +39,36 @@
     "test": "./build.sh --test && mt dist-for-testing --quiet"
   },
   "dependencies": {
-    "@codemod-utils/blueprints": "^1.1.5",
-    "@codemod-utils/files": "^2.0.4",
-    "@codemod-utils/json": "^1.1.9",
+    "@codemod-utils/blueprints": "^1.1.6",
+    "@codemod-utils/files": "^2.0.5",
+    "@codemod-utils/json": "^1.1.10",
     "strip-json-comments": "^5.0.1",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
-    "@codemod-utils/tests": "^1.1.7",
+    "@babel/core": "^7.26.0",
+    "@codemod-utils/tests": "^1.1.8",
     "@sondr3/minitest": "^0.1.2",
     "@tsconfig/node18": "^18.2.4",
     "@tsconfig/strictest": "^2.0.5",
-    "@types/node": "^18.19.47",
+    "@types/node": "^18.19.68",
     "@types/yargs": "^17.0.33",
-    "@typescript-eslint/eslint-plugin": "^8.3.0",
-    "@typescript-eslint/parser": "^8.3.0",
-    "concurrently": "^8.2.2",
-    "eslint": "^8.57.0",
+    "@typescript-eslint/eslint-plugin": "^8.18.2",
+    "@typescript-eslint/parser": "^8.18.2",
+    "concurrently": "^9.1.0",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-import-resolver-typescript": "^3.6.3",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^17.10.2",
+    "eslint-import-resolver-typescript": "^3.7.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-n": "^17.15.1",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "eslint-plugin-typescript-sort-keys": "^3.2.0",
+    "eslint-plugin-typescript-sort-keys": "^3.3.0",
     "lerna-changelog": "^2.2.0",
-    "prettier": "^3.3.3",
-    "typescript": "^5.5.4"
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
   },
+  "packageManager": "pnpm@9.15.1",
   "engines": {
     "node": "18.* || >= 20"
   },
@@ -82,7 +83,7 @@
   },
   "pnpm": {
     "overrides": {
-      "eslint-plugin-import@2.29.1>tsconfig-paths": "^4.2.0"
+      "eslint-plugin-import@2.31.0>tsconfig-paths": "^4.2.0"
     }
   }
 }
