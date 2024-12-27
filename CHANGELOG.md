@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.6.0 (2024-12-27)
+
+### Enhancement
+* [#92](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/92) Updated blueprints ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#91](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/91) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.5.0 (2024-09-05)
 
 ### Bug Fix
