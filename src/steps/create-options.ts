@@ -52,9 +52,9 @@ function analyzePackageManager(codemodOptions: CodemodOptions): PackageManager {
   });
 
   if (filePaths.length !== 1) {
-    console.warn('WARNING: Package manager is unknown. Yarn will be assumed.');
+    console.warn('WARNING: Package manager is unknown. pnpm will be assumed.');
 
-    return 'yarn';
+    return 'pnpm';
   }
 
   const lockfile = filePaths[0] as keyof typeof mapping;
