@@ -14,7 +14,7 @@
     "lint": "npm run lint --workspaces --if-present",
     "lint:fix": "npm run lint:fix --workspaces --if-present",
     "prepare": "npm run build",
-    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start": "concurrently \"npm:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "npm start --workspace <%= options.packages.addon.name %>",
     "start:test-app": "npm start --workspace <%= options.packages.testApp.name %>",
     "test": "npm run test --workspaces --if-present"
@@ -31,13 +31,13 @@
   "author": "",
   "scripts": {
     "build": "pnpm --filter <%= options.packages.addon.name %> build",
-    "lint": "pnpm --filter '*' lint",
-    "lint:fix": "pnpm --filter '*' lint:fix",
+    "lint": "pnpm --filter \"*\" lint",
+    "lint:fix": "pnpm --filter \"*\" lint:fix",
     "prepare": "pnpm build",
-    "start": "concurrently 'pnpm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start": "concurrently \"pnpm:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "pnpm --filter <%= options.packages.addon.name %> start",
     "start:test-app": "pnpm --filter <%= options.packages.testApp.name %> start",
-    "test": "pnpm --filter '*' test"
+    "test": "pnpm --filter \"*\" test"
   },
   "devDependencies": {
     "concurrently": "<%= context.projectRoot.devDependencies['concurrently'] %>"
@@ -58,7 +58,7 @@
     "lint": "yarn workspaces run lint",
     "lint:fix": "yarn workspaces run lint:fix",
     "prepare": "yarn build",
-    "start": "concurrently 'yarn:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start": "concurrently \"yarn:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "yarn workspace <%= options.packages.addon.name %> run start",
     "start:test-app": "yarn workspace <%= options.packages.testApp.name %> run start",
     "test": "yarn workspaces run test"

@@ -18,11 +18,13 @@ export function updateScripts(
 
   scripts.set(
     'lint',
-    `concurrently '${packageManager}:lint:*(!fix)' --names 'lint:'`,
+    // eslint-disable-next-line no-useless-escape
+    `concurrently \"${packageManager}:lint:*(!fix)\" --names \"lint:\"`,
   );
   scripts.set(
     'lint:fix',
-    `concurrently '${packageManager}:lint:*:fix' --names 'fix:'`,
+    // eslint-disable-next-line no-useless-escape
+    `concurrently \"${packageManager}:lint:*:fix\" --names \"fix:\"`,
   );
   scripts.set(
     'lint:hbs',
@@ -36,15 +38,19 @@ export function updateScripts(
   scripts.set('lint:js:fix', 'eslint . --fix');
   scripts.set(
     'test',
-    `echo 'A v2 addon does not have tests, run tests in ${locations.testApp}'`,
+    // eslint-disable-next-line no-useless-escape
+    `echo \"A v2 addon does not have tests, run tests in ${locations.testApp}\"`,
   );
 
   if (packages.addon.hasTypeScript) {
-    scripts.set('build', `concurrently '${packageManager}:build:*'`);
+    // eslint-disable-next-line no-useless-escape
+    scripts.set('build', `concurrently \"${packageManager}:build:*\"`);
     scripts.set('build:js', 'rollup --config');
     scripts.delete('postpack');
-    scripts.set('prepack', `concurrently '${packageManager}:build:*'`);
-    scripts.set('start', `concurrently '${packageManager}:start:*'`);
+    // eslint-disable-next-line no-useless-escape
+    scripts.set('prepack', `concurrently \"${packageManager}:build:*\"`);
+    // eslint-disable-next-line no-useless-escape
+    scripts.set('start', `concurrently \"${packageManager}:start:*\"`);
     scripts.set('start:js', 'rollup --config --watch --no-watch.clearScreen');
 
     if (packages.addon.hasGlint) {
