@@ -7,13 +7,13 @@
   "author": "",
   "scripts": {
     "build": "pnpm --filter ember-container-query build",
-    "lint": "pnpm --filter '*' lint",
-    "lint:fix": "pnpm --filter '*' lint:fix",
+    "lint": "pnpm --filter \"*\" lint",
+    "lint:fix": "pnpm --filter \"*\" lint:fix",
     "prepare": "pnpm build",
-    "start": "concurrently 'pnpm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start": "concurrently \"pnpm:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "pnpm --filter ember-container-query start",
     "start:test-app": "pnpm --filter test-app start",
-    "test": "pnpm --filter '*' test"
+    "test": "pnpm --filter \"*\" test"
   },
   "devDependencies": {
     "concurrently": "^7.6.0"
