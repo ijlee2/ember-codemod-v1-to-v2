@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.7.0 (2025-01-15)
+
+### Enhancement
+* [#95](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/95) Allowed pnpm to be the default manager, if unable to be determined ([@ijlee2](https://github.com/ijlee2))
+* [#94](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/94) Downstreamed @embroider/addon-blueprint@3.2.0 ([@ijlee2](https://github.com/ijlee2))
+
+### Internal
+* [#93](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/93) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.6.0 (2024-12-27)
 
 ### Enhancement
