@@ -14,7 +14,7 @@
     "lint": "yarn workspaces run lint",
     "lint:fix": "yarn workspaces run lint:fix",
     "prepare": "yarn build",
-    "start": "concurrently 'yarn:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start": "concurrently \"yarn:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "yarn workspace ember-container-query run start",
     "start:test-app": "yarn workspace test-app run start",
     "test": "yarn workspaces run test"

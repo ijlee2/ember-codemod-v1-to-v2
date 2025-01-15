@@ -3,7 +3,6 @@
 
 import '@glint/environment-ember-loose';
 import '@glint/environment-ember-template-imports';
-import 'ember-source/types';
 
 // Uncomment if you need to support consuming projects in loose mode
 //
