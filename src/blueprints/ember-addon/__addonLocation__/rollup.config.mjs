@@ -30,6 +30,7 @@ export default {
       'helpers/**/*.js',
       'modifiers/**/*.js',
       'services/**/*.js',
+      'utils/**/*.js',
     ]),
 
     // Follow the V2 Addon rules about dependencies. Your code can import from
@@ -52,7 +53,10 @@ export default {
     addon.hbs(),
 
     // Ensure that .gjs files are properly integrated as Javascript
-    addon.gjs(),
+    addon.gjs(),<% if (options.packages.addon.hasTypeScript) { %>
+
+    // Emit .d.ts declaration files
+    addon.declarations('declarations'),<% } %>
 
     // addons are allowed to contain imports of .css files, which we want rollup
     // to leave alone and keep in the published output.
