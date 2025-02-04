@@ -9,8 +9,6 @@
 /.DS_Store
 /.env*
 /.eslintcache
-/.eslintignore
-/.eslintrc.cjs
 /.git/
 /.github/
 /.gitignore
@@ -19,5 +17,6 @@
 /.prettierrc.cjs
 /build.sh
 /CONTRIBUTING.md
-/update-test-fixtures.sh
+/eslint.config.js
 /tests/
+/update-test-fixtures.sh
