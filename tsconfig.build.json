@@ -1,13 +1,8 @@
 {
-  "extends": [
-    "@tsconfig/node18/tsconfig",
-    "@tsconfig/strictest/tsconfig"
-  ],
+  "extends": "@ijlee2-frontend-configs/typescript/node18",
   "compilerOptions": {
     "declaration": false,
-    "moduleResolution": "NodeNext",
-    "outDir": "dist",
-    "verbatimModuleSyntax": true
+    "outDir": "dist"
   },
   "include": ["bin", "src"],
   "exclude": ["src/blueprints"]
