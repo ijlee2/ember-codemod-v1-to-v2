@@ -14,9 +14,9 @@
 /.gitignore
 /.pnpm-debug.log
 /.prettierignore
-/.prettierrc.cjs
 /build.sh
 /CONTRIBUTING.md
-/eslint.config.js
+/eslint.config.mjs
+/prettier.config.mjs
 /tests/
 /update-test-fixtures.sh
