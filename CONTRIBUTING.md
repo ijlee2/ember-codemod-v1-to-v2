@@ -70,19 +70,31 @@ Here are some guidelines to help you and everyone else.
 
 1. Generate a [personal access token](https://github.com/settings/tokens/) in GitHub, with default values for scopes (none selected).
 
-1. Run the `release:changelog` script. This generates a text that you can add to `CHANGELOG.md`.
+1. Run the `release:prepare` script. This generates a text that you can add to `CHANGELOG.md`.
 
     ```sh
-    GITHUB_AUTH=<YOUR_PERSONAL_ACCESS_TOKEN> pnpm release:changelog
+    # From the workspace root
+    GITHUB_AUTH=<YOUR_PERSONAL_ACCESS_TOKEN> pnpm release:prepare
     ```
 
-1. The package follows [semantic versioning](https://semver.org/). Update the version in `package.json` accordingly.
+    The package follows [semantic versioning](https://semver.org/). Update the version in `package.json` accordingly (e.g. from `0.1.1` to `0.1.2`).
 
-1. [Create a tag](https://github.com/ijlee2/ember-codemod-v1-to-v2/releases/new) and provide release notes. The tag name should match the package version.
+1. Review the file changes. Commit them in a branch, then open a pull request to merge the changes to the `main` branch.
+
+    ```sh
+    # From the workspace root
+    git checkout -b tag-0.1.2
+    git add .
+    git commit -m "Tagged 0.1.2"
+    git push origin tag-0.1.2
+    ```
+
+1. [Create a tag](https://github.com/ijlee2/ember-codemod-v1-to-v2/releases/new) and provide release notes. The tag name should match the package version (e.g. `0.1.2`).
 
 1. Publish the package.
 
     ```sh
+    # From the workspace root
     pnpm release:publish
     ```
 

@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.7.1 (2025-02-10)
+
+### Internal
+* [#97](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/97) Simplified lint configurations ([@ijlee2](https://github.com/ijlee2))
+* [#96](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/96) Updated eslint to v9 ([@ijlee2](https://github.com/ijlee2))
+
+### Committers: 1
+- Isaac Lee ([@ijlee2](https://github.com/ijlee2))
+
+
 ## 1.7.0 (2025-01-15)
 
 ### Enhancement

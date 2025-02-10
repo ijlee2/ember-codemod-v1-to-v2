@@ -1,6 +1,6 @@
 {
   "name": "ember-codemod-v1-to-v2",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "description": "Codemod to convert Ember addons to v2 addon format",
   "keywords": [
     "codemod",
@@ -28,13 +28,13 @@
   ],
   "scripts": {
     "build": "./build.sh --production",
-    "lint": "concurrently 'pnpm:lint:*(!fix)' --names 'lint:'",
-    "lint:fix": "concurrently 'pnpm:lint:*:fix' --names 'fix:'",
+    "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\"",
+    "lint:fix": "concurrently \"pnpm:lint:*:fix\" --names \"fix:\"",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
     "lint:types": "tsc --noEmit",
     "prepare": "pnpm build",
-    "release:changelog": "lerna-changelog",
+    "release:prepare": "lerna-changelog",
     "release:publish": "pnpm publish",
     "test": "./build.sh --test && mt dist-for-testing --quiet"
   },
