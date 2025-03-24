@@ -31,8 +31,8 @@ function analyzePackageJson(codemodOptions: CodemodOptions): AddonPackage {
     hasGlint: projectDependencies.has('@glint/core'),
     hasTypeScript: projectDependencies.has('typescript'),
     isV1Addon: Boolean(emberAddon),
-    name: name!,
-    version: version!,
+    name,
+    version,
   };
 }
 
