@@ -40,26 +40,26 @@
   },
   "dependencies": {
     "@codemod-utils/blueprints": "^1.1.9",
-    "@codemod-utils/files": "^2.0.8",
-    "@codemod-utils/json": "^1.1.13",
+    "@codemod-utils/files": "^2.1.0",
+    "@codemod-utils/json": "^1.2.0",
     "strip-json-comments": "^5.0.1",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@codemod-utils/tests": "^1.1.11",
-    "@ijlee2-frontend-configs/eslint-config-node": "^0.2.1",
-    "@ijlee2-frontend-configs/prettier": "^0.2.0",
-    "@ijlee2-frontend-configs/typescript": "^0.3.0",
+    "@ijlee2-frontend-configs/eslint-config-node": "^0.3.0",
+    "@ijlee2-frontend-configs/prettier": "^0.2.3",
+    "@ijlee2-frontend-configs/typescript": "^0.4.0",
     "@sondr3/minitest": "^0.1.2",
-    "@types/node": "^18.19.75",
+    "@types/node": "^18.19.82",
     "@types/yargs": "^17.0.33",
     "concurrently": "^9.1.2",
-    "eslint": "^9.20.0",
+    "eslint": "^9.23.0",
     "lerna-changelog": "^2.2.0",
-    "prettier": "^3.5.0",
-    "typescript": "^5.7.3"
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
   },
-  "packageManager": "pnpm@9.15.5",
+  "packageManager": "pnpm@9.15.9",
   "engines": {
     "node": "18.* || >= 20"
   },
