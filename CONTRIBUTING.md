@@ -66,23 +66,34 @@ Here are some guidelines to help you and everyone else.
 
 <details>
 
-<summary>Publish packages (for admins)</summary>
+<summary>Add changeset to pull request</code></summary>
+
+1. To record how a pull request affects packages, you will want to add a changeset.
+
+    The changeset provides a summary of the code change. It also describes how package versions should be updated (major, minor, or patch) as a result of the code change.
+
+    ```sh
+    pnpm changeset
+    ```
+
+</details>
+
+
+<details>
+
+<summary>Publish package (for admins)</summary>
 
 1. Generate a [personal access token](https://github.com/settings/tokens/) in GitHub, with default values for scopes (none selected).
 
-1. Run the `release:prepare` script. This generates a text that you can add to `CHANGELOG.md`.
+1. Run the `release:prepare` script. This removes changesets, updates the package version (e.g. from `0.1.1` to `0.1.2`), and updates the `CHANGELOG`.
 
     ```sh
-    # From the workspace root
-    GITHUB_AUTH=<YOUR_PERSONAL_ACCESS_TOKEN> pnpm release:prepare
+    GITHUB_TOKEN=<YOUR_PERSONAL_ACCESS_TOKEN> pnpm release:prepare
     ```
-
-    The package follows [semantic versioning](https://semver.org/). Update the version in `package.json` accordingly (e.g. from `0.1.1` to `0.1.2`).
 
 1. Review the file changes. Commit them in a branch, then open a pull request to merge the changes to the `main` branch.
 
     ```sh
-    # From the workspace root
     git checkout -b tag-0.1.2
     git add .
     git commit -m "Tagged 0.1.2"
@@ -94,77 +105,7 @@ Here are some guidelines to help you and everyone else.
 1. Publish the package.
 
     ```sh
-    # From the workspace root
     pnpm release:publish
     ```
 
 </details>
-
-
-## How can I help?
-
-If you haven't before, I encourage you to watch [Sean Massa's mini-talk](https://www.youtube.com/watch?v=CcSKlsc_AhQ) on what it means to be a contributor. To sum up the talk, you can be a contributor in many ways. I want you to discover a path that meets your goals well!
-
-Here are some suggestions to help you start:
-
-
-<details>
-
-<summary>Give feedback 💞</summary>
-
-1. An open source project's value comes from people using the code and extending it to make greater things. Let me know how the codemod worked on your Ember addon!
-
-1. You can **create an issue** to:
-
-    - Share how you used `ember-codemod-v1-to-v2`
-    - Share what you liked or didn't like about `ember-codemod-v1-to-v2`
-
-</details>
-
-
-<details>
-
-<summary>Help with marketing 📢</summary>
-
-1. Platforms include:
-
-    - Blog post
-    - GitHub star
-    - Meetup or conference talk
-    - Social media
-    - Word of mouth
-
-</details>
-
-
-<details>
-
-<summary>Join this project 👩‍💻👨‍💻</summary>
-
-1. Help me maintain the project! I have limited time and there is much that I don't know.
-
-    - Cut releases
-    - Research new ways to implement v2 addons
-    - Respond to issues
-    - Review pull requests
-
-</details>
-
-
-<details>
-
-<summary>Make issues 📝</summary>
-
-1. In addition to sharing feedback (described in `Give feedback`), you can create an issue to:
-
-    - Ask for better documentation
-    - Ask for new feature or refactor
-    - Report bug
-    - Report outdated dependency
-
-1. When reporting a bug, please provide details to help me understand what's going on. If possible, please use the latest version of `ember-codemod-v1-to-v2` and set up a public demo that I (and others) can check the code.
-
-</details>
-
-
-💡 Have ideas for contribution? Reach out to `@ijlee2` on [Discord](https://discord.com/invite/emberjs)!
