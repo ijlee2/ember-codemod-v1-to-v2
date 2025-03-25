@@ -8,6 +8,7 @@ const latestVersions = new Map([
   ['@babel/runtime', '7.26.0'],
   ['@embroider/addon-dev', '7.1.1'],
   ['@embroider/addon-shim', '1.9.0'],
+  ['@embroider/broccoli-side-watch', '1.0.1'],
   ['@embroider/test-setup', '4.0.0'],
   ['@eslint/js', '9.23.0'],
   ['@glint/core', '1.5.2'],

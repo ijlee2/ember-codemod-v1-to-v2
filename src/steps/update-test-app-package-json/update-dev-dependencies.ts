@@ -12,6 +12,7 @@ export function updateDevDependencies(
   const devDependencies = convertToMap(packageJson['devDependencies']);
 
   const packagesToInstall = new Set([
+    '@embroider/broccoli-side-watch',
     '@eslint/js',
     '@ijlee2-frontend-configs/ember-template-lint',
     '@ijlee2-frontend-configs/eslint-config-ember',
