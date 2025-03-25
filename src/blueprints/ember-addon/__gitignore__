@@ -1,10 +1,12 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
+# compiled output
+dist/
+tmp/
 
 # dependencies
 node_modules/
 
 # misc
+.DS_Store
 .env*
-.pnpm-debug.log
-npm-debug.log*
-yarn-error.log
+.eslintcache
+<% if (options.packageManager === 'npm') { %>npm-debug.log*<% } else if (options.packageManager === 'pnpm') { %>pnpm-debug.log<% } else if (options.packageManager === 'yarn') { %>yarn-error.log<% } %>
