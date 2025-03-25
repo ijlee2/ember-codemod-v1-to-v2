@@ -14,6 +14,7 @@ const codemodOptions: CodemodOptions = {
 const context: Context = {
   addon: {
     hasBlueprints: false,
+    hasPublicAssets: false,
     publicAssets: {},
   },
   projectRoot: {

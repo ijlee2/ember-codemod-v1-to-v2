@@ -1,0 +1,25 @@
+{
+  "extends": "@ijlee2-frontend-configs/typescript/ember",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "<%= options.packages.testApp.name %>/tests/*": ["tests/*"],
+      "<%= options.packages.testApp.name %>/*": ["app/*"],
+      "*": ["types/*"]
+    },
+    "types": [
+      "ember-source/types"
+    ]
+  },
+  "include": [
+    "app/**/*",
+    "tests/**/*",
+    "types/**/*"
+  ]<% if (options.packages.addon.hasGlint) { %>,
+  "glint": {
+    "environment": [
+      "ember-loose",
+      "ember-template-imports"
+    ]
+  }<% } %>
+}

@@ -7,7 +7,6 @@ import {
   moveTestAppFiles,
   updateAddonPackageJson,
   updateTestAppPackageJson,
-  updateTestAppTsConfigJson,
 } from './steps/index.js';
 import type { CodemodOptions } from './types/index.js';
 
@@ -34,5 +33,4 @@ export function runCodemod(codemodOptions: CodemodOptions): void {
   // Fine-tune individual files
   updateAddonPackageJson(context, options);
   updateTestAppPackageJson(options);
-  updateTestAppTsConfigJson(options);
 }

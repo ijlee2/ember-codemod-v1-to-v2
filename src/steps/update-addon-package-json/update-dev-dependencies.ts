@@ -11,38 +11,33 @@ export function updateDevDependencies(
 
   const devDependencies = convertToMap(packageJson['devDependencies']);
 
-  /*
-    The codemod sets the development dependencies that v2 addons need.
-    End-developers must add dependencies that their v1 addon needed.
-  */
+  // Start over
   devDependencies.clear();
 
   const packagesToInstall = new Set([
     '@babel/core',
-    '@babel/eslint-parser',
     '@babel/runtime',
     '@embroider/addon-dev',
+    '@eslint/js',
+    '@ijlee2-frontend-configs/ember-template-lint',
+    '@ijlee2-frontend-configs/eslint-config-ember',
+    '@ijlee2-frontend-configs/prettier',
+    '@ijlee2-frontend-configs/stylelint',
     '@rollup/plugin-babel',
     'babel-plugin-ember-template-compilation',
     'concurrently',
     'ember-template-lint',
     'eslint',
-    'eslint-config-prettier',
-    'eslint-plugin-ember',
-    'eslint-plugin-import',
-    'eslint-plugin-n',
-    'eslint-plugin-prettier',
     'prettier',
+    'stylelint',
     'rollup',
     'rollup-plugin-copy',
   ]);
 
   if (packages.addon.hasTypeScript) {
-    packagesToInstall.delete('@babel/eslint-parser');
     packagesToInstall.add('@babel/plugin-transform-typescript');
-    packagesToInstall.add('@tsconfig/ember');
-    packagesToInstall.add('@typescript-eslint/eslint-plugin');
-    packagesToInstall.add('@typescript-eslint/parser');
+    packagesToInstall.add('@ijlee2-frontend-configs/typescript');
+    packagesToInstall.add('ember-source');
     packagesToInstall.add('typescript');
   }
 
@@ -51,7 +46,6 @@ export function updateDevDependencies(
     packagesToInstall.add('@glint/environment-ember-loose');
     packagesToInstall.add('@glint/environment-ember-template-imports');
     packagesToInstall.add('@glint/template');
-    packagesToInstall.add('ember-source');
   }
 
   Array.from(packagesToInstall).forEach((packageName) => {

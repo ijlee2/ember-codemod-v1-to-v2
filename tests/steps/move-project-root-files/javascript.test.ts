@@ -33,20 +33,13 @@ test('steps | move-project-root-files > javascript', function () {
 
   const outputProject = {
     'ember-container-query': {
-      '.stylelintrc.js': 'some code for .stylelintrc.js',
       'LICENSE.md': 'some code for LICENSE.md',
       'package.json': 'some code for package.json',
       'README.md': 'some code for README.md',
     },
     'test-app': {
       '.ember-cli': 'some code for .ember-cli',
-      '.eslintignore': 'some code for .eslintignore',
-      '.eslintrc.js': 'some code for .eslintrc.js',
       '.gitignore': 'some code for .gitignore',
-      '.prettierignore': 'some code for .prettierignore',
-      '.prettierrc.js': 'some code for .prettierrc.js',
-      '.stylelintrc.js': 'some code for .stylelintrc.js',
-      '.template-lintrc.js': 'some code for .template-lintrc.js',
       '.watchmanconfig': 'some code for .watchmanconfig',
       'ember-cli-build.js': 'some code for ember-cli-build.js',
       'package.json': 'some code for package.json',

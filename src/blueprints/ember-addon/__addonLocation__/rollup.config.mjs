@@ -60,7 +60,13 @@ export default {
 
     // addons are allowed to contain imports of .css files, which we want rollup
     // to leave alone and keep in the published output.
-    addon.keepAssets(['**/*.css']),
+    addon.keepAssets(['**/*.css']),<% if (context.addon.hasPublicAssets) { %>
+
+    // Update public-assets field in package.json
+    addon.publicAssets('public/assets', {
+      exclude: ['**/.*'],
+      namespace: '<%= options.packages.addon.name %>',
+    }),<% } %>
 
     // Remove leftover build artifacts when starting a new build.
     addon.clean(),
