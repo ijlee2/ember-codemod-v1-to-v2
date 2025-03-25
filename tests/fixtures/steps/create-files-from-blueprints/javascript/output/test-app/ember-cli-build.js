@@ -1,5 +1,7 @@
 'use strict';
 
+const sideWatch = require('@embroider/broccoli-side-watch');
+const { maybeEmbroider } = require('@embroider/test-setup');
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function (defaults) {
@@ -8,9 +10,12 @@ module.exports = function (defaults) {
     autoImport: {
       watchDependencies: ['ember-container-query'],
     },
+    trees: {
+      app: sideWatch('app', {
+        watching: ['ember-container-query'],
+      }),
+    },
   });
-
-  const { maybeEmbroider } = require('@embroider/test-setup');
 
   return maybeEmbroider(app);
 };
