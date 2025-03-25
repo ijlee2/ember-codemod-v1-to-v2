@@ -1,5 +1,3 @@
 'use strict';
 
-module.exports = {
-  extends: 'recommended',
-};
+module.exports = require('@ijlee2-frontend-configs/ember-template-lint');
