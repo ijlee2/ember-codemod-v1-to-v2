@@ -24,6 +24,7 @@ test('steps | update-addon-package-json > blueprints', function () {
   const context: Context = {
     addon: {
       hasBlueprints: true,
+      hasPublicAssets: false,
       publicAssets: {},
     },
     projectRoot: {

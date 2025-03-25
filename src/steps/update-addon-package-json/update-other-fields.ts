@@ -98,12 +98,12 @@ export function updateOtherFields(
   context: Context,
   options: Options,
 ): void {
-  const { hasBlueprints, publicAssets } = context.addon;
+  const { hasBlueprints, hasPublicAssets, publicAssets } = context.addon;
   const { hasTypeScript } = options.packages.addon;
 
   const data = {
     hasBlueprints,
-    hasPublicAssets: Object.keys(publicAssets).length > 0,
+    hasPublicAssets,
     hasTypeScript,
     publicAssets,
   };

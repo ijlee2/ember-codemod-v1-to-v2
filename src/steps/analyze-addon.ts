@@ -42,10 +42,13 @@ function hasBlueprints(options: Options): boolean {
 }
 
 export function analyzeAddon(options: Options): Context {
+  const publicAssets = getPublicAssets(options);
+
   return {
     addon: {
       hasBlueprints: hasBlueprints(options),
-      publicAssets: getPublicAssets(options),
+      hasPublicAssets: Object.keys(publicAssets).length > 0,
+      publicAssets,
     },
     projectRoot: {
       devDependencies: getProjectRootDevDependencies(options),

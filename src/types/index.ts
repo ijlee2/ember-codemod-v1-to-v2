@@ -10,6 +10,7 @@ type CodemodOptions = {
 type Context = {
   addon: {
     hasBlueprints: boolean;
+    hasPublicAssets: boolean;
     publicAssets: Record<string, string>;
   };
   projectRoot: {
