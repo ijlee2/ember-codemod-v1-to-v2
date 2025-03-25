@@ -28,7 +28,7 @@ function copyToAddon(options: Options): void {
 function moveToAddonAndTestApp(options: Options): void {
   const { locations, projectRoot } = options;
 
-  const files = ['.stylelintignore', '.stylelintrc.{cjs,js}', 'package.json'];
+  const files = ['package.json'];
 
   const filePaths = findFiles(files, {
     projectRoot,
@@ -56,16 +56,10 @@ function moveToTestApp(options: Options): void {
 
   const files = [
     '.ember-cli',
-    '.eslintignore',
-    '.eslintrc.{cjs,js}',
     '.gitignore',
-    '.prettierignore',
-    '.prettierrc.{cjs,js}',
-    '.template-lintrc.{cjs,js}',
     '.watchmanconfig',
     'ember-cli-build.js',
     'testem.js',
-    'tsconfig.json',
   ];
 
   const filePaths = findFiles(files, {
@@ -83,7 +77,20 @@ function moveToTestApp(options: Options): void {
 function removeFromProjectRoot(options: Options): void {
   const { projectRoot } = options;
 
-  const files = ['.npmignore', 'index.js'];
+  const files = [
+    '.eslintignore',
+    '.eslintrc.{cjs,js}',
+    '.npmignore',
+    '.prettierignore',
+    '.prettierrc.{cjs,js}',
+    '.stylelintignore',
+    '.stylelintrc.{cjs,js,mjs}',
+    '.template-lintrc.{cjs,js}',
+    'eslint.config.mjs',
+    'index.js',
+    'prettier.config.mjs',
+    'tsconfig.json',
+  ];
 
   const filePaths = findFiles(files, {
     projectRoot,

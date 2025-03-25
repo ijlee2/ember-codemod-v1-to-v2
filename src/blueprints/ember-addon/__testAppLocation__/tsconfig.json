@@ -1,17 +1,20 @@
 {
   "extends": "@ijlee2-frontend-configs/typescript/ember",
   "compilerOptions": {
-    "allowImportingTsExtensions": true,
-    "allowJs": true,
-    "declarationDir": "declarations",
-    "rootDir": "./src",
+    "baseUrl": ".",
+    "paths": {
+      "<%= options.packages.testApp.name %>/tests/*": ["tests/*"],
+      "<%= options.packages.testApp.name %>/*": ["app/*"],
+      "*": ["types/*"]
+    },
     "types": [
       "ember-source/types"
     ]
   },
   "include": [
-    "src/**/*",
-    "unpublished-development-types/**/*"
+    "app/**/*",
+    "tests/**/*",
+    "types/**/*"
   ]<% if (options.packages.addon.hasGlint) { %>,
   "glint": {
     "environment": [

@@ -6,4 +6,3 @@ export * from './move-project-root-files.js';
 export * from './move-test-app-files.js';
 export * from './update-addon-package-json.js';
 export * from './update-test-app-package-json.js';
-export * from './update-test-app-tsconfig-json.js';

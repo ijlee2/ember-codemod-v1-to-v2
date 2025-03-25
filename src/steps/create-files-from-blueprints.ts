@@ -15,6 +15,7 @@ function getFilesToSkip(options: Options): string[] {
   if (!packages.addon.hasTypeScript) {
     files.add('__addonLocation__/tsconfig.json');
     files.add('__addonLocation__/unpublished-development-types/index.d.ts');
+    files.add('__testAppLocation__/tsconfig.json');
     files.add('__testAppLocation__/types/global.d.ts');
   }
 

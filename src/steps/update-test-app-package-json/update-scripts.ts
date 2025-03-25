@@ -14,10 +14,14 @@ export function updateScripts(
   // Start over
   scripts.clear();
 
-  scripts.set('build', 'rollup --config');
+  scripts.set('build', 'ember build --environment=production');
   scripts.set(
     'lint',
     `concurrently \"${packageManager}:lint:*(!fix)\" --names \"lint:\"`,
+  );
+  scripts.set(
+    'lint:fix',
+    `concurrently \"${packageManager}:lint:*:fix\" --names \"fix:\"`,
   );
   scripts.set(
     'lint:css',
@@ -27,26 +31,19 @@ export function updateScripts(
     'lint:css:fix',
     'stylelint \"**/*.css\" --allow-empty-input --fix',
   );
-  scripts.set(
-    'lint:fix',
-    `concurrently \"${packageManager}:lint:*:fix\" --names \"fix:\"`,
-  );
   scripts.set('lint:hbs', 'ember-template-lint .');
   scripts.set('lint:hbs:fix', 'ember-template-lint . --fix');
   scripts.set('lint:js', 'eslint . --cache');
   scripts.set('lint:js:fix', 'eslint . --fix');
-  scripts.set('prepack', 'rollup --config');
-  scripts.set('start', 'rollup --config --watch');
-  scripts.set(
-    'test',
-    `echo \"A v2 addon does not have tests, run tests in ${packages.testApp.name}\"`,
-  );
+  scripts.set('start', 'ember serve');
+  scripts.set('test', 'ember test');
+  scripts.set('test:ember-compatibility', 'ember try:one');
 
   if (packages.addon.hasTypeScript) {
     if (packages.addon.hasGlint) {
       scripts.set('lint:types', 'glint');
     } else {
-      scripts.set('lint:types', 'tsc --emitDeclarationOnly false --noEmit');
+      scripts.set('lint:types', 'tsc --noEmit');
     }
   }
 

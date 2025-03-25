@@ -9,6 +9,7 @@ import {
   updateDependencies,
   updateDevDependencies,
   updateOtherFields,
+  updateScripts,
 } from './update-test-app-package-json/index.js';
 
 export function updateTestAppPackageJson(options: Options): void {
@@ -21,6 +22,7 @@ export function updateTestAppPackageJson(options: Options): void {
   moveDependenciesToDevDependencies(packageJson, options);
   updateDependencies(packageJson);
   updateDevDependencies(packageJson, options);
+  updateScripts(packageJson, options);
   updateOtherFields(packageJson, options);
 
   const destination = join(projectRoot, locations.testApp, 'package.json');
