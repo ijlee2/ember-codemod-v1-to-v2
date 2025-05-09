@@ -29,7 +29,7 @@ export function updateDevDependencies(
   ]);
 
   if (packages.addon.hasTypeScript) {
-    packagesToInstall.add('@ijlee2-frontend-configs/typescript');
+    packagesToInstall.add('@tsconfig/ember');
     packagesToInstall.add('typescript');
   }
 
