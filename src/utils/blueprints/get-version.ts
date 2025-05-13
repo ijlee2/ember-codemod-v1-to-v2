@@ -21,7 +21,7 @@ const latestVersions = new Map([
   ['@ijlee2-frontend-configs/stylelint', '1.0.0'],
   ['@rollup/plugin-babel', '6.0.4'],
   ['@tsconfig/ember', '3.0.10'],
-  ['babel-plugin-ember-template-compilation', '3.0.0'],
+  ['babel-plugin-ember-template-compilation', '2.4.1'],
   ['concurrently', '9.1.2'],
   ['decorator-transforms', '2.3.0'],
   ['ember-auto-import', '2.10.0'],
