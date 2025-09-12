@@ -1,5 +1,8 @@
 import { findFiles } from '@codemod-utils/files';
-import { readPackageJson, validatePackageJson } from '@codemod-utils/json';
+import {
+  readPackageJson,
+  validatePackageJson,
+} from '@codemod-utils/package-json';
 
 import type { CodemodOptions, Options } from '../types/index.js';
 

@@ -1,4 +1,4 @@
-import { convertToMap, convertToObject } from '@codemod-utils/json';
+import { convertToMap, convertToObject } from '@codemod-utils/package-json';
 
 import type { Options, PackageJson } from '../../types/index.js';
 import { getVersion } from '../../utils/blueprints.js';
