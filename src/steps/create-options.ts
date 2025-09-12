@@ -1,5 +1,6 @@
 import { findFiles } from '@codemod-utils/files';
 import {
+  getPackageType,
   readPackageJson,
   validatePackageJson,
 } from '@codemod-utils/package-json';
@@ -16,13 +17,7 @@ function analyzePackageJson(codemodOptions: CodemodOptions): AddonPackage {
 
   validatePackageJson(packageJson);
 
-  const {
-    dependencies,
-    devDependencies,
-    'ember-addon': emberAddon,
-    name,
-    version,
-  } = packageJson;
+  const { dependencies, devDependencies, name, version } = packageJson;
 
   const projectDependencies = new Map<string, string>([
     ...(Object.entries(dependencies ?? {}) as [string, string][]),
@@ -33,7 +28,7 @@ function analyzePackageJson(codemodOptions: CodemodOptions): AddonPackage {
     dependencies: projectDependencies,
     hasGlint: projectDependencies.has('@glint/core'),
     hasTypeScript: projectDependencies.has('typescript'),
-    isV1Addon: Boolean(emberAddon),
+    isV1Addon: getPackageType(packageJson) === 'v1-addon',
     name,
     version,
   };

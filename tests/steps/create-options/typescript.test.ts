@@ -9,6 +9,7 @@ test('steps | create-options > typescript', function () {
       {
         name: 'ember-container-query',
         version: '3.2.0',
+        keywords: ['ember-addon'],
         dependencies: {
           'ember-cli-babel': '^7.26.11',
           'ember-cli-htmlbars': '^6.1.1',
