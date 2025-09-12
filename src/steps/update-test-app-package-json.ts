@@ -1,7 +1,7 @@
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-import { readPackageJson } from '@codemod-utils/json';
+import { readPackageJson } from '@codemod-utils/package-json';
 
 import type { Options } from '../types/index.js';
 import {

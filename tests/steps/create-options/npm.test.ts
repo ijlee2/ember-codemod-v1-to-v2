@@ -15,6 +15,7 @@ test('steps | create-options > npm', function () {
       {
         name: 'new-v1-addon',
         version: '0.0.0',
+        keywords: ['ember-addon'],
         dependencies: {
           'ember-cli-babel': '^7.26.11',
           'ember-cli-htmlbars': '^6.1.1',

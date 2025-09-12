@@ -9,6 +9,7 @@ test('steps | create-options > v2 addon', function () {
       {
         name: 'ember-container-query',
         version: '3.2.0',
+        keywords: ['ember-addon'],
         private: true,
         workspaces: ['ember-container-query', 'test-app'],
       },
