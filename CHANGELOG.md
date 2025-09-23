@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.6
+
+### Patch Changes
+
+- [#110](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/110) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 2.1.5
 
 ### Patch Changes
