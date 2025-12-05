@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.0
+
+### Minor Changes
+
+- [#113](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/113) Supported Windows ([@ijlee2](https://github.com/ijlee2))
+
 ## 2.1.7
 
 ### Patch Changes
