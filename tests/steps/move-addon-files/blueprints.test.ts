@@ -1,4 +1,9 @@
-import { assertFixture, loadFixture, test } from '@codemod-utils/tests';
+import {
+  assertFixture,
+  loadFixture,
+  normalizeFile,
+  test,
+} from '@codemod-utils/tests';
 
 import { moveAddonFiles } from '../../../src/steps/index.js';
 import {
@@ -15,12 +20,12 @@ test('steps | move-addon-files > blueprints', function () {
             'some-file.ts': '',
           },
         },
-        'index.ts': [
+        'index.ts': normalizeFile([
           `module.exports = {`,
           `  normalizeEntityName() {},`,
           `};`,
           ``,
-        ].join('\n'),
+        ]),
       },
     },
   };
@@ -34,12 +39,12 @@ test('steps | move-addon-files > blueprints', function () {
               'some-file.ts': '',
             },
           },
-          'index.ts': [
+          'index.ts': normalizeFile([
             `module.exports = {`,
             `  normalizeEntityName() {},`,
             `};`,
             ``,
-          ].join('\n'),
+          ]),
         },
       },
     },

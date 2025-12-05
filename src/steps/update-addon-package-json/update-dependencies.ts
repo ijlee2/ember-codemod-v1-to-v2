@@ -20,7 +20,7 @@ export function updateDependencies(
     packagesToDelete.add('ember-cli-typescript');
   }
 
-  Array.from(packagesToDelete).forEach((packageName) => {
+  packagesToDelete.forEach((packageName) => {
     dependencies.delete(packageName);
   });
 

@@ -1,3 +1,5 @@
+import { relative, sep } from 'node:path';
+
 import { findFiles } from '@codemod-utils/files';
 
 import type { Context, Options } from '../types/index.js';
@@ -20,8 +22,8 @@ function getPublicAssets(options: Options): Record<string, string> {
 
   return filePaths.reduce(
     (accumulator, filePath) => {
-      const from = `./${filePath}`;
-      const to = `/${packages.addon.name}/${filePath.replace(/^public\//, '')}`;
+      const from = `./${filePath.replaceAll(sep, '/')}`;
+      const to = `/${packages.addon.name}/${relative('public', filePath).replaceAll(sep, '/')}`;
 
       accumulator[from] = to;
 
