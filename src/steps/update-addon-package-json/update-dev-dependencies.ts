@@ -48,7 +48,7 @@ export function updateDevDependencies(
     packagesToInstall.add('@glint/template');
   }
 
-  Array.from(packagesToInstall).forEach((packageName) => {
+  packagesToInstall.forEach((packageName) => {
     const version = getLatestVersion(packageName);
 
     devDependencies.set(packageName, version);

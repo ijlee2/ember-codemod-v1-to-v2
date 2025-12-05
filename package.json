@@ -44,7 +44,6 @@
     "@codemod-utils/blueprints": "^2.1.0",
     "@codemod-utils/files": "^3.2.1",
     "@codemod-utils/package-json": "^3.3.0",
-    "strip-json-comments": "^5.0.3",
     "yargs": "^18.0.0"
   },
   "devDependencies": {

@@ -22,7 +22,7 @@ export function moveDependenciesToDevDependencies(
     packagesToMove.add('ember-cli-typescript');
   }
 
-  Array.from(packagesToMove).forEach((packageName) => {
+  packagesToMove.forEach((packageName) => {
     if (!dependencies.has(packageName)) {
       return;
     }
