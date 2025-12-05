@@ -1,4 +1,4 @@
-import { assert, loadFixture, test } from '@codemod-utils/tests';
+import { assert, loadFixture, normalizeFile, test } from '@codemod-utils/tests';
 
 import { analyzeAddon } from '../../../src/steps/index.js';
 import {
@@ -15,14 +15,14 @@ test('steps | analyze-addon > blueprints', function () {
             'some-file.ts': '',
           },
         },
-        'index.js': [
+        'index.js': normalizeFile([
           `'use strict';`,
           ``,
           `module.exports = {`,
           `  description: 'Generates something',`,
           `};`,
           ``,
-        ].join('\n'),
+        ]),
       },
     },
   };
