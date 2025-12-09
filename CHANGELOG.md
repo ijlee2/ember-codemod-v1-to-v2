@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.1
+
+### Patch Changes
+
+- [#114](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/114) Downstreamed changes from @codemod-utils/cli@3.9.1 ([@ijlee2](https://github.com/ijlee2))
+
 ## 2.2.0
 
 ### Minor Changes
