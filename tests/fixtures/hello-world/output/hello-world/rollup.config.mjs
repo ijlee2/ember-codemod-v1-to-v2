@@ -1,11 +1,17 @@
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 import { Addon } from '@embroider/addon-dev/rollup';
 import { babel } from '@rollup/plugin-babel';
-import copy from 'rollup-plugin-copy';
 
 const addon = new Addon({
   srcDir: 'src',
   destDir: 'dist',
 });
+
+const rootDirectory = dirname(fileURLToPath(import.meta.url));
+const babelConfig = resolve(rootDirectory, './babel.config.cjs');
+const tsConfig = resolve(rootDirectory, './tsconfig.json');
 
 export default {
   // This provides defaults that work well alongside `publicEntrypoints` below.
@@ -30,7 +36,6 @@ export default {
       'helpers/**/*.js',
       'modifiers/**/*.js',
       'services/**/*.js',
-      'utils/**/*.js',
     ]),
 
     // Follow the V2 Addon rules about dependencies. Your code can import from
@@ -46,7 +51,8 @@ export default {
     // babel.config.json.
     babel({
       babelHelpers: 'bundled',
-      extensions: ['.js', '.gjs', '.ts', '.gts'],
+      configFile: babelConfig,
+      extensions: ['.gjs', '.gts', '.js', '.ts'],
     }),
 
     // Ensure that standalone .hbs files are properly integrated as Javascript.
@@ -56,7 +62,10 @@ export default {
     addon.gjs(),
 
     // Emit .d.ts declaration files
-    addon.declarations('declarations'),
+    addon.declarations(
+      'declarations',
+      `pnpm ember-tsc --declaration --project ${tsConfig}`,
+    ),
 
     // addons are allowed to contain imports of .css files, which we want rollup
     // to leave alone and keep in the published output.
@@ -64,13 +73,5 @@ export default {
 
     // Remove leftover build artifacts when starting a new build.
     addon.clean(),
-
-    // Copy Readme and License into published package
-    copy({
-      targets: [
-        { src: '../README.md', dest: '.' },
-        { src: '../LICENSE.md', dest: '.' },
-      ],
-    }),
   ],
 };

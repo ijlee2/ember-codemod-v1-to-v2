@@ -8,11 +8,13 @@ module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
     // Add options here
     autoImport: {
-      watchDependencies: ['hello-world'],
+      watchDependencies: [],
     },
+
     'ember-cli-babel': {
       enableTypeScriptTransform: true,
     },
+
     trees: {
       app: sideWatch('app', {
         watching: ['hello-world'],

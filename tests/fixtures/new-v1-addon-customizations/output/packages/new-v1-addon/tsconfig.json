@@ -2,15 +2,13 @@
   "extends": "@tsconfig/ember/tsconfig.json",
   "compilerOptions": {
     "allowImportingTsExtensions": true,
-    "allowJs": true,
+    "declaration": true,
     "declarationDir": "declarations",
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "noEmit": false,
     "rootDir": "./src",
-    "types": [
-      "ember-source/types"
-    ]
+    "types": ["ember-source/types"]
   },
-  "include": [
-    "src/**/*",
-    "unpublished-development-types/**/*"
-  ]
+  "include": ["src/**/*", "unpublished-development-types/**/*"]
 }
