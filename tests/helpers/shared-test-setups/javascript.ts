@@ -19,7 +19,8 @@ const context: Context = {
   },
   projectRoot: {
     devDependencies: {
-      concurrently: '^7.6.0',
+      concurrently: '^9.2.1',
+      pnpm: '10.25.0',
     },
   },
 };
@@ -29,7 +30,6 @@ const options: Options = {
     addon: 'ember-container-query',
     testApp: 'test-app',
   },
-  packageManager: 'yarn',
   packages: {
     addon: {
       dependencies: new Map([

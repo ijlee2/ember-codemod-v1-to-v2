@@ -19,7 +19,8 @@ test('steps | analyze-addon > edge case (folders are missing)', function () {
     },
     projectRoot: {
       devDependencies: {
-        concurrently: '^7.6.0',
+        concurrently: '^9.2.1',
+        pnpm: '10.25.0',
       },
     },
   });

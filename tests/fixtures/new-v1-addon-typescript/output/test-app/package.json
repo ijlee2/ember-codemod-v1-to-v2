@@ -13,10 +13,10 @@
   "scripts": {
     "build": "ember build --environment=production",
     "format": "prettier . --cache --write",
-    "lint": "concurrently \"yarn:lint:*(!fix)\" --names \"lint:\"",
+    "lint": "concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\"",
     "lint:css": "stylelint \"**/*.css\" --allow-empty-input --cache\"",
     "lint:css:fix": "stylelint \"**/*.css\" --allow-empty-input --fix",
-    "lint:fix": "concurrently \"yarn:lint:*:fix\" --names \"fix:\" && yarn format",
+    "lint:fix": "concurrently \"pnpm:lint:*:fix\" --names \"fix:\" && pnpm format",
     "lint:format": "prettier . --cache --check",
     "lint:hbs": "ember-template-lint .",
     "lint:hbs:fix": "ember-template-lint . --fix",

@@ -78,20 +78,6 @@ cp -r "tests/fixtures/new-v1-addon-javascript/input" "tests/fixtures/new-v1-addo
   --root "tests/fixtures/new-v1-addon-javascript/output"
 
 # Update fixtures
-rm -r "tests/fixtures/new-v1-addon-npm/output"
-cp -r "tests/fixtures/new-v1-addon-npm/input" "tests/fixtures/new-v1-addon-npm/output"
-
-./dist/bin/ember-codemod-v1-to-v2.js \
-  --root "tests/fixtures/new-v1-addon-npm/output"
-
-# Update fixtures
-rm -r "tests/fixtures/new-v1-addon-pnpm/output"
-cp -r "tests/fixtures/new-v1-addon-pnpm/input" "tests/fixtures/new-v1-addon-pnpm/output"
-
-./dist/bin/ember-codemod-v1-to-v2.js \
-  --root "tests/fixtures/new-v1-addon-pnpm/output"
-
-# Update fixtures
 rm -r "tests/fixtures/new-v1-addon-typescript/output"
 cp -r "tests/fixtures/new-v1-addon-typescript/input" "tests/fixtures/new-v1-addon-typescript/output"
 

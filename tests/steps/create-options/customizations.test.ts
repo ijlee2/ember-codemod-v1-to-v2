@@ -32,7 +32,6 @@ test('steps | create-options > customizations', function () {
       addon: 'packages/ember-container-query',
       testApp: 'demo-app',
     },
-    packageManager: 'yarn',
     packages: {
       addon: {
         dependencies: new Map([

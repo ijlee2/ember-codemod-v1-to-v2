@@ -5,21 +5,23 @@
   "repository": "",
   "license": "MIT",
   "author": "",
-  "workspaces": [
-    "packages/ember-container-query",
-    "demo-app"
-  ],
   "scripts": {
-    "build": "yarn workspace ember-container-query run build",
-    "lint": "yarn workspaces run lint",
-    "lint:fix": "yarn workspaces run lint:fix",
-    "prepare": "yarn build",
-    "start": "concurrently \"yarn:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
-    "start:addon": "yarn workspace ember-container-query run start",
-    "start:test-app": "yarn workspace demo-app-for-ember-container-query run start",
-    "test": "yarn workspaces run test"
+    "build": "pnpm --filter ember-container-query build",
+    "format": "pnpm --filter \"*\" format",
+    "lint": "pnpm --filter \"*\" lint",
+    "lint:fix": "pnpm --filter \"*\" lint:fix",
+    "prepare": "pnpm build",
+    "start": "concurrently \"pnpm:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start:addon": "pnpm --filter ember-container-query start",
+    "start:test-app": "pnpm --filter demo-app-for-ember-container-query start",
+    "test": "pnpm --filter \"*\" test"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0"
+    "concurrently": "^9.2.1"
+  },
+  "packageManager": "pnpm@10.25.0",
+  "engines": {
+    "node": "20.* || >= 22",
+    "pnpm": ">= 10"
   }
 }
