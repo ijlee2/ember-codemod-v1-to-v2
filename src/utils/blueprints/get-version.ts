@@ -34,6 +34,7 @@ const latestVersions = new Map([
   ['ember-template-lint', '7.9.3'],
   ['ember-try', '4.0.0'],
   ['eslint', '9.39.1'],
+  ['pnpm', '10.25.0'],
   ['prettier', '3.7.4'],
   ['rollup', '4.53.3'],
   ['stylelint', '16.26.1'],

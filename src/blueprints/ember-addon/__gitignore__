@@ -9,4 +9,4 @@ node_modules/
 .DS_Store
 .env*
 .eslintcache
-<% if (options.packageManager === 'npm') { %>npm-debug.log*<% } else if (options.packageManager === 'pnpm') { %>pnpm-debug.log<% } else if (options.packageManager === 'yarn') { %>yarn-error.log<% } %>
+pnpm-debug.log

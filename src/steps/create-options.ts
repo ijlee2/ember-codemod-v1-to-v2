@@ -1,4 +1,3 @@
-import { findFiles } from '@codemod-utils/files';
 import {
   getPackageType,
   readPackageJson,
@@ -8,7 +7,6 @@ import {
 import type { CodemodOptions, Options } from '../types/index.js';
 
 type AddonPackage = Options['packages']['addon'];
-type PackageManager = Options['packageManager'];
 
 function analyzePackageJson(codemodOptions: CodemodOptions): AddonPackage {
   const { projectRoot } = codemodOptions;
@@ -36,32 +34,6 @@ function analyzePackageJson(codemodOptions: CodemodOptions): AddonPackage {
   };
 }
 
-function analyzePackageManager(codemodOptions: CodemodOptions): PackageManager {
-  const { projectRoot } = codemodOptions;
-
-  const mapping = {
-    'package-lock.json': 'npm',
-    'pnpm-lock.yaml': 'pnpm',
-    'yarn.lock': 'yarn',
-  } as const;
-
-  const lockFiles = Object.keys(mapping);
-
-  const filePaths = findFiles(lockFiles, {
-    projectRoot,
-  });
-
-  if (filePaths.length !== 1) {
-    console.warn('WARNING: Package manager is unknown. pnpm will be assumed.');
-
-    return 'pnpm';
-  }
-
-  const lockfile = filePaths[0] as keyof typeof mapping;
-
-  return mapping[lockfile];
-}
-
 function deriveAddonLocation(addonPackage: AddonPackage): string {
   const hasScope = addonPackage.name.includes('/');
 
@@ -76,14 +48,12 @@ function deriveAddonLocation(addonPackage: AddonPackage): string {
 
 export function createOptions(codemodOptions: CodemodOptions): Options {
   const addonPackage = analyzePackageJson(codemodOptions);
-  const packageManager = analyzePackageManager(codemodOptions);
 
   return {
     locations: {
       addon: codemodOptions.addonLocation ?? deriveAddonLocation(addonPackage),
       testApp: codemodOptions.testAppLocation ?? 'test-app',
     },
-    packageManager,
     packages: {
       addon: addonPackage,
       testApp: {
