@@ -18,7 +18,8 @@ export function updateDevDependencies(
     '@babel/core',
     '@babel/runtime',
     '@embroider/addon-dev',
-    '@eslint/js',
+    '@glimmer/component',
+    '@glimmer/tracking',
     '@ijlee2-frontend-configs/ember-template-lint',
     '@ijlee2-frontend-configs/eslint-config-ember',
     '@ijlee2-frontend-configs/prettier',
@@ -26,26 +27,25 @@ export function updateDevDependencies(
     '@rollup/plugin-babel',
     'babel-plugin-ember-template-compilation',
     'concurrently',
+    'ember-modifier',
+    'ember-source',
     'ember-template-lint',
     'eslint',
     'prettier',
     'stylelint',
     'rollup',
-    'rollup-plugin-copy',
   ]);
 
   if (packages.addon.hasTypeScript) {
     packagesToInstall.add('@babel/plugin-transform-typescript');
     packagesToInstall.add('@tsconfig/ember');
-    packagesToInstall.add('ember-source');
     packagesToInstall.add('typescript');
   }
 
   if (packages.addon.hasGlint) {
-    packagesToInstall.add('@glint/core');
-    packagesToInstall.add('@glint/environment-ember-loose');
-    packagesToInstall.add('@glint/environment-ember-template-imports');
+    packagesToInstall.add('@glint/ember-tsc');
     packagesToInstall.add('@glint/template');
+    packagesToInstall.add('@glint/tsserver-plugin');
   }
 
   packagesToInstall.forEach((packageName) => {

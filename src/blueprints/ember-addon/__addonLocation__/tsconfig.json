@@ -2,21 +2,19 @@
   "extends": "@tsconfig/ember/tsconfig.json",
   "compilerOptions": {
     "allowImportingTsExtensions": true,
-    "allowJs": true,
+    "declaration": true,
     "declarationDir": "declarations",
-    "rootDir": "./src",
-    "types": [
-      "ember-source/types"
-    ]
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "noEmit": false,<% if (options.packages.addon.hasGlint) { %>
+    "plugins": [
+      {
+        "name": "@glint/tsserver-plugin"
+      }
+    ],<% } %>
+    "rootDir": "./src",<% if (options.packages.addon.hasGlint) { %>
+    "types": ["ember-source/types", "@glint/ember-tsc/types"]<% } else { %>
+    "types": ["ember-source/types"]<% } %>
   },
-  "include": [
-    "src/**/*",
-    "unpublished-development-types/**/*"
-  ]<% if (options.packages.addon.hasGlint) { %>,
-  "glint": {
-    "environment": [
-      "ember-loose",
-      "ember-template-imports"
-    ]
-  }<% } %>
+  "include": ["src/**/*", "unpublished-development-types/**/*"]
 }

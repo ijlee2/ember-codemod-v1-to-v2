@@ -5,14 +5,6 @@
 _Codemod to convert Ember addons to v2 addon format_
 
 
-## Features
-
-- Follows closely [`@embroider/addon-blueprint`](https://github.com/embroider-build/addon-blueprint)
-- Preserves your code whenever possible
-- Supports [`ember-cli-typescript`](https://docs.ember-cli-typescript.com/) and [`glint`](https://typed-ember.gitbook.io/glint/)
-- Focuses on maintainability and extensibility
-
-
 ## Usage
 
 For examples, see [`ember-container-query`](https://github.com/ijlee2/ember-container-query/pull/151/commits) and [`ember-render-helpers`](https://github.com/buschtoens/ember-render-helpers/pull/447/commits).
@@ -32,6 +24,7 @@ npx ember-codemod-v1-to-v2 <arguments>
 >
 > - [Meet prerequisites for v2 addon](https://github.com/embroider-build/embroider/blob/v7.1.3-%40embroider/addon-dev/docs/porting-addons-to-v2.md#part-3-prerequisites-for-v2-addon).
 > - [Un-pod v1 addon](https://github.com/ijlee2/ember-codemod-pod-to-octane).
+> - [Convert templates to strict mode](https://github.com/ijlee2/ember-codemod-add-template-tags).
 > - Update dependencies.
 > - Switch `npm` or `yarn` to `pnpm`.
 
@@ -51,7 +44,7 @@ Step 3. Review the test-app package.
 
 Step 4. Review the workspace root including CI/CD.
 
-<sup>1. Files such as `eslint.config.mjs`, `.gitignore`, `babel.config.json` (addon only), `config/environment.js` (test-app only), `ember-cli-build.js` (test-app only), `package.json`, `rollup.config.mjs` (addon only), `tsconfig.json`, etc.</sup>
+<sup>1. Files such as `eslint.config.mjs`, `.gitignore`, `babel.config.cjs` (addon only), `config/environment.js` (test-app only), `ember-cli-build.js` (test-app only), `package.json`, `rollup.config.mjs` (addon only), `tsconfig.json`, etc.</sup>
 
 
 ### Arguments
@@ -126,7 +119,7 @@ pnpm build
 ./dist/bin/ember-codemod-v1-to-v2.js --root <path/to/your/project>
 ```
 
-You can also look at another codemod called [`ember-addon-migrator`](https://github.com/NullVoxPopuli/ember-addon-migrator).
+If you'd rather start over, you can use [`create-v2-addon-repo`](https://github.com/ijlee2/create-v2-addon-repo).
 
 
 ## Compatibility
@@ -137,8 +130,6 @@ You can also look at another codemod called [`ember-addon-migrator`](https://git
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
-
-If you have an open-sourced addon (v1 or v2) that I can use as a reference, reach out to me on [Discord](https://discord.gg/emberjs) at `ijlee2`. Please star this project so that I can gauge its importance to you and the Ember community. ⭐
 
 
 ## Credits

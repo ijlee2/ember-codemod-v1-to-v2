@@ -19,14 +19,16 @@ function analyzePackageJson(codemodOptions: CodemodOptions): AddonPackage {
 
   const { dependencies, devDependencies, name, version } = packageJson;
 
-  const projectDependencies = new Map<string, string>([
-    ...(Object.entries(dependencies ?? {}) as [string, string][]),
-    ...(Object.entries(devDependencies ?? {}) as [string, string][]),
-  ]);
+  const projectDependencies = new Map([
+    ...Object.entries(dependencies ?? {}),
+    ...Object.entries(devDependencies ?? {}),
+  ]) as Map<string, string>;
 
   return {
     dependencies: projectDependencies,
-    hasGlint: projectDependencies.has('@glint/core'),
+    hasGlint:
+      projectDependencies.has('@glint/core') ||
+      projectDependencies.has('@glint/ember-tsc'),
     hasTypeScript: projectDependencies.has('typescript'),
     isV1Addon: getPackageType(packageJson) === 'v1-addon',
     name,

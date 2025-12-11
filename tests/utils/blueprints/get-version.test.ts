@@ -4,6 +4,6 @@ import { getLatestVersion, getVersion } from '../../../src/utils/blueprints.js';
 import { options } from '../../helpers/shared-test-setups/typescript.js';
 
 test('utils | blueprints | get-version', function () {
-  assert.strictEqual(getLatestVersion('prettier'), '^3.5.3');
+  assert.strictEqual(getLatestVersion('prettier'), '^3.7.4');
   assert.strictEqual(getVersion('prettier', options), '^2.8.1');
 });

@@ -31,7 +31,7 @@ function moveAddonTestSupportFolder(options: Options): void {
 
   if (filePaths.length === 1) {
     const oldPath = filePaths[0]!;
-    const newPath = `${locations.addon}/src/test-support${oldPath.endsWith('.ts') ? '.ts' : 'js'}`;
+    const newPath = `${locations.addon}/src/test-support${oldPath.endsWith('.ts') ? '.ts' : '.js'}`;
 
     moveFiles(new Map([[oldPath, newPath]]), options);
   }

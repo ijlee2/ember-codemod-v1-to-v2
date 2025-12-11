@@ -7,13 +7,7 @@
       "demo-app-for-new-v1-addon/*": ["app/*"],
       "*": ["types/*"]
     },
-    "types": [
-      "ember-source/types"
-    ]
+    "types": ["ember-source/types"]
   },
-  "include": [
-    "app/**/*",
-    "tests/**/*",
-    "types/**/*"
-  ]
+  "include": ["app/**/*", "tests/**/*", "types/**/*"]
 }

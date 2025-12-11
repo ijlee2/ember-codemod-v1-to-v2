@@ -7,8 +7,6 @@ export function moveDependenciesToDevDependencies(
   packageJson: PackageJson,
   options: Options,
 ): void {
-  const { packages } = options;
-
   const dependencies = convertToMap(packageJson['dependencies']);
   const devDependencies = convertToMap(packageJson['devDependencies']);
 
@@ -17,10 +15,6 @@ export function moveDependenciesToDevDependencies(
     'ember-cli-babel',
     'ember-cli-htmlbars',
   ]);
-
-  if (packages.addon.hasTypeScript) {
-    packagesToMove.add('ember-cli-typescript');
-  }
 
   packagesToMove.forEach((packageName) => {
     if (!dependencies.has(packageName)) {

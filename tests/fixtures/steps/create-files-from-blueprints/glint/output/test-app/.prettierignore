@@ -1,7 +1,0 @@
-# compiled output
-/dist/
-
-# misc
-/coverage/
-!.*
-.*/

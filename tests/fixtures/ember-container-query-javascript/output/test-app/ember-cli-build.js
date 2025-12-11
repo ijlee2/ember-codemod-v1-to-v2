@@ -8,8 +8,9 @@ module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
     // Add options here
     autoImport: {
-      watchDependencies: ['ember-container-query'],
+      watchDependencies: [],
     },
+
     trees: {
       app: sideWatch('app', {
         watching: ['ember-container-query'],
