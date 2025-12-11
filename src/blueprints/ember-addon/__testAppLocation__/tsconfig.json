@@ -6,20 +6,14 @@
       "<%= options.packages.testApp.name %>/tests/*": ["tests/*"],
       "<%= options.packages.testApp.name %>/*": ["app/*"],
       "*": ["types/*"]
-    },
-    "types": [
-      "ember-source/types"
-    ]
+    },<% if (options.packages.addon.hasGlint) { %>
+    "plugins": [
+      {
+        "name": "@glint/tsserver-plugin"
+      }
+    ],<% } %><% if (options.packages.addon.hasGlint) { %>
+    "types": ["ember-source/types", "@glint/ember-tsc/types"]<% } else { %>
+    "types": ["ember-source/types"]<% } %>
   },
-  "include": [
-    "app/**/*",
-    "tests/**/*",
-    "types/**/*"
-  ]<% if (options.packages.addon.hasGlint) { %>,
-  "glint": {
-    "environment": [
-      "ember-loose",
-      "ember-template-imports"
-    ]
-  }<% } %>
+  "include": ["app/**/*", "tests/**/*", "types/**/*"]
 }

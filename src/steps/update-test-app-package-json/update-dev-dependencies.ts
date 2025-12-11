@@ -11,9 +11,19 @@ export function updateDevDependencies(
 
   const devDependencies = convertToMap(packageJson['devDependencies']);
 
+  const packagesToDelete = new Set([
+    '@glint/core',
+    '@glint/environment-ember-loose',
+    '@glint/environment-ember-template-imports',
+    'ember-cli-typescript',
+  ]);
+
+  packagesToDelete.forEach((packageName) => {
+    devDependencies.delete(packageName);
+  });
+
   const packagesToInstall = new Set([
     '@embroider/broccoli-side-watch',
-    '@eslint/js',
     '@ijlee2-frontend-configs/ember-template-lint',
     '@ijlee2-frontend-configs/eslint-config-ember',
     '@ijlee2-frontend-configs/prettier',
@@ -34,10 +44,9 @@ export function updateDevDependencies(
   }
 
   if (packages.addon.hasGlint) {
-    packagesToInstall.add('@glint/core');
-    packagesToInstall.add('@glint/environment-ember-loose');
-    packagesToInstall.add('@glint/environment-ember-template-imports');
+    packagesToInstall.add('@glint/ember-tsc');
     packagesToInstall.add('@glint/template');
+    packagesToInstall.add('@glint/tsserver-plugin');
   }
 
   packagesToInstall.forEach((packageName) => {
