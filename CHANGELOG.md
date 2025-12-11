@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.0.0
+
+### Major Changes
+
+- [#116](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/116) Supported pnpm only ([@ijlee2](https://github.com/ijlee2))
+- [#115](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/115) Modernized blueprints ([@ijlee2](https://github.com/ijlee2))
+
 ## 2.2.1
 
 ### Patch Changes
