@@ -1,0 +1,3 @@
+packages:
+  - 'packages/new-v1-addon'
+  - 'demo-app'

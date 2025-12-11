@@ -5,21 +5,23 @@
   "repository": "",
   "license": "MIT",
   "author": "",
-  "workspaces": [
-    "packages/new-v1-addon",
-    "demo-app"
-  ],
   "scripts": {
-    "build": "yarn workspace new-v1-addon run build",
-    "lint": "yarn workspaces run lint",
-    "lint:fix": "yarn workspaces run lint:fix",
-    "prepare": "yarn build",
-    "start": "concurrently \"yarn:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
-    "start:addon": "yarn workspace new-v1-addon run start",
-    "start:test-app": "yarn workspace demo-app-for-new-v1-addon run start",
-    "test": "yarn workspaces run test"
+    "build": "pnpm --filter new-v1-addon build",
+    "format": "pnpm --filter \"*\" format",
+    "lint": "pnpm --filter \"*\" lint",
+    "lint:fix": "pnpm --filter \"*\" lint:fix",
+    "prepare": "pnpm build",
+    "start": "concurrently \"pnpm:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start:addon": "pnpm --filter new-v1-addon start",
+    "start:test-app": "pnpm --filter demo-app-for-new-v1-addon start",
+    "test": "pnpm --filter \"*\" test"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0"
+    "concurrently": "^9.2.1"
+  },
+  "packageManager": "pnpm@10.25.0",
+  "engines": {
+    "node": "20.* || >= 22",
+    "pnpm": ">= 10"
   }
 }

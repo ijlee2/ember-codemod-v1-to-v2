@@ -23,7 +23,6 @@ type Options = {
     addon: string;
     testApp: string;
   };
-  packageManager: 'npm' | 'pnpm' | 'yarn';
   packages: {
     addon: {
       dependencies: Map<string, string>;

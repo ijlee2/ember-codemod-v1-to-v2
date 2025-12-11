@@ -64,7 +64,7 @@ export default {
     // Emit .d.ts declaration files
     addon.declarations(
       'declarations',
-      `<%= options.packageManager %> ember-tsc --declaration --project ${tsConfig}`,
+      `pnpm ember-tsc --declaration --project ${tsConfig}`,
     ),<% } %>
 
     // addons are allowed to contain imports of .css files, which we want rollup

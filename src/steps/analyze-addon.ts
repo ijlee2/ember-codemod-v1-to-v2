@@ -3,15 +3,7 @@ import { relative, sep } from 'node:path';
 import { findFiles } from '@codemod-utils/files';
 
 import type { Context, Options } from '../types/index.js';
-import { getVersion } from '../utils/blueprints.js';
-
-function getProjectRootDevDependencies(
-  options: Options,
-): Record<string, string> {
-  return {
-    concurrently: getVersion('concurrently', options),
-  };
-}
+import { getLatestVersion } from '../utils/blueprints.js';
 
 function getPublicAssets(options: Options): Record<string, string> {
   const { packages, projectRoot } = options;
@@ -53,7 +45,10 @@ export function analyzeAddon(options: Options): Context {
       publicAssets,
     },
     projectRoot: {
-      devDependencies: getProjectRootDevDependencies(options),
+      devDependencies: {
+        concurrently: getLatestVersion('concurrently'),
+        pnpm: getLatestVersion('pnpm').replace('^', ''),
+      },
     },
   };
 }

@@ -8,7 +8,7 @@ import type { Context, Options } from '../types/index.js';
 import { blueprintsRoot } from '../utils/blueprints.js';
 
 function getFilesToSkip(options: Options): string[] {
-  const { packageManager, packages } = options;
+  const { packages } = options;
 
   const files = new Set<string>();
 
@@ -17,10 +17,6 @@ function getFilesToSkip(options: Options): string[] {
     files.add('__addonLocation__/unpublished-development-types/index.d.ts');
     files.add('__testAppLocation__/tsconfig.json');
     files.add('__testAppLocation__/types/global.d.ts');
-  }
-
-  if (packageManager !== 'pnpm') {
-    files.add('pnpm-workspace.yaml');
   }
 
   return Array.from(files);
@@ -35,6 +31,7 @@ function resolveBlueprintFilePath(
   return blueprintFilePath
     .replace('__addonLocation__', locations.addon)
     .replace('__gitignore__', '.gitignore')
+    .replace('__npmrc__', '.npmrc')
     .replace('__testAppLocation__', locations.testApp);
 }
 

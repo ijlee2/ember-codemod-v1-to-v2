@@ -7,6 +7,7 @@
   "author": "",
   "scripts": {
     "build": "pnpm --filter hello-world build",
+    "format": "pnpm --filter \"*\" format",
     "lint": "pnpm --filter \"*\" lint",
     "lint:fix": "pnpm --filter \"*\" lint:fix",
     "prepare": "pnpm build",
@@ -16,6 +17,11 @@
     "test": "pnpm --filter \"*\" test"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0"
+    "concurrently": "^9.2.1"
+  },
+  "packageManager": "pnpm@10.25.0",
+  "engines": {
+    "node": "20.* || >= 22",
+    "pnpm": ">= 10"
   }
 }

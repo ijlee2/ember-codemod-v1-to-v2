@@ -34,7 +34,6 @@ test('steps | create-options > typescript', function () {
       addon: 'ember-container-query',
       testApp: 'test-app',
     },
-    packageManager: 'yarn',
     packages: {
       addon: {
         dependencies: new Map([

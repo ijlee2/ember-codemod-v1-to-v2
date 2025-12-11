@@ -1,28 +1,4 @@
-<% if (options.packageManager === 'npm') { %>{
-  "name": "workspace-root",
-  "version": "<%= options.packages.addon.version %>",
-  "private": true,
-  "repository": "",
-  "license": "MIT",
-  "author": "",
-  "workspaces": [
-    "<%= options.locations.addon %>",
-    "<%= options.locations.testApp %>"
-  ],
-  "scripts": {
-    "build": "npm run build --workspace <%= options.packages.addon.name %>",
-    "lint": "npm run lint --workspaces --if-present",
-    "lint:fix": "npm run lint:fix --workspaces --if-present",
-    "prepare": "npm run build",
-    "start": "concurrently \"npm:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
-    "start:addon": "npm start --workspace <%= options.packages.addon.name %>",
-    "start:test-app": "npm start --workspace <%= options.packages.testApp.name %>",
-    "test": "npm run test --workspaces --if-present"
-  },
-  "devDependencies": {
-    "concurrently": "<%= context.projectRoot.devDependencies['concurrently'] %>"
-  }
-}<% } else if (options.packageManager === 'pnpm') { %>{
+{
   "name": "workspace-root",
   "version": "<%= options.packages.addon.version %>",
   "private": true,
@@ -31,6 +7,7 @@
   "author": "",
   "scripts": {
     "build": "pnpm --filter <%= options.packages.addon.name %> build",
+    "format": "pnpm --filter \"*\" format",
     "lint": "pnpm --filter \"*\" lint",
     "lint:fix": "pnpm --filter \"*\" lint:fix",
     "prepare": "pnpm build",
@@ -41,29 +18,10 @@
   },
   "devDependencies": {
     "concurrently": "<%= context.projectRoot.devDependencies['concurrently'] %>"
-  }
-}<% } else if (options.packageManager === 'yarn') { %>{
-  "name": "workspace-root",
-  "version": "<%= options.packages.addon.version %>",
-  "private": true,
-  "repository": "",
-  "license": "MIT",
-  "author": "",
-  "workspaces": [
-    "<%= options.locations.addon %>",
-    "<%= options.locations.testApp %>"
-  ],
-  "scripts": {
-    "build": "yarn workspace <%= options.packages.addon.name %> run build",
-    "lint": "yarn workspaces run lint",
-    "lint:fix": "yarn workspaces run lint:fix",
-    "prepare": "yarn build",
-    "start": "concurrently \"yarn:start:*\" --restart-after 5000 --prefix-colors cyan,white,yellow",
-    "start:addon": "yarn workspace <%= options.packages.addon.name %> run start",
-    "start:test-app": "yarn workspace <%= options.packages.testApp.name %> run start",
-    "test": "yarn workspaces run test"
   },
-  "devDependencies": {
-    "concurrently": "<%= context.projectRoot.devDependencies['concurrently'] %>"
+  "packageManager": "pnpm@<%= context.projectRoot.devDependencies['pnpm'] %>",
+  "engines": {
+    "node": "20.* || >= 22",
+    "pnpm": ">= 10"
   }
-}<% } %>
+}

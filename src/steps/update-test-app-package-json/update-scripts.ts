@@ -7,7 +7,7 @@ export function updateScripts(
   packageJson: PackageJson,
   options: Options,
 ): void {
-  const { packageManager, packages } = options;
+  const { packages } = options;
 
   const scripts = convertToMap(packageJson['scripts']);
 
@@ -16,10 +16,7 @@ export function updateScripts(
 
   scripts.set('build', 'ember build --environment=production');
   scripts.set('format', 'prettier . --cache --write');
-  scripts.set(
-    'lint',
-    `concurrently \"${packageManager}:lint:*(!fix)\" --names \"lint:\"`,
-  );
+  scripts.set('lint', `concurrently \"pnpm:lint:*(!fix)\" --names \"lint:\"`);
   scripts.set(
     'lint:css',
     'stylelint \"**/*.css\" --allow-empty-input --cache"',
@@ -30,7 +27,7 @@ export function updateScripts(
   );
   scripts.set(
     'lint:fix',
-    `concurrently \"${packageManager}:lint:*:fix\" --names \"fix:\" && ${packageManager} format`,
+    `concurrently \"pnpm:lint:*:fix\" --names \"fix:\" && pnpm format`,
   );
   scripts.set('lint:format', 'prettier . --cache --check');
   scripts.set('lint:hbs', 'ember-template-lint .');
