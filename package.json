@@ -20,9 +20,6 @@
   "type": "module",
   "main": "dist/src/index.js",
   "bin": "dist/bin/ember-codemod-v1-to-v2.js",
-  "directories": {
-    "test": "tests"
-  },
   "files": [
     "dist"
   ],
