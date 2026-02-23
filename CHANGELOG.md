@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.0.0
+
+### Major Changes
+
+- [`bcc149e`](https://github.com/ijlee2/ember-codemod-v1-to-v2/commit/bcc149ea9d9421803b9a31b9b91a7a2dfce529c3) Dropped support for Node 20 ([@ijlee2](https://github.com/ijlee2))
+
 ## 3.0.3
 
 ### Patch Changes
