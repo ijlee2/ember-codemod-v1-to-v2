@@ -124,7 +124,7 @@ If you'd rather start over, you can use [`create-v2-addon-repo`](https://github.
 
 ## Compatibility
 
-- Node.js v20 or above
+- Node.js v22 or above
 
 
 ## Contributing
