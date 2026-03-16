@@ -19,7 +19,7 @@
   "devDependencies": {
     "concurrently": "^9.2.1"
   },
-  "packageManager": "pnpm@10.25.0",
+  "packageManager": "pnpm@10.32.1",
   "engines": {
     "node": "20.* || >= 22",
     "pnpm": ">= 10"

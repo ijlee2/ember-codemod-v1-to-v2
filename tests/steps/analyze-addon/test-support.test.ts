@@ -27,7 +27,7 @@ test('steps | analyze-addon > test-support', function () {
     projectRoot: {
       devDependencies: {
         concurrently: '^9.2.1',
-        pnpm: '10.25.0',
+        pnpm: '10.32.1',
       },
     },
   });
