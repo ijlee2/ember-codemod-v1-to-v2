@@ -1,10 +1,21 @@
 # Changelog
 
+## 4.1.0
+
+### Minor Changes
+
+- [#124](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/124) Updated latestVersions ([@ijlee2](https://github.com/ijlee2))
+
+### Patch Changes
+
+- [#123](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/123) Recommended the use of pnpx ([@ijlee2](https://github.com/ijlee2))
+- [#122](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/122) Updated dependencies ([@ijlee2](https://github.com/ijlee2))
+
 ## 4.0.0
 
 ### Major Changes
 
-- [`bcc149e`](https://github.com/ijlee2/ember-codemod-v1-to-v2/commit/bcc149ea9d9421803b9a31b9b91a7a2dfce529c3) Dropped support for Node 20 ([@ijlee2](https://github.com/ijlee2))
+- [#120](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/120) Dropped support for Node 20 ([@ijlee2](https://github.com/ijlee2))
 
 ## 3.0.3
 
