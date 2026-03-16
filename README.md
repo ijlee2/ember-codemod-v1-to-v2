@@ -13,7 +13,7 @@ Step 1. Quickly migrate to [v2 format](https://github.com/embroider-build/embroi
 
 ```sh
 cd <path/to/your/project>
-npx ember-codemod-v1-to-v2 <arguments>
+pnpx ember-codemod-v1-to-v2 <arguments>
 ```
 
 > [!IMPORTANT]
@@ -58,7 +58,7 @@ In most cases, I recommend running the codemod without any arguments (i.e. allow
 By default, the package name decides where the addon package lives. Pass `--addon-location` to override the logic. This may be useful if you have a workspace with many addons.
 
 ```sh
-npx ember-codemod-v1-to-v2 --addon-location packages/ui/button
+pnpx ember-codemod-v1-to-v2 --addon-location packages/ui/button
 ```
 
 </details>
@@ -71,7 +71,7 @@ npx ember-codemod-v1-to-v2 --addon-location packages/ui/button
 Pass `--root` to run the codemod on a project somewhere else (i.e. not in the current directory).
 
 ```sh
-npx ember-codemod-v1-to-v2 --root <path/to/your/project>
+pnpx ember-codemod-v1-to-v2 --root <path/to/your/project>
 ```
 
 </details>
@@ -84,7 +84,7 @@ npx ember-codemod-v1-to-v2 --root <path/to/your/project>
 By default, the test-app package lives in the folder `test-app`. Pass `--test-app-location` to override the logic.
 
 ```sh
-npx ember-codemod-v1-to-v2 --test-app-location docs-app
+pnpx ember-codemod-v1-to-v2 --test-app-location docs-app
 ```
 
 </details>
@@ -97,7 +97,7 @@ npx ember-codemod-v1-to-v2 --test-app-location docs-app
 By default, the test-app package is named `test-app`. Pass `--test-app-name` to override the logic. This may be useful if you have a workspace with many addons.
 
 ```sh
-npx ember-codemod-v1-to-v2 --test-app-name test-app-for-ui-button
+pnpx ember-codemod-v1-to-v2 --test-app-name test-app-for-ui-button
 ```
 
 </details>
