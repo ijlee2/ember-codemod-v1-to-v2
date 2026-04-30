@@ -80,7 +80,6 @@ function groupDataByMusicFormat(data) {
     const didMusicFormatExist = revenue !== 0;
 
     if (accumulator[musicFormat]) {
-      /* eslint-disable-next-line prefer-const */
       let { data, relevantYears } = accumulator[musicFormat];
 
       data.set(year, revenue);
