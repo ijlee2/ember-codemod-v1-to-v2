@@ -1,4 +1,3 @@
-/* eslint-disable qunit/require-expect */
 import { visit } from '@ember/test-helpers';
 import {
   setupApplicationTest,

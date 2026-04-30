@@ -1,6 +1,5 @@
 'use strict';
 
-/* eslint-disable-next-line n/no-unpublished-require */
 const { browsers } = require('./tests/dummy/config/targets');
 
 module.exports = {
