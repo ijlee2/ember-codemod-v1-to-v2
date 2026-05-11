@@ -1,6 +1,3 @@
-import { dirname, resolve } from 'node:path';
-import { fileURLToPath } from 'node:url';
-
 import { Addon } from '@embroider/addon-dev/rollup';
 import { babel } from '@rollup/plugin-babel';
 
@@ -8,9 +5,6 @@ const addon = new Addon({
   srcDir: 'src',
   destDir: 'dist',
 });
-
-const rootDirectory = dirname(fileURLToPath(import.meta.url));
-const babelConfig = resolve(rootDirectory, './babel.config.cjs');
 
 export default {
   // This provides defaults that work well alongside `publicEntrypoints` below.
@@ -50,7 +44,7 @@ export default {
     // babel.config.json.
     babel({
       babelHelpers: 'bundled',
-      configFile: babelConfig,
+      configFile: './babel.config.mjs',
       extensions: ['.gjs', '.js'],
     }),
 

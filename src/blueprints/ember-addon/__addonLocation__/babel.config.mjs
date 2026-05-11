@@ -1,9 +1,17 @@
-module.exports = {
+export default {
   generatorOpts: {
     compact: false,
   },
   plugins: [
-    '@embroider/addon-dev/template-colocation-plugin',
+<% if (options.packages.addon.hasTypeScript) { %>    [
+      '@babel/plugin-transform-typescript',
+      {
+        allExtensions: true,
+        allowDeclareFields: true,
+        onlyRemoveTypeImports: true,
+      },
+    ],
+<% } %>    '@embroider/addon-dev/template-colocation-plugin',
     [
       'babel-plugin-ember-template-compilation',
       {
