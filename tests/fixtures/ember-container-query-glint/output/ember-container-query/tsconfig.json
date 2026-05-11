@@ -1,18 +1,14 @@
 {
-  "extends": "@tsconfig/ember/tsconfig.json",
+  "extends": "@ember/library-tsconfig",
   "compilerOptions": {
-    "allowImportingTsExtensions": true,
-    "declaration": true,
     "declarationDir": "declarations",
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "noEmit": false,
     "plugins": [
       {
         "name": "@glint/tsserver-plugin"
       }
     ],
     "rootDir": "./src",
+    "target": "esnext",
     "types": ["ember-source/types", "@glint/ember-tsc/types"]
   },
   "include": ["src/**/*", "unpublished-development-types/**/*"]

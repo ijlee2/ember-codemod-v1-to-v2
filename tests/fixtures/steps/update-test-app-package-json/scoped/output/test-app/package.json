@@ -51,6 +51,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@ember/app-tsconfig": "^2.0.0",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.9.3",
     "@embroider/broccoli-side-watch": "^1.1.0",
@@ -68,7 +69,6 @@
     "@ijlee2/ember-container-query": "3.2.0",
     "@percy/cli": "^1.16.0",
     "@percy/ember": "^4.0.0",
-    "@tsconfig/ember": "^3.0.12",
     "@types/ember__application": "^4.0.5",
     "@types/ember__array": "^4.0.3",
     "@types/ember__component": "^4.0.12",
