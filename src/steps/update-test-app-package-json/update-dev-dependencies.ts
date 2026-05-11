@@ -15,6 +15,7 @@ export function updateDevDependencies(
     '@glint/core',
     '@glint/environment-ember-loose',
     '@glint/environment-ember-template-imports',
+    '@tsconfig/ember',
     'ember-cli-typescript',
   ]);
 
@@ -39,7 +40,7 @@ export function updateDevDependencies(
   ]);
 
   if (packages.addon.hasTypeScript) {
-    packagesToInstall.add('@tsconfig/ember');
+    packagesToInstall.add('@ember/app-tsconfig');
     packagesToInstall.add('typescript');
   }
 
