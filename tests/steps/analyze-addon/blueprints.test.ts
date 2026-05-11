@@ -38,7 +38,7 @@ test('steps | analyze-addon > blueprints', function () {
     projectRoot: {
       devDependencies: {
         concurrently: '^9.2.1',
-        pnpm: '10.32.1',
+        pnpm: '10.33.4',
       },
     },
   });
