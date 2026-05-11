@@ -38,7 +38,7 @@ export function updateDevDependencies(
 
   if (packages.addon.hasTypeScript) {
     packagesToInstall.add('@babel/plugin-transform-typescript');
-    packagesToInstall.add('@tsconfig/ember');
+    packagesToInstall.add('@ember/library-tsconfig');
     packagesToInstall.add('typescript');
   }
 

@@ -1,5 +1,5 @@
 {
-  "extends": "@tsconfig/ember/tsconfig.json",
+  "extends": "@ember/app-tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
@@ -11,7 +11,8 @@
       {
         "name": "@glint/tsserver-plugin"
       }
-    ],<% } %><% if (options.packages.addon.hasGlint) { %>
+    ],<% } %>
+    "target": "esnext",<% if (options.packages.addon.hasGlint) { %>
     "types": ["ember-source/types", "@glint/ember-tsc/types"]<% } else { %>
     "types": ["ember-source/types"]<% } %>
   },

@@ -1,13 +1,9 @@
 {
-  "extends": "@tsconfig/ember/tsconfig.json",
+  "extends": "@ember/library-tsconfig",
   "compilerOptions": {
-    "allowImportingTsExtensions": true,
-    "declaration": true,
     "declarationDir": "declarations",
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
-    "noEmit": false,
     "rootDir": "./src",
+    "target": "esnext",
     "types": ["ember-source/types"]
   },
   "include": ["src/**/*", "unpublished-development-types/**/*"]
