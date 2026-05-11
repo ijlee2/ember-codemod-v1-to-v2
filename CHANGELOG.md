@@ -1,5 +1,13 @@
 # Changelog
 
+## 4.2.0
+
+### Minor Changes
+
+- [#131](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/131) Simplified Rollup configuration ([@ijlee2](https://github.com/ijlee2))
+- [#130](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/130) Replaced @tsconfig/ember with @ember/app-tsconfig and @ember/library-tsconfig ([@ijlee2](https://github.com/ijlee2))
+- [#129](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/129) Updated latestVersions ([@ijlee2](https://github.com/ijlee2))
+
 ## 4.1.2
 
 ### Patch Changes
