@@ -105,7 +105,7 @@ Here are some guidelines to help you and everyone else.
 1. Publish the package.
 
     ```sh
-    pnpm release:publish
+    pnpm release:publish --otp <YOUR_ONE_TIME_PASSWORD>
     ```
 
 </details>
