@@ -22,7 +22,7 @@ jobs:
         uses: pnpm/action-setup@v6
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           cache: 'pnpm'
           node-version: ${{ env.NODE_VERSION }}
@@ -46,7 +46,7 @@ jobs:
         uses: pnpm/action-setup@v6
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           cache: 'pnpm'
           node-version: ${{ env.NODE_VERSION }}
@@ -70,7 +70,7 @@ jobs:
         uses: pnpm/action-setup@v6
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           cache: 'pnpm'
           node-version: ${{ env.NODE_VERSION }}
