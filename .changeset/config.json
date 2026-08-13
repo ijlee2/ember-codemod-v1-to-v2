@@ -1,11 +1,4 @@
 {
-  "$schema": "https://unpkg.com/@changesets/config/schema.json",
-  "changelog": "./formatter.mjs",
-  "commit": false,
-  "fixed": [],
-  "linked": [],
   "access": "public",
-  "baseBranch": "main",
-  "updateInternalDependencies": "patch",
-  "ignore": []
+  "changelog": "./formatter.mjs"
 }
