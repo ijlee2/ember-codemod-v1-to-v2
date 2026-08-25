@@ -14,15 +14,7 @@ Before you make a new issue, please search for similar issues. It's possible tha
 
 ## List outdated dependencies 🔗
 
-When you ran `pnpm outdated`, what did you see?
-
-```sh
-┌────────────────────────┬─────────┬────────┐
-│ Package                │ Current │ Latest │
-├────────────────────────┼─────────┼────────┤
-│ @sondr3/minitest (dev) │ 0.1.1   │ 0.1.2  │
-└────────────────────────┴─────────┴────────┘
-```
+When you ran `pnpm outdated`, what did you see? Please provide the table output.
 
 
 ## Risk analysis ⚠️
