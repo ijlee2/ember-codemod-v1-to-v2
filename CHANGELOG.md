@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.2.6
+
+### Patch Changes
+
+- [#143](https://github.com/ijlee2/ember-codemod-v1-to-v2/pull/143) Updated dependencies (replaced eslint with oxlint) ([@ijlee2](https://github.com/ijlee2))
+
 ## 4.2.5
 
 ### Patch Changes
