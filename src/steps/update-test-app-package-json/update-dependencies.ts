@@ -8,5 +8,6 @@ export function updateDependencies(packageJson: PackageJson): void {
   // Start over
   dependencies.clear();
 
+  // oxlint-disable-next-line typescript/no-unsafe-assignment
   packageJson['dependencies'] = convertToObject(dependencies);
 }

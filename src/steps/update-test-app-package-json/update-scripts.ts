@@ -46,5 +46,6 @@ export function updateScripts(
     }
   }
 
+  // oxlint-disable-next-line typescript/no-unsafe-assignment
   packageJson['scripts'] = convertToObject(scripts);
 }
