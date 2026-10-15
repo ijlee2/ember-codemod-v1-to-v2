@@ -1,9 +1,12 @@
 allowBuilds:
   unrs-resolver: false
 
+autoDedupe: true
+
 autoInstallPeers: false
 
-minimumReleaseAge: 720
+lockfile:
+  includeResolutionSettings: true
 
 minimumReleaseAgeExclude:
   - "@codemod-utils/*"

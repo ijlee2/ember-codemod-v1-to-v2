@@ -59,5 +59,6 @@ export function updateDevDependencies(
   // Install addon
   devDependencies.set(packages.addon.name, packages.addon.version);
 
+  // oxlint-disable-next-line typescript/no-unsafe-assignment
   packageJson['devDependencies'] = convertToObject(devDependencies);
 }

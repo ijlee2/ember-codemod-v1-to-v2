@@ -32,5 +32,6 @@ export function updateDependencies(
     dependencies.set(packageName, version);
   });
 
+  // oxlint-disable-next-line typescript/no-unsafe-assignment
   packageJson['dependencies'] = convertToObject(dependencies);
 }
