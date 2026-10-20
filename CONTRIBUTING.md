@@ -102,10 +102,6 @@ Here are some guidelines to help you and everyone else.
 
 1. [Create a tag](https://github.com/ijlee2/ember-codemod-v1-to-v2/releases/new) and provide release notes. The tag name should match the package version (e.g. `0.1.2`).
 
-1. Publish the package.
-
-    ```sh
-    pnpm release:publish --otp <YOUR_ONE_TIME_PASSWORD>
-    ```
+1. Once the tag is created, the package is published to npm using trusted publishing.
 
 </details>
