@@ -11,5 +11,6 @@ lockfile:
 minimumReleaseAgeExclude:
   - "@codemod-utils/*"
   - "@ijlee2-frontend-configs/*"
+  - eslint-plugin-perfectionist@5.14.0
 
 resolvePeersFromWorkspaceRoot: false
